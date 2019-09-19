@@ -222,12 +222,12 @@ public:
         label->setAlignment(Qt::AlignCenter);
         frame_2 = new QFrame(lock_screen);
         frame_2->setObjectName(QStringLiteral("frame_2"));
-        frame_2->setGeometry(QRect(10, 10, 201, 751));
+        frame_2->setGeometry(QRect(10, 10, 201, 711));
         frame_2->setFrameShape(QFrame::StyledPanel);
         frame_2->setFrameShadow(QFrame::Raised);
         verticalLayoutWidget = new QWidget(frame_2);
         verticalLayoutWidget->setObjectName(QStringLiteral("verticalLayoutWidget"));
-        verticalLayoutWidget->setGeometry(QRect(30, 10, 139, 721));
+        verticalLayoutWidget->setGeometry(QRect(30, 10, 139, 691));
         verticalLayout = new QVBoxLayout(verticalLayoutWidget);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
@@ -352,7 +352,7 @@ public:
 
         label_2 = new QLabel(lock_screen);
         label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(220, 730, 791, 31));
+        label_2->setGeometry(QRect(10, 730, 1001, 31));
         QPalette palette13;
         palette13.setBrush(QPalette::Active, QPalette::WindowText, brush3);
         palette13.setBrush(QPalette::Active, QPalette::Base, brush1);

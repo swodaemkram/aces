@@ -27,12 +27,15 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    lock_screen.cpp
+    lock_screen.cpp \
+    user_screen.cpp
 
 HEADERS += \
         mainwindow.h \
-    lock_screen.h
+    lock_screen.h \
+    user_screen.h
 
 FORMS += \
         mainwindow.ui \
-    lock_screen.ui
+    lock_screen.ui \
+    user_screen.ui

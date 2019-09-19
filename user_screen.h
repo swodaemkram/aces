@@ -1,20 +1,20 @@
-#ifndef LOCK_SCREEN_H
-#define LOCK_SCREEN_H
+#ifndef USER_SCREEN_H
+#define USER_SCREEN_H
 
 #include <QDialog>
 #include <QGraphicsScene> //Need this for Images
 
 namespace Ui {
-class lock_screen;
+class user_screen;
 }
 
-class lock_screen : public QDialog
+class user_screen : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit lock_screen(QWidget *parent = 0);
-    ~lock_screen();
+    explicit user_screen(QWidget *parent = 0);
+    ~user_screen();
 
 private slots:
     void on_pushButton_clicked();
@@ -22,15 +22,12 @@ private slots:
     void on_pushButton_2_clicked();
 
 private:
-    Ui::lock_screen *ui;
+    Ui::user_screen *ui;
     QPixmap image;
     QImage  *imageObject;
     QGraphicsScene *scene;
 
 
-
-
-
 };
 
-#endif // LOCK_SCREEN_H
+#endif // USER_SCREEN_H

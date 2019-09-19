@@ -434,11 +434,36 @@ void MainWindow::ValidateUser()
 
 
      QSqlQuery query;
-     query.exec("SELECT pin_number FROM user WHERE iduser = " + UserID);
+     query.exec("SELECT * FROM user WHERE iduser = " + UserID);
      query.next();
-     QString pin_from_db = query.value(0).toString();
+     QString pin_from_db = query.value(3).toString();
      //ui->label_4->setText(pin_from_db);
+     int user_enabled_from_db = query.value(5).toInt();
      db.close();
+
+/*
+=================================================================================================================
+Is User Enabled
+=================================================================================================================
+*/
+
+     if (!user_enabled_from_db)
+     {
+         ui->plainTextEdit->setPlainText("");
+         ui->plainTextEdit_2->setPlainText("");
+         HideText = "";
+         UserID = "";
+         Pin = "";
+         ui->label_4->setText("User Not Enabled !!!");
+         ui->plainTextEdit->setFocus();
+        return;
+     }
+/*
+================================================================================================================
+Is PIN Correct
+================================================================================================================
+*/
+
      if(Pin == pin_from_db)
      {
         ui->plainTextEdit->setPlainText("");
@@ -454,9 +479,12 @@ void MainWindow::ValidateUser()
         UserID="";
         return;
      }
+/*
+==============================================================================================================
+Planed Fall Through
+==============================================================================================================
+*/
 
-    if(Pin != 0)
-    {
      ui->plainTextEdit->setPlainText("");
      ui->plainTextEdit_2->setPlainText("");
      HideText = "";
@@ -464,7 +492,7 @@ void MainWindow::ValidateUser()
      Pin = "";
      ui->label_4->setText("Validation Error !!!");
      ui->plainTextEdit->setFocus();
-    }
+
 
 }
 /*

@@ -1,17 +1,14 @@
-#include "lock_screen.h"
-#include "ui_lock_screen.h"
-#include "mainwindow.h"
 #include "user_screen.h"
+#include "ui_user_screen.h"
 #include <QStyle>
 #include <QDesktopWidget>
 //#include <QtWidgets>
 #include <QtSql>
 
-extern QString UserID;
 
-lock_screen::lock_screen(QWidget *parent) :
+user_screen::user_screen(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::lock_screen)
+    ui(new Ui::user_screen)
 {
     ui->setupUi(this);
 /*
@@ -22,7 +19,6 @@ Center Window on Screen and remove minimize, maximize and exit buttons
   //this->setWindowFlags(Qt::Dialog); //Removes Minimize and Maximize Buttons
   this->setWindowFlags(Qt::FramelessWindowHint);//Gets Rid of all Window Buttons Minimize,Maxinize and Exit
   this->setGeometry(QStyle::alignedRect(Qt::LeftToRight,Qt::AlignCenter,this->size(),qApp->desktop()->availableGeometry()));//Centers This window on any screen
-
 /*
 ==============================================================================================================
 Lets Load a cool Background
@@ -37,12 +33,10 @@ Lets Load a cool Background
   ui->graphicsView->setScene(scene);        //   |
   imageObject = new QImage();
 /*
-==============================================================================================================
-Lets Figure out who logqed in and what they can do
-==============================================================================================================
+=============================================================================================================
+So lets load the user grid
+=============================================================================================================
 */
-
-
   QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
   db.setHostName("localhost");
   db.setDatabaseName("aces");
@@ -57,35 +51,43 @@ Lets Figure out who logqed in and what they can do
    ui->label_2->setText("Connected to database....");
 /*
 ============================================================================================================
-Ok so we conneced to the database, now run querry
+We are connected to the database lets run a select all query
 ============================================================================================================
 */
-   QSqlQuery query;
-   query.exec("SELECT * FROM user WHERE iduser = " + UserID);
-   query.next();
-   QString FirstNameFromDatabase = query.value(1).toString();
-   QString LastNameFromDatabase = query.value(2).toString();
-   ui->label_2->setText("User Logged in is " + FirstNameFromDatabase + " " + LastNameFromDatabase);
+  // QSqlQuery query;
+  // query.exec("SELECT * FROM user ");
+  // query.next();
+  // QString FirstNameFromDatabase = query.value(1).toString();
+  // QString LastNameFromDatabase = query.value(2).toString();
+  // ui->label_2->setText("User Logged in is " + FirstNameFromDatabase + " " + LastNameFromDatabase);
 
+    QSqlQueryModel *model = new QSqlQueryModel();
+    QSqlQuery *qry = new QSqlQuery(db);
+    qry->prepare("SELECT * FROM user");
+    qry->exec();
+    //query.exec("SELECT * FROM user ");
+    model->setQuery(*qry);
+    ui->tableView->setModel(model);
+/*
+============================================================================================================
+Query s ran and TableView is loaded
+============================================================================================================
+*/
 
-   db.close(); //Close Database
 
 }
 
-lock_screen::~lock_screen()
+user_screen::~user_screen()
 {
     delete ui;
 }
 
-void lock_screen::on_pushButton_clicked()
+void user_screen::on_pushButton_clicked()
 {
     close();
 }
 
-
-void lock_screen::on_pushButton_2_clicked()
+void user_screen::on_pushButton_2_clicked()
 {
-    user_screen user_screen;
-    user_screen.setModal(true);
-    user_screen.exec();
+
 }

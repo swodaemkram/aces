@@ -27,7 +27,7 @@ CREATE TABLE `user` (
   `first_name` varchar(45) DEFAULT NULL,
   `last_name` varchar(45) DEFAULT NULL,
   `pin_number` varchar(45) DEFAULT NULL,
-  `window_group` varchar(45) DEFAULT NULL,
+  `permission_group` varchar(45) DEFAULT NULL,
   `user_enabled` tinyint(1) DEFAULT NULL,
   `override_key_number` int(20) unsigned DEFAULT NULL,
   PRIMARY KEY (`iduser`),
@@ -41,7 +41,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'mark','meadows','3333','employee',1,NULL),(2,'phil','macrevas','1234','noone',0,NULL);
+INSERT INTO `user` VALUES (1,'mark','meadows','3333','employee',1,NULL),(2,'phil','macrevas','1234','noone',1,NULL);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -54,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-09-19 10:45:48
+-- Dump completed on 2019-09-20 13:16:35

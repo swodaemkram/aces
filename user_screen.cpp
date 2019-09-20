@@ -31,7 +31,7 @@ Lets Load a cool Background
   scene->addPixmap(image);                  //   |_______All this to display a picture
   scene->setSceneRect(image.rect());        //   |               WOW !
   ui->graphicsView->setScene(scene);        //   |
-  imageObject = new QImage();
+
 /*
 =============================================================================================================
 So lets load the user grid
@@ -54,18 +54,10 @@ So lets load the user grid
 We are connected to the database lets run a select all query
 ============================================================================================================
 */
-  // QSqlQuery query;
-  // query.exec("SELECT * FROM user ");
-  // query.next();
-  // QString FirstNameFromDatabase = query.value(1).toString();
-  // QString LastNameFromDatabase = query.value(2).toString();
-  // ui->label_2->setText("User Logged in is " + FirstNameFromDatabase + " " + LastNameFromDatabase);
-
     QSqlQueryModel *model = new QSqlQueryModel();
     QSqlQuery *qry = new QSqlQuery(db);
     qry->prepare("SELECT * FROM user");
     qry->exec();
-    //query.exec("SELECT * FROM user ");
     model->setQuery(*qry);
     ui->tableView->setModel(model);
 /*

@@ -2,6 +2,9 @@
 #include "ui_lock_screen.h"
 #include "mainwindow.h"
 #include "user_screen.h"
+#include "access_group.h"
+#include "manage_access_item.h"
+
 #include <QStyle>
 #include <QDesktopWidget>
 //#include <QtWidgets>
@@ -153,4 +156,18 @@ void lock_screen::on_pushButton_2_clicked()
     user_screen user_screen;
     user_screen.setModal(true);
     user_screen.exec();
+}
+
+void lock_screen::on_pushButton_5_clicked()
+{
+    manage_access_item manage_access_item;
+    manage_access_item.setModal(true);
+    manage_access_item.exec();
+}
+
+void lock_screen::on_pushButton_4_clicked()
+{
+    Access_Group Access_Group;
+    Access_Group.setModal(true);
+    Access_Group.exec();
 }

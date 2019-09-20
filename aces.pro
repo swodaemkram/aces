@@ -28,14 +28,20 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     lock_screen.cpp \
-    user_screen.cpp
+    user_screen.cpp \
+    manage_access_item.cpp \
+    access_group.cpp
 
 HEADERS += \
         mainwindow.h \
     lock_screen.h \
-    user_screen.h
+    user_screen.h \
+    manage_access_item.h \
+    access_group.h
 
 FORMS += \
         mainwindow.ui \
     lock_screen.ui \
-    user_screen.ui
+    user_screen.ui \
+    manage_access_item.ui \
+    access_group.ui

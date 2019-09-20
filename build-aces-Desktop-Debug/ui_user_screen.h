@@ -190,6 +190,9 @@ public:
         tableView = new QTableView(frame_2);
         tableView->setObjectName(QStringLiteral("tableView"));
         tableView->setGeometry(QRect(10, 10, 811, 201));
+        QFont font1;
+        font1.setPointSize(8);
+        tableView->setFont(font1);
         tableView->setEditTriggers(QAbstractItemView::AllEditTriggers);
         tableView->setAlternatingRowColors(true);
         tableView->setSelectionBehavior(QAbstractItemView::SelectRows);

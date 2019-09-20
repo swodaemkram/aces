@@ -53,16 +53,24 @@ OBJECTS_DIR   = ./
 SOURCES       = ../aces/main.cpp \
 		../aces/mainwindow.cpp \
 		../aces/lock_screen.cpp \
-		../aces/user_screen.cpp moc_mainwindow.cpp \
+		../aces/user_screen.cpp \
+		../aces/manage_access_item.cpp \
+		../aces/access_group.cpp moc_mainwindow.cpp \
 		moc_lock_screen.cpp \
-		moc_user_screen.cpp
+		moc_user_screen.cpp \
+		moc_manage_access_item.cpp \
+		moc_access_group.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
 		lock_screen.o \
 		user_screen.o \
+		manage_access_item.o \
+		access_group.o \
 		moc_mainwindow.o \
 		moc_lock_screen.o \
-		moc_user_screen.o
+		moc_user_screen.o \
+		moc_manage_access_item.o \
+		moc_access_group.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/linux.conf \
@@ -143,10 +151,14 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/lex.prf \
 		../aces/aces.pro ../aces/mainwindow.h \
 		../aces/lock_screen.h \
-		../aces/user_screen.h ../aces/main.cpp \
+		../aces/user_screen.h \
+		../aces/manage_access_item.h \
+		../aces/access_group.h ../aces/main.cpp \
 		../aces/mainwindow.cpp \
 		../aces/lock_screen.cpp \
-		../aces/user_screen.cpp
+		../aces/user_screen.cpp \
+		../aces/manage_access_item.cpp \
+		../aces/access_group.cpp
 QMAKE_TARGET  = aces
 DESTDIR       = 
 TARGET        = aces
@@ -155,7 +167,7 @@ TARGET        = aces
 first: all
 ####### Build rules
 
-$(TARGET): ui_mainwindow.h ui_lock_screen.h ui_user_screen.h $(OBJECTS)  
+$(TARGET): ui_mainwindow.h ui_lock_screen.h ui_user_screen.h ui_manage_access_item.h ui_access_group.h $(OBJECTS)  
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
 Makefile: ../aces/aces.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
@@ -340,9 +352,9 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../aces/mainwindow.h ../aces/lock_screen.h ../aces/user_screen.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../aces/main.cpp ../aces/mainwindow.cpp ../aces/lock_screen.cpp ../aces/user_screen.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../aces/mainwindow.ui ../aces/lock_screen.ui ../aces/user_screen.ui $(DISTDIR)/
+	$(COPY_FILE) --parents ../aces/mainwindow.h ../aces/lock_screen.h ../aces/user_screen.h ../aces/manage_access_item.h ../aces/access_group.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../aces/main.cpp ../aces/mainwindow.cpp ../aces/lock_screen.cpp ../aces/user_screen.cpp ../aces/manage_access_item.cpp ../aces/access_group.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../aces/mainwindow.ui ../aces/lock_screen.ui ../aces/user_screen.ui ../aces/manage_access_item.ui ../aces/access_group.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -374,9 +386,9 @@ compiler_moc_predefs_clean:
 moc_predefs.h: /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 	g++ -pipe -g -Wall -W -dM -E -o moc_predefs.h /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_mainwindow.cpp moc_lock_screen.cpp moc_user_screen.cpp
+compiler_moc_header_make_all: moc_mainwindow.cpp moc_lock_screen.cpp moc_user_screen.cpp moc_manage_access_item.cpp moc_access_group.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_mainwindow.cpp moc_lock_screen.cpp moc_user_screen.cpp
+	-$(DEL_FILE) moc_mainwindow.cpp moc_lock_screen.cpp moc_user_screen.cpp moc_manage_access_item.cpp moc_access_group.cpp
 moc_mainwindow.cpp: ../aces/mainwindow.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
@@ -392,11 +404,21 @@ moc_user_screen.cpp: ../aces/user_screen.h \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/mark/qt_projects/aces -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../aces/user_screen.h -o moc_user_screen.cpp
 
+moc_manage_access_item.cpp: ../aces/manage_access_item.h \
+		moc_predefs.h \
+		/usr/lib/qt5/bin/moc
+	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/mark/qt_projects/aces -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../aces/manage_access_item.h -o moc_manage_access_item.cpp
+
+moc_access_group.cpp: ../aces/access_group.h \
+		moc_predefs.h \
+		/usr/lib/qt5/bin/moc
+	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/mark/qt_projects/aces -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../aces/access_group.h -o moc_access_group.cpp
+
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_mainwindow.h ui_lock_screen.h ui_user_screen.h
+compiler_uic_make_all: ui_mainwindow.h ui_lock_screen.h ui_user_screen.h ui_manage_access_item.h ui_access_group.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_mainwindow.h ui_lock_screen.h ui_user_screen.h
+	-$(DEL_FILE) ui_mainwindow.h ui_lock_screen.h ui_user_screen.h ui_manage_access_item.h ui_access_group.h
 ui_mainwindow.h: ../aces/mainwindow.ui \
 		/usr/lib/qt5/bin/uic
 	/usr/lib/qt5/bin/uic ../aces/mainwindow.ui -o ui_mainwindow.h
@@ -408,6 +430,14 @@ ui_lock_screen.h: ../aces/lock_screen.ui \
 ui_user_screen.h: ../aces/user_screen.ui \
 		/usr/lib/qt5/bin/uic
 	/usr/lib/qt5/bin/uic ../aces/user_screen.ui -o ui_user_screen.h
+
+ui_manage_access_item.h: ../aces/manage_access_item.ui \
+		/usr/lib/qt5/bin/uic
+	/usr/lib/qt5/bin/uic ../aces/manage_access_item.ui -o ui_manage_access_item.h
+
+ui_access_group.h: ../aces/access_group.ui \
+		/usr/lib/qt5/bin/uic
+	/usr/lib/qt5/bin/uic ../aces/access_group.ui -o ui_access_group.h
 
 compiler_yacc_decl_make_all:
 compiler_yacc_decl_clean:
@@ -429,12 +459,23 @@ mainwindow.o: ../aces/mainwindow.cpp ../aces/mainwindow.h \
 
 lock_screen.o: ../aces/lock_screen.cpp ../aces/lock_screen.h \
 		ui_lock_screen.h \
-		../aces/mainwindow.h
+		../aces/mainwindow.h \
+		../aces/user_screen.h \
+		../aces/access_group.h \
+		../aces/manage_access_item.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o lock_screen.o ../aces/lock_screen.cpp
 
 user_screen.o: ../aces/user_screen.cpp ../aces/user_screen.h \
 		ui_user_screen.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o user_screen.o ../aces/user_screen.cpp
+
+manage_access_item.o: ../aces/manage_access_item.cpp ../aces/manage_access_item.h \
+		ui_manage_access_item.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o manage_access_item.o ../aces/manage_access_item.cpp
+
+access_group.o: ../aces/access_group.cpp ../aces/access_group.h \
+		ui_access_group.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o access_group.o ../aces/access_group.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp
@@ -444,6 +485,12 @@ moc_lock_screen.o: moc_lock_screen.cpp
 
 moc_user_screen.o: moc_user_screen.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_user_screen.o moc_user_screen.cpp
+
+moc_manage_access_item.o: moc_manage_access_item.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_manage_access_item.o moc_manage_access_item.cpp
+
+moc_access_group.o: moc_access_group.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_access_group.o moc_access_group.cpp
 
 ####### Install
 

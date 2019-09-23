@@ -33,9 +33,9 @@ Lets Load a cool Background
   ui->graphicsView->setScene(scene);        //   |
 
 /*
-=============================================================================================================
+=================================================================================================================
 So lets load the user grid
-=============================================================================================================
+=================================================================================================================
 */
   QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
   db.setHostName("localhost");
@@ -50,21 +50,48 @@ So lets load the user grid
   }
    ui->label_2->setText("Connected to database....");
 /*
-============================================================================================================
+==================================================================================================================
 We are connected to the database lets run a select all query
-============================================================================================================
+==================================================================================================================
 */
-    QSqlQueryModel *model = new QSqlQueryModel();
-    QSqlQuery *qry = new QSqlQuery(db);
-    qry->prepare("SELECT * FROM user");
-    qry->exec();
-    model->setQuery(*qry);
-    ui->tableView->setModel(model);
+   // QSqlQueryModel *model = new QSqlQueryModel(); //This is for a grid view that wont work well with touch screen
+   // QSqlQuery *qry = new QSqlQuery(db);
+   // qry->prepare("SELECT * FROM user");
+   // qry->exec();
+   //  model->setQuery(*qry); //This is for a grid view that wont work well with touch screen
+   // ui->tableView->setModel(model); //This is for a grid view that wont work well with touch screen
 /*
-============================================================================================================
+==================================================================================================================
 Query s ran and TableView is loaded
-============================================================================================================
+==================================================================================================================
+We need to Fill in all the Screen info on the current record
+==================================================================================================================
 */
+
+   QSqlQuery query;
+   query.exec("SELECT * FROM user");
+   query.next();
+   QString pin_from_db = query.value(3).toString();
+
+
+
+
+
+ QString FirstNamefromDB = query.value(1).toString();
+ ui->plainTextEdit->setPlainText(FirstNamefromDB);
+
+ QString LastNamefromDB = query.value(2).toString();
+ ui->plainTextEdit_2->setPlainText(LastNamefromDB);
+
+ QString PinfromDB = query.value(3).toString();
+ ui->plainTextEdit_3->setPlainText(PinfromDB);
+
+
+
+
+
+
+
 
 
 }
@@ -80,6 +107,11 @@ void user_screen::on_pushButton_clicked()
 }
 
 void user_screen::on_pushButton_2_clicked()
+{
+
+}
+
+void user_screen::on_pushButton_51_clicked()
 {
 
 }

@@ -32,9 +32,9 @@
   <widget class="QFrame" name="frame">
    <property name="geometry">
     <rect>
-     <x>220</x>
+     <x>160</x>
      <y>10</y>
-     <width>791</width>
+     <width>851</width>
      <height>491</height>
     </rect>
    </property>
@@ -49,8 +49,8 @@
      <rect>
       <x>10</x>
       <y>50</y>
-      <width>771</width>
-      <height>421</height>
+      <width>831</width>
+      <height>431</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout">
@@ -581,9 +581,9 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>10</x>
       <y>10</y>
-      <width>761</width>
+      <width>831</width>
       <height>31</height>
      </rect>
     </property>
@@ -766,7 +766,7 @@
     <rect>
      <x>10</x>
      <y>10</y>
-     <width>201</width>
+     <width>141</width>
      <height>711</height>
     </rect>
    </property>
@@ -779,9 +779,9 @@
    <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>30</x>
+      <x>10</x>
       <y>10</y>
-      <width>139</width>
+      <width>121</width>
       <height>691</height>
      </rect>
     </property>

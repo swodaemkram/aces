@@ -434,11 +434,18 @@ void MainWindow::ValidateUser()
 
 
      QSqlQuery query;
-     query.exec("SELECT * FROM user WHERE iduser = " + UserID);
+     query.exec("SELECT * FROM user WHERE iduser = " + UserID );
      query.next();
      QString pin_from_db = query.value(3).toString();
-     //ui->label_4->setText(pin_from_db);
+     //ui->label->setText(pin_from_db);
      int user_enabled_from_db = query.value(5).toInt();
+
+//-------------------------------------Here we need to encode the PIN into a MD5 hash so we can compare with the
+//-------------------------------------Given password-----------------------------------------------------------
+     QSqlQuery query1;
+     query1.exec("SELECT MD5('" + Pin + "')" );
+     query1.next();
+     QString MD5_Hash_from_db = query1.value(0).toString();
      db.close();
 
 /*
@@ -464,7 +471,7 @@ Is PIN Correct
 ================================================================================================================
 */
 
-     if(Pin == pin_from_db)
+     if(MD5_Hash_from_db == pin_from_db)
      {
         ui->plainTextEdit->setPlainText("");
         ui->plainTextEdit_2->setPlainText("");

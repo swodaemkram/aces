@@ -62,12 +62,12 @@ public:
         graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         frame = new QFrame(lock_screen);
         frame->setObjectName(QStringLiteral("frame"));
-        frame->setGeometry(QRect(220, 10, 791, 491));
+        frame->setGeometry(QRect(160, 10, 851, 491));
         frame->setFrameShape(QFrame::WinPanel);
         frame->setFrameShadow(QFrame::Raised);
         gridLayoutWidget = new QWidget(frame);
         gridLayoutWidget->setObjectName(QStringLiteral("gridLayoutWidget"));
-        gridLayoutWidget->setGeometry(QRect(10, 50, 771, 421));
+        gridLayoutWidget->setGeometry(QRect(10, 50, 831, 431));
         gridLayout = new QGridLayout(gridLayoutWidget);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
         gridLayout->setContentsMargins(0, 0, 0, 0);
@@ -186,7 +186,7 @@ public:
 
         label = new QLabel(frame);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(20, 10, 761, 31));
+        label->setGeometry(QRect(10, 10, 831, 31));
         QPalette palette6;
         QBrush brush3(QColor(243, 245, 174, 255));
         brush3.setStyle(Qt::SolidPattern);
@@ -222,12 +222,12 @@ public:
         label->setAlignment(Qt::AlignCenter);
         frame_2 = new QFrame(lock_screen);
         frame_2->setObjectName(QStringLiteral("frame_2"));
-        frame_2->setGeometry(QRect(10, 10, 201, 711));
+        frame_2->setGeometry(QRect(10, 10, 141, 711));
         frame_2->setFrameShape(QFrame::StyledPanel);
         frame_2->setFrameShadow(QFrame::Raised);
         verticalLayoutWidget = new QWidget(frame_2);
         verticalLayoutWidget->setObjectName(QStringLiteral("verticalLayoutWidget"));
-        verticalLayoutWidget->setGeometry(QRect(30, 10, 139, 691));
+        verticalLayoutWidget->setGeometry(QRect(10, 10, 121, 691));
         verticalLayout = new QVBoxLayout(verticalLayoutWidget);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);

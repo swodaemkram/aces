@@ -342,12 +342,15 @@ public:
         plainTextEdit_4->setGeometry(QRect(480, 10, 221, 31));
         checkBox = new QCheckBox(frame_3);
         checkBox->setObjectName(QStringLiteral("checkBox"));
-        checkBox->setGeometry(QRect(340, 50, 111, 23));
+        checkBox->setGeometry(QRect(220, 120, 251, 41));
         QPalette palette12;
         palette12.setBrush(QPalette::Active, QPalette::WindowText, brush1);
         palette12.setBrush(QPalette::Inactive, QPalette::WindowText, brush1);
         palette12.setBrush(QPalette::Disabled, QPalette::WindowText, brush3);
         checkBox->setPalette(palette12);
+        QFont font1;
+        font1.setPointSize(18);
+        checkBox->setFont(font1);
         pushButton_50 = new QPushButton(frame_3);
         pushButton_50->setObjectName(QStringLiteral("pushButton_50"));
         pushButton_50->setGeometry(QRect(210, 160, 121, 91));
@@ -393,11 +396,11 @@ public:
         palette15.setBrush(QPalette::Disabled, QPalette::WindowText, brush3);
         palette15.setBrush(QPalette::Disabled, QPalette::Text, brush3);
         label_7->setPalette(palette15);
-        QFont font1;
-        font1.setFamily(QStringLiteral("Ubuntu Condensed"));
-        font1.setBold(true);
-        font1.setWeight(75);
-        label_7->setFont(font1);
+        QFont font2;
+        font2.setFamily(QStringLiteral("Ubuntu Condensed"));
+        font2.setBold(true);
+        font2.setWeight(75);
+        label_7->setFont(font2);
         label_8 = new QLabel(frame_3);
         label_8->setObjectName(QStringLiteral("label_8"));
         label_8->setGeometry(QRect(620, 200, 141, 17));
@@ -406,7 +409,7 @@ public:
         palette16.setBrush(QPalette::Inactive, QPalette::WindowText, brush1);
         palette16.setBrush(QPalette::Disabled, QPalette::WindowText, brush3);
         label_8->setPalette(palette16);
-        label_8->setFont(font1);
+        label_8->setFont(font2);
         label_9 = new QLabel(frame_3);
         label_9->setObjectName(QStringLiteral("label_9"));
         label_9->setGeometry(QRect(310, 190, 201, 41));
@@ -426,12 +429,12 @@ public:
         palette17.setBrush(QPalette::Disabled, QPalette::Base, brush8);
         palette17.setBrush(QPalette::Disabled, QPalette::Window, brush8);
         label_9->setPalette(palette17);
-        QFont font2;
-        font2.setFamily(QStringLiteral("URW Bookman L"));
-        font2.setPointSize(20);
-        font2.setBold(true);
-        font2.setWeight(75);
-        label_9->setFont(font2);
+        QFont font3;
+        font3.setFamily(QStringLiteral("URW Bookman L"));
+        font3.setPointSize(20);
+        font3.setBold(true);
+        font3.setWeight(75);
+        label_9->setFont(font3);
         label_9->setAlignment(Qt::AlignCenter);
         label_10 = new QLabel(frame_3);
         label_10->setObjectName(QStringLiteral("label_10"));
@@ -473,12 +476,12 @@ public:
         palette19.setBrush(QPalette::Disabled, QPalette::Base, brush4);
         palette19.setBrush(QPalette::Disabled, QPalette::Window, brush4);
         label_11->setPalette(palette19);
-        QFont font3;
-        font3.setFamily(QStringLiteral("URW Bookman L"));
-        font3.setPointSize(12);
-        font3.setBold(true);
-        font3.setWeight(75);
-        label_11->setFont(font3);
+        QFont font4;
+        font4.setFamily(QStringLiteral("URW Bookman L"));
+        font4.setPointSize(12);
+        font4.setBold(true);
+        font4.setWeight(75);
+        label_11->setFont(font4);
         label_11->setAutoFillBackground(true);
         label_11->setFrameShape(QFrame::WinPanel);
         label_11->setFrameShadow(QFrame::Sunken);
@@ -495,19 +498,19 @@ public:
         pushButton_47 = new QPushButton(frame_4);
         pushButton_47->setObjectName(QStringLiteral("pushButton_47"));
         pushButton_47->setGeometry(QRect(0, 340, 61, 41));
-        QFont font4;
-        font4.setPointSize(20);
-        pushButton_47->setFont(font4);
+        QFont font5;
+        font5.setPointSize(20);
+        pushButton_47->setFont(font5);
         pushButton_47->setFocusPolicy(Qt::NoFocus);
         pushButton_45 = new QPushButton(frame_4);
         pushButton_45->setObjectName(QStringLiteral("pushButton_45"));
         pushButton_45->setGeometry(QRect(70, 340, 641, 41));
-        pushButton_45->setFont(font4);
+        pushButton_45->setFont(font5);
         pushButton_45->setFocusPolicy(Qt::NoFocus);
         pushButton_48 = new QPushButton(frame_4);
         pushButton_48->setObjectName(QStringLiteral("pushButton_48"));
         pushButton_48->setGeometry(QRect(720, 340, 111, 41));
-        pushButton_48->setFont(font4);
+        pushButton_48->setFont(font5);
         pushButton_48->setFocusPolicy(Qt::NoFocus);
         gridLayoutWidget = new QWidget(frame_4);
         gridLayoutWidget->setObjectName(QStringLiteral("gridLayoutWidget"));
@@ -521,7 +524,7 @@ public:
         pushButton_6->setObjectName(QStringLiteral("pushButton_6"));
         sizePolicy.setHeightForWidth(pushButton_6->sizePolicy().hasHeightForWidth());
         pushButton_6->setSizePolicy(sizePolicy);
-        pushButton_6->setFont(font4);
+        pushButton_6->setFont(font5);
         pushButton_6->setFocusPolicy(Qt::NoFocus);
 
         gridLayout->addWidget(pushButton_6, 1, 0, 1, 1);
@@ -530,7 +533,7 @@ public:
         pushButton_23->setObjectName(QStringLiteral("pushButton_23"));
         sizePolicy.setHeightForWidth(pushButton_23->sizePolicy().hasHeightForWidth());
         pushButton_23->setSizePolicy(sizePolicy);
-        pushButton_23->setFont(font4);
+        pushButton_23->setFont(font5);
         pushButton_23->setFocusPolicy(Qt::NoFocus);
 
         gridLayout->addWidget(pushButton_23, 2, 7, 1, 1);
@@ -539,7 +542,7 @@ public:
         pushButton_39->setObjectName(QStringLiteral("pushButton_39"));
         sizePolicy.setHeightForWidth(pushButton_39->sizePolicy().hasHeightForWidth());
         pushButton_39->setSizePolicy(sizePolicy);
-        pushButton_39->setFont(font4);
+        pushButton_39->setFont(font5);
         pushButton_39->setFocusPolicy(Qt::NoFocus);
 
         gridLayout->addWidget(pushButton_39, 0, 4, 1, 1);
@@ -548,7 +551,7 @@ public:
         pushButton_7->setObjectName(QStringLiteral("pushButton_7"));
         sizePolicy.setHeightForWidth(pushButton_7->sizePolicy().hasHeightForWidth());
         pushButton_7->setSizePolicy(sizePolicy);
-        pushButton_7->setFont(font4);
+        pushButton_7->setFont(font5);
         pushButton_7->setFocusPolicy(Qt::NoFocus);
 
         gridLayout->addWidget(pushButton_7, 1, 1, 1, 1);
@@ -557,7 +560,7 @@ public:
         pushButton_11->setObjectName(QStringLiteral("pushButton_11"));
         sizePolicy.setHeightForWidth(pushButton_11->sizePolicy().hasHeightForWidth());
         pushButton_11->setSizePolicy(sizePolicy);
-        pushButton_11->setFont(font4);
+        pushButton_11->setFont(font5);
         pushButton_11->setFocusPolicy(Qt::NoFocus);
 
         gridLayout->addWidget(pushButton_11, 1, 5, 1, 1);
@@ -566,7 +569,7 @@ public:
         pushButton_19->setObjectName(QStringLiteral("pushButton_19"));
         sizePolicy.setHeightForWidth(pushButton_19->sizePolicy().hasHeightForWidth());
         pushButton_19->setSizePolicy(sizePolicy);
-        pushButton_19->setFont(font4);
+        pushButton_19->setFont(font5);
         pushButton_19->setFocusPolicy(Qt::NoFocus);
 
         gridLayout->addWidget(pushButton_19, 2, 3, 1, 1);
@@ -575,7 +578,7 @@ public:
         pushButton_18->setObjectName(QStringLiteral("pushButton_18"));
         sizePolicy.setHeightForWidth(pushButton_18->sizePolicy().hasHeightForWidth());
         pushButton_18->setSizePolicy(sizePolicy);
-        pushButton_18->setFont(font4);
+        pushButton_18->setFont(font5);
         pushButton_18->setFocusPolicy(Qt::NoFocus);
 
         gridLayout->addWidget(pushButton_18, 2, 2, 1, 1);
@@ -584,7 +587,7 @@ public:
         pushButton_46->setObjectName(QStringLiteral("pushButton_46"));
         sizePolicy.setHeightForWidth(pushButton_46->sizePolicy().hasHeightForWidth());
         pushButton_46->setSizePolicy(sizePolicy);
-        pushButton_46->setFont(font4);
+        pushButton_46->setFont(font5);
         pushButton_46->setFocusPolicy(Qt::NoFocus);
 
         gridLayout->addWidget(pushButton_46, 3, 8, 1, 1);
@@ -593,7 +596,7 @@ public:
         pushButton_33->setObjectName(QStringLiteral("pushButton_33"));
         sizePolicy.setHeightForWidth(pushButton_33->sizePolicy().hasHeightForWidth());
         pushButton_33->setSizePolicy(sizePolicy);
-        pushButton_33->setFont(font4);
+        pushButton_33->setFont(font5);
         pushButton_33->setFocusPolicy(Qt::NoFocus);
 
         gridLayout->addWidget(pushButton_33, 3, 9, 1, 1);
@@ -602,7 +605,7 @@ public:
         pushButton_8->setObjectName(QStringLiteral("pushButton_8"));
         sizePolicy.setHeightForWidth(pushButton_8->sizePolicy().hasHeightForWidth());
         pushButton_8->setSizePolicy(sizePolicy);
-        pushButton_8->setFont(font4);
+        pushButton_8->setFont(font5);
         pushButton_8->setFocusPolicy(Qt::NoFocus);
 
         gridLayout->addWidget(pushButton_8, 1, 2, 1, 1);
@@ -611,7 +614,7 @@ public:
         pushButton_15->setObjectName(QStringLiteral("pushButton_15"));
         sizePolicy.setHeightForWidth(pushButton_15->sizePolicy().hasHeightForWidth());
         pushButton_15->setSizePolicy(sizePolicy);
-        pushButton_15->setFont(font4);
+        pushButton_15->setFont(font5);
         pushButton_15->setFocusPolicy(Qt::NoFocus);
 
         gridLayout->addWidget(pushButton_15, 1, 9, 1, 1);
@@ -620,7 +623,7 @@ public:
         pushButton_42->setObjectName(QStringLiteral("pushButton_42"));
         sizePolicy.setHeightForWidth(pushButton_42->sizePolicy().hasHeightForWidth());
         pushButton_42->setSizePolicy(sizePolicy);
-        pushButton_42->setFont(font4);
+        pushButton_42->setFont(font5);
         pushButton_42->setFocusPolicy(Qt::NoFocus);
 
         gridLayout->addWidget(pushButton_42, 0, 7, 1, 1);
@@ -629,7 +632,7 @@ public:
         pushButton_43->setObjectName(QStringLiteral("pushButton_43"));
         sizePolicy.setHeightForWidth(pushButton_43->sizePolicy().hasHeightForWidth());
         pushButton_43->setSizePolicy(sizePolicy);
-        pushButton_43->setFont(font4);
+        pushButton_43->setFont(font5);
         pushButton_43->setFocusPolicy(Qt::NoFocus);
 
         gridLayout->addWidget(pushButton_43, 0, 8, 1, 1);
@@ -638,7 +641,7 @@ public:
         pushButton_9->setObjectName(QStringLiteral("pushButton_9"));
         sizePolicy.setHeightForWidth(pushButton_9->sizePolicy().hasHeightForWidth());
         pushButton_9->setSizePolicy(sizePolicy);
-        pushButton_9->setFont(font4);
+        pushButton_9->setFont(font5);
         pushButton_9->setFocusPolicy(Qt::NoFocus);
 
         gridLayout->addWidget(pushButton_9, 1, 3, 1, 1);
@@ -647,7 +650,7 @@ public:
         pushButton_22->setObjectName(QStringLiteral("pushButton_22"));
         sizePolicy.setHeightForWidth(pushButton_22->sizePolicy().hasHeightForWidth());
         pushButton_22->setSizePolicy(sizePolicy);
-        pushButton_22->setFont(font4);
+        pushButton_22->setFont(font5);
         pushButton_22->setFocusPolicy(Qt::NoFocus);
 
         gridLayout->addWidget(pushButton_22, 2, 6, 1, 1);
@@ -656,7 +659,7 @@ public:
         pushButton_35->setObjectName(QStringLiteral("pushButton_35"));
         sizePolicy.setHeightForWidth(pushButton_35->sizePolicy().hasHeightForWidth());
         pushButton_35->setSizePolicy(sizePolicy);
-        pushButton_35->setFont(font4);
+        pushButton_35->setFont(font5);
         pushButton_35->setFocusPolicy(Qt::NoFocus);
 
         gridLayout->addWidget(pushButton_35, 0, 0, 1, 1);
@@ -665,7 +668,7 @@ public:
         pushButton_32->setObjectName(QStringLiteral("pushButton_32"));
         sizePolicy.setHeightForWidth(pushButton_32->sizePolicy().hasHeightForWidth());
         pushButton_32->setSizePolicy(sizePolicy);
-        pushButton_32->setFont(font4);
+        pushButton_32->setFont(font5);
         pushButton_32->setFocusPolicy(Qt::NoFocus);
 
         gridLayout->addWidget(pushButton_32, 3, 7, 1, 1);
@@ -674,7 +677,7 @@ public:
         pushButton_31->setObjectName(QStringLiteral("pushButton_31"));
         sizePolicy.setHeightForWidth(pushButton_31->sizePolicy().hasHeightForWidth());
         pushButton_31->setSizePolicy(sizePolicy);
-        pushButton_31->setFont(font4);
+        pushButton_31->setFont(font5);
         pushButton_31->setFocusPolicy(Qt::NoFocus);
 
         gridLayout->addWidget(pushButton_31, 3, 6, 1, 1);
@@ -683,7 +686,7 @@ public:
         pushButton_38->setObjectName(QStringLiteral("pushButton_38"));
         sizePolicy.setHeightForWidth(pushButton_38->sizePolicy().hasHeightForWidth());
         pushButton_38->setSizePolicy(sizePolicy);
-        pushButton_38->setFont(font4);
+        pushButton_38->setFont(font5);
         pushButton_38->setFocusPolicy(Qt::NoFocus);
 
         gridLayout->addWidget(pushButton_38, 0, 3, 1, 1);
@@ -692,7 +695,7 @@ public:
         pushButton_20->setObjectName(QStringLiteral("pushButton_20"));
         sizePolicy.setHeightForWidth(pushButton_20->sizePolicy().hasHeightForWidth());
         pushButton_20->setSizePolicy(sizePolicy);
-        pushButton_20->setFont(font4);
+        pushButton_20->setFont(font5);
         pushButton_20->setFocusPolicy(Qt::NoFocus);
 
         gridLayout->addWidget(pushButton_20, 2, 4, 1, 1);
@@ -701,7 +704,7 @@ public:
         pushButton_40->setObjectName(QStringLiteral("pushButton_40"));
         sizePolicy.setHeightForWidth(pushButton_40->sizePolicy().hasHeightForWidth());
         pushButton_40->setSizePolicy(sizePolicy);
-        pushButton_40->setFont(font4);
+        pushButton_40->setFont(font5);
         pushButton_40->setFocusPolicy(Qt::NoFocus);
 
         gridLayout->addWidget(pushButton_40, 0, 5, 1, 1);
@@ -710,7 +713,7 @@ public:
         pushButton_27->setObjectName(QStringLiteral("pushButton_27"));
         sizePolicy.setHeightForWidth(pushButton_27->sizePolicy().hasHeightForWidth());
         pushButton_27->setSizePolicy(sizePolicy);
-        pushButton_27->setFont(font4);
+        pushButton_27->setFont(font5);
         pushButton_27->setFocusPolicy(Qt::NoFocus);
 
         gridLayout->addWidget(pushButton_27, 3, 2, 1, 1);
@@ -719,7 +722,7 @@ public:
         pushButton_34->setObjectName(QStringLiteral("pushButton_34"));
         sizePolicy.setHeightForWidth(pushButton_34->sizePolicy().hasHeightForWidth());
         pushButton_34->setSizePolicy(sizePolicy);
-        pushButton_34->setFont(font4);
+        pushButton_34->setFont(font5);
         pushButton_34->setFocusPolicy(Qt::NoFocus);
 
         gridLayout->addWidget(pushButton_34, 3, 0, 1, 1);
@@ -728,7 +731,7 @@ public:
         pushButton_44->setObjectName(QStringLiteral("pushButton_44"));
         sizePolicy.setHeightForWidth(pushButton_44->sizePolicy().hasHeightForWidth());
         pushButton_44->setSizePolicy(sizePolicy);
-        pushButton_44->setFont(font4);
+        pushButton_44->setFont(font5);
         pushButton_44->setFocusPolicy(Qt::NoFocus);
 
         gridLayout->addWidget(pushButton_44, 0, 9, 1, 1);
@@ -737,7 +740,7 @@ public:
         pushButton_16->setObjectName(QStringLiteral("pushButton_16"));
         sizePolicy.setHeightForWidth(pushButton_16->sizePolicy().hasHeightForWidth());
         pushButton_16->setSizePolicy(sizePolicy);
-        pushButton_16->setFont(font4);
+        pushButton_16->setFont(font5);
         pushButton_16->setFocusPolicy(Qt::NoFocus);
 
         gridLayout->addWidget(pushButton_16, 2, 0, 1, 1);
@@ -746,7 +749,7 @@ public:
         pushButton_13->setObjectName(QStringLiteral("pushButton_13"));
         sizePolicy.setHeightForWidth(pushButton_13->sizePolicy().hasHeightForWidth());
         pushButton_13->setSizePolicy(sizePolicy);
-        pushButton_13->setFont(font4);
+        pushButton_13->setFont(font5);
         pushButton_13->setFocusPolicy(Qt::NoFocus);
 
         gridLayout->addWidget(pushButton_13, 1, 7, 1, 1);
@@ -755,7 +758,7 @@ public:
         pushButton_14->setObjectName(QStringLiteral("pushButton_14"));
         sizePolicy.setHeightForWidth(pushButton_14->sizePolicy().hasHeightForWidth());
         pushButton_14->setSizePolicy(sizePolicy);
-        pushButton_14->setFont(font4);
+        pushButton_14->setFont(font5);
         pushButton_14->setFocusPolicy(Qt::NoFocus);
 
         gridLayout->addWidget(pushButton_14, 1, 8, 1, 1);
@@ -764,7 +767,7 @@ public:
         pushButton_10->setObjectName(QStringLiteral("pushButton_10"));
         sizePolicy.setHeightForWidth(pushButton_10->sizePolicy().hasHeightForWidth());
         pushButton_10->setSizePolicy(sizePolicy);
-        pushButton_10->setFont(font4);
+        pushButton_10->setFont(font5);
         pushButton_10->setFocusPolicy(Qt::NoFocus);
 
         gridLayout->addWidget(pushButton_10, 1, 4, 1, 1);
@@ -773,7 +776,7 @@ public:
         pushButton_29->setObjectName(QStringLiteral("pushButton_29"));
         sizePolicy.setHeightForWidth(pushButton_29->sizePolicy().hasHeightForWidth());
         pushButton_29->setSizePolicy(sizePolicy);
-        pushButton_29->setFont(font4);
+        pushButton_29->setFont(font5);
         pushButton_29->setFocusPolicy(Qt::NoFocus);
 
         gridLayout->addWidget(pushButton_29, 3, 4, 1, 1);
@@ -782,7 +785,7 @@ public:
         pushButton_21->setObjectName(QStringLiteral("pushButton_21"));
         sizePolicy.setHeightForWidth(pushButton_21->sizePolicy().hasHeightForWidth());
         pushButton_21->setSizePolicy(sizePolicy);
-        pushButton_21->setFont(font4);
+        pushButton_21->setFont(font5);
         pushButton_21->setFocusPolicy(Qt::NoFocus);
 
         gridLayout->addWidget(pushButton_21, 2, 5, 1, 1);
@@ -791,7 +794,7 @@ public:
         pushButton_26->setObjectName(QStringLiteral("pushButton_26"));
         sizePolicy.setHeightForWidth(pushButton_26->sizePolicy().hasHeightForWidth());
         pushButton_26->setSizePolicy(sizePolicy);
-        pushButton_26->setFont(font4);
+        pushButton_26->setFont(font5);
         pushButton_26->setFocusPolicy(Qt::NoFocus);
 
         gridLayout->addWidget(pushButton_26, 3, 1, 1, 1);
@@ -800,7 +803,7 @@ public:
         pushButton_41->setObjectName(QStringLiteral("pushButton_41"));
         sizePolicy.setHeightForWidth(pushButton_41->sizePolicy().hasHeightForWidth());
         pushButton_41->setSizePolicy(sizePolicy);
-        pushButton_41->setFont(font4);
+        pushButton_41->setFont(font5);
         pushButton_41->setFocusPolicy(Qt::NoFocus);
 
         gridLayout->addWidget(pushButton_41, 0, 6, 1, 1);
@@ -809,7 +812,7 @@ public:
         pushButton_24->setObjectName(QStringLiteral("pushButton_24"));
         sizePolicy.setHeightForWidth(pushButton_24->sizePolicy().hasHeightForWidth());
         pushButton_24->setSizePolicy(sizePolicy);
-        pushButton_24->setFont(font4);
+        pushButton_24->setFont(font5);
         pushButton_24->setFocusPolicy(Qt::NoFocus);
 
         gridLayout->addWidget(pushButton_24, 2, 8, 1, 1);
@@ -818,7 +821,7 @@ public:
         pushButton_25->setObjectName(QStringLiteral("pushButton_25"));
         sizePolicy.setHeightForWidth(pushButton_25->sizePolicy().hasHeightForWidth());
         pushButton_25->setSizePolicy(sizePolicy);
-        pushButton_25->setFont(font4);
+        pushButton_25->setFont(font5);
         pushButton_25->setFocusPolicy(Qt::NoFocus);
 
         gridLayout->addWidget(pushButton_25, 2, 9, 1, 1);
@@ -827,7 +830,7 @@ public:
         pushButton_37->setObjectName(QStringLiteral("pushButton_37"));
         sizePolicy.setHeightForWidth(pushButton_37->sizePolicy().hasHeightForWidth());
         pushButton_37->setSizePolicy(sizePolicy);
-        pushButton_37->setFont(font4);
+        pushButton_37->setFont(font5);
         pushButton_37->setFocusPolicy(Qt::NoFocus);
 
         gridLayout->addWidget(pushButton_37, 0, 2, 1, 1);
@@ -836,7 +839,7 @@ public:
         pushButton_36->setObjectName(QStringLiteral("pushButton_36"));
         sizePolicy.setHeightForWidth(pushButton_36->sizePolicy().hasHeightForWidth());
         pushButton_36->setSizePolicy(sizePolicy);
-        pushButton_36->setFont(font4);
+        pushButton_36->setFont(font5);
         pushButton_36->setFocusPolicy(Qt::NoFocus);
 
         gridLayout->addWidget(pushButton_36, 0, 1, 1, 1);
@@ -845,7 +848,7 @@ public:
         pushButton_30->setObjectName(QStringLiteral("pushButton_30"));
         sizePolicy.setHeightForWidth(pushButton_30->sizePolicy().hasHeightForWidth());
         pushButton_30->setSizePolicy(sizePolicy);
-        pushButton_30->setFont(font4);
+        pushButton_30->setFont(font5);
         pushButton_30->setFocusPolicy(Qt::NoFocus);
 
         gridLayout->addWidget(pushButton_30, 3, 5, 1, 1);
@@ -854,7 +857,7 @@ public:
         pushButton_12->setObjectName(QStringLiteral("pushButton_12"));
         sizePolicy.setHeightForWidth(pushButton_12->sizePolicy().hasHeightForWidth());
         pushButton_12->setSizePolicy(sizePolicy);
-        pushButton_12->setFont(font4);
+        pushButton_12->setFont(font5);
         pushButton_12->setFocusPolicy(Qt::NoFocus);
 
         gridLayout->addWidget(pushButton_12, 1, 6, 1, 1);
@@ -863,7 +866,7 @@ public:
         pushButton_17->setObjectName(QStringLiteral("pushButton_17"));
         sizePolicy.setHeightForWidth(pushButton_17->sizePolicy().hasHeightForWidth());
         pushButton_17->setSizePolicy(sizePolicy);
-        pushButton_17->setFont(font4);
+        pushButton_17->setFont(font5);
         pushButton_17->setFocusPolicy(Qt::NoFocus);
 
         gridLayout->addWidget(pushButton_17, 2, 1, 1, 1);
@@ -872,7 +875,7 @@ public:
         pushButton_28->setObjectName(QStringLiteral("pushButton_28"));
         sizePolicy.setHeightForWidth(pushButton_28->sizePolicy().hasHeightForWidth());
         pushButton_28->setSizePolicy(sizePolicy);
-        pushButton_28->setFont(font4);
+        pushButton_28->setFont(font5);
         pushButton_28->setFocusPolicy(Qt::NoFocus);
 
         gridLayout->addWidget(pushButton_28, 3, 3, 1, 1);

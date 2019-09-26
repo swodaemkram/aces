@@ -32,7 +32,7 @@ Lets Load a cool Background
 ==============================================================================================================
 */
   imageObject = new QImage();               //  _
-  imageObject->load("./icons/2.jpg");       //   |
+  imageObject->load("./icons/B4.jpg");       //   |
   image = QPixmap::fromImage(*imageObject); //   |
   scene = new QGraphicsScene(this);         //   |
   scene->addPixmap(image);                  //   |_______All this to display a picture

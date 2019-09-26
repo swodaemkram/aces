@@ -26,7 +26,7 @@ Lets Load a cool Background
 ==============================================================================================================
 */
           imageObject = new QImage();               //  _
-          imageObject->load("./icons/2.jpg");       //   |
+          imageObject->load("./icons/B4.jpg");       //   |
           image = QPixmap::fromImage(*imageObject); //   |
           scene = new QGraphicsScene(this);         //   |
           scene->addPixmap(image);                  //   |_______All this to display a picture
@@ -38,7 +38,10 @@ Lets Load a cool Background
 Background is loaded
 ==============================================================================================================
 */
-         QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
+
+          ui->pushButton_5->hide();
+          ui->pushButton_49->hide();
+          QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
           db.setHostName("localhost");
           db.setDatabaseName("aces");
           db.setUserName("root");

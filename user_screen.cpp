@@ -32,7 +32,7 @@ Lets Load a cool Background
 ==============================================================================================================
 */
   imageObject = new QImage();               //  _
-  imageObject->load("./icons/2.jpg");       //   |
+  imageObject->load("./icons/B4.jpg");       //   |
   image = QPixmap::fromImage(*imageObject); //   |
   scene = new QGraphicsScene(this);         //   |
   scene->addPixmap(image);                  //   |_______All this to display a picture
@@ -124,7 +124,9 @@ Edit User Button
     ui->pushButton_5->show();
     ui->pushButton_49->show();
     ui->frame_4->show();
-   ui->listWidget->clear();
+    ui->listWidget->clear();
+    ui->plainTextEdit->setStyleSheet("background-color: yellow");
+    ui->plainTextEdit->setFocus();
 
 //--------------------List all Permissions Groups From Database----------------------------
 
@@ -155,8 +157,6 @@ Edit User Button
 
  }
 
-
-
     ui->listWidget->setVisible(true);
     RecordModType = "edit";
 /*
@@ -173,7 +173,6 @@ void user_screen::on_pushButton_51_clicked()
 Move Forward in Database
 ==============================================================================================
 */
-
     if(RecordModType != "")return;
 
     QSqlQuery query;
@@ -313,6 +312,46 @@ Add New User
     ui->pushButton_5->show();
     ui->pushButton_49->show();
     RecordModType = "newuser";
+    ui->plainTextEdit->setPlainText("");
+    ui->plainTextEdit_2->setPlainText("");
+    ui->plainTextEdit_3->setPlainText("");
+    ui->plainTextEdit_4->setPlainText("");
+    ui->frame_4->show();
+    ui->plainTextEdit->setFocus();
+    ui->plainTextEdit->setStyleSheet("background-color: yellow");
+
+    ui->listWidget->clear();
+
+    QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
+    db.setHostName("localhost");
+    db.setDatabaseName("aces");
+    db.setUserName("root");
+    db.setPassword("b0whunter");
+
+    if (!db.open())
+    {
+         ui->label_2->setText("Unable to connect to database !!!");
+        return;
+    }
+     ui->label_2->setText("Connected to database....");
+
+    int recordcount = 0;
+    int LastRow = 1;
+    QSqlQuery query ;
+    query.exec("SELECT permission_group_name FROM permission_group");
+
+            while(LastRow == 1)
+ {
+     LastRow = query.next();
+     QString permission_group_name = query.value(0).toString();
+     ui->listWidget->insertItem(recordcount,permission_group_name);
+     recordcount++;
+
+ }
+
+    ui->listWidget->setVisible(true);
+    ui->listWidget->show();
+
 /*
 =====================================================================================================
 End of Add New User
@@ -336,7 +375,52 @@ Cancel Button
     ui->pushButton_4->show();
     ui->listWidget->setVisible(false);
     ui->frame_4->setVisible(false);
+    ui->plainTextEdit->setStyleSheet("background-color: white");
+    ui->plainTextEdit_2->setStyleSheet("background-color: white");
+    ui->plainTextEdit_3->setStyleSheet("background-color: white");
+    ui->plainTextEdit_4->setStyleSheet("background-color: white");
+    ui->checkBox->setStyleSheet("background-color: ");
+
     RecordModType = "";
+
+      ui->listWidget->setVisible(false);
+      QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
+      db.setHostName("localhost");
+      db.setDatabaseName("aces");
+      db.setUserName("root");
+      db.setPassword("b0whunter");
+
+      if (!db.open())
+      {
+           ui->label_2->setText("Unable to connect to database !!!");
+          return;
+      }
+       ui->label_2->setText("Connected to database....");
+
+       QSqlQuery query;
+       query.exec("SELECT * FROM user WHERE iduser =" + iduserFromDB );
+
+     query.first();
+
+     iduserFromDB = query.value(0).toString();
+     ui->label_11->setText(iduserFromDB);
+
+     QString FirstNamefromDB = query.value(1).toString();
+     ui->plainTextEdit->setPlainText(FirstNamefromDB);
+
+     QString LastNamefromDB = query.value(2).toString();
+     ui->plainTextEdit_2->setPlainText(LastNamefromDB);
+
+     QString PinfromDB = query.value(3).toString();
+     ui->plainTextEdit_3->setPlainText(PinfromDB);
+
+     QString  PermissionGroupfromDB =  query.value(4).toString();
+     ui->plainTextEdit_4->setPlainText(PermissionGroupfromDB);
+
+     int UserEnabledfromDB = query.value(5).toInt();
+     if(UserEnabledfromDB == 1)ui->checkBox->setChecked(true);
+     else ui->checkBox->setChecked(false);
+
 /*
 =====================================================================================================
 End of Cancel Button
@@ -351,7 +435,6 @@ void user_screen::on_pushButton_5_clicked()
 Save Button
 =====================================================================================================
 */
-
 //--------------------------------Delete current record----------------------------------------
     if (RecordModType == "delete")
     {
@@ -411,11 +494,16 @@ Save Button
      ui->pushButton_4->show();
      ui->label_2->setText("User Deleted !!!");
      ui->frame_4->setVisible(false);
+     ui->plainTextEdit->setStyleSheet("background-color: white");
+     ui->plainTextEdit_2->setStyleSheet("background-color: white");
+     ui->plainTextEdit_3->setStyleSheet("background-color: white");
+     ui->plainTextEdit_4->setStyleSheet("background-color: white");
+     ui->checkBox->setStyleSheet("background-color: ");
      return;
     }
 //------------------------------------End of Delete Current Record-------------------------------
 //--------------------------------Add New User record----------------------------------------
- if (RecordModType == "new")
+ if (RecordModType == "newuser")
  {
      ui->pushButton_5->hide();
      ui->pushButton_49->hide();
@@ -423,6 +511,136 @@ Save Button
      ui->pushButton_3->show();
      ui->pushButton_2->show();
      ui->pushButton_4->show();
+     QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
+     db.setHostName("localhost");
+     db.setDatabaseName("aces");
+     db.setUserName("root");
+     db.setPassword("b0whunter");
+
+     if (!db.open())
+     {
+          ui->label_2->setText("Unable to connect to database !!!");
+         return;
+     }
+
+      ui->label_2->setText("Connected to database....");
+      QSqlQuery query;
+      QString first_name = ui->plainTextEdit->toPlainText();
+      QString last_name = ui->plainTextEdit_2->toPlainText();
+      QString pin_number = ui->plainTextEdit_3->toPlainText();
+      QString permission_group = ui->plainTextEdit_4->toPlainText();
+      QString user_enabled = "";
+
+      if(!ui->checkBox->isChecked())
+      {
+           user_enabled = "0";
+      }
+          else  user_enabled ="1";
+
+//------------------------------Record Sanity Check------------------------------------------
+//-------------------------------is the pin number More then 3 Digits------------------------
+      if (pin_number.size() < 4)
+    {
+        QPalette pal = palette();
+        ui->plainTextEdit_3->setFocus();
+        ui->label_2->setText("PIN CODE MUST BE 4 DIGITS !!!");
+        ui->plainTextEdit->setStyleSheet("background-color: white");
+        ui->plainTextEdit_2->setStyleSheet("background-color: white");
+        ui->plainTextEdit_3->setStyleSheet("background-color: yellow");
+        ui->plainTextEdit_4->setStyleSheet("background-color: white");
+        ui->checkBox->setStyleSheet("background-color: ");
+        return;
+    }
+//---------------------------------End---------------------------------------------------------
+//----------------------Is permission Group Entered in the Database----------------------------
+
+     QString NewPermissionGroup = ui->plainTextEdit_4->toPlainText();
+     if(NewPermissionGroup < 1)
+     {
+         ui->plainTextEdit_4->setFocus();
+         ui->plainTextEdit_4->setStyleSheet("background-color: yellow");
+         ui->plainTextEdit->setStyleSheet("background-color: white");
+         ui->plainTextEdit_2->setStyleSheet("background-color: white");
+         ui->plainTextEdit_3->setStyleSheet("background-color: white");
+         ui->checkBox->setStyleSheet("background-color: ");
+         ui->label_2->setText("PERMISSION GROUP MUST NOT BE BLANK !!!");
+         return;
+      }
+
+     QSqlQuery query3;
+     query3.exec("SELECT * FROM permission_group WHERE permission_group_name = '" + NewPermissionGroup + "'");
+     int isthere = query3.next();
+     qDebug() << isthere;
+     if (!isthere)
+     {
+         ui->plainTextEdit_4->setFocus();
+         ui->plainTextEdit_4->setStyleSheet("background-color: yellow");
+         ui->plainTextEdit->setStyleSheet("background-color: white");
+         ui->plainTextEdit_2->setStyleSheet("background-color: white");
+         ui->plainTextEdit_3->setStyleSheet("background-color: white");
+         ui->checkBox->setStyleSheet("background-color: ");
+         ui->label_2->setText("PERMISSION GROUP MUST BE LISTED BELOW !!!");
+         return;
+     }
+
+//----------------Finished Sanity Check--------------------------------------------------------
+//---------------------------Do we need to Hash a new PIN number------------------------------
+      if (pin_number.size() == 4)
+      {
+          QSqlQuery query1;
+          query1.exec("SELECT MD5('" + pin_number + "')" );
+          //qDebug() << pin_number;
+          query1.next();
+          QString MD5_Hash_from_db = query1.value(0).toString();
+          //qDebug() << MD5_Hash_from_db;
+          pin_number = MD5_Hash_from_db;
+      }
+//----------------------------New PIN Hashed and ready for Database-----------------------------
+
+     query.exec("INSERT INTO user (first_name, last_name, pin_number, permission_group, user_enabled) VALUES ('" + first_name + "','" +  last_name + "','" + pin_number + "','" + permission_group + "','" + user_enabled +"')");
+     query.next();
+
+//-----------------------------------Lets Reload Changes to Database------------------------------
+     QSqlQuery query2;
+     query2.exec("SELECT * FROM user");
+     query2.last();
+
+     iduserFromDB = query2.value(0).toString();
+     ui->label_11->setText(iduserFromDB);
+
+     QString FirstNamefromDB = query2.value(1).toString();
+     ui->plainTextEdit->setPlainText(FirstNamefromDB);
+
+     QString LastNamefromDB = query2.value(2).toString();
+     ui->plainTextEdit_2->setPlainText(LastNamefromDB);
+
+     QString PinfromDB = query2.value(3).toString();
+     ui->plainTextEdit_3->setPlainText(PinfromDB);
+
+     QString  PermissionGroupfromDB =  query2.value(4).toString();
+     ui->plainTextEdit_4->setPlainText(PermissionGroupfromDB);
+
+     int UserEnabledfromDB = query2.value(5).toInt();
+     if(UserEnabledfromDB == 1)ui->checkBox->setChecked(true);
+     else ui->checkBox->setChecked(false);
+
+     RecordModType = "";
+     RecordNumber = 0;
+     ui->pushButton_5->hide();
+     ui->pushButton_49->hide();
+     ui->pushButton->show();
+     ui->pushButton_3->show();
+     ui->pushButton_2->show();
+     ui->pushButton_4->show();
+     ui->listWidget->setVisible(false);
+     ui->label_2->setText("New User Saved ...");
+     ui->frame_4->setVisible(false);
+     ui->plainTextEdit->setStyleSheet("background-color: white");
+     ui->plainTextEdit_2->setStyleSheet("background-color: white");
+     ui->plainTextEdit_3->setStyleSheet("background-color: white");
+     ui->plainTextEdit_4->setStyleSheet("background-color: white");
+     ui->checkBox->setStyleSheet("background-color: ");
+
      return;
  }
 //--------------------------------Add New User record----------------------------------------
@@ -458,14 +676,52 @@ Save Button
           else  user_enabled ="1";
 
 //------------------------------Record Sanity Check------------------------------------------
-
-    if (pin_number.size() < 4)
+//-------------------------------is the pin number More then 3 Digits------------------------
+      if (pin_number.size() < 4)
     {
         QPalette pal = palette();
         ui->plainTextEdit_3->setFocus();
         ui->label_2->setText("PIN CODE MUST BE 4 DIGITS !!!");
+        ui->plainTextEdit->setStyleSheet("background-color: white");
+        ui->plainTextEdit_2->setStyleSheet("background-color: white");
+        ui->plainTextEdit_3->setStyleSheet("background-color: yellow");
+        ui->plainTextEdit_4->setStyleSheet("background-color: white");
+        ui->checkBox->setStyleSheet("background-color: ");
         return;
     }
+//---------------------------------End---------------------------------------------------------
+//----------------------Is permission Group Entered in the Database----------------------------
+
+     QString NewPermissionGroup = ui->plainTextEdit_4->toPlainText();
+     if(NewPermissionGroup < 1)
+     {
+         ui->plainTextEdit_4->setFocus();
+         ui->plainTextEdit_4->setStyleSheet("background-color: yellow");
+         ui->plainTextEdit->setStyleSheet("background-color: white");
+         ui->plainTextEdit_2->setStyleSheet("background-color: white");
+         ui->plainTextEdit_3->setStyleSheet("background-color: white");
+         ui->checkBox->setStyleSheet("background-color: ");
+         ui->label_2->setText("PERMISSION GROUP MUST NOT BE BLANK !!!");
+         return;
+      }
+
+     QSqlQuery query3;
+     query3.exec("SELECT * FROM permission_group WHERE permission_group_name = '" + NewPermissionGroup + "'");
+     int isthere = query3.next();
+     qDebug() << isthere;
+     if (!isthere)
+     {
+         ui->plainTextEdit_4->setFocus();
+         ui->plainTextEdit_4->setStyleSheet("background-color: yellow");
+         ui->plainTextEdit->setStyleSheet("background-color: white");
+         ui->plainTextEdit_2->setStyleSheet("background-color: white");
+         ui->plainTextEdit_3->setStyleSheet("background-color: white");
+         ui->checkBox->setStyleSheet("background-color: ");
+         ui->label_2->setText("PERMISSION GROUP MUST BE LISTED BELOW !!!");
+         return;
+     }
+
+//----------------Finished Sanity Check--------------------------------------------------------
 
 //---------------------------Do we need to Hash a new PIN number------------------------------
       if (pin_number.size() == 4)
@@ -480,11 +736,9 @@ Save Button
       }
 //----------------------------New PIN Hashed and ready for Database-----------------------------
 
-
       query.exec("UPDATE user SET first_name = '" + first_name +"', last_name = '" + last_name + "', pin_number = '" +
                  pin_number + "', permission_group = '" + permission_group + "', user_enabled = '" + user_enabled +
                  "' WHERE iduser = '" + iduserFromDB + "'" );
-
      query.next();
 
 //-----------------------------------Lets Reload Changes to Database------------------------------
@@ -520,13 +774,16 @@ Save Button
      ui->pushButton_2->show();
      ui->pushButton_4->show();
      ui->listWidget->setVisible(false);
-     ui->label_2->setText("Edit Save ...");
+     ui->label_2->setText("Edit Saved ...");
      ui->frame_4->setVisible(false);
+     ui->plainTextEdit->setStyleSheet("background-color: white");
+     ui->plainTextEdit_2->setStyleSheet("background-color: white");
+     ui->plainTextEdit_3->setStyleSheet("background-color: white");
+     ui->plainTextEdit_4->setStyleSheet("background-color: white");
+     ui->checkBox->setStyleSheet("background-color: ");
      return;
  }
 //--------------------------------Edit current User record----------------------------------------
-
-
 /*
 ==================================================================================================
 End of Save Button
@@ -572,7 +829,6 @@ void user_screen::on_pushButton_35_clicked()
       ui->plainTextEdit_4->setPlainText(KeyBuff);
       return;
   }
-
 
 //----------------------------------------End Button 1---------------------------------------------
 }
@@ -1069,7 +1325,7 @@ void user_screen::on_pushButton_9_clicked()
          }
 
          KeyBuff = ui->plainTextEdit->toPlainText();
-        KeyBuff = KeyBuff + "rq";
+        KeyBuff = KeyBuff + "r";
         ui->plainTextEdit->setPlainText(KeyBuff);
         return;
     }
@@ -2353,6 +2609,20 @@ void user_screen::on_pushButton_45_clicked()
         return;
      }
 
+
+    if (ui->checkBox->hasFocus())
+    {
+        if (ui->checkBox->isChecked())
+        {
+            ui->checkBox->setChecked(false);
+        return;
+        }
+
+        ui->checkBox->setChecked(true);
+
+    }
+
+
     if (ui->plainTextEdit_4->hasFocus())
     {
         QString KeyBuff = ui->plainTextEdit_4->toPlainText();
@@ -2369,31 +2639,41 @@ void user_screen::on_pushButton_47_clicked()
 
     if (ui->plainTextEdit->hasFocus())
     {
+        ui->plainTextEdit->setStyleSheet("background-color: white");
         ui->plainTextEdit_2->setFocus();
+        ui->plainTextEdit_2->setStyleSheet("background-color: yellow");
         return;
     }
 
     if (ui->plainTextEdit_2->hasFocus())
     {
         ui->plainTextEdit_3->setFocus();
+        ui->plainTextEdit_3->setStyleSheet("background-color: yellow");
+        ui->plainTextEdit_2->setStyleSheet("background-color: white");
         return;
      }
 
     if (ui->plainTextEdit_3->hasFocus())
     {
         ui->plainTextEdit_4->setFocus();
+        ui->plainTextEdit_3->setStyleSheet("background-color: white");
+        ui->plainTextEdit_4->setStyleSheet("background-color: yellow");
         return;
      }
 
     if (ui->plainTextEdit_4->hasFocus())
     {
         ui->checkBox->setFocus();
+        ui->plainTextEdit_4->setStyleSheet("background-color: white");
+        ui->checkBox->setStyleSheet("background-color: yellow");
         return;
     }
 
     if (ui->checkBox->hasFocus())
     {
         ui->plainTextEdit->setFocus();
+        ui->checkBox->setStyleSheet("background-color: ");
+        ui->plainTextEdit->setStyleSheet("background-color: yellow");
         return;
     }
 
@@ -2406,34 +2686,79 @@ void user_screen::on_pushButton_25_clicked()
 //------------------------------Handels Enter Key--------------------------------------------------
     if (ui->plainTextEdit->hasFocus())
     {
+        ui->plainTextEdit->setStyleSheet("background-color: white");
         ui->plainTextEdit_2->setFocus();
+        ui->plainTextEdit_2->setStyleSheet("background-color: yellow");
         return;
     }
 
     if (ui->plainTextEdit_2->hasFocus())
     {
         ui->plainTextEdit_3->setFocus();
+        ui->plainTextEdit_3->setStyleSheet("background-color: yellow");
+        ui->plainTextEdit_2->setStyleSheet("background-color: white");
         return;
      }
 
     if (ui->plainTextEdit_3->hasFocus())
     {
         ui->plainTextEdit_4->setFocus();
+        ui->plainTextEdit_3->setStyleSheet("background-color: white");
+        ui->plainTextEdit_4->setStyleSheet("background-color: yellow");
         return;
      }
 
     if (ui->plainTextEdit_4->hasFocus())
     {
         ui->checkBox->setFocus();
+        ui->plainTextEdit_4->setStyleSheet("background-color: white");
+        ui->checkBox->setStyleSheet("background-color: yellow");
         return;
     }
 
     if (ui->checkBox->hasFocus())
     {
         ui->plainTextEdit->setFocus();
+        ui->checkBox->setStyleSheet("background-color: ");
+        ui->plainTextEdit->setStyleSheet("background-color: yellow");
         return;
     }
+
+    return;
+
 //--------------------------------------End of Enter Key--------------------------------------------
+}
+
+void user_screen::on_pushButton_48_clicked()
+{
+//--------------------------------------Back Space Key---------------------------------------------
+
+    if (ui->plainTextEdit->hasFocus())
+    {
+        QApplication::postEvent(ui->plainTextEdit, new QKeyEvent(QEvent::KeyPress, Qt::Key_Backspace, 0, 0));
+        return;
+    }
+
+    if (ui->plainTextEdit_2->hasFocus())
+    {
+        QApplication::postEvent(ui->plainTextEdit_2, new QKeyEvent(QEvent::KeyPress, Qt::Key_Backspace, 0, 0));
+        return;
+     }
+
+    if (ui->plainTextEdit_3->hasFocus())
+    {
+        QApplication::postEvent(ui->plainTextEdit_3, new QKeyEvent(QEvent::KeyPress, Qt::Key_Backspace, 0, 0));
+        return;
+    }
+
+    if (ui->plainTextEdit_4->hasFocus())
+    {
+        QApplication::postEvent(ui->plainTextEdit_4, new QKeyEvent(QEvent::KeyPress, Qt::Key_Backspace, 0, 0));
+        return;
+    }
+
+    return;
+//---------------------------------------End of Back Space Key-------------------------------------
 }
 /*
 =================================================================================================================

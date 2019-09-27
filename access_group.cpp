@@ -38,7 +38,7 @@ Lets Load a cool Background
 Background is loaded
 ==============================================================================================================
 */
-
+          ui->frame_3->hide();
           ui->pushButton_5->hide();
           ui->pushButton_49->hide();
           QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
@@ -58,17 +58,55 @@ Background is loaded
 We are connected to the database lets run a select all query
 ============================================================================================================
 */
-          QSqlQueryModel *model = new QSqlQueryModel();
-          QSqlQuery *qry = new QSqlQuery(db);
-          qry->prepare("SELECT * FROM permission_group");
-          qry->exec();
-          model->setQuery(*qry);
-          ui->tableView->setModel(model);
+          //QSqlQueryModel *model = new QSqlQueryModel();
+          //QSqlQuery *qry = new QSqlQuery(db);
+          //qry->prepare("SELECT * FROM permission_group");
+          //qry->exec();
+          //model->setQuery(*qry);
+          //ui->tableView->setModel(model);
 /*
 ============================================================================================================
 Query s ran and TableView is loaded
 ============================================================================================================
 */
+           QSqlQuery query;
+           query.exec("SELECT * FROM permission_group");
+           query.first();
+
+           QString permissionGroupNamefromDB = query.value(11).toString();
+           ui->plainTextEdit->setPlainText(permissionGroupNamefromDB);
+           QString item1DB = query.value(1).toString();
+           ui->plainTextEdit_2->setPlainText(item1DB);
+           QString item2DB = query.value(2).toString();
+           ui->plainTextEdit_3->setPlainText(item2DB);
+           QString item3DB = query.value(3).toString();
+           ui->plainTextEdit_4->setPlainText(item3DB);
+           QString item4DB = query.value(4).toString();
+           ui->plainTextEdit_5->setPlainText(item4DB);
+           QString item5DB = query.value(5).toString();
+           ui->plainTextEdit_6->setPlainText(item5DB);
+           QString item6DB = query.value(6).toString();
+           ui->plainTextEdit_7->setPlainText(item6DB);
+           QString item7DB = query.value(7).toString();
+           ui->plainTextEdit_8->setPlainText(item7DB);
+           QString item8DB = query.value(8).toString();
+           ui->plainTextEdit_9->setPlainText(item8DB);
+           QString item9DB = query.value(9).toString();
+           ui->plainTextEdit_10->setPlainText(item9DB);
+           QString item10DB = query.value(10).toString();
+           ui->plainTextEdit_11->setPlainText(item10DB);
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 }

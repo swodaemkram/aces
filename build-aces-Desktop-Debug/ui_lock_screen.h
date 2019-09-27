@@ -62,12 +62,12 @@ public:
         graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         frame = new QFrame(lock_screen);
         frame->setObjectName(QStringLiteral("frame"));
-        frame->setGeometry(QRect(160, 10, 851, 491));
+        frame->setGeometry(QRect(180, 10, 831, 491));
         frame->setFrameShape(QFrame::WinPanel);
         frame->setFrameShadow(QFrame::Raised);
         gridLayoutWidget = new QWidget(frame);
         gridLayoutWidget->setObjectName(QStringLiteral("gridLayoutWidget"));
-        gridLayoutWidget->setGeometry(QRect(10, 50, 831, 431));
+        gridLayoutWidget->setGeometry(QRect(10, 50, 811, 431));
         gridLayout = new QGridLayout(gridLayoutWidget);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
         gridLayout->setContentsMargins(0, 0, 0, 0);
@@ -79,10 +79,10 @@ public:
         sizePolicy.setHeightForWidth(pushButton_9->sizePolicy().hasHeightForWidth());
         pushButton_9->setSizePolicy(sizePolicy);
         QPalette palette;
-        QBrush brush(QColor(46, 52, 54, 255));
+        QBrush brush(QColor(243, 243, 243, 255));
         brush.setStyle(Qt::SolidPattern);
         palette.setBrush(QPalette::Active, QPalette::Button, brush);
-        QBrush brush1(QColor(255, 255, 255, 255));
+        QBrush brush1(QColor(0, 0, 0, 255));
         brush1.setStyle(Qt::SolidPattern);
         palette.setBrush(QPalette::Active, QPalette::ButtonText, brush1);
         palette.setBrush(QPalette::Inactive, QPalette::Button, brush);
@@ -93,7 +93,7 @@ public:
         palette.setBrush(QPalette::Disabled, QPalette::ButtonText, brush2);
         pushButton_9->setPalette(palette);
         QIcon icon;
-        icon.addFile(QStringLiteral("../build-aces-Desktop-Debug/icons/White_Lock.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon.addFile(QStringLiteral("../build-aces-Desktop-Debug/icons/newBlackLock.png"), QSize(), QIcon::Normal, QIcon::Off);
         pushButton_9->setIcon(icon);
         pushButton_9->setIconSize(QSize(50, 50));
 
@@ -186,27 +186,29 @@ public:
 
         label = new QLabel(frame);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(10, 10, 831, 31));
+        label->setGeometry(QRect(10, 10, 811, 31));
         QPalette palette6;
         QBrush brush3(QColor(243, 245, 174, 255));
         brush3.setStyle(Qt::SolidPattern);
         palette6.setBrush(QPalette::Active, QPalette::WindowText, brush3);
         palette6.setBrush(QPalette::Active, QPalette::Text, brush3);
         palette6.setBrush(QPalette::Active, QPalette::ButtonText, brush3);
-        palette6.setBrush(QPalette::Active, QPalette::Base, brush1);
-        QBrush brush4(QColor(78, 154, 6, 255));
+        QBrush brush4(QColor(255, 255, 255, 255));
         brush4.setStyle(Qt::SolidPattern);
-        palette6.setBrush(QPalette::Active, QPalette::Window, brush4);
+        palette6.setBrush(QPalette::Active, QPalette::Base, brush4);
+        QBrush brush5(QColor(78, 154, 6, 255));
+        brush5.setStyle(Qt::SolidPattern);
+        palette6.setBrush(QPalette::Active, QPalette::Window, brush5);
         palette6.setBrush(QPalette::Inactive, QPalette::WindowText, brush3);
         palette6.setBrush(QPalette::Inactive, QPalette::Text, brush3);
         palette6.setBrush(QPalette::Inactive, QPalette::ButtonText, brush3);
-        palette6.setBrush(QPalette::Inactive, QPalette::Base, brush1);
-        palette6.setBrush(QPalette::Inactive, QPalette::Window, brush4);
+        palette6.setBrush(QPalette::Inactive, QPalette::Base, brush4);
+        palette6.setBrush(QPalette::Inactive, QPalette::Window, brush5);
         palette6.setBrush(QPalette::Disabled, QPalette::WindowText, brush2);
         palette6.setBrush(QPalette::Disabled, QPalette::Text, brush2);
         palette6.setBrush(QPalette::Disabled, QPalette::ButtonText, brush2);
-        palette6.setBrush(QPalette::Disabled, QPalette::Base, brush4);
-        palette6.setBrush(QPalette::Disabled, QPalette::Window, brush4);
+        palette6.setBrush(QPalette::Disabled, QPalette::Base, brush5);
+        palette6.setBrush(QPalette::Disabled, QPalette::Window, brush5);
         label->setPalette(palette6);
         QFont font;
         font.setFamily(QStringLiteral("Ubuntu Condensed"));
@@ -222,12 +224,12 @@ public:
         label->setAlignment(Qt::AlignCenter);
         frame_2 = new QFrame(lock_screen);
         frame_2->setObjectName(QStringLiteral("frame_2"));
-        frame_2->setGeometry(QRect(10, 10, 141, 711));
+        frame_2->setGeometry(QRect(10, 10, 161, 711));
         frame_2->setFrameShape(QFrame::StyledPanel);
         frame_2->setFrameShadow(QFrame::Raised);
         verticalLayoutWidget = new QWidget(frame_2);
         verticalLayoutWidget->setObjectName(QStringLiteral("verticalLayoutWidget"));
-        verticalLayoutWidget->setGeometry(QRect(10, 10, 121, 691));
+        verticalLayoutWidget->setGeometry(QRect(10, 10, 139, 691));
         verticalLayout = new QVBoxLayout(verticalLayoutWidget);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
@@ -244,7 +246,7 @@ public:
         palette7.setBrush(QPalette::Disabled, QPalette::ButtonText, brush2);
         pushButton_5->setPalette(palette7);
         QIcon icon1;
-        icon1.addFile(QStringLiteral("../build-aces-Desktop-Debug/icons/white-key.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon1.addFile(QStringLiteral("../build-aces-Desktop-Debug/icons/black-key.png"), QSize(), QIcon::Normal, QIcon::Off);
         pushButton_5->setIcon(icon1);
         pushButton_5->setIconSize(QSize(30, 30));
 
@@ -263,7 +265,7 @@ public:
         palette8.setBrush(QPalette::Disabled, QPalette::ButtonText, brush2);
         pushButton_4->setPalette(palette8);
         QIcon icon2;
-        icon2.addFile(QStringLiteral("../build-aces-Desktop-Debug/icons/white-keys.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon2.addFile(QStringLiteral("../build-aces-Desktop-Debug/icons/Keys-Silhouette.svg.png"), QSize(), QIcon::Normal, QIcon::Off);
         pushButton_4->setIcon(icon2);
         pushButton_4->setIconSize(QSize(30, 30));
 
@@ -282,9 +284,9 @@ public:
         palette9.setBrush(QPalette::Disabled, QPalette::ButtonText, brush2);
         pushButton_2->setPalette(palette9);
         QIcon icon3;
-        icon3.addFile(QStringLiteral("../build-aces-Desktop-Debug/icons/white-users.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon3.addFile(QStringLiteral("../build-aces-Desktop-Debug/icons/black_lock.png"), QSize(), QIcon::Normal, QIcon::Off);
         pushButton_2->setIcon(icon3);
-        pushButton_2->setIconSize(QSize(25, 25));
+        pushButton_2->setIconSize(QSize(30, 30));
 
         verticalLayout->addWidget(pushButton_2);
 
@@ -301,7 +303,7 @@ public:
         palette10.setBrush(QPalette::Disabled, QPalette::ButtonText, brush2);
         pushButton_3->setPalette(palette10);
         QIcon icon4;
-        icon4.addFile(QStringLiteral("../build-aces-Desktop-Debug/icons/white_gear.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon4.addFile(QStringLiteral("../build-aces-Desktop-Debug/icons/black_gear.png"), QSize(), QIcon::Normal, QIcon::Off);
         pushButton_3->setIcon(icon4);
         pushButton_3->setIconSize(QSize(30, 30));
 
@@ -312,10 +314,10 @@ public:
         sizePolicy.setHeightForWidth(pushButton_12->sizePolicy().hasHeightForWidth());
         pushButton_12->setSizePolicy(sizePolicy);
         QPalette palette11;
-        palette11.setBrush(QPalette::Active, QPalette::WindowText, brush1);
+        palette11.setBrush(QPalette::Active, QPalette::WindowText, brush4);
         palette11.setBrush(QPalette::Active, QPalette::Button, brush);
         palette11.setBrush(QPalette::Active, QPalette::ButtonText, brush1);
-        palette11.setBrush(QPalette::Inactive, QPalette::WindowText, brush1);
+        palette11.setBrush(QPalette::Inactive, QPalette::WindowText, brush4);
         palette11.setBrush(QPalette::Inactive, QPalette::Button, brush);
         palette11.setBrush(QPalette::Inactive, QPalette::ButtonText, brush1);
         palette11.setBrush(QPalette::Disabled, QPalette::WindowText, brush2);
@@ -323,7 +325,7 @@ public:
         palette11.setBrush(QPalette::Disabled, QPalette::ButtonText, brush2);
         pushButton_12->setPalette(palette11);
         QIcon icon5;
-        icon5.addFile(QStringLiteral("../build-aces-Desktop-Debug/icons/white-log.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon5.addFile(QStringLiteral("../build-aces-Desktop-Debug/icons/black-log.png"), QSize(), QIcon::Normal, QIcon::Off);
         pushButton_12->setIcon(icon5);
         pushButton_12->setIconSize(QSize(35, 35));
 
@@ -334,17 +336,15 @@ public:
         sizePolicy.setHeightForWidth(pushButton->sizePolicy().hasHeightForWidth());
         pushButton->setSizePolicy(sizePolicy);
         QPalette palette12;
-        QBrush brush5(QColor(136, 138, 133, 255));
-        brush5.setStyle(Qt::SolidPattern);
-        palette12.setBrush(QPalette::Active, QPalette::Button, brush5);
+        palette12.setBrush(QPalette::Active, QPalette::Button, brush);
         palette12.setBrush(QPalette::Active, QPalette::ButtonText, brush1);
-        palette12.setBrush(QPalette::Inactive, QPalette::Button, brush5);
+        palette12.setBrush(QPalette::Inactive, QPalette::Button, brush);
         palette12.setBrush(QPalette::Inactive, QPalette::ButtonText, brush1);
-        palette12.setBrush(QPalette::Disabled, QPalette::Button, brush5);
+        palette12.setBrush(QPalette::Disabled, QPalette::Button, brush);
         palette12.setBrush(QPalette::Disabled, QPalette::ButtonText, brush2);
         pushButton->setPalette(palette12);
         QIcon icon6;
-        icon6.addFile(QStringLiteral("../build-aces-Desktop-Debug/icons/white-exit.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon6.addFile(QStringLiteral("../build-aces-Desktop-Debug/icons/black-exit.png"), QSize(), QIcon::Normal, QIcon::Off);
         pushButton->setIcon(icon6);
         pushButton->setIconSize(QSize(25, 25));
 
@@ -355,12 +355,12 @@ public:
         label_2->setGeometry(QRect(10, 730, 1001, 31));
         QPalette palette13;
         palette13.setBrush(QPalette::Active, QPalette::WindowText, brush3);
-        palette13.setBrush(QPalette::Active, QPalette::Base, brush1);
+        palette13.setBrush(QPalette::Active, QPalette::Base, brush4);
         QBrush brush6(QColor(164, 0, 0, 255));
         brush6.setStyle(Qt::SolidPattern);
         palette13.setBrush(QPalette::Active, QPalette::Window, brush6);
         palette13.setBrush(QPalette::Inactive, QPalette::WindowText, brush3);
-        palette13.setBrush(QPalette::Inactive, QPalette::Base, brush1);
+        palette13.setBrush(QPalette::Inactive, QPalette::Base, brush4);
         palette13.setBrush(QPalette::Inactive, QPalette::Window, brush6);
         palette13.setBrush(QPalette::Disabled, QPalette::WindowText, brush2);
         palette13.setBrush(QPalette::Disabled, QPalette::Base, brush6);

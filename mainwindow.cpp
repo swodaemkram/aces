@@ -98,8 +98,12 @@ Clock Display
 void MainWindow::MyTimerSlot()
 {
     QTime time = QTime::currentTime();
-    QString text = time.toString("hh:mm:ss    ");
-    ui->lcdNumber->display(text);
+    QString ct = time.toString("hh:mm:ss    ");
+    QDate dedate = QDate::currentDate();
+    QString cd = dedate.toString();
+    QString DateAndTime = cd + " " + ct;
+
+    ui->lcdNumber->display(DateAndTime);
 }
 /*
 ===================================================================================================

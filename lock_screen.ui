@@ -32,9 +32,9 @@
   <widget class="QFrame" name="frame">
    <property name="geometry">
     <rect>
-     <x>160</x>
+     <x>180</x>
      <y>10</y>
-     <width>851</width>
+     <width>831</width>
      <height>491</height>
     </rect>
    </property>
@@ -49,7 +49,7 @@
      <rect>
       <x>10</x>
       <y>50</y>
-      <width>831</width>
+      <width>811</width>
       <height>431</height>
      </rect>
     </property>
@@ -68,18 +68,18 @@
           <colorrole role="Button">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>46</red>
-             <green>52</green>
-             <blue>54</blue>
+             <red>243</red>
+             <green>243</green>
+             <blue>243</blue>
             </color>
            </brush>
           </colorrole>
           <colorrole role="ButtonText">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>255</red>
-             <green>255</green>
-             <blue>255</blue>
+             <red>0</red>
+             <green>0</green>
+             <blue>0</blue>
             </color>
            </brush>
           </colorrole>
@@ -88,18 +88,18 @@
           <colorrole role="Button">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>46</red>
-             <green>52</green>
-             <blue>54</blue>
+             <red>243</red>
+             <green>243</green>
+             <blue>243</blue>
             </color>
            </brush>
           </colorrole>
           <colorrole role="ButtonText">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>255</red>
-             <green>255</green>
-             <blue>255</blue>
+             <red>0</red>
+             <green>0</green>
+             <blue>0</blue>
             </color>
            </brush>
           </colorrole>
@@ -108,9 +108,9 @@
           <colorrole role="Button">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>46</red>
-             <green>52</green>
-             <blue>54</blue>
+             <red>243</red>
+             <green>243</green>
+             <blue>243</blue>
             </color>
            </brush>
           </colorrole>
@@ -131,7 +131,7 @@
        </property>
        <property name="icon">
         <iconset>
-         <normaloff>../build-aces-Desktop-Debug/icons/White_Lock.png</normaloff>../build-aces-Desktop-Debug/icons/White_Lock.png</iconset>
+         <normaloff>../build-aces-Desktop-Debug/icons/newBlackLock.png</normaloff>../build-aces-Desktop-Debug/icons/newBlackLock.png</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -155,18 +155,18 @@
           <colorrole role="Button">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>46</red>
-             <green>52</green>
-             <blue>54</blue>
+             <red>243</red>
+             <green>243</green>
+             <blue>243</blue>
             </color>
            </brush>
           </colorrole>
           <colorrole role="ButtonText">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>255</red>
-             <green>255</green>
-             <blue>255</blue>
+             <red>0</red>
+             <green>0</green>
+             <blue>0</blue>
             </color>
            </brush>
           </colorrole>
@@ -175,18 +175,18 @@
           <colorrole role="Button">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>46</red>
-             <green>52</green>
-             <blue>54</blue>
+             <red>243</red>
+             <green>243</green>
+             <blue>243</blue>
             </color>
            </brush>
           </colorrole>
           <colorrole role="ButtonText">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>255</red>
-             <green>255</green>
-             <blue>255</blue>
+             <red>0</red>
+             <green>0</green>
+             <blue>0</blue>
             </color>
            </brush>
           </colorrole>
@@ -195,9 +195,9 @@
           <colorrole role="Button">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>46</red>
-             <green>52</green>
-             <blue>54</blue>
+             <red>243</red>
+             <green>243</green>
+             <blue>243</blue>
             </color>
            </brush>
           </colorrole>
@@ -218,7 +218,7 @@
        </property>
        <property name="icon">
         <iconset>
-         <normaloff>../build-aces-Desktop-Debug/icons/White_Lock.png</normaloff>../build-aces-Desktop-Debug/icons/White_Lock.png</iconset>
+         <normaloff>../build-aces-Desktop-Debug/icons/newBlackLock.png</normaloff>../build-aces-Desktop-Debug/icons/newBlackLock.png</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -242,18 +242,18 @@
           <colorrole role="Button">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>46</red>
-             <green>52</green>
-             <blue>54</blue>
+             <red>243</red>
+             <green>243</green>
+             <blue>243</blue>
             </color>
            </brush>
           </colorrole>
           <colorrole role="ButtonText">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>255</red>
-             <green>255</green>
-             <blue>255</blue>
+             <red>0</red>
+             <green>0</green>
+             <blue>0</blue>
             </color>
            </brush>
           </colorrole>
@@ -262,18 +262,18 @@
           <colorrole role="Button">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>46</red>
-             <green>52</green>
-             <blue>54</blue>
+             <red>243</red>
+             <green>243</green>
+             <blue>243</blue>
             </color>
            </brush>
           </colorrole>
           <colorrole role="ButtonText">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>255</red>
-             <green>255</green>
-             <blue>255</blue>
+             <red>0</red>
+             <green>0</green>
+             <blue>0</blue>
             </color>
            </brush>
           </colorrole>
@@ -282,9 +282,9 @@
           <colorrole role="Button">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>46</red>
-             <green>52</green>
-             <blue>54</blue>
+             <red>243</red>
+             <green>243</green>
+             <blue>243</blue>
             </color>
            </brush>
           </colorrole>
@@ -305,7 +305,7 @@
        </property>
        <property name="icon">
         <iconset>
-         <normaloff>../build-aces-Desktop-Debug/icons/White_Lock.png</normaloff>../build-aces-Desktop-Debug/icons/White_Lock.png</iconset>
+         <normaloff>../build-aces-Desktop-Debug/icons/newBlackLock.png</normaloff>../build-aces-Desktop-Debug/icons/newBlackLock.png</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -329,18 +329,18 @@
           <colorrole role="Button">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>46</red>
-             <green>52</green>
-             <blue>54</blue>
+             <red>243</red>
+             <green>243</green>
+             <blue>243</blue>
             </color>
            </brush>
           </colorrole>
           <colorrole role="ButtonText">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>255</red>
-             <green>255</green>
-             <blue>255</blue>
+             <red>0</red>
+             <green>0</green>
+             <blue>0</blue>
             </color>
            </brush>
           </colorrole>
@@ -349,18 +349,18 @@
           <colorrole role="Button">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>46</red>
-             <green>52</green>
-             <blue>54</blue>
+             <red>243</red>
+             <green>243</green>
+             <blue>243</blue>
             </color>
            </brush>
           </colorrole>
           <colorrole role="ButtonText">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>255</red>
-             <green>255</green>
-             <blue>255</blue>
+             <red>0</red>
+             <green>0</green>
+             <blue>0</blue>
             </color>
            </brush>
           </colorrole>
@@ -369,9 +369,9 @@
           <colorrole role="Button">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>46</red>
-             <green>52</green>
-             <blue>54</blue>
+             <red>243</red>
+             <green>243</green>
+             <blue>243</blue>
             </color>
            </brush>
           </colorrole>
@@ -392,7 +392,7 @@
        </property>
        <property name="icon">
         <iconset>
-         <normaloff>../build-aces-Desktop-Debug/icons/White_Lock.png</normaloff>../build-aces-Desktop-Debug/icons/White_Lock.png</iconset>
+         <normaloff>../build-aces-Desktop-Debug/icons/newBlackLock.png</normaloff>../build-aces-Desktop-Debug/icons/newBlackLock.png</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -416,18 +416,18 @@
           <colorrole role="Button">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>46</red>
-             <green>52</green>
-             <blue>54</blue>
+             <red>243</red>
+             <green>243</green>
+             <blue>243</blue>
             </color>
            </brush>
           </colorrole>
           <colorrole role="ButtonText">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>255</red>
-             <green>255</green>
-             <blue>255</blue>
+             <red>0</red>
+             <green>0</green>
+             <blue>0</blue>
             </color>
            </brush>
           </colorrole>
@@ -436,18 +436,18 @@
           <colorrole role="Button">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>46</red>
-             <green>52</green>
-             <blue>54</blue>
+             <red>243</red>
+             <green>243</green>
+             <blue>243</blue>
             </color>
            </brush>
           </colorrole>
           <colorrole role="ButtonText">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>255</red>
-             <green>255</green>
-             <blue>255</blue>
+             <red>0</red>
+             <green>0</green>
+             <blue>0</blue>
             </color>
            </brush>
           </colorrole>
@@ -456,9 +456,9 @@
           <colorrole role="Button">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>46</red>
-             <green>52</green>
-             <blue>54</blue>
+             <red>243</red>
+             <green>243</green>
+             <blue>243</blue>
             </color>
            </brush>
           </colorrole>
@@ -479,7 +479,7 @@
        </property>
        <property name="icon">
         <iconset>
-         <normaloff>../build-aces-Desktop-Debug/icons/White_Lock.png</normaloff>../build-aces-Desktop-Debug/icons/White_Lock.png</iconset>
+         <normaloff>../build-aces-Desktop-Debug/icons/newBlackLock.png</normaloff>../build-aces-Desktop-Debug/icons/newBlackLock.png</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -503,18 +503,18 @@
           <colorrole role="Button">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>46</red>
-             <green>52</green>
-             <blue>54</blue>
+             <red>243</red>
+             <green>243</green>
+             <blue>243</blue>
             </color>
            </brush>
           </colorrole>
           <colorrole role="ButtonText">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>255</red>
-             <green>255</green>
-             <blue>255</blue>
+             <red>0</red>
+             <green>0</green>
+             <blue>0</blue>
             </color>
            </brush>
           </colorrole>
@@ -523,18 +523,18 @@
           <colorrole role="Button">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>46</red>
-             <green>52</green>
-             <blue>54</blue>
+             <red>243</red>
+             <green>243</green>
+             <blue>243</blue>
             </color>
            </brush>
           </colorrole>
           <colorrole role="ButtonText">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>255</red>
-             <green>255</green>
-             <blue>255</blue>
+             <red>0</red>
+             <green>0</green>
+             <blue>0</blue>
             </color>
            </brush>
           </colorrole>
@@ -543,9 +543,9 @@
           <colorrole role="Button">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>46</red>
-             <green>52</green>
-             <blue>54</blue>
+             <red>243</red>
+             <green>243</green>
+             <blue>243</blue>
             </color>
            </brush>
           </colorrole>
@@ -566,7 +566,7 @@
        </property>
        <property name="icon">
         <iconset>
-         <normaloff>../build-aces-Desktop-Debug/icons/White_Lock.png</normaloff>../build-aces-Desktop-Debug/icons/White_Lock.png</iconset>
+         <normaloff>../build-aces-Desktop-Debug/icons/newBlackLock.png</normaloff>../build-aces-Desktop-Debug/icons/newBlackLock.png</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -583,7 +583,7 @@
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>831</width>
+      <width>811</width>
       <height>31</height>
      </rect>
     </property>
@@ -766,7 +766,7 @@
     <rect>
      <x>10</x>
      <y>10</y>
-     <width>141</width>
+     <width>161</width>
      <height>711</height>
     </rect>
    </property>
@@ -781,7 +781,7 @@
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>121</width>
+      <width>139</width>
       <height>691</height>
      </rect>
     </property>
@@ -800,18 +800,18 @@
           <colorrole role="Button">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>46</red>
-             <green>52</green>
-             <blue>54</blue>
+             <red>243</red>
+             <green>243</green>
+             <blue>243</blue>
             </color>
            </brush>
           </colorrole>
           <colorrole role="ButtonText">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>255</red>
-             <green>255</green>
-             <blue>255</blue>
+             <red>0</red>
+             <green>0</green>
+             <blue>0</blue>
             </color>
            </brush>
           </colorrole>
@@ -820,18 +820,18 @@
           <colorrole role="Button">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>46</red>
-             <green>52</green>
-             <blue>54</blue>
+             <red>243</red>
+             <green>243</green>
+             <blue>243</blue>
             </color>
            </brush>
           </colorrole>
           <colorrole role="ButtonText">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>255</red>
-             <green>255</green>
-             <blue>255</blue>
+             <red>0</red>
+             <green>0</green>
+             <blue>0</blue>
             </color>
            </brush>
           </colorrole>
@@ -840,9 +840,9 @@
           <colorrole role="Button">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>46</red>
-             <green>52</green>
-             <blue>54</blue>
+             <red>243</red>
+             <green>243</green>
+             <blue>243</blue>
             </color>
            </brush>
           </colorrole>
@@ -863,7 +863,7 @@
        </property>
        <property name="icon">
         <iconset>
-         <normaloff>../build-aces-Desktop-Debug/icons/white-key.png</normaloff>../build-aces-Desktop-Debug/icons/white-key.png</iconset>
+         <normaloff>../build-aces-Desktop-Debug/icons/black-key.png</normaloff>../build-aces-Desktop-Debug/icons/black-key.png</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -887,18 +887,18 @@
           <colorrole role="Button">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>46</red>
-             <green>52</green>
-             <blue>54</blue>
+             <red>243</red>
+             <green>243</green>
+             <blue>243</blue>
             </color>
            </brush>
           </colorrole>
           <colorrole role="ButtonText">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>255</red>
-             <green>255</green>
-             <blue>255</blue>
+             <red>0</red>
+             <green>0</green>
+             <blue>0</blue>
             </color>
            </brush>
           </colorrole>
@@ -907,18 +907,18 @@
           <colorrole role="Button">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>46</red>
-             <green>52</green>
-             <blue>54</blue>
+             <red>243</red>
+             <green>243</green>
+             <blue>243</blue>
             </color>
            </brush>
           </colorrole>
           <colorrole role="ButtonText">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>255</red>
-             <green>255</green>
-             <blue>255</blue>
+             <red>0</red>
+             <green>0</green>
+             <blue>0</blue>
             </color>
            </brush>
           </colorrole>
@@ -927,9 +927,9 @@
           <colorrole role="Button">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>46</red>
-             <green>52</green>
-             <blue>54</blue>
+             <red>243</red>
+             <green>243</green>
+             <blue>243</blue>
             </color>
            </brush>
           </colorrole>
@@ -950,7 +950,7 @@
        </property>
        <property name="icon">
         <iconset>
-         <normaloff>../build-aces-Desktop-Debug/icons/white-keys.png</normaloff>../build-aces-Desktop-Debug/icons/white-keys.png</iconset>
+         <normaloff>../build-aces-Desktop-Debug/icons/Keys-Silhouette.svg.png</normaloff>../build-aces-Desktop-Debug/icons/Keys-Silhouette.svg.png</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -974,18 +974,18 @@
           <colorrole role="Button">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>46</red>
-             <green>52</green>
-             <blue>54</blue>
+             <red>243</red>
+             <green>243</green>
+             <blue>243</blue>
             </color>
            </brush>
           </colorrole>
           <colorrole role="ButtonText">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>255</red>
-             <green>255</green>
-             <blue>255</blue>
+             <red>0</red>
+             <green>0</green>
+             <blue>0</blue>
             </color>
            </brush>
           </colorrole>
@@ -994,18 +994,18 @@
           <colorrole role="Button">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>46</red>
-             <green>52</green>
-             <blue>54</blue>
+             <red>243</red>
+             <green>243</green>
+             <blue>243</blue>
             </color>
            </brush>
           </colorrole>
           <colorrole role="ButtonText">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>255</red>
-             <green>255</green>
-             <blue>255</blue>
+             <red>0</red>
+             <green>0</green>
+             <blue>0</blue>
             </color>
            </brush>
           </colorrole>
@@ -1014,9 +1014,9 @@
           <colorrole role="Button">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>46</red>
-             <green>52</green>
-             <blue>54</blue>
+             <red>243</red>
+             <green>243</green>
+             <blue>243</blue>
             </color>
            </brush>
           </colorrole>
@@ -1037,12 +1037,12 @@
        </property>
        <property name="icon">
         <iconset>
-         <normaloff>../build-aces-Desktop-Debug/icons/white-users.png</normaloff>../build-aces-Desktop-Debug/icons/white-users.png</iconset>
+         <normaloff>../build-aces-Desktop-Debug/icons/black_lock.png</normaloff>../build-aces-Desktop-Debug/icons/black_lock.png</iconset>
        </property>
        <property name="iconSize">
         <size>
-         <width>25</width>
-         <height>25</height>
+         <width>30</width>
+         <height>30</height>
         </size>
        </property>
       </widget>
@@ -1061,18 +1061,18 @@
           <colorrole role="Button">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>46</red>
-             <green>52</green>
-             <blue>54</blue>
+             <red>243</red>
+             <green>243</green>
+             <blue>243</blue>
             </color>
            </brush>
           </colorrole>
           <colorrole role="ButtonText">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>255</red>
-             <green>255</green>
-             <blue>255</blue>
+             <red>0</red>
+             <green>0</green>
+             <blue>0</blue>
             </color>
            </brush>
           </colorrole>
@@ -1081,18 +1081,18 @@
           <colorrole role="Button">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>46</red>
-             <green>52</green>
-             <blue>54</blue>
+             <red>243</red>
+             <green>243</green>
+             <blue>243</blue>
             </color>
            </brush>
           </colorrole>
           <colorrole role="ButtonText">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>255</red>
-             <green>255</green>
-             <blue>255</blue>
+             <red>0</red>
+             <green>0</green>
+             <blue>0</blue>
             </color>
            </brush>
           </colorrole>
@@ -1101,9 +1101,9 @@
           <colorrole role="Button">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>46</red>
-             <green>52</green>
-             <blue>54</blue>
+             <red>243</red>
+             <green>243</green>
+             <blue>243</blue>
             </color>
            </brush>
           </colorrole>
@@ -1124,7 +1124,7 @@
        </property>
        <property name="icon">
         <iconset>
-         <normaloff>../build-aces-Desktop-Debug/icons/white_gear.png</normaloff>../build-aces-Desktop-Debug/icons/white_gear.png</iconset>
+         <normaloff>../build-aces-Desktop-Debug/icons/black_gear.png</normaloff>../build-aces-Desktop-Debug/icons/black_gear.png</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -1157,18 +1157,18 @@
           <colorrole role="Button">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>46</red>
-             <green>52</green>
-             <blue>54</blue>
+             <red>243</red>
+             <green>243</green>
+             <blue>243</blue>
             </color>
            </brush>
           </colorrole>
           <colorrole role="ButtonText">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>255</red>
-             <green>255</green>
-             <blue>255</blue>
+             <red>0</red>
+             <green>0</green>
+             <blue>0</blue>
             </color>
            </brush>
           </colorrole>
@@ -1186,18 +1186,18 @@
           <colorrole role="Button">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>46</red>
-             <green>52</green>
-             <blue>54</blue>
+             <red>243</red>
+             <green>243</green>
+             <blue>243</blue>
             </color>
            </brush>
           </colorrole>
           <colorrole role="ButtonText">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>255</red>
-             <green>255</green>
-             <blue>255</blue>
+             <red>0</red>
+             <green>0</green>
+             <blue>0</blue>
             </color>
            </brush>
           </colorrole>
@@ -1215,9 +1215,9 @@
           <colorrole role="Button">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>46</red>
-             <green>52</green>
-             <blue>54</blue>
+             <red>243</red>
+             <green>243</green>
+             <blue>243</blue>
             </color>
            </brush>
           </colorrole>
@@ -1238,7 +1238,7 @@
        </property>
        <property name="icon">
         <iconset>
-         <normaloff>../build-aces-Desktop-Debug/icons/white-log.png</normaloff>../build-aces-Desktop-Debug/icons/white-log.png</iconset>
+         <normaloff>../build-aces-Desktop-Debug/icons/black-log.png</normaloff>../build-aces-Desktop-Debug/icons/black-log.png</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -1262,18 +1262,18 @@
           <colorrole role="Button">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>136</red>
-             <green>138</green>
-             <blue>133</blue>
+             <red>243</red>
+             <green>243</green>
+             <blue>243</blue>
             </color>
            </brush>
           </colorrole>
           <colorrole role="ButtonText">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>255</red>
-             <green>255</green>
-             <blue>255</blue>
+             <red>0</red>
+             <green>0</green>
+             <blue>0</blue>
             </color>
            </brush>
           </colorrole>
@@ -1282,18 +1282,18 @@
           <colorrole role="Button">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>136</red>
-             <green>138</green>
-             <blue>133</blue>
+             <red>243</red>
+             <green>243</green>
+             <blue>243</blue>
             </color>
            </brush>
           </colorrole>
           <colorrole role="ButtonText">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>255</red>
-             <green>255</green>
-             <blue>255</blue>
+             <red>0</red>
+             <green>0</green>
+             <blue>0</blue>
             </color>
            </brush>
           </colorrole>
@@ -1302,9 +1302,9 @@
           <colorrole role="Button">
            <brush brushstyle="SolidPattern">
             <color alpha="255">
-             <red>136</red>
-             <green>138</green>
-             <blue>133</blue>
+             <red>243</red>
+             <green>243</green>
+             <blue>243</blue>
             </color>
            </brush>
           </colorrole>
@@ -1325,7 +1325,7 @@
        </property>
        <property name="icon">
         <iconset>
-         <normaloff>../build-aces-Desktop-Debug/icons/white-exit.png</normaloff>../build-aces-Desktop-Debug/icons/white-exit.png</iconset>
+         <normaloff>../build-aces-Desktop-Debug/icons/black-exit.png</normaloff>../build-aces-Desktop-Debug/icons/black-exit.png</iconset>
        </property>
        <property name="iconSize">
         <size>

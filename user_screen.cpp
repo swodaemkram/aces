@@ -38,6 +38,16 @@ Lets Load a cool Background
   scene->addPixmap(image);                  //   |_______All this to display a picture
   scene->setSceneRect(image.rect());        //   |               WOW !
   ui->graphicsView->setScene(scene);        //   |
+
+  imageObject = new QImage();               //  _
+  imageObject->load("./icons/background2.jpg");       //   |
+  image = QPixmap::fromImage(*imageObject); //   |
+  scene = new QGraphicsScene(this);         //   |
+  scene->addPixmap(image);                  //   |_______All this to display a picture
+  scene->setSceneRect(image.rect());        //   |               WOW !
+  ui->graphicsView_2->setScene(scene);        //
+
+
   ui->plainTextEdit->setFocus();
   ui->pushButton_5->hide();
   ui->pushButton_49->hide();

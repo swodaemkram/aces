@@ -19,6 +19,10 @@ public:
 private slots:
     void on_pushButton_clicked();
 
+    void on_pushButton_50_clicked();
+
+    void on_pushButton_51_clicked();
+
 private:
     Ui::manage_access_item *ui;
     QPixmap image;

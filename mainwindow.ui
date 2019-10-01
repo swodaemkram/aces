@@ -1641,7 +1641,7 @@
      <bool>false</bool>
     </property>
     <property name="digitCount">
-     <number>30</number>
+     <number>24</number>
     </property>
     <property name="segmentStyle">
      <enum>QLCDNumber::Filled</enum>

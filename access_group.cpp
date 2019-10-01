@@ -3128,3 +3128,3798 @@ void Access_Group::on_pushButton_17_clicked()
            return;
     //-----------------------------------------------------End of the U key-------------------------------------------------------
 }
+
+void Access_Group::on_pushButton_13_clicked()
+{
+    //--------------------------------------------- Button I------------------------------------------------------------
+
+           if (ui->plainTextEdit->hasFocus())
+           {
+
+               QString KeyBuff = ui->plainTextEdit->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "I";
+                   ui->plainTextEdit->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit->toPlainText();
+               KeyBuff = KeyBuff + "i";
+               ui->plainTextEdit->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_2->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_2->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "I";
+                   ui->plainTextEdit_2->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_2->toPlainText();
+               KeyBuff = KeyBuff + "i";
+               ui->plainTextEdit_2->setPlainText(KeyBuff);
+               return;
+           }
+
+
+           if (ui->plainTextEdit_3->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_3->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "I";
+                   ui->plainTextEdit_3->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_3->toPlainText();
+               KeyBuff = KeyBuff + "i";
+               ui->plainTextEdit_3->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_4->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_4->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "I";
+                   ui->plainTextEdit_4->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_4->toPlainText();
+               KeyBuff = KeyBuff + "i";
+               ui->plainTextEdit_4->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_5->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_5->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "I";
+                   ui->plainTextEdit_5->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_5->toPlainText();
+               KeyBuff = KeyBuff + "i";
+               ui->plainTextEdit_5->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_6->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_6->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "I";
+                   ui->plainTextEdit_6->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_6->toPlainText();
+               KeyBuff = KeyBuff + "i";
+               ui->plainTextEdit_6->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_7->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_7->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "I";
+                   ui->plainTextEdit_7->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_7->toPlainText();
+               KeyBuff = KeyBuff + "i";
+               ui->plainTextEdit_7->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_8->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_8->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "I";
+                   ui->plainTextEdit_8->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_8->toPlainText();
+               KeyBuff = KeyBuff + "i";
+               ui->plainTextEdit_8->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_9->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_9->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "I";
+                   ui->plainTextEdit_9->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_9->toPlainText();
+               KeyBuff = KeyBuff + "i";
+               ui->plainTextEdit_9->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_10->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_10->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "I";
+                   ui->plainTextEdit_10->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_10->toPlainText();
+               KeyBuff = KeyBuff + "i";
+               ui->plainTextEdit_10->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_11->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_11->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "I";
+                   ui->plainTextEdit_11->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_11->toPlainText();
+               KeyBuff = KeyBuff + "i";
+               ui->plainTextEdit_11->setPlainText(KeyBuff);
+               return;
+           }
+
+           return;
+    //-----------------------------------------------------End of the I key-------------------------------------------------------
+}
+
+void Access_Group::on_pushButton_14_clicked()
+{
+    //--------------------------------------------- Button O------------------------------------------------------------
+
+           if (ui->plainTextEdit->hasFocus())
+           {
+
+               QString KeyBuff = ui->plainTextEdit->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "O";
+                   ui->plainTextEdit->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit->toPlainText();
+               KeyBuff = KeyBuff + "o";
+               ui->plainTextEdit->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_2->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_2->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "O";
+                   ui->plainTextEdit_2->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_2->toPlainText();
+               KeyBuff = KeyBuff + "o";
+               ui->plainTextEdit_2->setPlainText(KeyBuff);
+               return;
+           }
+
+
+           if (ui->plainTextEdit_3->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_3->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "O";
+                   ui->plainTextEdit_3->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_3->toPlainText();
+               KeyBuff = KeyBuff + "o";
+               ui->plainTextEdit_3->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_4->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_4->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "O";
+                   ui->plainTextEdit_4->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_4->toPlainText();
+               KeyBuff = KeyBuff + "o";
+               ui->plainTextEdit_4->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_5->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_5->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "O";
+                   ui->plainTextEdit_5->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_5->toPlainText();
+               KeyBuff = KeyBuff + "o";
+               ui->plainTextEdit_5->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_6->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_6->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "O";
+                   ui->plainTextEdit_6->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_6->toPlainText();
+               KeyBuff = KeyBuff + "o";
+               ui->plainTextEdit_6->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_7->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_7->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "O";
+                   ui->plainTextEdit_7->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_7->toPlainText();
+               KeyBuff = KeyBuff + "o";
+               ui->plainTextEdit_7->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_8->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_8->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "O";
+                   ui->plainTextEdit_8->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_8->toPlainText();
+               KeyBuff = KeyBuff + "o";
+               ui->plainTextEdit_8->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_9->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_9->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "O";
+                   ui->plainTextEdit_9->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_9->toPlainText();
+               KeyBuff = KeyBuff + "o";
+               ui->plainTextEdit_9->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_10->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_10->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "O";
+                   ui->plainTextEdit_10->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_10->toPlainText();
+               KeyBuff = KeyBuff + "o";
+               ui->plainTextEdit_10->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_11->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_11->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "O";
+                   ui->plainTextEdit_11->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_11->toPlainText();
+               KeyBuff = KeyBuff + "o";
+               ui->plainTextEdit_11->setPlainText(KeyBuff);
+               return;
+           }
+
+           return;
+    //-----------------------------------------------------End of the O key-------------------------------------------------------
+}
+
+void Access_Group::on_pushButton_15_clicked()
+{
+    //--------------------------------------------- Button P------------------------------------------------------------
+
+           if (ui->plainTextEdit->hasFocus())
+           {
+
+               QString KeyBuff = ui->plainTextEdit->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "P";
+                   ui->plainTextEdit->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit->toPlainText();
+               KeyBuff = KeyBuff + "p";
+               ui->plainTextEdit->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_2->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_2->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "P";
+                   ui->plainTextEdit_2->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_2->toPlainText();
+               KeyBuff = KeyBuff + "p";
+               ui->plainTextEdit_2->setPlainText(KeyBuff);
+               return;
+           }
+
+
+           if (ui->plainTextEdit_3->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_3->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "P";
+                   ui->plainTextEdit_3->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_3->toPlainText();
+               KeyBuff = KeyBuff + "p";
+               ui->plainTextEdit_3->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_4->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_4->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "P";
+                   ui->plainTextEdit_4->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_4->toPlainText();
+               KeyBuff = KeyBuff + "p";
+               ui->plainTextEdit_4->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_5->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_5->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "P";
+                   ui->plainTextEdit_5->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_5->toPlainText();
+               KeyBuff = KeyBuff + "p";
+               ui->plainTextEdit_5->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_6->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_6->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "P";
+                   ui->plainTextEdit_6->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_6->toPlainText();
+               KeyBuff = KeyBuff + "p";
+               ui->plainTextEdit_6->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_7->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_7->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "P";
+                   ui->plainTextEdit_7->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_7->toPlainText();
+               KeyBuff = KeyBuff + "p";
+               ui->plainTextEdit_7->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_8->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_8->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "P";
+                   ui->plainTextEdit_8->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_8->toPlainText();
+               KeyBuff = KeyBuff + "p";
+               ui->plainTextEdit_8->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_9->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_9->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "P";
+                   ui->plainTextEdit_9->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_9->toPlainText();
+               KeyBuff = KeyBuff + "p";
+               ui->plainTextEdit_9->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_10->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_10->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "P";
+                   ui->plainTextEdit_10->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_10->toPlainText();
+               KeyBuff = KeyBuff + "p";
+               ui->plainTextEdit_10->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_11->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_11->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "P";
+                   ui->plainTextEdit_11->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_11->toPlainText();
+               KeyBuff = KeyBuff + "p";
+               ui->plainTextEdit_11->setPlainText(KeyBuff);
+               return;
+           }
+
+           return;
+    //-----------------------------------------------------End of the P key-------------------------------------------------------
+}
+
+void Access_Group::on_pushButton_16_clicked()
+{
+    //--------------------------------------------- Button A------------------------------------------------------------
+
+           if (ui->plainTextEdit->hasFocus())
+           {
+
+               QString KeyBuff = ui->plainTextEdit->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "A";
+                   ui->plainTextEdit->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit->toPlainText();
+               KeyBuff = KeyBuff + "a";
+               ui->plainTextEdit->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_2->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_2->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "A";
+                   ui->plainTextEdit_2->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_2->toPlainText();
+               KeyBuff = KeyBuff + "a";
+               ui->plainTextEdit_2->setPlainText(KeyBuff);
+               return;
+           }
+
+
+           if (ui->plainTextEdit_3->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_3->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "A";
+                   ui->plainTextEdit_3->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_3->toPlainText();
+               KeyBuff = KeyBuff + "a";
+               ui->plainTextEdit_3->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_4->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_4->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "A";
+                   ui->plainTextEdit_4->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_4->toPlainText();
+               KeyBuff = KeyBuff + "a";
+               ui->plainTextEdit_4->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_5->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_5->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "A";
+                   ui->plainTextEdit_5->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_5->toPlainText();
+               KeyBuff = KeyBuff + "a";
+               ui->plainTextEdit_5->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_6->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_6->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "A";
+                   ui->plainTextEdit_6->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_6->toPlainText();
+               KeyBuff = KeyBuff + "a";
+               ui->plainTextEdit_6->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_7->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_7->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "A";
+                   ui->plainTextEdit_7->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_7->toPlainText();
+               KeyBuff = KeyBuff + "a";
+               ui->plainTextEdit_7->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_8->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_8->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "A";
+                   ui->plainTextEdit_8->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_8->toPlainText();
+               KeyBuff = KeyBuff + "a";
+               ui->plainTextEdit_8->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_9->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_9->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "A";
+                   ui->plainTextEdit_9->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_9->toPlainText();
+               KeyBuff = KeyBuff + "a";
+               ui->plainTextEdit_9->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_10->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_10->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "A";
+                   ui->plainTextEdit_10->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_10->toPlainText();
+               KeyBuff = KeyBuff + "a";
+               ui->plainTextEdit_10->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_11->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_11->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "A";
+                   ui->plainTextEdit_11->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_11->toPlainText();
+               KeyBuff = KeyBuff + "a";
+               ui->plainTextEdit_11->setPlainText(KeyBuff);
+               return;
+           }
+
+           return;
+    //-----------------------------------------------------End of the A key-------------------------------------------------------
+}
+
+void Access_Group::on_pushButton_28_clicked()
+{
+    //--------------------------------------------- Button S------------------------------------------------------------
+
+           if (ui->plainTextEdit->hasFocus())
+           {
+
+               QString KeyBuff = ui->plainTextEdit->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "S";
+                   ui->plainTextEdit->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit->toPlainText();
+               KeyBuff = KeyBuff + "s";
+               ui->plainTextEdit->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_2->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_2->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "S";
+                   ui->plainTextEdit_2->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_2->toPlainText();
+               KeyBuff = KeyBuff + "s";
+               ui->plainTextEdit_2->setPlainText(KeyBuff);
+               return;
+           }
+
+
+           if (ui->plainTextEdit_3->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_3->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "S";
+                   ui->plainTextEdit_3->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_3->toPlainText();
+               KeyBuff = KeyBuff + "s";
+               ui->plainTextEdit_3->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_4->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_4->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "S";
+                   ui->plainTextEdit_4->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_4->toPlainText();
+               KeyBuff = KeyBuff + "s";
+               ui->plainTextEdit_4->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_5->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_5->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "S";
+                   ui->plainTextEdit_5->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_5->toPlainText();
+               KeyBuff = KeyBuff + "s";
+               ui->plainTextEdit_5->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_6->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_6->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "S";
+                   ui->plainTextEdit_6->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_6->toPlainText();
+               KeyBuff = KeyBuff + "s";
+               ui->plainTextEdit_6->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_7->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_7->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "S";
+                   ui->plainTextEdit_7->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_7->toPlainText();
+               KeyBuff = KeyBuff + "s";
+               ui->plainTextEdit_7->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_8->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_8->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "S";
+                   ui->plainTextEdit_8->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_8->toPlainText();
+               KeyBuff = KeyBuff + "s";
+               ui->plainTextEdit_8->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_9->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_9->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "S";
+                   ui->plainTextEdit_9->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_9->toPlainText();
+               KeyBuff = KeyBuff + "s";
+               ui->plainTextEdit_9->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_10->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_10->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "S";
+                   ui->plainTextEdit_10->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_10->toPlainText();
+               KeyBuff = KeyBuff + "s";
+               ui->plainTextEdit_10->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_11->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_11->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "S";
+                   ui->plainTextEdit_11->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_11->toPlainText();
+               KeyBuff = KeyBuff + "s";
+               ui->plainTextEdit_11->setPlainText(KeyBuff);
+               return;
+           }
+
+           return;
+    //-----------------------------------------------------End of the S key-------------------------------------------------------
+}
+
+void Access_Group::on_pushButton_18_clicked()
+{
+    //--------------------------------------------- Button P------------------------------------------------------------
+
+           if (ui->plainTextEdit->hasFocus())
+           {
+
+               QString KeyBuff = ui->plainTextEdit->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "D";
+                   ui->plainTextEdit->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit->toPlainText();
+               KeyBuff = KeyBuff + "d";
+               ui->plainTextEdit->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_2->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_2->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "D";
+                   ui->plainTextEdit_2->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_2->toPlainText();
+               KeyBuff = KeyBuff + "d";
+               ui->plainTextEdit_2->setPlainText(KeyBuff);
+               return;
+           }
+
+
+           if (ui->plainTextEdit_3->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_3->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "D";
+                   ui->plainTextEdit_3->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_3->toPlainText();
+               KeyBuff = KeyBuff + "d";
+               ui->plainTextEdit_3->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_4->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_4->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "D";
+                   ui->plainTextEdit_4->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_4->toPlainText();
+               KeyBuff = KeyBuff + "d";
+               ui->plainTextEdit_4->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_5->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_5->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "D";
+                   ui->plainTextEdit_5->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_5->toPlainText();
+               KeyBuff = KeyBuff + "d";
+               ui->plainTextEdit_5->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_6->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_6->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "D";
+                   ui->plainTextEdit_6->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_6->toPlainText();
+               KeyBuff = KeyBuff + "d";
+               ui->plainTextEdit_6->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_7->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_7->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "D";
+                   ui->plainTextEdit_7->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_7->toPlainText();
+               KeyBuff = KeyBuff + "d";
+               ui->plainTextEdit_7->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_8->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_8->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "D";
+                   ui->plainTextEdit_8->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_8->toPlainText();
+               KeyBuff = KeyBuff + "d";
+               ui->plainTextEdit_8->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_9->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_9->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "D";
+                   ui->plainTextEdit_9->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_9->toPlainText();
+               KeyBuff = KeyBuff + "d";
+               ui->plainTextEdit_9->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_10->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_10->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "D";
+                   ui->plainTextEdit_10->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_10->toPlainText();
+               KeyBuff = KeyBuff + "d";
+               ui->plainTextEdit_10->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_11->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_11->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "D";
+                   ui->plainTextEdit_11->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_11->toPlainText();
+               KeyBuff = KeyBuff + "d";
+               ui->plainTextEdit_11->setPlainText(KeyBuff);
+               return;
+           }
+
+           return;
+    //-----------------------------------------------------End of the D key-------------------------------------------------------
+}
+
+void Access_Group::on_pushButton_19_clicked()
+{
+    //--------------------------------------------- Button F------------------------------------------------------------
+
+           if (ui->plainTextEdit->hasFocus())
+           {
+
+               QString KeyBuff = ui->plainTextEdit->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "F";
+                   ui->plainTextEdit->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit->toPlainText();
+               KeyBuff = KeyBuff + "f";
+               ui->plainTextEdit->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_2->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_2->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "F";
+                   ui->plainTextEdit_2->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_2->toPlainText();
+               KeyBuff = KeyBuff + "f";
+               ui->plainTextEdit_2->setPlainText(KeyBuff);
+               return;
+           }
+
+
+           if (ui->plainTextEdit_3->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_3->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "F";
+                   ui->plainTextEdit_3->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_3->toPlainText();
+               KeyBuff = KeyBuff + "f";
+               ui->plainTextEdit_3->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_4->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_4->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "F";
+                   ui->plainTextEdit_4->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_4->toPlainText();
+               KeyBuff = KeyBuff + "f";
+               ui->plainTextEdit_4->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_5->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_5->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "F";
+                   ui->plainTextEdit_5->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_5->toPlainText();
+               KeyBuff = KeyBuff + "f";
+               ui->plainTextEdit_5->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_6->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_6->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "F";
+                   ui->plainTextEdit_6->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_6->toPlainText();
+               KeyBuff = KeyBuff + "f";
+               ui->plainTextEdit_6->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_7->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_7->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "F";
+                   ui->plainTextEdit_7->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_7->toPlainText();
+               KeyBuff = KeyBuff + "f";
+               ui->plainTextEdit_7->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_8->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_8->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "F";
+                   ui->plainTextEdit_8->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_8->toPlainText();
+               KeyBuff = KeyBuff + "f";
+               ui->plainTextEdit_8->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_9->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_9->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "F";
+                   ui->plainTextEdit_9->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_9->toPlainText();
+               KeyBuff = KeyBuff + "f";
+               ui->plainTextEdit_9->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_10->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_10->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "F";
+                   ui->plainTextEdit_10->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_10->toPlainText();
+               KeyBuff = KeyBuff + "f";
+               ui->plainTextEdit_10->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_11->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_11->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "F";
+                   ui->plainTextEdit_11->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_11->toPlainText();
+               KeyBuff = KeyBuff + "f";
+               ui->plainTextEdit_11->setPlainText(KeyBuff);
+               return;
+           }
+
+           return;
+    //-----------------------------------------------------End of the F key-------------------------------------------------------
+}
+
+void Access_Group::on_pushButton_20_clicked()
+{
+    //--------------------------------------------- Button G------------------------------------------------------------
+
+           if (ui->plainTextEdit->hasFocus())
+           {
+
+               QString KeyBuff = ui->plainTextEdit->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "G";
+                   ui->plainTextEdit->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit->toPlainText();
+               KeyBuff = KeyBuff + "g";
+               ui->plainTextEdit->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_2->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_2->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "G";
+                   ui->plainTextEdit_2->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_2->toPlainText();
+               KeyBuff = KeyBuff + "g";
+               ui->plainTextEdit_2->setPlainText(KeyBuff);
+               return;
+           }
+
+
+           if (ui->plainTextEdit_3->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_3->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "G";
+                   ui->plainTextEdit_3->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_3->toPlainText();
+               KeyBuff = KeyBuff + "g";
+               ui->plainTextEdit_3->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_4->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_4->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "G";
+                   ui->plainTextEdit_4->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_4->toPlainText();
+               KeyBuff = KeyBuff + "g";
+               ui->plainTextEdit_4->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_5->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_5->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "G";
+                   ui->plainTextEdit_5->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_5->toPlainText();
+               KeyBuff = KeyBuff + "g";
+               ui->plainTextEdit_5->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_6->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_6->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "G";
+                   ui->plainTextEdit_6->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_6->toPlainText();
+               KeyBuff = KeyBuff + "g";
+               ui->plainTextEdit_6->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_7->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_7->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "G";
+                   ui->plainTextEdit_7->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_7->toPlainText();
+               KeyBuff = KeyBuff + "g";
+               ui->plainTextEdit_7->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_8->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_8->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "G";
+                   ui->plainTextEdit_8->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_8->toPlainText();
+               KeyBuff = KeyBuff + "g";
+               ui->plainTextEdit_8->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_9->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_9->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "G";
+                   ui->plainTextEdit_9->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_9->toPlainText();
+               KeyBuff = KeyBuff + "g";
+               ui->plainTextEdit_9->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_10->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_10->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "G";
+                   ui->plainTextEdit_10->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_10->toPlainText();
+               KeyBuff = KeyBuff + "g";
+               ui->plainTextEdit_10->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_11->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_11->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "G";
+                   ui->plainTextEdit_11->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_11->toPlainText();
+               KeyBuff = KeyBuff + "g";
+               ui->plainTextEdit_11->setPlainText(KeyBuff);
+               return;
+           }
+
+           return;
+    //-----------------------------------------------------End of the G key-------------------------------------------------------
+}
+
+void Access_Group::on_pushButton_21_clicked()
+{
+    //--------------------------------------------- Button H------------------------------------------------------------
+
+           if (ui->plainTextEdit->hasFocus())
+           {
+
+               QString KeyBuff = ui->plainTextEdit->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "H";
+                   ui->plainTextEdit->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit->toPlainText();
+               KeyBuff = KeyBuff + "h";
+               ui->plainTextEdit->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_2->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_2->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "H";
+                   ui->plainTextEdit_2->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_2->toPlainText();
+               KeyBuff = KeyBuff + "h";
+               ui->plainTextEdit_2->setPlainText(KeyBuff);
+               return;
+           }
+
+
+           if (ui->plainTextEdit_3->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_3->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "H";
+                   ui->plainTextEdit_3->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_3->toPlainText();
+               KeyBuff = KeyBuff + "h";
+               ui->plainTextEdit_3->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_4->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_4->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "H";
+                   ui->plainTextEdit_4->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_4->toPlainText();
+               KeyBuff = KeyBuff + "h";
+               ui->plainTextEdit_4->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_5->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_5->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "H";
+                   ui->plainTextEdit_5->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_5->toPlainText();
+               KeyBuff = KeyBuff + "h";
+               ui->plainTextEdit_5->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_6->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_6->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "H";
+                   ui->plainTextEdit_6->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_6->toPlainText();
+               KeyBuff = KeyBuff + "h";
+               ui->plainTextEdit_6->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_7->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_7->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "H";
+                   ui->plainTextEdit_7->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_7->toPlainText();
+               KeyBuff = KeyBuff + "h";
+               ui->plainTextEdit_7->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_8->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_8->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "H";
+                   ui->plainTextEdit_8->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_8->toPlainText();
+               KeyBuff = KeyBuff + "h";
+               ui->plainTextEdit_8->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_9->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_9->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "H";
+                   ui->plainTextEdit_9->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_9->toPlainText();
+               KeyBuff = KeyBuff + "h";
+               ui->plainTextEdit_9->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_10->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_10->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "H";
+                   ui->plainTextEdit_10->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_10->toPlainText();
+               KeyBuff = KeyBuff + "h";
+               ui->plainTextEdit_10->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_11->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_11->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "H";
+                   ui->plainTextEdit_11->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_11->toPlainText();
+               KeyBuff = KeyBuff + "h";
+               ui->plainTextEdit_11->setPlainText(KeyBuff);
+               return;
+           }
+
+           return;
+    //-----------------------------------------------------End of the H key-------------------------------------------------------
+}
+
+void Access_Group::on_pushButton_22_clicked()
+{
+    //--------------------------------------------- Button J------------------------------------------------------------
+
+           if (ui->plainTextEdit->hasFocus())
+           {
+
+               QString KeyBuff = ui->plainTextEdit->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "J";
+                   ui->plainTextEdit->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit->toPlainText();
+               KeyBuff = KeyBuff + "j";
+               ui->plainTextEdit->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_2->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_2->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "J";
+                   ui->plainTextEdit_2->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_2->toPlainText();
+               KeyBuff = KeyBuff + "j";
+               ui->plainTextEdit_2->setPlainText(KeyBuff);
+               return;
+           }
+
+
+           if (ui->plainTextEdit_3->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_3->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "J";
+                   ui->plainTextEdit_3->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_3->toPlainText();
+               KeyBuff = KeyBuff + "j";
+               ui->plainTextEdit_3->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_4->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_4->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "J";
+                   ui->plainTextEdit_4->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_4->toPlainText();
+               KeyBuff = KeyBuff + "j";
+               ui->plainTextEdit_4->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_5->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_5->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "J";
+                   ui->plainTextEdit_5->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_5->toPlainText();
+               KeyBuff = KeyBuff + "j";
+               ui->plainTextEdit_5->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_6->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_6->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "J";
+                   ui->plainTextEdit_6->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_6->toPlainText();
+               KeyBuff = KeyBuff + "j";
+               ui->plainTextEdit_6->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_7->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_7->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "J";
+                   ui->plainTextEdit_7->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_7->toPlainText();
+               KeyBuff = KeyBuff + "j";
+               ui->plainTextEdit_7->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_8->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_8->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "J";
+                   ui->plainTextEdit_8->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_8->toPlainText();
+               KeyBuff = KeyBuff + "j";
+               ui->plainTextEdit_8->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_9->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_9->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "J";
+                   ui->plainTextEdit_9->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_9->toPlainText();
+               KeyBuff = KeyBuff + "j";
+               ui->plainTextEdit_9->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_10->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_10->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "J";
+                   ui->plainTextEdit_10->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_10->toPlainText();
+               KeyBuff = KeyBuff + "j";
+               ui->plainTextEdit_10->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_11->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_11->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "J";
+                   ui->plainTextEdit_11->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_11->toPlainText();
+               KeyBuff = KeyBuff + "j";
+               ui->plainTextEdit_11->setPlainText(KeyBuff);
+               return;
+           }
+
+           return;
+    //-----------------------------------------------------End of the J key-------------------------------------------------------
+}
+
+void Access_Group::on_pushButton_23_clicked()
+{
+    //--------------------------------------------- Button P------------------------------------------------------------
+
+           if (ui->plainTextEdit->hasFocus())
+           {
+
+               QString KeyBuff = ui->plainTextEdit->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "K";
+                   ui->plainTextEdit->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit->toPlainText();
+               KeyBuff = KeyBuff + "k";
+               ui->plainTextEdit->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_2->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_2->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "K";
+                   ui->plainTextEdit_2->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_2->toPlainText();
+               KeyBuff = KeyBuff + "k";
+               ui->plainTextEdit_2->setPlainText(KeyBuff);
+               return;
+           }
+
+
+           if (ui->plainTextEdit_3->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_3->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "K";
+                   ui->plainTextEdit_3->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_3->toPlainText();
+               KeyBuff = KeyBuff + "k";
+               ui->plainTextEdit_3->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_4->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_4->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "K";
+                   ui->plainTextEdit_4->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_4->toPlainText();
+               KeyBuff = KeyBuff + "k";
+               ui->plainTextEdit_4->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_5->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_5->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "K";
+                   ui->plainTextEdit_5->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_5->toPlainText();
+               KeyBuff = KeyBuff + "k";
+               ui->plainTextEdit_5->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_6->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_6->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "K";
+                   ui->plainTextEdit_6->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_6->toPlainText();
+               KeyBuff = KeyBuff + "k";
+               ui->plainTextEdit_6->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_7->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_7->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "K";
+                   ui->plainTextEdit_7->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_7->toPlainText();
+               KeyBuff = KeyBuff + "k";
+               ui->plainTextEdit_7->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_8->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_8->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "K";
+                   ui->plainTextEdit_8->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_8->toPlainText();
+               KeyBuff = KeyBuff + "k";
+               ui->plainTextEdit_8->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_9->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_9->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "K";
+                   ui->plainTextEdit_9->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_9->toPlainText();
+               KeyBuff = KeyBuff + "k";
+               ui->plainTextEdit_9->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_10->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_10->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "K";
+                   ui->plainTextEdit_10->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_10->toPlainText();
+               KeyBuff = KeyBuff + "k";
+               ui->plainTextEdit_10->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_11->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_11->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "K";
+                   ui->plainTextEdit_11->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_11->toPlainText();
+               KeyBuff = KeyBuff + "k";
+               ui->plainTextEdit_11->setPlainText(KeyBuff);
+               return;
+           }
+
+           return;
+    //-----------------------------------------------------End of the K key-------------------------------------------------------
+}
+
+void Access_Group::on_pushButton_24_clicked()
+{
+    //--------------------------------------------- Button L------------------------------------------------------------
+
+           if (ui->plainTextEdit->hasFocus())
+           {
+
+               QString KeyBuff = ui->plainTextEdit->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "L";
+                   ui->plainTextEdit->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit->toPlainText();
+               KeyBuff = KeyBuff + "l";
+               ui->plainTextEdit->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_2->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_2->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "L";
+                   ui->plainTextEdit_2->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_2->toPlainText();
+               KeyBuff = KeyBuff + "l";
+               ui->plainTextEdit_2->setPlainText(KeyBuff);
+               return;
+           }
+
+
+           if (ui->plainTextEdit_3->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_3->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "L";
+                   ui->plainTextEdit_3->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_3->toPlainText();
+               KeyBuff = KeyBuff + "l";
+               ui->plainTextEdit_3->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_4->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_4->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "L";
+                   ui->plainTextEdit_4->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_4->toPlainText();
+               KeyBuff = KeyBuff + "l";
+               ui->plainTextEdit_4->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_5->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_5->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "L";
+                   ui->plainTextEdit_5->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_5->toPlainText();
+               KeyBuff = KeyBuff + "l";
+               ui->plainTextEdit_5->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_6->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_6->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "L";
+                   ui->plainTextEdit_6->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_6->toPlainText();
+               KeyBuff = KeyBuff + "l";
+               ui->plainTextEdit_6->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_7->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_7->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "L";
+                   ui->plainTextEdit_7->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_7->toPlainText();
+               KeyBuff = KeyBuff + "l";
+               ui->plainTextEdit_7->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_8->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_8->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "L";
+                   ui->plainTextEdit_8->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_8->toPlainText();
+               KeyBuff = KeyBuff + "l";
+               ui->plainTextEdit_8->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_9->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_9->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "L";
+                   ui->plainTextEdit_9->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_9->toPlainText();
+               KeyBuff = KeyBuff + "l";
+               ui->plainTextEdit_9->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_10->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_10->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "L";
+                   ui->plainTextEdit_10->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_10->toPlainText();
+               KeyBuff = KeyBuff + "l";
+               ui->plainTextEdit_10->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_11->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_11->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "L";
+                   ui->plainTextEdit_11->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_11->toPlainText();
+               KeyBuff = KeyBuff + "l";
+               ui->plainTextEdit_11->setPlainText(KeyBuff);
+               return;
+           }
+
+           return;
+    //-----------------------------------------------------End of the L key-------------------------------------------------------
+}
+
+void Access_Group::on_pushButton_26_clicked()
+{
+    //--------------------------------------------- Button Z------------------------------------------------------------
+
+           if (ui->plainTextEdit->hasFocus())
+           {
+
+               QString KeyBuff = ui->plainTextEdit->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "Z";
+                   ui->plainTextEdit->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit->toPlainText();
+               KeyBuff = KeyBuff + "z";
+               ui->plainTextEdit->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_2->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_2->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "Z";
+                   ui->plainTextEdit_2->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_2->toPlainText();
+               KeyBuff = KeyBuff + "z";
+               ui->plainTextEdit_2->setPlainText(KeyBuff);
+               return;
+           }
+
+
+           if (ui->plainTextEdit_3->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_3->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "Z";
+                   ui->plainTextEdit_3->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_3->toPlainText();
+               KeyBuff = KeyBuff + "z";
+               ui->plainTextEdit_3->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_4->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_4->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "Z";
+                   ui->plainTextEdit_4->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_4->toPlainText();
+               KeyBuff = KeyBuff + "z";
+               ui->plainTextEdit_4->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_5->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_5->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "Z";
+                   ui->plainTextEdit_5->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_5->toPlainText();
+               KeyBuff = KeyBuff + "z";
+               ui->plainTextEdit_5->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_6->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_6->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "Z";
+                   ui->plainTextEdit_6->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_6->toPlainText();
+               KeyBuff = KeyBuff + "z";
+               ui->plainTextEdit_6->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_7->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_7->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "Z";
+                   ui->plainTextEdit_7->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_7->toPlainText();
+               KeyBuff = KeyBuff + "z";
+               ui->plainTextEdit_7->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_8->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_8->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "Z";
+                   ui->plainTextEdit_8->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_8->toPlainText();
+               KeyBuff = KeyBuff + "z";
+               ui->plainTextEdit_8->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_9->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_9->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "Z";
+                   ui->plainTextEdit_9->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_9->toPlainText();
+               KeyBuff = KeyBuff + "z";
+               ui->plainTextEdit_9->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_10->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_10->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "Z";
+                   ui->plainTextEdit_10->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_10->toPlainText();
+               KeyBuff = KeyBuff + "z";
+               ui->plainTextEdit_10->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_11->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_11->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "Z";
+                   ui->plainTextEdit_11->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_11->toPlainText();
+               KeyBuff = KeyBuff + "z";
+               ui->plainTextEdit_11->setPlainText(KeyBuff);
+               return;
+           }
+
+           return;
+    //-----------------------------------------------------End of the Z key-------------------------------------------------------
+}
+
+void Access_Group::on_pushButton_27_clicked()
+{
+    //--------------------------------------------- Button X------------------------------------------------------------
+
+           if (ui->plainTextEdit->hasFocus())
+           {
+
+               QString KeyBuff = ui->plainTextEdit->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "X";
+                   ui->plainTextEdit->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit->toPlainText();
+               KeyBuff = KeyBuff + "x";
+               ui->plainTextEdit->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_2->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_2->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "X";
+                   ui->plainTextEdit_2->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_2->toPlainText();
+               KeyBuff = KeyBuff + "x";
+               ui->plainTextEdit_2->setPlainText(KeyBuff);
+               return;
+           }
+
+
+           if (ui->plainTextEdit_3->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_3->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "X";
+                   ui->plainTextEdit_3->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_3->toPlainText();
+               KeyBuff = KeyBuff + "x";
+               ui->plainTextEdit_3->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_4->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_4->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "X";
+                   ui->plainTextEdit_4->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_4->toPlainText();
+               KeyBuff = KeyBuff + "x";
+               ui->plainTextEdit_4->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_5->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_5->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "X";
+                   ui->plainTextEdit_5->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_5->toPlainText();
+               KeyBuff = KeyBuff + "x";
+               ui->plainTextEdit_5->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_6->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_6->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "X";
+                   ui->plainTextEdit_6->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_6->toPlainText();
+               KeyBuff = KeyBuff + "x";
+               ui->plainTextEdit_6->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_7->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_7->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "X";
+                   ui->plainTextEdit_7->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_7->toPlainText();
+               KeyBuff = KeyBuff + "x";
+               ui->plainTextEdit_7->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_8->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_8->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "X";
+                   ui->plainTextEdit_8->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_8->toPlainText();
+               KeyBuff = KeyBuff + "x";
+               ui->plainTextEdit_8->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_9->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_9->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "X";
+                   ui->plainTextEdit_9->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_9->toPlainText();
+               KeyBuff = KeyBuff + "x";
+               ui->plainTextEdit_9->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_10->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_10->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "X";
+                   ui->plainTextEdit_10->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_10->toPlainText();
+               KeyBuff = KeyBuff + "x";
+               ui->plainTextEdit_10->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_11->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_11->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "X";
+                   ui->plainTextEdit_11->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_11->toPlainText();
+               KeyBuff = KeyBuff + "x";
+               ui->plainTextEdit_11->setPlainText(KeyBuff);
+               return;
+           }
+
+           return;
+    //-----------------------------------------------------End of the X key-------------------------------------------------------
+}
+
+void Access_Group::on_pushButton_45_clicked()
+{
+    //--------------------------------------------- Button C------------------------------------------------------------
+
+           if (ui->plainTextEdit->hasFocus())
+           {
+
+               QString KeyBuff = ui->plainTextEdit->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "C";
+                   ui->plainTextEdit->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit->toPlainText();
+               KeyBuff = KeyBuff + "c";
+               ui->plainTextEdit->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_2->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_2->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "C";
+                   ui->plainTextEdit_2->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_2->toPlainText();
+               KeyBuff = KeyBuff + "c";
+               ui->plainTextEdit_2->setPlainText(KeyBuff);
+               return;
+           }
+
+
+           if (ui->plainTextEdit_3->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_3->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "C";
+                   ui->plainTextEdit_3->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_3->toPlainText();
+               KeyBuff = KeyBuff + "c";
+               ui->plainTextEdit_3->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_4->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_4->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "C";
+                   ui->plainTextEdit_4->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_4->toPlainText();
+               KeyBuff = KeyBuff + "c";
+               ui->plainTextEdit_4->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_5->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_5->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "C";
+                   ui->plainTextEdit_5->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_5->toPlainText();
+               KeyBuff = KeyBuff + "c";
+               ui->plainTextEdit_5->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_6->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_6->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "C";
+                   ui->plainTextEdit_6->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_6->toPlainText();
+               KeyBuff = KeyBuff + "c";
+               ui->plainTextEdit_6->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_7->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_7->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "C";
+                   ui->plainTextEdit_7->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_7->toPlainText();
+               KeyBuff = KeyBuff + "c";
+               ui->plainTextEdit_7->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_8->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_8->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "C";
+                   ui->plainTextEdit_8->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_8->toPlainText();
+               KeyBuff = KeyBuff + "c";
+               ui->plainTextEdit_8->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_9->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_9->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "C";
+                   ui->plainTextEdit_9->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_9->toPlainText();
+               KeyBuff = KeyBuff + "c";
+               ui->plainTextEdit_9->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_10->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_10->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "C";
+                   ui->plainTextEdit_10->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_10->toPlainText();
+               KeyBuff = KeyBuff + "c";
+               ui->plainTextEdit_10->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_11->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_11->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "C";
+                   ui->plainTextEdit_11->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_11->toPlainText();
+               KeyBuff = KeyBuff + "c";
+               ui->plainTextEdit_11->setPlainText(KeyBuff);
+               return;
+           }
+
+           return;
+    //-----------------------------------------------------End of the C key-------------------------------------------------------
+}
+
+void Access_Group::on_pushButton_29_clicked()
+{
+    //--------------------------------------------- Button V------------------------------------------------------------
+
+           if (ui->plainTextEdit->hasFocus())
+           {
+
+               QString KeyBuff = ui->plainTextEdit->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "V";
+                   ui->plainTextEdit->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit->toPlainText();
+               KeyBuff = KeyBuff + "v";
+               ui->plainTextEdit->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_2->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_2->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "V";
+                   ui->plainTextEdit_2->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_2->toPlainText();
+               KeyBuff = KeyBuff + "v";
+               ui->plainTextEdit_2->setPlainText(KeyBuff);
+               return;
+           }
+
+
+           if (ui->plainTextEdit_3->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_3->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "V";
+                   ui->plainTextEdit_3->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_3->toPlainText();
+               KeyBuff = KeyBuff + "v";
+               ui->plainTextEdit_3->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_4->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_4->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "V";
+                   ui->plainTextEdit_4->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_4->toPlainText();
+               KeyBuff = KeyBuff + "v";
+               ui->plainTextEdit_4->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_5->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_5->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "V";
+                   ui->plainTextEdit_5->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_5->toPlainText();
+               KeyBuff = KeyBuff + "v";
+               ui->plainTextEdit_5->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_6->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_6->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "V";
+                   ui->plainTextEdit_6->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_6->toPlainText();
+               KeyBuff = KeyBuff + "v";
+               ui->plainTextEdit_6->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_7->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_7->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "V";
+                   ui->plainTextEdit_7->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_7->toPlainText();
+               KeyBuff = KeyBuff + "v";
+               ui->plainTextEdit_7->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_8->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_8->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "V";
+                   ui->plainTextEdit_8->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_8->toPlainText();
+               KeyBuff = KeyBuff + "v";
+               ui->plainTextEdit_8->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_9->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_9->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "V";
+                   ui->plainTextEdit_9->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_9->toPlainText();
+               KeyBuff = KeyBuff + "v";
+               ui->plainTextEdit_9->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_10->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_10->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "V";
+                   ui->plainTextEdit_10->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_10->toPlainText();
+               KeyBuff = KeyBuff + "v";
+               ui->plainTextEdit_10->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_11->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_11->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "V";
+                   ui->plainTextEdit_11->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_11->toPlainText();
+               KeyBuff = KeyBuff + "v";
+               ui->plainTextEdit_11->setPlainText(KeyBuff);
+               return;
+           }
+
+           return;
+    //-----------------------------------------------------End of the V key-------------------------------------------------------
+}
+
+void Access_Group::on_pushButton_30_clicked()
+{
+    //--------------------------------------------- Button B------------------------------------------------------------
+
+           if (ui->plainTextEdit->hasFocus())
+           {
+
+               QString KeyBuff = ui->plainTextEdit->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "B";
+                   ui->plainTextEdit->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit->toPlainText();
+               KeyBuff = KeyBuff + "b";
+               ui->plainTextEdit->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_2->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_2->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "B";
+                   ui->plainTextEdit_2->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_2->toPlainText();
+               KeyBuff = KeyBuff + "b";
+               ui->plainTextEdit_2->setPlainText(KeyBuff);
+               return;
+           }
+
+
+           if (ui->plainTextEdit_3->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_3->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "B";
+                   ui->plainTextEdit_3->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_3->toPlainText();
+               KeyBuff = KeyBuff + "b";
+               ui->plainTextEdit_3->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_4->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_4->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "B";
+                   ui->plainTextEdit_4->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_4->toPlainText();
+               KeyBuff = KeyBuff + "b";
+               ui->plainTextEdit_4->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_5->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_5->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "B";
+                   ui->plainTextEdit_5->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_5->toPlainText();
+               KeyBuff = KeyBuff + "b";
+               ui->plainTextEdit_5->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_6->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_6->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "B";
+                   ui->plainTextEdit_6->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_6->toPlainText();
+               KeyBuff = KeyBuff + "b";
+               ui->plainTextEdit_6->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_7->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_7->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "B";
+                   ui->plainTextEdit_7->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_7->toPlainText();
+               KeyBuff = KeyBuff + "b";
+               ui->plainTextEdit_7->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_8->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_8->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "B";
+                   ui->plainTextEdit_8->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_8->toPlainText();
+               KeyBuff = KeyBuff + "b";
+               ui->plainTextEdit_8->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_9->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_9->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "B";
+                   ui->plainTextEdit_9->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_9->toPlainText();
+               KeyBuff = KeyBuff + "b";
+               ui->plainTextEdit_9->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_10->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_10->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "B";
+                   ui->plainTextEdit_10->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_10->toPlainText();
+               KeyBuff = KeyBuff + "b";
+               ui->plainTextEdit_10->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_11->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_11->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "B";
+                   ui->plainTextEdit_11->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_11->toPlainText();
+               KeyBuff = KeyBuff + "b";
+               ui->plainTextEdit_11->setPlainText(KeyBuff);
+               return;
+           }
+
+           return;
+    //-----------------------------------------------------End of the B key-------------------------------------------------------
+}
+
+void Access_Group::on_pushButton_31_clicked()
+{
+    //--------------------------------------------- Button N------------------------------------------------------------
+
+           if (ui->plainTextEdit->hasFocus())
+           {
+
+               QString KeyBuff = ui->plainTextEdit->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "N";
+                   ui->plainTextEdit->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit->toPlainText();
+               KeyBuff = KeyBuff + "n";
+               ui->plainTextEdit->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_2->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_2->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "N";
+                   ui->plainTextEdit_2->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_2->toPlainText();
+               KeyBuff = KeyBuff + "n";
+               ui->plainTextEdit_2->setPlainText(KeyBuff);
+               return;
+           }
+
+
+           if (ui->plainTextEdit_3->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_3->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "N";
+                   ui->plainTextEdit_3->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_3->toPlainText();
+               KeyBuff = KeyBuff + "n";
+               ui->plainTextEdit_3->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_4->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_4->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "N";
+                   ui->plainTextEdit_4->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_4->toPlainText();
+               KeyBuff = KeyBuff + "n";
+               ui->plainTextEdit_4->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_5->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_5->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "N";
+                   ui->plainTextEdit_5->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_5->toPlainText();
+               KeyBuff = KeyBuff + "n";
+               ui->plainTextEdit_5->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_6->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_6->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "N";
+                   ui->plainTextEdit_6->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_6->toPlainText();
+               KeyBuff = KeyBuff + "n";
+               ui->plainTextEdit_6->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_7->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_7->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "N";
+                   ui->plainTextEdit_7->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_7->toPlainText();
+               KeyBuff = KeyBuff + "n";
+               ui->plainTextEdit_7->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_8->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_8->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "N";
+                   ui->plainTextEdit_8->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_8->toPlainText();
+               KeyBuff = KeyBuff + "n";
+               ui->plainTextEdit_8->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_9->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_9->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "N";
+                   ui->plainTextEdit_9->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_9->toPlainText();
+               KeyBuff = KeyBuff + "n";
+               ui->plainTextEdit_9->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_10->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_10->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "N";
+                   ui->plainTextEdit_10->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_10->toPlainText();
+               KeyBuff = KeyBuff + "n";
+               ui->plainTextEdit_10->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_11->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_11->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "N";
+                   ui->plainTextEdit_11->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_11->toPlainText();
+               KeyBuff = KeyBuff + "n";
+               ui->plainTextEdit_11->setPlainText(KeyBuff);
+               return;
+           }
+
+           return;
+    //-----------------------------------------------------End of the N key-------------------------------------------------------
+}
+
+void Access_Group::on_pushButton_32_clicked()
+{
+    //--------------------------------------------- Button M------------------------------------------------------------
+
+           if (ui->plainTextEdit->hasFocus())
+           {
+
+               QString KeyBuff = ui->plainTextEdit->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "M";
+                   ui->plainTextEdit->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit->toPlainText();
+               KeyBuff = KeyBuff + "m";
+               ui->plainTextEdit->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_2->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_2->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "M";
+                   ui->plainTextEdit_2->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_2->toPlainText();
+               KeyBuff = KeyBuff + "m";
+               ui->plainTextEdit_2->setPlainText(KeyBuff);
+               return;
+           }
+
+
+           if (ui->plainTextEdit_3->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_3->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "M";
+                   ui->plainTextEdit_3->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_3->toPlainText();
+               KeyBuff = KeyBuff + "m";
+               ui->plainTextEdit_3->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_4->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_4->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "M";
+                   ui->plainTextEdit_4->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_4->toPlainText();
+               KeyBuff = KeyBuff + "m";
+               ui->plainTextEdit_4->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_5->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_5->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "M";
+                   ui->plainTextEdit_5->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_5->toPlainText();
+               KeyBuff = KeyBuff + "m";
+               ui->plainTextEdit_5->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_6->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_6->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "M";
+                   ui->plainTextEdit_6->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_6->toPlainText();
+               KeyBuff = KeyBuff + "m";
+               ui->plainTextEdit_6->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_7->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_7->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "M";
+                   ui->plainTextEdit_7->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_7->toPlainText();
+               KeyBuff = KeyBuff + "m";
+               ui->plainTextEdit_7->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_8->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_8->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "M";
+                   ui->plainTextEdit_8->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_8->toPlainText();
+               KeyBuff = KeyBuff + "m";
+               ui->plainTextEdit_8->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_9->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_9->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "M";
+                   ui->plainTextEdit_9->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_9->toPlainText();
+               KeyBuff = KeyBuff + "m";
+               ui->plainTextEdit_9->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_10->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_10->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "M";
+                   ui->plainTextEdit_10->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_10->toPlainText();
+               KeyBuff = KeyBuff + "m";
+               ui->plainTextEdit_10->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_11->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_11->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = "M";
+                   ui->plainTextEdit_11->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_11->toPlainText();
+               KeyBuff = KeyBuff + "m";
+               ui->plainTextEdit_11->setPlainText(KeyBuff);
+               return;
+           }
+
+           return;
+    //-----------------------------------------------------End of the M key-------------------------------------------------------
+}
+
+void Access_Group::on_pushButton_33_clicked()
+{
+    //--------------------------------------------- Clear Button ------------------------------------------------------------
+
+           if (ui->plainTextEdit->hasFocus())
+           {
+               ui->plainTextEdit->setPlainText("");
+               return;
+           }
+
+           if (ui->plainTextEdit_2->hasFocus())
+           {
+               ui->plainTextEdit_2->setPlainText("");
+               return;
+           }
+
+
+           if (ui->plainTextEdit_3->hasFocus())
+           {
+               ui->plainTextEdit_3->setPlainText("");
+               return;
+           }
+
+           if (ui->plainTextEdit_4->hasFocus())
+           {
+               ui->plainTextEdit_4->setPlainText("");
+               return;
+           }
+
+           if (ui->plainTextEdit_5->hasFocus())
+           {
+               ui->plainTextEdit_5->setPlainText("");
+               return;
+           }
+
+           if (ui->plainTextEdit_6->hasFocus())
+           {
+               ui->plainTextEdit_6->setPlainText("");
+               return;
+           }
+
+           if (ui->plainTextEdit_7->hasFocus())
+           {
+               ui->plainTextEdit_7->setPlainText("");
+               return;
+           }
+
+           if (ui->plainTextEdit_8->hasFocus())
+           {
+               ui->plainTextEdit_8->setPlainText("");
+               return;
+           }
+
+           if (ui->plainTextEdit_9->hasFocus())
+           {
+               ui->plainTextEdit_9->setPlainText("");
+               return;
+           }
+
+           if (ui->plainTextEdit_10->hasFocus())
+           {
+               ui->plainTextEdit_10->setPlainText("");
+               return;
+           }
+
+           if (ui->plainTextEdit_11->hasFocus())
+           {
+               ui->plainTextEdit_11->setPlainText("");
+               return;
+           }
+
+           return;
+    //-----------------------------------------------------End of the Clear key-------------------------------------------------------
+}
+
+void Access_Group::on_pushButton_6_clicked()
+{
+    //--------------------------------------------- Space Button ------------------------------------------------------------
+
+           if (ui->plainTextEdit->hasFocus())
+           {
+
+               QString KeyBuff = ui->plainTextEdit->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = " ";
+                   ui->plainTextEdit->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit->toPlainText();
+               KeyBuff = KeyBuff + " ";
+               ui->plainTextEdit->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_2->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_2->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = " ";
+                   ui->plainTextEdit_2->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_2->toPlainText();
+               KeyBuff = KeyBuff + " ";
+               ui->plainTextEdit_2->setPlainText(KeyBuff);
+               return;
+           }
+
+
+           if (ui->plainTextEdit_3->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_3->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = " ";
+                   ui->plainTextEdit_3->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_3->toPlainText();
+               KeyBuff = KeyBuff + " ";
+               ui->plainTextEdit_3->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_4->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_4->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = " ";
+                   ui->plainTextEdit_4->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_4->toPlainText();
+               KeyBuff = KeyBuff + " ";
+               ui->plainTextEdit_4->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_5->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_5->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = " ";
+                   ui->plainTextEdit_5->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_5->toPlainText();
+               KeyBuff = KeyBuff + " ";
+               ui->plainTextEdit_5->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_6->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_6->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = " ";
+                   ui->plainTextEdit_6->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_6->toPlainText();
+               KeyBuff = KeyBuff + " ";
+               ui->plainTextEdit_6->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_7->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_7->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = " ";
+                   ui->plainTextEdit_7->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_7->toPlainText();
+               KeyBuff = KeyBuff + " ";
+               ui->plainTextEdit_7->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_8->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_8->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = " ";
+                   ui->plainTextEdit_8->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_8->toPlainText();
+               KeyBuff = KeyBuff + " ";
+               ui->plainTextEdit_8->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_9->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_9->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = " ";
+                   ui->plainTextEdit_9->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_9->toPlainText();
+               KeyBuff = KeyBuff + " ";
+               ui->plainTextEdit_9->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_10->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_10->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = " ";
+                   ui->plainTextEdit_10->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_10->toPlainText();
+               KeyBuff = KeyBuff + " ";
+               ui->plainTextEdit_10->setPlainText(KeyBuff);
+               return;
+           }
+
+           if (ui->plainTextEdit_11->hasFocus())
+           {
+               QString KeyBuff = ui->plainTextEdit_11->toPlainText();
+               if(KeyBuff.size() == 0)
+               {
+                   QString KeyBuff = " ";
+                   ui->plainTextEdit_11->setPlainText(KeyBuff);
+                   return;
+                }
+
+               KeyBuff = ui->plainTextEdit_11->toPlainText();
+               KeyBuff = KeyBuff + " ";
+               ui->plainTextEdit_11->setPlainText(KeyBuff);
+               return;
+           }
+
+           return;
+    //-----------------------------------------------------End of the space key-------------------------------------------------------
+}

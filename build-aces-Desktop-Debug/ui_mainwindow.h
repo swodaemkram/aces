@@ -396,7 +396,7 @@ public:
         lcdNumber->setFrameShape(QFrame::WinPanel);
         lcdNumber->setFrameShadow(QFrame::Sunken);
         lcdNumber->setSmallDecimalPoint(false);
-        lcdNumber->setDigitCount(30);
+        lcdNumber->setDigitCount(24);
         lcdNumber->setSegmentStyle(QLCDNumber::Filled);
         label_4 = new QLabel(centralWidget);
         label_4->setObjectName(QStringLiteral("label_4"));

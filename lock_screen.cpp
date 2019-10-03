@@ -4,6 +4,7 @@
 #include "user_screen.h"
 #include "access_group.h"
 #include "manage_access_item.h"
+#include <QtSerialPort/QtSerialPort>
 
 #include <QStyle>
 #include <QDesktopWidget>
@@ -12,9 +13,30 @@
 
 extern QString UserID;
 
+#define CODE_LENGTH     10
+#define KEY "7578649673"
+QString unlock_time="10"; // lock open time in seconds
+QString sensor_status = "";
+char ochr;
+
+char master[10][10] ={
+        {1,2,3,4,5,6,7,8,9,0},
+        {3,4,5,6,7,8,9,0,1,2},
+        {6,7,8,9,0,1,2,3,4,5},
+        {9,0,1,2,3,4,5,6,7,8},
+        {4,5,6,7,8,9,0,1,2,3},
+        {7,8,9,0,1,2,3,4,5,6},
+        {8,9,0,1,2,3,4,5,6,7},
+        {0,1,2,3,4,5,6,7,8,9},
+        {2,3,4,5,6,7,8,9,0,1},
+        {5,6,7,8,9,0,1,2,3,4}
+    };
+
+
 lock_screen::lock_screen(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::lock_screen)
+
 {
     ui->setupUi(this);
 /*
@@ -39,6 +61,42 @@ Lets Load a cool Background
   scene->setSceneRect(image.rect());        //   |               WOW !
   ui->graphicsView->setScene(scene);        //   |
   imageObject = new QImage();
+
+  imageObject = new QImage();               //  _
+  imageObject->load("./icons/black-open-door.png");       //   |
+  image = QPixmap::fromImage(*imageObject); //   |
+  scene = new QGraphicsScene(this);         //   |
+  scene->addPixmap(image);                  //   |_______All this to display a picture
+  scene->setSceneRect(image.rect());        //   |               WOW !
+  ui->graphicsView_2->setScene(scene);        //   |
+  imageObject = new QImage();
+
+
+  ui->graphicsView_2->hide();
+
+
+/*
+==============================================================================================================
+Lets open some comm ports
+==============================================================================================================
+*/
+
+  lock1_serial = new QSerialPort(this);
+  open_Lock1_SerialPort();
+/*
+=============================================================================================================
+Locks Comm Ports are Now Open
+=============================================================================================================
+Lets check lock door status
+=============================================================================================================
+*/
+
+  QTimer *timer;
+  timer = new QTimer;
+  connect(timer, SIGNAL(timeout()), this, SLOT(MyTimerSlot()));
+  timer->start(500);
+
+
 /*
 ==============================================================================================================
 Lets Figure out who logqed in and what they can do
@@ -171,3 +229,121 @@ void lock_screen::on_pushButton_4_clicked()
     Access_Group.setModal(true);
     Access_Group.exec();
 }
+
+
+void lock_screen::open_Lock1_SerialPort()
+{
+    lock1_serial->setPortName("/dev/ttyACM0");
+    lock1_serial->setBaudRate(QSerialPort::Baud115200);
+    lock1_serial->setDataBits(QSerialPort::Data8);
+    lock1_serial->setParity(QSerialPort::NoParity);
+    lock1_serial->setStopBits(QSerialPort::OneStop);
+    lock1_serial->setFlowControl(QSerialPort::NoFlowControl);
+    if (lock1_serial->open(QIODevice::ReadWrite)) {
+
+        ui->label->setText("Connected");
+
+    } else {
+
+        ui->label->setText("Connection Error");;
+    }
+return;
+}
+
+/*
+================================================================================================================
+Close Lock1 Com port
+================================================================================================================
+*/
+void lock_screen::close_Lock1_SerialPort()
+{
+    if (lock1_serial->isOpen()) lock1_serial->close();
+}
+/*
+================================================================================================================
+end of Close Lock1 Com port
+================================================================================================================
+Write Data to Lock1
+================================================================================================================
+*/
+void lock_screen::writeData_lock1(const QByteArray &data)
+{
+    lock1_serial->write(data);
+}
+/*
+================================================================================================================
+End of Write Data to Lock1
+================================================================================================================
+ Read Data from Lock1 Com port
+================================================================================================================
+*/
+void lock_screen::readData_lock1()
+{
+   QByteArray data = lock1_serial->readAll();
+   qDebug() << data;
+}
+/*
+================================================================================================================
+end of Read Data from Lock1 Com port
+================================================================================================================
+Open Lock1
+================================================================================================================
+*/
+void lock_screen::on_pushButton_6_clicked()
+{
+
+}
+/*
+===============================================================================================================
+End of open Lock1
+===============================================================================================================
+*/
+
+void lock_screen::getLock1DoorSensors(void)
+{
+    // get sensors
+
+    int lock_sensor, door_sensor;
+    char send_char = 'r';
+
+
+    //printf("Sending: %c\n",send_char);//DEBUG
+   //MARK  SendChar(send_char);
+   //MARK sensor_status = GetResponse();
+
+    //lock_sensor = (int) sensor_status[3] - 0x30;
+    //door_sensor = (int) sensor_status[5] - 0x30;
+
+    //printf("Response from Lock was %s\n",sensor_status.c_str());//DEBUG
+    return ;
+}
+
+/*
+===============================================================================================================
+Timer to get lock and door status
+==============================================================================================================
+*/
+void lock_screen::MyTimerSlot()
+
+{
+//---------------------------------------------Lock 1------------------------------------------------------------
+    lock1_serial->write("r;");
+    QByteArray data = lock1_serial->readAll();
+    QString DoorOpenStatus = data.mid(5,1);
+    if(QString::compare(DoorOpenStatus,"1") == 0) ui->graphicsView_2->show();
+    else ui->graphicsView_2->hide();
+//------------------------------------------End of Lock 1-----------------------------------------------------
+
+    return;
+}
+
+
+
+
+
+
+
+
+
+
+

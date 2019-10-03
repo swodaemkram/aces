@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include <QGraphicsScene> //Need this for Images
+#include <QtSerialPort/QtSerialPort>
 
 namespace Ui {
 class lock_screen;
@@ -15,6 +16,7 @@ class lock_screen : public QDialog
 public:
     explicit lock_screen(QWidget *parent = 0);
     ~lock_screen();
+    QSerialPort *lock1_serial;
 
 private slots:
     void on_pushButton_clicked();
@@ -24,6 +26,20 @@ private slots:
     void on_pushButton_5_clicked();
 
     void on_pushButton_4_clicked();
+
+    void open_Lock1_SerialPort();
+
+    void close_Lock1_SerialPort();
+
+    void writeData_lock1(const QByteArray &data);
+
+    void readData_lock1();
+
+    void on_pushButton_6_clicked();
+
+    void getLock1DoorSensors(void);
+
+    void MyTimerSlot();
 
 private:
     Ui::lock_screen *ui;

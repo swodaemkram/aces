@@ -32,12 +32,13 @@ public:
     QFrame *frame;
     QWidget *gridLayoutWidget;
     QGridLayout *gridLayout;
-    QPushButton *pushButton_9;
     QPushButton *pushButton_8;
     QPushButton *pushButton_7;
     QPushButton *pushButton_10;
+    QPushButton *pushButton_9;
     QPushButton *pushButton_11;
     QPushButton *pushButton_6;
+    QGraphicsView *graphicsView_2;
     QLabel *label;
     QFrame *frame_2;
     QWidget *verticalLayoutWidget;
@@ -62,22 +63,22 @@ public:
         graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         frame = new QFrame(lock_screen);
         frame->setObjectName(QStringLiteral("frame"));
-        frame->setGeometry(QRect(180, 10, 831, 491));
+        frame->setGeometry(QRect(180, 10, 831, 461));
         frame->setFrameShape(QFrame::WinPanel);
         frame->setFrameShadow(QFrame::Raised);
         gridLayoutWidget = new QWidget(frame);
         gridLayoutWidget->setObjectName(QStringLiteral("gridLayoutWidget"));
-        gridLayoutWidget->setGeometry(QRect(10, 50, 811, 431));
+        gridLayoutWidget->setGeometry(QRect(10, 50, 811, 401));
         gridLayout = new QGridLayout(gridLayoutWidget);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
         gridLayout->setContentsMargins(0, 0, 0, 0);
-        pushButton_9 = new QPushButton(gridLayoutWidget);
-        pushButton_9->setObjectName(QStringLiteral("pushButton_9"));
+        pushButton_8 = new QPushButton(gridLayoutWidget);
+        pushButton_8->setObjectName(QStringLiteral("pushButton_8"));
         QSizePolicy sizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(pushButton_9->sizePolicy().hasHeightForWidth());
-        pushButton_9->setSizePolicy(sizePolicy);
+        sizePolicy.setHeightForWidth(pushButton_8->sizePolicy().hasHeightForWidth());
+        pushButton_8->setSizePolicy(sizePolicy);
         QPalette palette;
         QBrush brush(QColor(243, 243, 243, 255));
         brush.setStyle(Qt::SolidPattern);
@@ -91,18 +92,18 @@ public:
         QBrush brush2(QColor(190, 190, 190, 255));
         brush2.setStyle(Qt::SolidPattern);
         palette.setBrush(QPalette::Disabled, QPalette::ButtonText, brush2);
-        pushButton_9->setPalette(palette);
+        pushButton_8->setPalette(palette);
         QIcon icon;
         icon.addFile(QStringLiteral("../build-aces-Desktop-Debug/icons/newBlackLock.png"), QSize(), QIcon::Normal, QIcon::Off);
-        pushButton_9->setIcon(icon);
-        pushButton_9->setIconSize(QSize(50, 50));
+        pushButton_8->setIcon(icon);
+        pushButton_8->setIconSize(QSize(50, 50));
 
-        gridLayout->addWidget(pushButton_9, 2, 0, 1, 1);
+        gridLayout->addWidget(pushButton_8, 2, 2, 1, 1);
 
-        pushButton_8 = new QPushButton(gridLayoutWidget);
-        pushButton_8->setObjectName(QStringLiteral("pushButton_8"));
-        sizePolicy.setHeightForWidth(pushButton_8->sizePolicy().hasHeightForWidth());
-        pushButton_8->setSizePolicy(sizePolicy);
+        pushButton_7 = new QPushButton(gridLayoutWidget);
+        pushButton_7->setObjectName(QStringLiteral("pushButton_7"));
+        sizePolicy.setHeightForWidth(pushButton_7->sizePolicy().hasHeightForWidth());
+        pushButton_7->setSizePolicy(sizePolicy);
         QPalette palette1;
         palette1.setBrush(QPalette::Active, QPalette::Button, brush);
         palette1.setBrush(QPalette::Active, QPalette::ButtonText, brush1);
@@ -110,16 +111,16 @@ public:
         palette1.setBrush(QPalette::Inactive, QPalette::ButtonText, brush1);
         palette1.setBrush(QPalette::Disabled, QPalette::Button, brush);
         palette1.setBrush(QPalette::Disabled, QPalette::ButtonText, brush2);
-        pushButton_8->setPalette(palette1);
-        pushButton_8->setIcon(icon);
-        pushButton_8->setIconSize(QSize(50, 50));
+        pushButton_7->setPalette(palette1);
+        pushButton_7->setIcon(icon);
+        pushButton_7->setIconSize(QSize(50, 50));
 
-        gridLayout->addWidget(pushButton_8, 0, 2, 1, 1);
+        gridLayout->addWidget(pushButton_7, 2, 1, 1, 1);
 
-        pushButton_7 = new QPushButton(gridLayoutWidget);
-        pushButton_7->setObjectName(QStringLiteral("pushButton_7"));
-        sizePolicy.setHeightForWidth(pushButton_7->sizePolicy().hasHeightForWidth());
-        pushButton_7->setSizePolicy(sizePolicy);
+        pushButton_10 = new QPushButton(gridLayoutWidget);
+        pushButton_10->setObjectName(QStringLiteral("pushButton_10"));
+        sizePolicy.setHeightForWidth(pushButton_10->sizePolicy().hasHeightForWidth());
+        pushButton_10->setSizePolicy(sizePolicy);
         QPalette palette2;
         palette2.setBrush(QPalette::Active, QPalette::Button, brush);
         palette2.setBrush(QPalette::Active, QPalette::ButtonText, brush1);
@@ -127,16 +128,16 @@ public:
         palette2.setBrush(QPalette::Inactive, QPalette::ButtonText, brush1);
         palette2.setBrush(QPalette::Disabled, QPalette::Button, brush);
         palette2.setBrush(QPalette::Disabled, QPalette::ButtonText, brush2);
-        pushButton_7->setPalette(palette2);
-        pushButton_7->setIcon(icon);
-        pushButton_7->setIconSize(QSize(50, 50));
+        pushButton_10->setPalette(palette2);
+        pushButton_10->setIcon(icon);
+        pushButton_10->setIconSize(QSize(50, 50));
 
-        gridLayout->addWidget(pushButton_7, 0, 1, 1, 1);
+        gridLayout->addWidget(pushButton_10, 4, 1, 1, 1);
 
-        pushButton_10 = new QPushButton(gridLayoutWidget);
-        pushButton_10->setObjectName(QStringLiteral("pushButton_10"));
-        sizePolicy.setHeightForWidth(pushButton_10->sizePolicy().hasHeightForWidth());
-        pushButton_10->setSizePolicy(sizePolicy);
+        pushButton_9 = new QPushButton(gridLayoutWidget);
+        pushButton_9->setObjectName(QStringLiteral("pushButton_9"));
+        sizePolicy.setHeightForWidth(pushButton_9->sizePolicy().hasHeightForWidth());
+        pushButton_9->setSizePolicy(sizePolicy);
         QPalette palette3;
         palette3.setBrush(QPalette::Active, QPalette::Button, brush);
         palette3.setBrush(QPalette::Active, QPalette::ButtonText, brush1);
@@ -144,11 +145,11 @@ public:
         palette3.setBrush(QPalette::Inactive, QPalette::ButtonText, brush1);
         palette3.setBrush(QPalette::Disabled, QPalette::Button, brush);
         palette3.setBrush(QPalette::Disabled, QPalette::ButtonText, brush2);
-        pushButton_10->setPalette(palette3);
-        pushButton_10->setIcon(icon);
-        pushButton_10->setIconSize(QSize(50, 50));
+        pushButton_9->setPalette(palette3);
+        pushButton_9->setIcon(icon);
+        pushButton_9->setIconSize(QSize(50, 50));
 
-        gridLayout->addWidget(pushButton_10, 2, 1, 1, 1);
+        gridLayout->addWidget(pushButton_9, 4, 0, 1, 1);
 
         pushButton_11 = new QPushButton(gridLayoutWidget);
         pushButton_11->setObjectName(QStringLiteral("pushButton_11"));
@@ -165,7 +166,7 @@ public:
         pushButton_11->setIcon(icon);
         pushButton_11->setIconSize(QSize(50, 50));
 
-        gridLayout->addWidget(pushButton_11, 2, 2, 1, 1);
+        gridLayout->addWidget(pushButton_11, 4, 2, 1, 1);
 
         pushButton_6 = new QPushButton(gridLayoutWidget);
         pushButton_6->setObjectName(QStringLiteral("pushButton_6"));
@@ -182,7 +183,12 @@ public:
         pushButton_6->setIcon(icon);
         pushButton_6->setIconSize(QSize(50, 50));
 
-        gridLayout->addWidget(pushButton_6, 0, 0, 1, 1);
+        gridLayout->addWidget(pushButton_6, 2, 0, 1, 1);
+
+        graphicsView_2 = new QGraphicsView(gridLayoutWidget);
+        graphicsView_2->setObjectName(QStringLiteral("graphicsView_2"));
+
+        gridLayout->addWidget(graphicsView_2, 1, 0, 1, 1);
 
         label = new QLabel(frame);
         label->setObjectName(QStringLiteral("label"));
@@ -382,10 +388,10 @@ public:
     void retranslateUi(QDialog *lock_screen)
     {
         lock_screen->setWindowTitle(QApplication::translate("lock_screen", "Dialog", Q_NULLPTR));
-        pushButton_9->setText(QApplication::translate("lock_screen", " Lock 4 Control", Q_NULLPTR));
         pushButton_8->setText(QApplication::translate("lock_screen", " Lock 3 Control", Q_NULLPTR));
         pushButton_7->setText(QApplication::translate("lock_screen", " Lock 2 Control", Q_NULLPTR));
         pushButton_10->setText(QApplication::translate("lock_screen", " Lock 5 Control", Q_NULLPTR));
+        pushButton_9->setText(QApplication::translate("lock_screen", " Lock 4 Control", Q_NULLPTR));
         pushButton_11->setText(QApplication::translate("lock_screen", " Lock 6 Control", Q_NULLPTR));
         pushButton_6->setText(QApplication::translate("lock_screen", " Lock 1 Control", Q_NULLPTR));
         label->setText(QApplication::translate("lock_screen", "Lock Control Window", Q_NULLPTR));

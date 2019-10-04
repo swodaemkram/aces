@@ -5,15 +5,16 @@
 #include "access_group.h"
 #include "manage_access_item.h"
 #include <QtSerialPort/QtSerialPort>
-
+#include <unistd.h> //For sleep function
 #include <QStyle>
 #include <QDesktopWidget>
 //#include <QtWidgets>
 #include <QtSql>
 
+
 extern QString UserID;
 
-#define CODE_LENGTH     10
+#define CODE_LENGTH  10
 #define KEY "7578649673"
 QString unlock_time="10"; // lock open time in seconds
 QString sensor_status = "";
@@ -31,7 +32,7 @@ char master[10][10] ={
         {2,3,4,5,6,7,8,9,0,1},
         {5,6,7,8,9,0,1,2,3,4}
     };
-
+QTimer *timer;
 
 lock_screen::lock_screen(QWidget *parent) :
     QDialog(parent),
@@ -91,7 +92,7 @@ Lets check lock door status
 =============================================================================================================
 */
 
-  QTimer *timer;
+
   timer = new QTimer;
   connect(timer, SIGNAL(timeout()), this, SLOT(MyTimerSlot()));
   timer->start(500);
@@ -277,10 +278,11 @@ End of Write Data to Lock1
  Read Data from Lock1 Com port
 ================================================================================================================
 */
-void lock_screen::readData_lock1()
+QByteArray lock_screen::readData_lock1()
 {
    QByteArray data = lock1_serial->readAll();
    qDebug() << data;
+   return(data);
 }
 /*
 ================================================================================================================
@@ -291,34 +293,50 @@ Open Lock1
 */
 void lock_screen::on_pushButton_6_clicked()
 {
+     timer->stop();
+     QByteArray data;
 
+     lock1_serial->write("k;");
+     data = lock1_serial->readAll();
+
+     if(data.size() > 8)
+     {
+     data = data.mid(3,10);
+     ui->label->setText("Challenge Code = " + data);
+
+
+     std::string challenge = data.toStdString();
+     const char* newchallenge = challenge.c_str();
+
+
+     std::string response = genkey(newchallenge);
+     printf("Response Key = %s\n",response.c_str());
+     QByteArray newResponse = QByteArray::fromStdString(response);
+     qDebug() << response.c_str()  ;
+
+
+
+     lock1_serial->write("W 10 ");
+     lock1_serial->write(newResponse);
+     lock1_serial->write(";");
+
+     data = lock1_serial->readAll();
+     ui->label->setText(data);
+
+
+
+     return;
+     }
+
+     ui->label->setText(data);
+
+
+
+    //timer->start(500);
 }
 /*
 ===============================================================================================================
 End of open Lock1
-===============================================================================================================
-*/
-
-void lock_screen::getLock1DoorSensors(void)
-{
-    // get sensors
-
-    int lock_sensor, door_sensor;
-    char send_char = 'r';
-
-
-    //printf("Sending: %c\n",send_char);//DEBUG
-   //MARK  SendChar(send_char);
-   //MARK sensor_status = GetResponse();
-
-    //lock_sensor = (int) sensor_status[3] - 0x30;
-    //door_sensor = (int) sensor_status[5] - 0x30;
-
-    //printf("Response from Lock was %s\n",sensor_status.c_str());//DEBUG
-    return ;
-}
-
-/*
 ===============================================================================================================
 Timer to get lock and door status
 ==============================================================================================================
@@ -332,17 +350,85 @@ void lock_screen::MyTimerSlot()
     QString DoorOpenStatus = data.mid(5,1);
     if(QString::compare(DoorOpenStatus,"1") == 0) ui->graphicsView_2->show();
     else ui->graphicsView_2->hide();
-//------------------------------------------End of Lock 1-----------------------------------------------------
 
+//------------------------------------------End of Lock 1-----------------------------------------------------
     return;
+}
+/*
+==================================================================================================================
+End of door status timer
+==================================================================================================================
+Lock Decryption Key Gen
+==================================================================================================================
+*/
+
+std::string lock_screen::genkey(const char* newchallenge)
+{
+
+
+            qDebug() << newchallenge;
+            unsigned char r = 0;
+
+            char master[] = KEY;    // "7578649673";
+            char ctmp[10];                              // = new byte[10];
+            char code[10];
+            bzero(ctmp,10);
+            bzero(code,10);
+
+
+            char salt[12];
+            bzero(salt,12);
+
+            for(int i = 0; i < 10; i++)
+                salt[i] = newchallenge[i] - 0x30;
+
+            for(int i = 0; i < 10; i++)
+                master[i] = master[i] - 0x30;
+
+            for(int i = 0; i < 10; i++)
+                ctmp[i] = (char) ((salt[i] + master[i]) % 10);
+
+            for(int i = 0; i < 5; i++)
+            {
+                char *x = rot(ctmp, r);
+                for (int i=0; i < 10; i++)
+                    ctmp[i] = x[i];
+                r = ctmp[9];
+            }
+
+            for(int i = 0; i < 10; i++)
+            {
+                code[i] = (unsigned char) ('0' + ctmp[i]);
+            }
+
+            std::string str;
+            for (int i=0; i < 10; i++)
+                str += code[i];
+
+
+            return str;
+
+
 }
 
 
 
-
-
-
-
+char* lock_screen::rot(char b[], char seed)
+{
+    char a[10];
+    for (int i=0; i < CODE_LENGTH; i++)
+        a[i]=b[i];
+    b[0] = master[seed][a[0]];
+    for(int i = 1; i < CODE_LENGTH; i++) {
+        b[i] = master[b[i-1]][a[i]];
+    }
+    return &b[0];
+}
+/*
+=================================================================================================================
+End of Lock Decryption
+=================================================================================================================
+*/
 
 
 

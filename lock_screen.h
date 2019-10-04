@@ -4,6 +4,7 @@
 #include <QDialog>
 #include <QGraphicsScene> //Need this for Images
 #include <QtSerialPort/QtSerialPort>
+#include <QChar>
 
 namespace Ui {
 class lock_screen;
@@ -33,11 +34,13 @@ private slots:
 
     void writeData_lock1(const QByteArray &data);
 
-    void readData_lock1();
+    QByteArray readData_lock1();
+
+    std::string genkey(const char* challenge);
+
+    char* rot(char b[], char seed);
 
     void on_pushButton_6_clicked();
-
-    void getLock1DoorSensors(void);
 
     void MyTimerSlot();
 
@@ -46,9 +49,6 @@ private:
     QPixmap image;
     QImage  *imageObject;
     QGraphicsScene *scene;
-
-
-
 
 
 };

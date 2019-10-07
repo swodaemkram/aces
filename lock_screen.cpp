@@ -297,10 +297,16 @@ void lock_screen::on_pushButton_6_clicked()
      QByteArray data;
 
      lock1_serial->write("k;");
-     data = lock1_serial->readAll();
+     //data = lock1_serial->readAll();
 
-     if(data.size() > 8)
+     while(lock1_serial->bytesAvailable()>0||lock1_serial->waitForReadyRead(10))
      {
+        data = lock1_serial->readAll();
+     }
+     ui->plainTextEdit->setPlainText(data);
+
+     //if(data.size() > 8)
+     //{
      data = data.mid(3,10);
      ui->label->setText("Challenge Code = " + data);
 
@@ -311,28 +317,40 @@ void lock_screen::on_pushButton_6_clicked()
 
      std::string response = genkey(newchallenge);
      printf("Response Key = %s\n",response.c_str());
-     QByteArray newResponse = QByteArray::fromStdString(response);
-     qDebug() << response.c_str()  ;
 
 
+       // QByteArray newResponse = QByteArray::fromStdString(response);
+       // qDebug() << response.c_str()  ;
+       //lock1_serial->write("E 10 " + newResponse + ";");
+     QString newResponse = QString::fromStdString(response);
+     QString TheResponse = "E 10 " + newResponse + ";";
+     std::string TheStringResponse = TheResponse.toStdString();
+     qDebug() << TheResponse;
+     QByteArray NewResponse = QByteArray::fromStdString(TheStringResponse);
+     lock1_serial->write(NewResponse);
 
-     lock1_serial->write("W 10 ");
-     lock1_serial->write(newResponse);
-     lock1_serial->write(";");
+     //lock1_serial->write(newResponse);
+     //lock1_serial->write(";");
 
-     data = lock1_serial->readAll();
-     ui->label->setText(data);
+     //data = lock1_serial->readAll();
 
-
-
-     return;
+     while(lock1_serial->bytesAvailable()>0||lock1_serial->waitForReadyRead(10))
+     {
+        data = lock1_serial->readAll();
      }
-
+     ui->plainTextEdit->setPlainText(data);
      ui->label->setText(data);
 
 
 
-    //timer->start(500);
+     //return;
+     //}
+
+     //ui->label->setText(data);
+
+
+
+    timer->start(500);
 }
 /*
 ===============================================================================================================
@@ -347,6 +365,7 @@ void lock_screen::MyTimerSlot()
 //---------------------------------------------Lock 1------------------------------------------------------------
     lock1_serial->write("r;");
     QByteArray data = lock1_serial->readAll();
+    ui->plainTextEdit->setPlainText(data);
     QString DoorOpenStatus = data.mid(5,1);
     if(QString::compare(DoorOpenStatus,"1") == 0) ui->graphicsView_2->show();
     else ui->graphicsView_2->hide();
@@ -369,11 +388,16 @@ std::string lock_screen::genkey(const char* newchallenge)
             qDebug() << newchallenge;
             unsigned char r = 0;
 
-            char master[] = KEY;    // "7578649673";
+            //char master[] = KEY;    // "7578649673";
+
+            char master[] = "7578649673";
             char ctmp[10];                              // = new byte[10];
             char code[10];
-            bzero(ctmp,10);
-            bzero(code,10);
+            //bzero(ctmp,10);
+            //bzero(code,10);
+
+            memset(ctmp,0,10);
+            memset(code,0,10);
 
 
             char salt[12];
@@ -416,10 +440,11 @@ std::string lock_screen::genkey(const char* newchallenge)
 char* lock_screen::rot(char b[], char seed)
 {
     char a[10];
-    for (int i=0; i < CODE_LENGTH; i++)
+        for (int i=0; i < 10; i++)
         a[i]=b[i];
-    b[0] = master[seed][a[0]];
-    for(int i = 1; i < CODE_LENGTH; i++) {
+        b[0] = master[seed][a[0]];
+
+        for(int i = 1; i < 10; i++) {
         b[i] = master[b[i-1]][a[i]];
     }
     return &b[0];

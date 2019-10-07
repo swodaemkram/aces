@@ -19,6 +19,7 @@
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QPlainTextEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
@@ -50,6 +51,7 @@ public:
     QPushButton *pushButton_12;
     QPushButton *pushButton;
     QLabel *label_2;
+    QPlainTextEdit *plainTextEdit;
 
     void setupUi(QDialog *lock_screen)
     {
@@ -379,6 +381,28 @@ public:
         label_2->setFrameShape(QFrame::WinPanel);
         label_2->setFrameShadow(QFrame::Sunken);
         label_2->setAlignment(Qt::AlignCenter);
+        plainTextEdit = new QPlainTextEdit(lock_screen);
+        plainTextEdit->setObjectName(QStringLiteral("plainTextEdit"));
+        plainTextEdit->setGeometry(QRect(190, 490, 261, 201));
+        QPalette palette14;
+        palette14.setBrush(QPalette::Active, QPalette::WindowText, brush4);
+        palette14.setBrush(QPalette::Active, QPalette::Text, brush4);
+        palette14.setBrush(QPalette::Active, QPalette::ButtonText, brush4);
+        QBrush brush7(QColor(46, 52, 54, 255));
+        brush7.setStyle(Qt::SolidPattern);
+        palette14.setBrush(QPalette::Active, QPalette::Base, brush7);
+        palette14.setBrush(QPalette::Active, QPalette::Window, brush7);
+        palette14.setBrush(QPalette::Inactive, QPalette::WindowText, brush4);
+        palette14.setBrush(QPalette::Inactive, QPalette::Text, brush4);
+        palette14.setBrush(QPalette::Inactive, QPalette::ButtonText, brush4);
+        palette14.setBrush(QPalette::Inactive, QPalette::Base, brush7);
+        palette14.setBrush(QPalette::Inactive, QPalette::Window, brush7);
+        palette14.setBrush(QPalette::Disabled, QPalette::WindowText, brush2);
+        palette14.setBrush(QPalette::Disabled, QPalette::Text, brush2);
+        palette14.setBrush(QPalette::Disabled, QPalette::ButtonText, brush2);
+        palette14.setBrush(QPalette::Disabled, QPalette::Base, brush7);
+        palette14.setBrush(QPalette::Disabled, QPalette::Window, brush7);
+        plainTextEdit->setPalette(palette14);
 
         retranslateUi(lock_screen);
 

@@ -74,7 +74,11 @@ Lets Load a cool Background
 
 
   ui->graphicsView_2->hide();
-
+  ui->graphicsView_3->hide();
+  ui->graphicsView_4->hide();
+  ui->graphicsView_5->hide();
+  ui->graphicsView_6->hide();
+  ui->graphicsView_7->hide();
 
 /*
 ==============================================================================================================
@@ -242,11 +246,11 @@ void lock_screen::open_Lock1_SerialPort()
     lock1_serial->setFlowControl(QSerialPort::NoFlowControl);
     if (lock1_serial->open(QIODevice::ReadWrite)) {
 
-        ui->label->setText("Connected");
+        //ui->label->setText("Connected");
 
     } else {
 
-        ui->label->setText("Connection Error");;
+        //ui->label->setText("Connection Error");;
     }
 return;
 }
@@ -303,25 +307,15 @@ void lock_screen::on_pushButton_6_clicked()
      {
         data = lock1_serial->readAll();
      }
-     ui->plainTextEdit->setPlainText(data);
 
-     //if(data.size() > 8)
-     //{
      data = data.mid(3,10);
-     ui->label->setText("Challenge Code = " + data);
-
-
+     //ui->label->setText("Challenge Code = " + data);
      std::string challenge = data.toStdString();
      const char* newchallenge = challenge.c_str();
-
 
      std::string response = genkey(newchallenge);
      printf("Response Key = %s\n",response.c_str());
 
-
-       // QByteArray newResponse = QByteArray::fromStdString(response);
-       // qDebug() << response.c_str()  ;
-       //lock1_serial->write("E 10 " + newResponse + ";");
      QString newResponse = QString::fromStdString(response);
      QString TheResponse = "E 10 " + newResponse + ";";
      std::string TheStringResponse = TheResponse.toStdString();
@@ -329,28 +323,14 @@ void lock_screen::on_pushButton_6_clicked()
      QByteArray NewResponse = QByteArray::fromStdString(TheStringResponse);
      lock1_serial->write(NewResponse);
 
-     //lock1_serial->write(newResponse);
-     //lock1_serial->write(";");
-
-     //data = lock1_serial->readAll();
-
      while(lock1_serial->bytesAvailable()>0||lock1_serial->waitForReadyRead(10))
      {
         data = lock1_serial->readAll();
      }
-     ui->plainTextEdit->setPlainText(data);
-     ui->label->setText(data);
-
-
-
-     //return;
-     //}
 
      //ui->label->setText(data);
 
-
-
-    timer->start(500);
+     timer->start(500);
 }
 /*
 ===============================================================================================================
@@ -365,7 +345,6 @@ void lock_screen::MyTimerSlot()
 //---------------------------------------------Lock 1------------------------------------------------------------
     lock1_serial->write("r;");
     QByteArray data = lock1_serial->readAll();
-    ui->plainTextEdit->setPlainText(data);
     QString DoorOpenStatus = data.mid(5,1);
     if(QString::compare(DoorOpenStatus,"1") == 0) ui->graphicsView_2->show();
     else ui->graphicsView_2->hide();

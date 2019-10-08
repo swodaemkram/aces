@@ -12,6 +12,8 @@ QString Pin;
 QString Validatae;
 QString HideText;
 
+
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -39,19 +41,27 @@ Lets Load a cool Background
   scene->setSceneRect(image.rect());        //   |               WOW !
   ui->graphicsView->setScene(scene);        //   |
   imageObject = new QImage();
-
+  lock1_serial = new QSerialPort(this);
   /*
 ===============================================================================================================
-Update Clock Timer
+Update Clock Timer and Door Status Timer
 ===============================================================================================================
 */
+//-----------------------------------------------Clock Timer----------------------------------------------------
 QTimer *timer;
 timer = new QTimer;
 connect(timer, SIGNAL(timeout()), this, SLOT(MyTimerSlot()));
 timer->start(500);
+//-----------------------------------------------End of clock Timer-----------------------------------------------
+//-----------------------------------------------Door Status timer------------------------------------------------
+//QTimer *DoorMonitorTimer;
+DoorMonitorTimer = new QTimer;
+connect(DoorMonitorTimer, SIGNAL(timeout()), this, SLOT(DoorMonitorTimerSlot()));
+DoorMonitorTimer->start(500);
+//-------------------------------------------End of Door Status Timer----------------------------------------------
 /*
 ====================================================================================================================
-End of Update Clock Timer
+End of Update Clock Timer and Door Status Timer
 ====================================================================================================================
 Lets connect to the database
 ====================================================================================================================
@@ -126,18 +136,76 @@ void MainWindow::MyTimerSlot()
     QDate dedate = QDate::currentDate();
     QString cd = dedate.toString();
     QString DateAndTime = cd + " " + ct;
-
     ui->lcdNumber->display(DateAndTime);
 }
 /*
 ===================================================================================================
 End of Clock Display
 ===================================================================================================
+Door Status Monitor Code
+====================================================================================================
+*/
+void MainWindow::DoorMonitorTimerSlot()
+{
+//-------------------------------------------Door 1------------------------------------------------
+
+
+    lock1_serial->setPortName("/dev/ttyACM0");
+    lock1_serial->setBaudRate(QSerialPort::Baud115200);
+    lock1_serial->setDataBits(QSerialPort::Data8);
+    lock1_serial->setParity(QSerialPort::NoParity);
+    lock1_serial->setStopBits(QSerialPort::OneStop);
+    lock1_serial->setFlowControl(QSerialPort::NoFlowControl);
+    if (lock1_serial->open(QIODevice::ReadWrite)) {
+
+       // ui->label_4->setText("Door 1 Connected");//DEBUG MARK MEADOWS
+
+    } else {
+
+        //ui->label_4->setText("Door 1 Connection Error");//DEBUG MARK MEADOWS
+    }
+
+    lock1_serial->write("r;");
+    QString data = "";
+
+
+    while(lock1_serial->bytesAvailable()>0||lock1_serial->waitForReadyRead(10))
+    {
+       data = lock1_serial->readAll();
+    }
+
+    QString DoorOpenStatus = data.mid(5,1);
+    if(QString::compare(DoorOpenStatus,"1") == 0)
+    {
+        imageObject = new QImage();               //  _
+        imageObject->load(REDBACKGROUNDIMAGE);    //   |
+        image = QPixmap::fromImage(*imageObject); //   |
+        scene = new QGraphicsScene(this);         //   |
+        scene->addPixmap(image);                  //   |_______All this to display a picture
+        scene->setSceneRect(image.rect());        //   |               WOW !
+        ui->graphicsView->setScene(scene);        //   |
+        imageObject = new QImage();
+        return;
+    }
+        else imageObject = new QImage();      //  _
+    imageObject->load(BACKGROUNDIMAGE);       //   |
+    image = QPixmap::fromImage(*imageObject); //   |
+    scene = new QGraphicsScene(this);         //   |
+    scene->addPixmap(image);                  //   |_______All this to display a picture
+    scene->setSceneRect(image.rect());        //   |               WOW !
+    ui->graphicsView->setScene(scene);        //   |
+    imageObject = new QImage();
+
+    if (lock1_serial->isOpen()) lock1_serial->close();
+//----------------------------------------End of Door 1--------------------------------------------
+}
+/*
+===================================================================================================
+End of door monitoring code
+===================================================================================================
 Keypad Code
 ===================================================================================================
 */
-
-
 void MainWindow::on_pushButton_2_clicked()
 {
     if (ui->plainTextEdit->hasFocus() )
@@ -525,12 +593,16 @@ Is PIN Correct
         HideText = "";
         //UserID = "";
         Pin = "";
+        if (lock1_serial->isOpen()) lock1_serial->close();
+        DoorMonitorTimer->stop();
         lock_screen lock_screen;
         lock_screen.setModal(true);
         lock_screen.exec();
         ui->label_4->setText("");
         ui->plainTextEdit->setFocus();
         UserID="";
+        DoorMonitorTimer->start(500);
+
         return;
      }
 /*
@@ -546,11 +618,11 @@ Planed Fall Through
      Pin = "";
      ui->label_4->setText("Validation Error !!!");
      ui->plainTextEdit->setFocus();
-
-
 }
 /*
 ===================================================================================================
 End of Validate user
 ===================================================================================================
 */
+
+

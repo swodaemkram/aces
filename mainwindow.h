@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QGraphicsScene> //Need this for Images
+#include <QtSerialPort/QtSerialPort>
 
 /*
 ==============================================================================================================
@@ -17,7 +18,7 @@ Definitions
 #define DATABASENAME "aces"
 #define BACKGROUNDIMAGE "./icons/B4.jpg"
 #define SECONDBACKGROUNDIMAGE "./icons/background2.jpg"
-
+#define REDBACKGROUNDIMAGE "./icons/B4RED.jpg"
 /*
 ==============================================================================================================
 End Definitions
@@ -35,6 +36,8 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
+    QSerialPort *lock1_serial;
+
 
 private slots:
     void on_pushButton_clicked();
@@ -65,12 +68,15 @@ private slots:
 
     void ValidateUser();
 
+    void DoorMonitorTimerSlot();
+
+
 private:
     Ui::MainWindow *ui;
     QPixmap image;
     QImage  *imageObject;
     QGraphicsScene *scene;
-
+    QTimer *DoorMonitorTimer;
 };
 
 #endif // MAINWINDOW_H

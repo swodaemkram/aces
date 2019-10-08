@@ -1,5 +1,6 @@
 #include "access_group.h"
 #include "ui_access_group.h"
+#include "mainwindow.h"
 #include <QStyle>
 #include <QDesktopWidget>
 //#include <QtWidgets>
@@ -31,7 +32,7 @@ Lets Load a cool Background
 ==============================================================================================================
 */
           imageObject = new QImage();               //  _
-          imageObject->load("./icons/B4.jpg");       //   |
+          imageObject->load(BACKGROUNDIMAGE);       //   |
           image = QPixmap::fromImage(*imageObject); //   |
           scene = new QGraphicsScene(this);         //   |
           scene->addPixmap(image);                  //   |_______All this to display a picture
@@ -40,7 +41,7 @@ Lets Load a cool Background
           imageObject = new QImage();
 
           imageObject = new QImage();               //  _
-          imageObject->load("./icons/background2.jpg");       //   |
+          imageObject->load(SECONDBACKGROUNDIMAGE);       //   |
           image = QPixmap::fromImage(*imageObject); //   |
           scene = new QGraphicsScene(this);         //   |
           scene->addPixmap(image);                  //   |_______All this to display a picture
@@ -55,11 +56,11 @@ Background is loaded
           ui->frame_3->hide();
           ui->pushButton_5->hide();
           ui->pushButton_49->hide();
-          QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
-          db.setHostName("localhost");
-          db.setDatabaseName("aces");
-          db.setUserName("root");
-          db.setPassword("b0whunter");
+          QSqlDatabase db = QSqlDatabase::addDatabase(DATABASEDRIVER);
+          db.setHostName(DATABASEURL);
+          db.setDatabaseName(DATABASENAME);
+          db.setUserName(DATABASEUSER);
+          db.setPassword(DATABASEPASSWORD);
 
           if (!db.open())
           {
@@ -176,11 +177,11 @@ Cancel Button
     ui->plainTextEdit_11->setStyleSheet("background-color: white");
 //---------------------------------------------------------------------------------------------------------------
 //---------------------------------------------Reload Current Record---------------------------------------------
-    QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
-    db.setHostName("localhost");
-    db.setDatabaseName("aces");
-    db.setUserName("root");
-    db.setPassword("b0whunter");
+    QSqlDatabase db = QSqlDatabase::addDatabase(DATABASEDRIVER);
+    db.setHostName(DATABASEURL);
+    db.setDatabaseName(DATABASENAME);
+    db.setUserName(DATABASEUSER);
+    db.setPassword(DATABASEPASSWORD);
 
     if (!db.open())
     {
@@ -248,11 +249,11 @@ Edit Button
 
             ui->listWidget->clear();
 
-            QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
-            db.setHostName("localhost");
-            db.setDatabaseName("aces");
-            db.setUserName("root");
-            db.setPassword("b0whunter");
+            QSqlDatabase db = QSqlDatabase::addDatabase(DATABASEDRIVER);
+            db.setHostName(DATABASEURL);
+            db.setDatabaseName(DATABASENAME);
+            db.setUserName(DATABASEUSER);
+            db.setPassword(DATABASEPASSWORD);
 
             if (!db.open())
             {
@@ -305,11 +306,11 @@ Add New Button
 //----------------------------------Load the Access Items into a list and show them-------------------------------
         ui->listWidget->clear();
 
-        QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
-        db.setHostName("localhost");
-        db.setDatabaseName("aces");
-        db.setUserName("root");
-        db.setPassword("b0whunter");
+        QSqlDatabase db = QSqlDatabase::addDatabase(DATABASEDRIVER);
+        db.setHostName(DATABASEURL);
+        db.setDatabaseName(DATABASENAME);
+        db.setUserName(DATABASEUSER);
+        db.setPassword(DATABASEPASSWORD);
 
         if (!db.open())
         {
@@ -714,11 +715,11 @@ Save Button
 //---------------------------------------Delete Function---------------------------------------------------
 if (RecordModTypeaccess == "delete")
 {
-    QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
-    db.setHostName("localhost");
-    db.setDatabaseName("aces");
-    db.setUserName("root");
-    db.setPassword("b0whunter");
+    QSqlDatabase db = QSqlDatabase::addDatabase(DATABASEDRIVER);
+    db.setHostName(DATABASEURL);
+    db.setDatabaseName(DATABASENAME);
+    db.setUserName(DATABASEUSER);
+    db.setPassword(DATABASEPASSWORD);
 
     if (!db.open())
     {
@@ -799,11 +800,11 @@ if (RecordModTypeaccess == "delete")
 //---------------------------------------Add New Function--------------------------------------------------
      if (RecordModTypeaccess == "addnew")
      {
-         QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
-         db.setHostName("localhost");
-         db.setDatabaseName("aces");
-         db.setUserName("root");
-         db.setPassword("b0whunter");
+         QSqlDatabase db = QSqlDatabase::addDatabase(DATABASEDRIVER);
+         db.setHostName(DATABASEURL);
+         db.setDatabaseName(DATABASENAME);
+         db.setUserName(DATABASEUSER);
+         db.setPassword(DATABASEPASSWORD);
 
          if (!db.open())
          {

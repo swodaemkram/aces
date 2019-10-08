@@ -14,10 +14,24 @@
 
 extern QString UserID;
 
+/*
+===================================================================================================================
+Definitions
+===================================================================================================================
+*/
+
 #define CODE_LENGTH  10
 #define KEY "7578649673"
+
+/*
+=================================================================================================================
+End of Definitions
+=================================================================================================================
+*/
+
 QString unlock_time="10"; // lock open time in seconds
 QString sensor_status = "";
+
 char ochr;
 
 char master[10][10] ={
@@ -33,6 +47,9 @@ char master[10][10] ={
         {5,6,7,8,9,0,1,2,3,4}
     };
 QTimer *timer;
+
+QString FirstNameFromDatabase;
+QString LastNameFromDatabase;
 
 lock_screen::lock_screen(QWidget *parent) :
     QDialog(parent),
@@ -55,7 +72,7 @@ Lets Load a cool Background
 ==============================================================================================================
 */
   imageObject = new QImage();               //  _
-  imageObject->load("./icons/B4.jpg");       //   |
+  imageObject->load(BACKGROUNDIMAGE);       //   |
   image = QPixmap::fromImage(*imageObject); //   |
   scene = new QGraphicsScene(this);         //   |
   scene->addPixmap(image);                  //   |_______All this to display a picture
@@ -107,11 +124,11 @@ Lets check lock door status
 Lets Figure out who logqed in and what they can do
 ==============================================================================================================
 */
-  QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
-  db.setHostName("localhost");
-  db.setDatabaseName("aces");
-  db.setUserName("root");
-  db.setPassword("b0whunter");
+  QSqlDatabase db = QSqlDatabase::addDatabase(DATABASEDRIVER);
+  db.setHostName(DATABASEURL);
+  db.setDatabaseName(DATABASENAME);
+  db.setUserName(DATABASEUSER);
+  db.setPassword(DATABASEPASSWORD);
 
   if (!db.open())
   {
@@ -127,10 +144,32 @@ Ok so we conneced to the database, now run querry
    QSqlQuery query;
    query.exec("SELECT * FROM user WHERE iduser = " + UserID);
    query.next();
-   QString FirstNameFromDatabase = query.value(1).toString();
-   QString LastNameFromDatabase = query.value(2).toString();
+   FirstNameFromDatabase = query.value(1).toString();
+   LastNameFromDatabase = query.value(2).toString();
    ui->label_2->setText("User Logged in is " + FirstNameFromDatabase + " " + LastNameFromDatabase);
+//-------------------------------------------Log Event------------------------------------------------------
+   db.setHostName(DATABASEURL);
+   db.setDatabaseName(DATABASENAME);
+   db.setUserName(DATABASEUSER);
+   db.setPassword(DATABASEPASSWORD);
+
+   if (!db.open())
+   {
+        ui->label_2->setText("Unable to connect to database !!!");
+       return;
+   }
+    ui->label_2->setText("Connected to database again....");
+
+    QString event_date = QDate::currentDate().toString("yyyyMMdd");
+
+    QString event_time = QTime::currentTime().toString();
+
+    QSqlQuery query4;
+    query4.exec("INSERT INTO event_log (event_user_id, event_date, event_time, event_code, event_detail) VALUES ('"+ UserID + "','" + event_date + "','" + event_time + "','" + "2" + "','" + FirstNameFromDatabase + " " + LastNameFromDatabase + "')");
+//--------------------------------------------Log Event----------------------------------------------------
 /*
+============================================================================================================
+End of Logging the login
 ============================================================================================================
 Lets Pull up the permissions for this user at the current time
 ============================================================================================================
@@ -208,33 +247,135 @@ lock_screen::~lock_screen()
     delete ui;
 }
 
+/*
+=========================================================================================================================
+Exit Button
+==========================================================================================================================
+*/
 void lock_screen::on_pushButton_clicked()
 {
-    close();
+//-----------------------------------------------Log Event----------------------------------------------------------------
+    QSqlDatabase db = QSqlDatabase::addDatabase(DATABASEDRIVER);
+    db.setHostName(DATABASEURL);
+    db.setDatabaseName(DATABASENAME);
+    db.setUserName(DATABASEUSER);
+    db.setPassword(DATABASEPASSWORD);
+
+    if (!db.open())
+    {
+         ui->label_2->setText("Unable to connect to database !!!");
+        return;
+    }
+     ui->label_2->setText("Connected to database again....");
+     QString event_date = QDate::currentDate().toString("yyyyMMdd");
+     QString event_time = QTime::currentTime().toString();
+     QSqlQuery query4;
+     query4.exec("INSERT INTO event_log (event_user_id, event_date, event_time, event_code, event_detail) VALUES ('"+ UserID + "','" + event_date + "','" + event_time + "','" + "3" + "','" + FirstNameFromDatabase + " " + LastNameFromDatabase + "')");
+//---------------------------------------------------Log Event-------------------------------------------------------------
+//---------------------------------------------------Close Window----------------------------------------------------------
+     close();
+
 }
-
-
+/*
+=========================================================================================================================
+End of Exit Button
+==========================================================================================================================
+Display User Screen
+==========================================================================================================================
+*/
 void lock_screen::on_pushButton_2_clicked()
 {
+
+//--------------------------------------------Log Event-------------------------------------------------------------
+     QSqlDatabase db = QSqlDatabase::addDatabase(DATABASEDRIVER);
+     db.setHostName(DATABASEURL);
+     db.setDatabaseName(DATABASENAME);
+     db.setUserName(DATABASEUSER);
+     db.setPassword(DATABASEPASSWORD);
+
+     if (!db.open())
+     {
+         ui->label_2->setText("Unable to connect to database !!!");
+         return;
+      }
+      ui->label_2->setText("Connected to database again....");
+      QString event_date = QDate::currentDate().toString("yyyyMMdd");
+      QString event_time = QTime::currentTime().toString();
+      QSqlQuery query4;
+      query4.exec("INSERT INTO event_log (event_user_id, event_date, event_time, event_code, event_detail) VALUES ('"+ UserID + "','" + event_date + "','" + event_time + "','" + "21" + "','" + FirstNameFromDatabase + " " + LastNameFromDatabase + "')");
+//------------------------------------------------Log Event----------------------------------------------------------
+
     user_screen user_screen;
     user_screen.setModal(true);
     user_screen.exec();
 }
-
+/*
+=========================================================================================================================
+End of Display User Screen
+=========================================================================================================================
+Display Access Item Screen
+=========================================================================================================================
+*/
 void lock_screen::on_pushButton_5_clicked()
 {
+//--------------------------------------------Log Event-------------------------------------------------------------
+     QSqlDatabase db = QSqlDatabase::addDatabase(DATABASEDRIVER);
+     db.setHostName(DATABASEURL);
+     db.setDatabaseName(DATABASENAME);
+     db.setUserName(DATABASEUSER);
+     db.setPassword(DATABASEPASSWORD);
+
+     if (!db.open())
+     {
+         ui->label_2->setText("Unable to connect to database !!!");
+         return;
+      }
+      ui->label_2->setText("Connected to database again....");
+      QString event_date = QDate::currentDate().toString("yyyyMMdd");
+      QString event_time = QTime::currentTime().toString();
+      QSqlQuery query4;
+      query4.exec("INSERT INTO event_log (event_user_id, event_date, event_time, event_code, event_detail) VALUES ('"+ UserID + "','" + event_date + "','" + event_time + "','" + "18" + "','" + FirstNameFromDatabase + " " + LastNameFromDatabase + "')");
+//------------------------------------------------Log Event----------------------------------------------------------
     manage_access_item manage_access_item;
     manage_access_item.setModal(true);
     manage_access_item.exec();
 }
-
+/*
+=========================================================================================================================
+End of Dissplay Access Item Screen
+=========================================================================================================================
+Display Acces Group Screen
+=========================================================================================================================
+*/
 void lock_screen::on_pushButton_4_clicked()
 {
+//--------------------------------------------Log Event-------------------------------------------------------------
+     QSqlDatabase db = QSqlDatabase::addDatabase(DATABASEDRIVER);
+     db.setHostName(DATABASEURL);
+     db.setDatabaseName(DATABASENAME);
+     db.setUserName(DATABASEUSER);
+     db.setPassword(DATABASEPASSWORD);
+
+     if (!db.open())
+     {
+         ui->label_2->setText("Unable to connect to database !!!");
+         return;
+      }
+      ui->label_2->setText("Connected to database again....");
+      QString event_date = QDate::currentDate().toString("yyyyMMdd");
+      QString event_time = QTime::currentTime().toString();
+      QSqlQuery query4;
+      query4.exec("INSERT INTO event_log (event_user_id, event_date, event_time, event_code, event_detail) VALUES ('"+ UserID + "','" + event_date + "','" + event_time + "','" + "17" + "','" + FirstNameFromDatabase + " " + LastNameFromDatabase + "')");
+//------------------------------------------------Log Event----------------------------------------------------------
     Access_Group Access_Group;
     Access_Group.setModal(true);
     Access_Group.exec();
 }
-
+/*
+========================================================================================================================
+End of access group screen
+========================================================================================================================
+*/
 
 void lock_screen::open_Lock1_SerialPort()
 {
@@ -246,11 +387,11 @@ void lock_screen::open_Lock1_SerialPort()
     lock1_serial->setFlowControl(QSerialPort::NoFlowControl);
     if (lock1_serial->open(QIODevice::ReadWrite)) {
 
-        //ui->label->setText("Connected");
+        //ui->label->setText("Connected");//DEBUG MARK MEADOWS
 
     } else {
 
-        //ui->label->setText("Connection Error");;
+        //ui->label->setText("Connection Error");//DEBUG MARK MEADOWS
     }
 return;
 }
@@ -330,6 +471,26 @@ void lock_screen::on_pushButton_6_clicked()
 
      //ui->label->setText(data);
 
+//--------------------------------------------Log Event-------------------------------------------------------------
+
+     QSqlDatabase db = QSqlDatabase::addDatabase(DATABASEDRIVER);
+     db.setHostName(DATABASEURL);
+     db.setDatabaseName(DATABASENAME);
+     db.setUserName(DATABASEUSER);
+     db.setPassword(DATABASEPASSWORD);
+
+     if (!db.open())
+     {
+          ui->label_2->setText("Unable to connect to database !!!");
+         return;
+     }
+      ui->label_2->setText("Connected to database again....");
+      QString event_date = QDate::currentDate().toString("yyyyMMdd");
+      QString event_time = QTime::currentTime().toString();
+      QSqlQuery query4;
+      query4.exec("INSERT INTO event_log (event_user_id, event_date, event_time, event_code, event_detail) VALUES ('"+ UserID + "','" + event_date + "','" + event_time + "','" + "4" + "','" + FirstNameFromDatabase + " " + LastNameFromDatabase + "')");
+
+//------------------------------------------------Log Event----------------------------------------------------------
      timer->start(500);
 }
 /*
@@ -363,7 +524,6 @@ Lock Decryption Key Gen
 std::string lock_screen::genkey(const char* newchallenge)
 {
 
-
             qDebug() << newchallenge;
             unsigned char r = 0;
 
@@ -377,7 +537,6 @@ std::string lock_screen::genkey(const char* newchallenge)
 
             memset(ctmp,0,10);
             memset(code,0,10);
-
 
             char salt[12];
             bzero(salt,12);
@@ -408,13 +567,9 @@ std::string lock_screen::genkey(const char* newchallenge)
             for (int i=0; i < 10; i++)
                 str += code[i];
 
-
             return str;
 
-
 }
-
-
 
 char* lock_screen::rot(char b[], char seed)
 {
@@ -432,8 +587,65 @@ char* lock_screen::rot(char b[], char seed)
 =================================================================================================================
 End of Lock Decryption
 =================================================================================================================
+Open Log Screen
+=================================================================================================================
 */
+void lock_screen::on_pushButton_12_clicked()
+{
+
+//--------------------------------------------------Log Event------------------------------------------------------
+    QSqlDatabase db = QSqlDatabase::addDatabase(DATABASEDRIVER);
+    db.setHostName(DATABASEURL);
+    db.setDatabaseName(DATABASENAME);
+    db.setUserName(DATABASEUSER);
+    db.setPassword(DATABASEPASSWORD);
+
+    if (!db.open())
+    {
+         ui->label_2->setText("Unable to connect to database !!!");
+        return;
+    }
+     ui->label_2->setText("Connected to database again....");
+     QString event_date = QDate::currentDate().toString("yyyyMMdd");
+     QString event_time = QTime::currentTime().toString();
+     QSqlQuery query4;
+     query4.exec("INSERT INTO event_log (event_user_id, event_date, event_time, event_code, event_detail) VALUES ('"+ UserID + "','" + event_date + "','" + event_time + "','" + "20" + "','" + FirstNameFromDatabase + " " + LastNameFromDatabase + "')");
+}
+//------------------------------------------------------Log Event-------------------------------------------------------
+
+/*
+==========================================================================================================================
+End of Open log Screen
+=========================================================================================================================
+Open System Screen
+==========================================================================================================================
+*/
+void lock_screen::on_pushButton_3_clicked()
+{
 
 
+//------------------------------------------------------Log Event--------------------------------------------------------
+    QSqlDatabase db = QSqlDatabase::addDatabase(DATABASEDRIVER);
+    db.setHostName(DATABASEURL);
+    db.setDatabaseName(DATABASENAME);
+    db.setUserName(DATABASEUSER);
+    db.setPassword(DATABASEPASSWORD);
 
+    if (!db.open())
+    {
+         ui->label_2->setText("Unable to connect to database !!!");
+        return;
+    }
+     ui->label_2->setText("Connected to database again....");
+     QString event_date = QDate::currentDate().toString("yyyyMMdd");
+     QString event_time = QTime::currentTime().toString();
+     QSqlQuery query4;
+     query4.exec("INSERT INTO event_log (event_user_id, event_date, event_time, event_code, event_detail) VALUES ('"+ UserID + "','" + event_date + "','" + event_time + "','" + "19" + "','" + FirstNameFromDatabase + " " + LastNameFromDatabase + "')");
+//-----------------------------------------------------------Log Event-------------------------------------------------------
 
+}
+/*
+============================================================================================================================
+End of Open System Screen
+============================================================================================================================
+*/

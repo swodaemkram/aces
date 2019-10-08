@@ -4,6 +4,26 @@
 #include <QMainWindow>
 #include <QGraphicsScene> //Need this for Images
 
+/*
+==============================================================================================================
+Definitions
+==============================================================================================================
+*/
+
+#define DATABASEDRIVER "QMYSQL"
+#define DATABASEURL "localhost"
+#define DATABASEUSER "root"
+#define DATABASEPASSWORD "b0whunter"
+#define DATABASENAME "aces"
+#define BACKGROUNDIMAGE "./icons/B4.jpg"
+#define SECONDBACKGROUNDIMAGE "./icons/background2.jpg"
+
+/*
+==============================================================================================================
+End Definitions
+==============================================================================================================
+*/
+
 namespace Ui {
 class MainWindow;
 }

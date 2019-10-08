@@ -1,5 +1,6 @@
 #include "manage_access_item.h"
 #include "ui_manage_access_item.h"
+#include "mainwindow.h"
 #include <QStyle>
 #include <QDesktopWidget>
 //#include <QtWidgets>
@@ -29,7 +30,7 @@ Lets Load a cool Background
 ==============================================================================================================
 */
       imageObject = new QImage();               //  _
-      imageObject->load("./icons/B4.jpg");       //   |
+      imageObject->load(BACKGROUNDIMAGE);       //   |
       image = QPixmap::fromImage(*imageObject); //   |
       scene = new QGraphicsScene(this);         //   |
       scene->addPixmap(image);                  //   |_______All this to display a picture
@@ -38,7 +39,7 @@ Lets Load a cool Background
       imageObject = new QImage();
 
       imageObject = new QImage();               //  _
-      imageObject->load("./icons/background2.jpg");       //   |
+      imageObject->load(SECONDBACKGROUNDIMAGE);       //   |
       image = QPixmap::fromImage(*imageObject); //   |
       scene = new QGraphicsScene(this);         //   |
       scene->addPixmap(image);                  //   |_______All this to display a picture
@@ -56,11 +57,11 @@ Background is loaded
      ui->frame_3->hide();
      ui->checkBox_8->hide();
 
-      QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
-      db.setHostName("localhost");
-      db.setDatabaseName("aces");
-      db.setUserName("root");
-      db.setPassword("b0whunter");
+      QSqlDatabase db = QSqlDatabase::addDatabase(DATABASEDRIVER);
+      db.setHostName(DATABASEURL);
+      db.setDatabaseName(DATABASENAME);
+      db.setUserName(DATABASEUSER);
+      db.setPassword(DATABASEPASSWORD);
 
       if (!db.open())
       {

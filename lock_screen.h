@@ -44,6 +44,10 @@ private slots:
 
     void MyTimerSlot();
 
+    void on_pushButton_12_clicked();
+
+    void on_pushButton_3_clicked();
+
 private:
     Ui::lock_screen *ui;
     QPixmap image;

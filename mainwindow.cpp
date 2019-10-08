@@ -32,7 +32,7 @@ Lets Load a cool Background
 ==============================================================================================================
 */
   imageObject = new QImage();               //  _
-  imageObject->load("./icons/B4.jpg");       //   |
+  imageObject->load(BACKGROUNDIMAGE);       //   |
   image = QPixmap::fromImage(*imageObject); //   |
   scene = new QGraphicsScene(this);         //   |
   scene->addPixmap(image);                  //   |_______All this to display a picture
@@ -57,11 +57,11 @@ Lets connect to the database
 ====================================================================================================================
  */
 
-QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
-db.setHostName("localhost");
-db.setDatabaseName("aces");
-db.setUserName("root");
-db.setPassword("b0whunter");
+QSqlDatabase db = QSqlDatabase::addDatabase(DATABASEDRIVER);
+db.setHostName(DATABASEURL);
+db.setDatabaseName(DATABASENAME);
+db.setUserName(DATABASEUSER);
+db.setPassword(DATABASEPASSWORD);
 
 if (!db.open())
 {
@@ -70,11 +70,35 @@ if (!db.open())
 }
  ui->label_4->setText("Connected to database....");
 db.close();
-
-
  /*
 ====================================================================================================
    End of connecting to Database
+====================================================================================================
+   Log system boot
+====================================================================================================
+*/
+db.setHostName(DATABASEURL);
+db.setDatabaseName(DATABASENAME);
+db.setUserName(DATABASEUSER);
+db.setPassword(DATABASEPASSWORD);
+
+if (!db.open())
+{
+     ui->label_4->setText("Unable to connect to database !!!");
+    return;
+}
+ ui->label_4->setText("Connected to database again....");
+
+ QString event_date = QDate::currentDate().toString("yyyyMMdd");
+
+ QString event_time = QTime::currentTime().toString();
+
+ QSqlQuery query4;
+ query4.exec("INSERT INTO event_log (event_date, event_time, event_code) VALUES ('"+ event_date + "','" + event_time + "','" + "1" +"')");
+return;
+/*
+====================================================================================================
+  End of Log system Boot
 ====================================================================================================
 */
 
@@ -423,11 +447,11 @@ Lets validate user with database
 */
 void MainWindow::ValidateUser()
 {
-    QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
-    db.setHostName("localhost");
-    db.setDatabaseName("aces");
-    db.setUserName("root");
-    db.setPassword("b0whunter");
+    QSqlDatabase db = QSqlDatabase::addDatabase(DATABASEDRIVER);
+    db.setHostName(DATABASEURL);
+    db.setDatabaseName(DATABASENAME);
+    db.setUserName(DATABASEUSER);
+    db.setPassword(DATABASEPASSWORD);
 
     if (!db.open())
     {
@@ -467,7 +491,26 @@ Is User Enabled
          Pin = "";
          ui->label_4->setText("User Not Enabled !!!");
          ui->plainTextEdit->setFocus();
-        return;
+
+         db.setHostName(DATABASEURL);
+         db.setDatabaseName(DATABASENAME);
+         db.setUserName(DATABASEUSER);
+         db.setPassword(DATABASEPASSWORD);
+
+         if (!db.open())
+         {
+              ui->label_4->setText("Unable to connect to database !!!");
+             return;
+         }
+          ui->label_4->setText("Connected to database again....");
+
+          QString event_date = QDate::currentDate().toString("yyyyMMdd");
+
+          QString event_time = QTime::currentTime().toString();
+
+          QSqlQuery query4;
+          query4.exec("INSERT INTO event_log (event_date, event_time, event_code) VALUES ('"+ event_date + "','" + event_time + "','" + "35" +"')");
+         return;
      }
 /*
 ================================================================================================================

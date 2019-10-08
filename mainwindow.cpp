@@ -57,7 +57,7 @@ timer->start(500);
 //QTimer *DoorMonitorTimer;
 DoorMonitorTimer = new QTimer;
 connect(DoorMonitorTimer, SIGNAL(timeout()), this, SLOT(DoorMonitorTimerSlot()));
-DoorMonitorTimer->start(500);
+//DoorMonitorTimer->start(500);
 //-------------------------------------------End of Door Status Timer----------------------------------------------
 /*
 ====================================================================================================================
@@ -601,7 +601,7 @@ Is PIN Correct
         ui->label_4->setText("");
         ui->plainTextEdit->setFocus();
         UserID="";
-        DoorMonitorTimer->start(500);
+        //DoorMonitorTimer->start(500);
 
         return;
      }

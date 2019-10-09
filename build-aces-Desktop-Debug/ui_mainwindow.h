@@ -52,6 +52,7 @@ public:
     QLabel *label_3;
     QLCDNumber *lcdNumber;
     QLabel *label_4;
+    QGraphicsView *graphicsView_2;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -426,7 +427,13 @@ public:
         label_4->setFrameShape(QFrame::WinPanel);
         label_4->setFrameShadow(QFrame::Sunken);
         label_4->setAlignment(Qt::AlignCenter);
+        graphicsView_2 = new QGraphicsView(centralWidget);
+        graphicsView_2->setObjectName(QStringLiteral("graphicsView_2"));
+        graphicsView_2->setGeometry(QRect(0, 0, 1021, 771));
+        graphicsView_2->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        graphicsView_2->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         MainWindow->setCentralWidget(centralWidget);
+        graphicsView_2->raise();
         graphicsView->raise();
         label->raise();
         gridLayoutWidget->raise();

@@ -70,6 +70,7 @@ private slots:
 
     void DoorMonitorTimerSlot();
 
+    void Open_Lock1_SerialPort();
 
 private:
     Ui::MainWindow *ui;

@@ -12,13 +12,17 @@ QString Pin;
 QString Validatae;
 QString HideText;
 
-
+int lock1_serial_open = 0;
+int Alarm_Logged = 0;
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
   ui->setupUi(this);
+
+
+
 /*
 ===============================================================================================================
 Center Window on Screen and remove minimize, maximize and exit buttons
@@ -42,7 +46,17 @@ Lets Load a cool Background
   ui->graphicsView->setScene(scene);        //   |
   imageObject = new QImage();
   lock1_serial = new QSerialPort(this);
-  /*
+
+  imageObject = new QImage();               //  _
+  imageObject->load(REDBACKGROUNDIMAGE);       //   |
+  image = QPixmap::fromImage(*imageObject); //   |
+  scene = new QGraphicsScene(this);         //   |
+  scene->addPixmap(image);                  //   |_______All this to display a picture
+  scene->setSceneRect(image.rect());        //   |               WOW !
+  ui->graphicsView_2->setScene(scene);        //   |
+  imageObject = new QImage();
+  lock1_serial = new QSerialPort(this);
+ /*
 ===============================================================================================================
 Update Clock Timer and Door Status Timer
 ===============================================================================================================
@@ -57,7 +71,7 @@ timer->start(500);
 //QTimer *DoorMonitorTimer;
 DoorMonitorTimer = new QTimer;
 connect(DoorMonitorTimer, SIGNAL(timeout()), this, SLOT(DoorMonitorTimerSlot()));
-//DoorMonitorTimer->start(500);
+DoorMonitorTimer->start(500);
 //-------------------------------------------End of Door Status Timer----------------------------------------------
 /*
 ====================================================================================================================
@@ -149,21 +163,7 @@ void MainWindow::DoorMonitorTimerSlot()
 {
 //-------------------------------------------Door 1------------------------------------------------
 
-
-    lock1_serial->setPortName("/dev/ttyACM0");
-    lock1_serial->setBaudRate(QSerialPort::Baud115200);
-    lock1_serial->setDataBits(QSerialPort::Data8);
-    lock1_serial->setParity(QSerialPort::NoParity);
-    lock1_serial->setStopBits(QSerialPort::OneStop);
-    lock1_serial->setFlowControl(QSerialPort::NoFlowControl);
-    if (lock1_serial->open(QIODevice::ReadWrite)) {
-
-       // ui->label_4->setText("Door 1 Connected");//DEBUG MARK MEADOWS
-
-    } else {
-
-        //ui->label_4->setText("Door 1 Connection Error");//DEBUG MARK MEADOWS
-    }
+    if(lock1_serial_open == 0) Open_Lock1_SerialPort();
 
     lock1_serial->write("r;");
     QString data = "";
@@ -177,34 +177,49 @@ void MainWindow::DoorMonitorTimerSlot()
     QString DoorOpenStatus = data.mid(5,1);
     if(QString::compare(DoorOpenStatus,"1") == 0)
     {
-        imageObject = new QImage();               //  _
-        imageObject->load(REDBACKGROUNDIMAGE);    //   |
-        image = QPixmap::fromImage(*imageObject); //   |
-        scene = new QGraphicsScene(this);         //   |
-        scene->addPixmap(image);                  //   |_______All this to display a picture
-        scene->setSceneRect(image.rect());        //   |               WOW !
-        ui->graphicsView->setScene(scene);        //   |
-        imageObject = new QImage();
+        ui->graphicsView->hide();
+        ui->graphicsView_2->show();
+//-------------------------------------------------------Log Event--------------------------------------------------
+        if(Alarm_Logged == 0)
+        {
+        QSqlDatabase db = QSqlDatabase::addDatabase(DATABASEDRIVER);
+        db.setHostName(DATABASEURL);
+        db.setDatabaseName(DATABASENAME);
+        db.setUserName(DATABASEUSER);
+        db.setPassword(DATABASEPASSWORD);
+
+        if (!db.open())
+        {
+             ui->label_4->setText("Unable to connect to database !!!");
+            return;
+        }
+         ui->label_4->setText("Connected to database again....");
+
+         QString event_date = QDate::currentDate().toString("yyyyMMdd");
+
+         QString event_time = QTime::currentTime().toString();
+
+         QSqlQuery query4;
+         query4.exec("INSERT INTO event_log (event_date, event_time, event_code) VALUES ('"+ event_date + "','" + event_time + "','" + "911" +"')");
+         Alarm_Logged = 1;//Set Alarm Flag so we dont log multiple events for a single alarm
+        }
+//-------------------------------------------------------End of Log Event---------------------------------------------------
         return;
     }
-        else imageObject = new QImage();      //  _
-    imageObject->load(BACKGROUNDIMAGE);       //   |
-    image = QPixmap::fromImage(*imageObject); //   |
-    scene = new QGraphicsScene(this);         //   |
-    scene->addPixmap(image);                  //   |_______All this to display a picture
-    scene->setSceneRect(image.rect());        //   |               WOW !
-    ui->graphicsView->setScene(scene);        //   |
-    imageObject = new QImage();
-
-    if (lock1_serial->isOpen()) lock1_serial->close();
-//----------------------------------------End of Door 1--------------------------------------------
+        else
+    {
+        ui->graphicsView->show();
+        ui->graphicsView_2->hide();
+        Alarm_Logged = 0;//Reset Alarm Flag to catch next event
+    }
+//----------------------------------------End of Door 1---------------------------------------------------------------------
 }
 /*
-===================================================================================================
+============================================================================================================================
 End of door monitoring code
-===================================================================================================
+============================================================================================================================
 Keypad Code
-===================================================================================================
+============================================================================================================================
 */
 void MainWindow::on_pushButton_2_clicked()
 {
@@ -595,13 +610,14 @@ Is PIN Correct
         Pin = "";
         if (lock1_serial->isOpen()) lock1_serial->close();
         DoorMonitorTimer->stop();
+        lock1_serial_open = 0;
         lock_screen lock_screen;
         lock_screen.setModal(true);
         lock_screen.exec();
         ui->label_4->setText("");
         ui->plainTextEdit->setFocus();
         UserID="";
-        //DoorMonitorTimer->start(500);
+        DoorMonitorTimer->start(500);
 
         return;
      }
@@ -620,9 +636,39 @@ Planed Fall Through
      ui->plainTextEdit->setFocus();
 }
 /*
-===================================================================================================
+==============================================================================================================
 End of Validate user
-===================================================================================================
+===============================================================================================================
+Open Lock 1 Serial Port
+===============================================================================================================
 */
 
+void MainWindow::Open_Lock1_SerialPort()
+{
+    if (lock1_serial_open == 0)
+    {
 
+
+    qDebug() << "open Comm Port";
+    lock1_serial->setPortName("/dev/ttyACM0");
+    lock1_serial->setBaudRate(QSerialPort::Baud115200);
+    lock1_serial->setDataBits(QSerialPort::Data8);
+    lock1_serial->setParity(QSerialPort::NoParity);
+    lock1_serial->setStopBits(QSerialPort::OneStop);
+    lock1_serial->setFlowControl(QSerialPort::NoFlowControl);
+    if (lock1_serial->open(QIODevice::ReadWrite))
+        {
+
+       // ui->label_4->setText("Door 1 Connected");//DEBUG MARK MEADOWS
+          lock1_serial_open = 1;
+        } else
+        {
+
+        //ui->label_4->setText("Door 1 Connection Error");//DEBUG MARK MEADOWS
+           lock1_serial_open = 0;
+         }
+
+    }
+
+    return;
+}

@@ -100,7 +100,7 @@ public:
         label->setAlignment(Qt::AlignCenter);
         gridLayoutWidget = new QWidget(centralWidget);
         gridLayoutWidget->setObjectName(QStringLiteral("gridLayoutWidget"));
-        gridLayoutWidget->setGeometry(QRect(210, 310, 591, 401));
+        gridLayoutWidget->setGeometry(QRect(210, 280, 591, 401));
         gridLayout = new QGridLayout(gridLayoutWidget);
         gridLayout->setSpacing(6);
         gridLayout->setContentsMargins(11, 11, 11, 11);
@@ -401,7 +401,7 @@ public:
         lcdNumber->setSegmentStyle(QLCDNumber::Filled);
         label_4 = new QLabel(centralWidget);
         label_4->setObjectName(QStringLiteral("label_4"));
-        label_4->setGeometry(QRect(16, 730, 991, 31));
+        label_4->setGeometry(QRect(16, 720, 991, 41));
         QPalette palette16;
         QBrush brush8(QColor(243, 245, 174, 255));
         brush8.setStyle(Qt::SolidPattern);
@@ -423,6 +423,9 @@ public:
         palette16.setBrush(QPalette::Disabled, QPalette::Base, brush9);
         palette16.setBrush(QPalette::Disabled, QPalette::Window, brush9);
         label_4->setPalette(palette16);
+        QFont font2;
+        font2.setPointSize(14);
+        label_4->setFont(font2);
         label_4->setAutoFillBackground(true);
         label_4->setFrameShape(QFrame::WinPanel);
         label_4->setFrameShadow(QFrame::Sunken);

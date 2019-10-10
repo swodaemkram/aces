@@ -6,6 +6,8 @@
 #include <QtWidgets>
 #include <QtSql>
 #include <unistd.h>
+#include <QNetworkInterface>
+
 
 QString UserID;
 QString Pin;
@@ -119,6 +121,22 @@ if (!db.open())
 
  QSqlQuery query4;
  query4.exec("INSERT INTO event_log (event_date, event_time, event_code) VALUES ('"+ event_date + "','" + event_time + "','" + "1" +"')");
+
+qDebug() << QNetworkInterface::interfaceFromIndex(2).hardwareAddress();
+
+/*
+=====================================================How We play Audio============================================
+*/
+
+//player = new QMediaPlayer;
+//player->setMedia(QUrl::fromLocalFile("/home/mark/qt_projects/build-aces-Desktop-Debug/01.mp3"));
+//player->setVolume(90);
+//player->play();
+
+/*
+=======================================================How We Play Audio==========================================
+*/
+
 return;
 /*
 ====================================================================================================

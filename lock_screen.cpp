@@ -4,6 +4,7 @@
 #include "user_screen.h"
 #include "access_group.h"
 #include "manage_access_item.h"
+#include "settings.h"
 #include <QtSerialPort/QtSerialPort>
 #include <unistd.h> //For sleep function
 #include <QStyle>
@@ -642,7 +643,9 @@ void lock_screen::on_pushButton_3_clicked()
      QSqlQuery query4;
      query4.exec("INSERT INTO event_log (event_user_id, event_date, event_time, event_code, event_detail) VALUES ('"+ UserID + "','" + event_date + "','" + event_time + "','" + "19" + "','" + FirstNameFromDatabase + " " + LastNameFromDatabase + "')");
 //-----------------------------------------------------------Log Event-------------------------------------------------------
-
+     settings settings;
+     settings.setModal(true);
+     settings.exec();
 }
 /*
 ============================================================================================================================

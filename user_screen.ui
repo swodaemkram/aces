@@ -71,9 +71,9 @@
       <colorrole role="Window">
        <brush brushstyle="SolidPattern">
         <color alpha="255">
-         <red>78</red>
-         <green>154</green>
-         <blue>6</blue>
+         <red>245</red>
+         <green>121</green>
+         <blue>0</blue>
         </color>
        </brush>
       </colorrole>
@@ -109,9 +109,9 @@
       <colorrole role="Window">
        <brush brushstyle="SolidPattern">
         <color alpha="255">
-         <red>78</red>
-         <green>154</green>
-         <blue>6</blue>
+         <red>245</red>
+         <green>121</green>
+         <blue>0</blue>
         </color>
        </brush>
       </colorrole>
@@ -138,18 +138,18 @@
       <colorrole role="Base">
        <brush brushstyle="SolidPattern">
         <color alpha="255">
-         <red>78</red>
-         <green>154</green>
-         <blue>6</blue>
+         <red>245</red>
+         <green>121</green>
+         <blue>0</blue>
         </color>
        </brush>
       </colorrole>
       <colorrole role="Window">
        <brush brushstyle="SolidPattern">
         <color alpha="255">
-         <red>78</red>
-         <green>154</green>
-         <blue>6</blue>
+         <red>245</red>
+         <green>121</green>
+         <blue>0</blue>
         </color>
        </brush>
       </colorrole>
@@ -764,8 +764,19 @@
        <height>31</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
      <property name="focusPolicy">
       <enum>Qt::WheelFocus</enum>
+     </property>
+     <property name="verticalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="horizontalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
      </property>
     </widget>
     <widget class="QLabel" name="label_4">
@@ -790,6 +801,17 @@
        <height>31</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="verticalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="horizontalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
     </widget>
     <widget class="QLabel" name="label_5">
      <property name="geometry">
@@ -809,8 +831,8 @@
       <rect>
        <x>100</x>
        <y>90</y>
-       <width>371</width>
-       <height>31</height>
+       <width>391</width>
+       <height>41</height>
       </rect>
      </property>
      <property name="palette">
@@ -850,11 +872,22 @@
        </disabled>
       </palette>
      </property>
+     <property name="font">
+      <font>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
      <property name="acceptDrops">
       <bool>true</bool>
      </property>
      <property name="autoFillBackground">
       <bool>false</bool>
+     </property>
+     <property name="verticalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="horizontalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
      </property>
     </widget>
     <widget class="QLabel" name="label_6">
@@ -879,12 +912,23 @@
        <height>31</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="verticalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="horizontalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
     </widget>
     <widget class="QCheckBox" name="checkBox">
      <property name="geometry">
       <rect>
        <x>220</x>
-       <y>120</y>
+       <y>130</y>
        <width>251</width>
        <height>41</height>
       </rect>
@@ -1342,14 +1386,25 @@
     <widget class="QListWidget" name="listWidget">
      <property name="geometry">
       <rect>
-       <x>480</x>
+       <x>510</x>
        <y>50</y>
-       <width>221</width>
+       <width>191</width>
        <height>121</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
      <property name="focusPolicy">
       <enum>Qt::NoFocus</enum>
+     </property>
+     <property name="verticalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="horizontalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
      </property>
     </widget>
     <widget class="QGraphicsView" name="graphicsView_2">
@@ -1470,8 +1525,8 @@
       <rect>
        <x>10</x>
        <y>10</y>
-       <width>838</width>
-       <height>321</height>
+       <width>811</width>
+       <height>311</height>
       </rect>
      </property>
      <layout class="QGridLayout" name="gridLayout">
@@ -2470,6 +2525,11 @@
       </colorrole>
      </disabled>
     </palette>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>14</pointsize>
+    </font>
    </property>
    <property name="autoFillBackground">
     <bool>true</bool>

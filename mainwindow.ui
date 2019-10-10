@@ -174,7 +174,7 @@
     <property name="geometry">
      <rect>
       <x>210</x>
-      <y>310</y>
+      <y>280</y>
       <width>591</width>
       <height>401</height>
      </rect>
@@ -1651,9 +1651,9 @@
     <property name="geometry">
      <rect>
       <x>16</x>
-      <y>730</y>
+      <y>720</y>
       <width>991</width>
-      <height>31</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="palette">
@@ -1800,6 +1800,11 @@
        </colorrole>
       </disabled>
      </palette>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+     </font>
     </property>
     <property name="autoFillBackground">
      <bool>true</bool>

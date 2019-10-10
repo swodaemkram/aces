@@ -4,7 +4,7 @@
 #include <QMainWindow>
 #include <QGraphicsScene> //Need this for Images
 #include <QtSerialPort/QtSerialPort>
-
+#include <QtMultimedia/QMediaPlayer> //sound
 /*
 ==============================================================================================================
 Definitions
@@ -19,6 +19,8 @@ Definitions
 #define BACKGROUNDIMAGE "./icons/B4.jpg"
 #define SECONDBACKGROUNDIMAGE "./icons/background2.jpg"
 #define REDBACKGROUNDIMAGE "./icons/B4RED.jpg"
+#define SETTINGSBACKGROUND "./icons/settingsbackground.jpg"
+
 /*
 ==============================================================================================================
 End Definitions
@@ -78,6 +80,8 @@ private:
     QImage  *imageObject;
     QGraphicsScene *scene;
     QTimer *DoorMonitorTimer;
+    QMediaPlayer *player;
+
 };
 
 #endif // MAINWINDOW_H

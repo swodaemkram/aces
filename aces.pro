@@ -7,6 +7,9 @@
 QT += core gui
 QT += sql
 QT += serialport
+QT += network
+QT += multimedia
+
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = aces
@@ -30,18 +33,21 @@ SOURCES += \
     lock_screen.cpp \
     user_screen.cpp \
     manage_access_item.cpp \
-    access_group.cpp
+    access_group.cpp \
+    settings.cpp
 
 HEADERS += \
         mainwindow.h \
     lock_screen.h \
     user_screen.h \
     manage_access_item.h \
-    access_group.h
+    access_group.h \
+    settings.h
 
 FORMS += \
         mainwindow.ui \
     lock_screen.ui \
     user_screen.ui \
     manage_access_item.ui \
-    access_group.ui
+    access_group.ui \
+    settings.ui

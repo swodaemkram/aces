@@ -56,12 +56,14 @@ SOURCES       = ../aces/main.cpp \
 		../aces/user_screen.cpp \
 		../aces/manage_access_item.cpp \
 		../aces/access_group.cpp \
-		../aces/settings.cpp moc_mainwindow.cpp \
+		../aces/settings.cpp \
+		../aces/override_screen.cpp moc_mainwindow.cpp \
 		moc_lock_screen.cpp \
 		moc_user_screen.cpp \
 		moc_manage_access_item.cpp \
 		moc_access_group.cpp \
-		moc_settings.cpp
+		moc_settings.cpp \
+		moc_override_screen.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
 		lock_screen.o \
@@ -69,12 +71,14 @@ OBJECTS       = main.o \
 		manage_access_item.o \
 		access_group.o \
 		settings.o \
+		override_screen.o \
 		moc_mainwindow.o \
 		moc_lock_screen.o \
 		moc_user_screen.o \
 		moc_manage_access_item.o \
 		moc_access_group.o \
-		moc_settings.o
+		moc_settings.o \
+		moc_override_screen.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/linux.conf \
@@ -161,13 +165,15 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		../aces/user_screen.h \
 		../aces/manage_access_item.h \
 		../aces/access_group.h \
-		../aces/settings.h ../aces/main.cpp \
+		../aces/settings.h \
+		../aces/override_screen.h ../aces/main.cpp \
 		../aces/mainwindow.cpp \
 		../aces/lock_screen.cpp \
 		../aces/user_screen.cpp \
 		../aces/manage_access_item.cpp \
 		../aces/access_group.cpp \
-		../aces/settings.cpp
+		../aces/settings.cpp \
+		../aces/override_screen.cpp
 QMAKE_TARGET  = aces
 DESTDIR       = 
 TARGET        = aces
@@ -176,7 +182,7 @@ TARGET        = aces
 first: all
 ####### Build rules
 
-$(TARGET): ui_mainwindow.h ui_lock_screen.h ui_user_screen.h ui_manage_access_item.h ui_access_group.h ui_settings.h $(OBJECTS)  
+$(TARGET): ui_mainwindow.h ui_lock_screen.h ui_user_screen.h ui_manage_access_item.h ui_access_group.h ui_settings.h ui_override_screen.h $(OBJECTS)  
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
 Makefile: ../aces/aces.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
@@ -373,9 +379,9 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../aces/mainwindow.h ../aces/lock_screen.h ../aces/user_screen.h ../aces/manage_access_item.h ../aces/access_group.h ../aces/settings.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../aces/main.cpp ../aces/mainwindow.cpp ../aces/lock_screen.cpp ../aces/user_screen.cpp ../aces/manage_access_item.cpp ../aces/access_group.cpp ../aces/settings.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../aces/mainwindow.ui ../aces/lock_screen.ui ../aces/user_screen.ui ../aces/manage_access_item.ui ../aces/access_group.ui ../aces/settings.ui $(DISTDIR)/
+	$(COPY_FILE) --parents ../aces/mainwindow.h ../aces/lock_screen.h ../aces/user_screen.h ../aces/manage_access_item.h ../aces/access_group.h ../aces/settings.h ../aces/override_screen.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../aces/main.cpp ../aces/mainwindow.cpp ../aces/lock_screen.cpp ../aces/user_screen.cpp ../aces/manage_access_item.cpp ../aces/access_group.cpp ../aces/settings.cpp ../aces/override_screen.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../aces/mainwindow.ui ../aces/lock_screen.ui ../aces/user_screen.ui ../aces/manage_access_item.ui ../aces/access_group.ui ../aces/settings.ui ../aces/override_screen.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -407,9 +413,9 @@ compiler_moc_predefs_clean:
 moc_predefs.h: /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 	g++ -pipe -g -Wall -W -dM -E -o moc_predefs.h /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_mainwindow.cpp moc_lock_screen.cpp moc_user_screen.cpp moc_manage_access_item.cpp moc_access_group.cpp moc_settings.cpp
+compiler_moc_header_make_all: moc_mainwindow.cpp moc_lock_screen.cpp moc_user_screen.cpp moc_manage_access_item.cpp moc_access_group.cpp moc_settings.cpp moc_override_screen.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_mainwindow.cpp moc_lock_screen.cpp moc_user_screen.cpp moc_manage_access_item.cpp moc_access_group.cpp moc_settings.cpp
+	-$(DEL_FILE) moc_mainwindow.cpp moc_lock_screen.cpp moc_user_screen.cpp moc_manage_access_item.cpp moc_access_group.cpp moc_settings.cpp moc_override_screen.cpp
 moc_mainwindow.cpp: ../aces/mainwindow.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
@@ -440,11 +446,16 @@ moc_settings.cpp: ../aces/settings.h \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/mark/qt_projects/aces -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtMultimedia -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtSerialPort -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../aces/settings.h -o moc_settings.cpp
 
+moc_override_screen.cpp: ../aces/override_screen.h \
+		moc_predefs.h \
+		/usr/lib/qt5/bin/moc
+	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/mark/qt_projects/aces -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtMultimedia -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtSerialPort -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../aces/override_screen.h -o moc_override_screen.cpp
+
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_mainwindow.h ui_lock_screen.h ui_user_screen.h ui_manage_access_item.h ui_access_group.h ui_settings.h
+compiler_uic_make_all: ui_mainwindow.h ui_lock_screen.h ui_user_screen.h ui_manage_access_item.h ui_access_group.h ui_settings.h ui_override_screen.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_mainwindow.h ui_lock_screen.h ui_user_screen.h ui_manage_access_item.h ui_access_group.h ui_settings.h
+	-$(DEL_FILE) ui_mainwindow.h ui_lock_screen.h ui_user_screen.h ui_manage_access_item.h ui_access_group.h ui_settings.h ui_override_screen.h
 ui_mainwindow.h: ../aces/mainwindow.ui \
 		/usr/lib/qt5/bin/uic
 	/usr/lib/qt5/bin/uic ../aces/mainwindow.ui -o ui_mainwindow.h
@@ -469,6 +480,10 @@ ui_settings.h: ../aces/settings.ui \
 		/usr/lib/qt5/bin/uic
 	/usr/lib/qt5/bin/uic ../aces/settings.ui -o ui_settings.h
 
+ui_override_screen.h: ../aces/override_screen.ui \
+		/usr/lib/qt5/bin/uic
+	/usr/lib/qt5/bin/uic ../aces/override_screen.ui -o ui_override_screen.h
+
 compiler_yacc_decl_make_all:
 compiler_yacc_decl_clean:
 compiler_yacc_impl_make_all:
@@ -484,7 +499,8 @@ main.o: ../aces/main.cpp ../aces/mainwindow.h
 
 mainwindow.o: ../aces/mainwindow.cpp ../aces/mainwindow.h \
 		ui_mainwindow.h \
-		../aces/lock_screen.h
+		../aces/lock_screen.h \
+		../aces/override_screen.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../aces/mainwindow.cpp
 
 lock_screen.o: ../aces/lock_screen.cpp ../aces/lock_screen.h \
@@ -516,6 +532,11 @@ settings.o: ../aces/settings.cpp ../aces/settings.h \
 		../aces/mainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o settings.o ../aces/settings.cpp
 
+override_screen.o: ../aces/override_screen.cpp ../aces/override_screen.h \
+		ui_override_screen.h \
+		../aces/mainwindow.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o override_screen.o ../aces/override_screen.cpp
+
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp
 
@@ -533,6 +554,9 @@ moc_access_group.o: moc_access_group.cpp
 
 moc_settings.o: moc_settings.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_settings.o moc_settings.cpp
+
+moc_override_screen.o: moc_override_screen.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_override_screen.o moc_override_screen.cpp
 
 ####### Install
 

@@ -37,7 +37,7 @@ Lets Load a cool Background
       scene->setSceneRect(image.rect());        //   |               WOW !
       ui->graphicsView->setScene(scene);        //   |
       imageObject = new QImage();
-
+/*
       imageObject = new QImage();               //  _
       imageObject->load(SECONDBACKGROUNDIMAGE);       //   |
       image = QPixmap::fromImage(*imageObject); //   |
@@ -46,7 +46,7 @@ Lets Load a cool Background
       scene->setSceneRect(image.rect());        //   |               WOW !
       ui->graphicsView_2->setScene(scene);        //   |
       imageObject = new QImage();
-
+*/
 /*
 ==============================================================================================================
 Background is loaded

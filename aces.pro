@@ -10,6 +10,8 @@ QT += serialport
 QT += network
 QT += multimedia
 
+
+
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = aces
@@ -34,7 +36,8 @@ SOURCES += \
     user_screen.cpp \
     manage_access_item.cpp \
     access_group.cpp \
-    settings.cpp
+    settings.cpp \
+    override_screen.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -42,7 +45,8 @@ HEADERS += \
     user_screen.h \
     manage_access_item.h \
     access_group.h \
-    settings.h
+    settings.h \
+    override_screen.h
 
 FORMS += \
         mainwindow.ui \
@@ -50,4 +54,5 @@ FORMS += \
     user_screen.ui \
     manage_access_item.ui \
     access_group.ui \
-    settings.ui
+    settings.ui \
+    override_screen.ui

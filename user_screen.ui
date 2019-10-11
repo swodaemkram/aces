@@ -747,9 +747,14 @@
       <rect>
        <x>10</x>
        <y>20</y>
-       <width>91</width>
+       <width>121</width>
        <height>17</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>14</pointsize>
+      </font>
      </property>
      <property name="text">
       <string>First Name :</string>
@@ -758,7 +763,7 @@
     <widget class="QPlainTextEdit" name="plainTextEdit">
      <property name="geometry">
       <rect>
-       <x>100</x>
+       <x>130</x>
        <y>10</y>
        <width>221</width>
        <height>31</height>
@@ -784,9 +789,14 @@
       <rect>
        <x>10</x>
        <y>60</y>
-       <width>91</width>
+       <width>111</width>
        <height>17</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>14</pointsize>
+      </font>
      </property>
      <property name="text">
       <string>Last Name :</string>
@@ -795,7 +805,7 @@
     <widget class="QPlainTextEdit" name="plainTextEdit_2">
      <property name="geometry">
       <rect>
-       <x>100</x>
+       <x>130</x>
        <y>50</y>
        <width>221</width>
        <height>31</height>
@@ -816,11 +826,16 @@
     <widget class="QLabel" name="label_5">
      <property name="geometry">
       <rect>
-       <x>60</x>
+       <x>70</x>
        <y>100</y>
        <width>41</width>
        <height>17</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>14</pointsize>
+      </font>
      </property>
      <property name="text">
       <string>PIN :</string>
@@ -829,7 +844,7 @@
     <widget class="QPlainTextEdit" name="plainTextEdit_3">
      <property name="geometry">
       <rect>
-       <x>100</x>
+       <x>120</x>
        <y>90</y>
        <width>391</width>
        <height>41</height>
@@ -893,11 +908,16 @@
     <widget class="QLabel" name="label_6">
      <property name="geometry">
       <rect>
-       <x>340</x>
+       <x>390</x>
        <y>20</y>
-       <width>131</width>
-       <height>17</height>
+       <width>191</width>
+       <height>20</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>14</pointsize>
+      </font>
      </property>
      <property name="text">
       <string>Permission Group :</string>
@@ -906,7 +926,7 @@
     <widget class="QPlainTextEdit" name="plainTextEdit_4">
      <property name="geometry">
       <rect>
-       <x>480</x>
+       <x>590</x>
        <y>10</y>
        <width>221</width>
        <height>31</height>
@@ -1131,15 +1151,16 @@
     <widget class="QLabel" name="label_7">
      <property name="geometry">
       <rect>
-       <x>70</x>
+       <x>50</x>
        <y>200</y>
-       <width>151</width>
+       <width>171</width>
        <height>20</height>
       </rect>
      </property>
      <property name="font">
       <font>
        <family>Ubuntu Condensed</family>
+       <pointsize>14</pointsize>
        <weight>75</weight>
        <bold>true</bold>
       </font>
@@ -1153,13 +1174,14 @@
       <rect>
        <x>620</x>
        <y>200</y>
-       <width>141</width>
+       <width>151</width>
        <height>17</height>
       </rect>
      </property>
      <property name="font">
       <font>
        <family>Ubuntu Condensed</family>
+       <pointsize>14</pointsize>
        <weight>75</weight>
        <bold>true</bold>
       </font>
@@ -1197,9 +1219,14 @@
       <rect>
        <x>30</x>
        <y>140</y>
-       <width>67</width>
+       <width>81</width>
        <height>21</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>14</pointsize>
+      </font>
      </property>
      <property name="text">
       <string>USER ID :</string>
@@ -1208,7 +1235,7 @@
     <widget class="QLabel" name="label_11">
      <property name="geometry">
       <rect>
-       <x>100</x>
+       <x>120</x>
        <y>130</y>
        <width>81</width>
        <height>41</height>
@@ -1386,7 +1413,7 @@
     <widget class="QListWidget" name="listWidget">
      <property name="geometry">
       <rect>
-       <x>510</x>
+       <x>620</x>
        <y>50</y>
        <width>191</width>
        <height>121</height>
@@ -1415,6 +1442,9 @@
        <width>831</width>
        <height>251</height>
       </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>true</bool>
      </property>
      <property name="verticalScrollBarPolicy">
       <enum>Qt::ScrollBarAlwaysOff</enum>
@@ -1525,7 +1555,7 @@
       <rect>
        <x>10</x>
        <y>10</y>
-       <width>811</width>
+       <width>838</width>
        <height>311</height>
       </rect>
      </property>

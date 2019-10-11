@@ -7,7 +7,7 @@
 #include <QtSql>
 #include <unistd.h>
 #include <QNetworkInterface>
-
+#include"override_screen.h"
 
 QString UserID;
 QString Pin;
@@ -22,8 +22,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
   ui->setupUi(this);
-
-
 
 /*
 ===============================================================================================================
@@ -122,7 +120,7 @@ if (!db.open())
  QSqlQuery query4;
  query4.exec("INSERT INTO event_log (event_date, event_time, event_code) VALUES ('"+ event_date + "','" + event_time + "','" + "1" +"')");
 
-qDebug() << QNetworkInterface::interfaceFromIndex(2).hardwareAddress();
+
 
 /*
 =====================================================How We play Audio============================================
@@ -689,4 +687,11 @@ void MainWindow::Open_Lock1_SerialPort()
     }
 
     return;
+}
+
+void MainWindow::on_pushButton_16_clicked()
+{
+    override_screen override_screen;
+    override_screen.setModal(true);
+    override_screen.exec();
 }

@@ -20,7 +20,7 @@ Definitions
 #define SECONDBACKGROUNDIMAGE "./icons/background2.jpg"
 #define REDBACKGROUNDIMAGE "./icons/B4RED.jpg"
 #define SETTINGSBACKGROUND "./icons/settingsbackground.jpg"
-
+#define BACKGROUNDOVERRIDE "./icons/B0.jpg"
 /*
 ==============================================================================================================
 End Definitions
@@ -73,6 +73,8 @@ private slots:
     void DoorMonitorTimerSlot();
 
     void Open_Lock1_SerialPort();
+
+    void on_pushButton_16_clicked();
 
 private:
     Ui::MainWindow *ui;

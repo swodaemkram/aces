@@ -57,13 +57,19 @@ SOURCES       = ../aces/main.cpp \
 		../aces/manage_access_item.cpp \
 		../aces/access_group.cpp \
 		../aces/settings.cpp \
-		../aces/override_screen.cpp moc_mainwindow.cpp \
+		../aces/override_screen.cpp \
+		../aces/pin_change_screen.cpp \
+		../aces/set_time_screen.cpp \
+		../aces/networksettings.cpp moc_mainwindow.cpp \
 		moc_lock_screen.cpp \
 		moc_user_screen.cpp \
 		moc_manage_access_item.cpp \
 		moc_access_group.cpp \
 		moc_settings.cpp \
-		moc_override_screen.cpp
+		moc_override_screen.cpp \
+		moc_pin_change_screen.cpp \
+		moc_set_time_screen.cpp \
+		moc_networksettings.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
 		lock_screen.o \
@@ -72,13 +78,19 @@ OBJECTS       = main.o \
 		access_group.o \
 		settings.o \
 		override_screen.o \
+		pin_change_screen.o \
+		set_time_screen.o \
+		networksettings.o \
 		moc_mainwindow.o \
 		moc_lock_screen.o \
 		moc_user_screen.o \
 		moc_manage_access_item.o \
 		moc_access_group.o \
 		moc_settings.o \
-		moc_override_screen.o
+		moc_override_screen.o \
+		moc_pin_change_screen.o \
+		moc_set_time_screen.o \
+		moc_networksettings.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/linux.conf \
@@ -166,14 +178,20 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		../aces/manage_access_item.h \
 		../aces/access_group.h \
 		../aces/settings.h \
-		../aces/override_screen.h ../aces/main.cpp \
+		../aces/override_screen.h \
+		../aces/pin_change_screen.h \
+		../aces/set_time_screen.h \
+		../aces/networksettings.h ../aces/main.cpp \
 		../aces/mainwindow.cpp \
 		../aces/lock_screen.cpp \
 		../aces/user_screen.cpp \
 		../aces/manage_access_item.cpp \
 		../aces/access_group.cpp \
 		../aces/settings.cpp \
-		../aces/override_screen.cpp
+		../aces/override_screen.cpp \
+		../aces/pin_change_screen.cpp \
+		../aces/set_time_screen.cpp \
+		../aces/networksettings.cpp
 QMAKE_TARGET  = aces
 DESTDIR       = 
 TARGET        = aces
@@ -182,7 +200,7 @@ TARGET        = aces
 first: all
 ####### Build rules
 
-$(TARGET): ui_mainwindow.h ui_lock_screen.h ui_user_screen.h ui_manage_access_item.h ui_access_group.h ui_settings.h ui_override_screen.h $(OBJECTS)  
+$(TARGET): ui_mainwindow.h ui_lock_screen.h ui_user_screen.h ui_manage_access_item.h ui_access_group.h ui_settings.h ui_override_screen.h ui_pin_change_screen.h ui_set_time_screen.h ui_networksettings.h $(OBJECTS)  
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
 Makefile: ../aces/aces.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
@@ -379,9 +397,9 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../aces/mainwindow.h ../aces/lock_screen.h ../aces/user_screen.h ../aces/manage_access_item.h ../aces/access_group.h ../aces/settings.h ../aces/override_screen.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../aces/main.cpp ../aces/mainwindow.cpp ../aces/lock_screen.cpp ../aces/user_screen.cpp ../aces/manage_access_item.cpp ../aces/access_group.cpp ../aces/settings.cpp ../aces/override_screen.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../aces/mainwindow.ui ../aces/lock_screen.ui ../aces/user_screen.ui ../aces/manage_access_item.ui ../aces/access_group.ui ../aces/settings.ui ../aces/override_screen.ui $(DISTDIR)/
+	$(COPY_FILE) --parents ../aces/mainwindow.h ../aces/lock_screen.h ../aces/user_screen.h ../aces/manage_access_item.h ../aces/access_group.h ../aces/settings.h ../aces/override_screen.h ../aces/pin_change_screen.h ../aces/set_time_screen.h ../aces/networksettings.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../aces/main.cpp ../aces/mainwindow.cpp ../aces/lock_screen.cpp ../aces/user_screen.cpp ../aces/manage_access_item.cpp ../aces/access_group.cpp ../aces/settings.cpp ../aces/override_screen.cpp ../aces/pin_change_screen.cpp ../aces/set_time_screen.cpp ../aces/networksettings.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../aces/mainwindow.ui ../aces/lock_screen.ui ../aces/user_screen.ui ../aces/manage_access_item.ui ../aces/access_group.ui ../aces/settings.ui ../aces/override_screen.ui ../aces/pin_change_screen.ui ../aces/set_time_screen.ui ../aces/networksettings.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -413,9 +431,9 @@ compiler_moc_predefs_clean:
 moc_predefs.h: /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 	g++ -pipe -g -Wall -W -dM -E -o moc_predefs.h /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_mainwindow.cpp moc_lock_screen.cpp moc_user_screen.cpp moc_manage_access_item.cpp moc_access_group.cpp moc_settings.cpp moc_override_screen.cpp
+compiler_moc_header_make_all: moc_mainwindow.cpp moc_lock_screen.cpp moc_user_screen.cpp moc_manage_access_item.cpp moc_access_group.cpp moc_settings.cpp moc_override_screen.cpp moc_pin_change_screen.cpp moc_set_time_screen.cpp moc_networksettings.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_mainwindow.cpp moc_lock_screen.cpp moc_user_screen.cpp moc_manage_access_item.cpp moc_access_group.cpp moc_settings.cpp moc_override_screen.cpp
+	-$(DEL_FILE) moc_mainwindow.cpp moc_lock_screen.cpp moc_user_screen.cpp moc_manage_access_item.cpp moc_access_group.cpp moc_settings.cpp moc_override_screen.cpp moc_pin_change_screen.cpp moc_set_time_screen.cpp moc_networksettings.cpp
 moc_mainwindow.cpp: ../aces/mainwindow.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
@@ -451,11 +469,26 @@ moc_override_screen.cpp: ../aces/override_screen.h \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/mark/qt_projects/aces -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtMultimedia -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtSerialPort -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../aces/override_screen.h -o moc_override_screen.cpp
 
+moc_pin_change_screen.cpp: ../aces/pin_change_screen.h \
+		moc_predefs.h \
+		/usr/lib/qt5/bin/moc
+	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/mark/qt_projects/aces -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtMultimedia -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtSerialPort -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../aces/pin_change_screen.h -o moc_pin_change_screen.cpp
+
+moc_set_time_screen.cpp: ../aces/set_time_screen.h \
+		moc_predefs.h \
+		/usr/lib/qt5/bin/moc
+	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/mark/qt_projects/aces -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtMultimedia -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtSerialPort -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../aces/set_time_screen.h -o moc_set_time_screen.cpp
+
+moc_networksettings.cpp: ../aces/networksettings.h \
+		moc_predefs.h \
+		/usr/lib/qt5/bin/moc
+	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/mark/qt_projects/aces -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtMultimedia -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtSerialPort -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../aces/networksettings.h -o moc_networksettings.cpp
+
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_mainwindow.h ui_lock_screen.h ui_user_screen.h ui_manage_access_item.h ui_access_group.h ui_settings.h ui_override_screen.h
+compiler_uic_make_all: ui_mainwindow.h ui_lock_screen.h ui_user_screen.h ui_manage_access_item.h ui_access_group.h ui_settings.h ui_override_screen.h ui_pin_change_screen.h ui_set_time_screen.h ui_networksettings.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_mainwindow.h ui_lock_screen.h ui_user_screen.h ui_manage_access_item.h ui_access_group.h ui_settings.h ui_override_screen.h
+	-$(DEL_FILE) ui_mainwindow.h ui_lock_screen.h ui_user_screen.h ui_manage_access_item.h ui_access_group.h ui_settings.h ui_override_screen.h ui_pin_change_screen.h ui_set_time_screen.h ui_networksettings.h
 ui_mainwindow.h: ../aces/mainwindow.ui \
 		/usr/lib/qt5/bin/uic
 	/usr/lib/qt5/bin/uic ../aces/mainwindow.ui -o ui_mainwindow.h
@@ -483,6 +516,18 @@ ui_settings.h: ../aces/settings.ui \
 ui_override_screen.h: ../aces/override_screen.ui \
 		/usr/lib/qt5/bin/uic
 	/usr/lib/qt5/bin/uic ../aces/override_screen.ui -o ui_override_screen.h
+
+ui_pin_change_screen.h: ../aces/pin_change_screen.ui \
+		/usr/lib/qt5/bin/uic
+	/usr/lib/qt5/bin/uic ../aces/pin_change_screen.ui -o ui_pin_change_screen.h
+
+ui_set_time_screen.h: ../aces/set_time_screen.ui \
+		/usr/lib/qt5/bin/uic
+	/usr/lib/qt5/bin/uic ../aces/set_time_screen.ui -o ui_set_time_screen.h
+
+ui_networksettings.h: ../aces/networksettings.ui \
+		/usr/lib/qt5/bin/uic
+	/usr/lib/qt5/bin/uic ../aces/networksettings.ui -o ui_networksettings.h
 
 compiler_yacc_decl_make_all:
 compiler_yacc_decl_clean:
@@ -534,8 +579,21 @@ settings.o: ../aces/settings.cpp ../aces/settings.h \
 
 override_screen.o: ../aces/override_screen.cpp ../aces/override_screen.h \
 		ui_override_screen.h \
-		../aces/mainwindow.h
+		../aces/mainwindow.h \
+		../aces/user_screen.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o override_screen.o ../aces/override_screen.cpp
+
+pin_change_screen.o: ../aces/pin_change_screen.cpp ../aces/pin_change_screen.h \
+		ui_pin_change_screen.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o pin_change_screen.o ../aces/pin_change_screen.cpp
+
+set_time_screen.o: ../aces/set_time_screen.cpp ../aces/set_time_screen.h \
+		ui_set_time_screen.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o set_time_screen.o ../aces/set_time_screen.cpp
+
+networksettings.o: ../aces/networksettings.cpp ../aces/networksettings.h \
+		ui_networksettings.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o networksettings.o ../aces/networksettings.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp
@@ -557,6 +615,15 @@ moc_settings.o: moc_settings.cpp
 
 moc_override_screen.o: moc_override_screen.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_override_screen.o moc_override_screen.cpp
+
+moc_pin_change_screen.o: moc_pin_change_screen.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_pin_change_screen.o moc_pin_change_screen.cpp
+
+moc_set_time_screen.o: moc_set_time_screen.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_set_time_screen.o moc_set_time_screen.cpp
+
+moc_networksettings.o: moc_networksettings.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_networksettings.o moc_networksettings.cpp
 
 ####### Install
 

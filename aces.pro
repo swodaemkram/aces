@@ -37,7 +37,10 @@ SOURCES += \
     manage_access_item.cpp \
     access_group.cpp \
     settings.cpp \
-    override_screen.cpp
+    override_screen.cpp \
+    pin_change_screen.cpp \
+    set_time_screen.cpp \
+    networksettings.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -46,7 +49,10 @@ HEADERS += \
     manage_access_item.h \
     access_group.h \
     settings.h \
-    override_screen.h
+    override_screen.h \
+    pin_change_screen.h \
+    set_time_screen.h \
+    networksettings.h
 
 FORMS += \
         mainwindow.ui \
@@ -55,4 +61,7 @@ FORMS += \
     manage_access_item.ui \
     access_group.ui \
     settings.ui \
-    override_screen.ui
+    override_screen.ui \
+    pin_change_screen.ui \
+    set_time_screen.ui \
+    networksettings.ui

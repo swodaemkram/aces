@@ -490,9 +490,9 @@ void override_screen::on_pushButton_3_clicked()
      QString MD5_Hash_from_db = query.value(0).toString();
      //ui->plainTextEdit_3->setPlainText(MD5_Hash_from_db);//DEBUG
 
- //-------------------------------------We need one of these for each screen we will----------------------------
- //------------------------------------Allow access to with this override---------------------------------------
- //--------------------------------------Allow access to User Edit Screen---------------------------------------
+//-------------------------------------We need one of these for each screen we will----------------------------
+//------------------------------------Allow access to with this override---------------------------------------
+//--------------------------------------Allow access to User Edit Screen---------------------------------------
      if (ui->plainTextEdit->toPlainText().compare("1") == 0 && MD5_Hash_from_db.compare(ui->plainTextEdit_3->toPlainText()) == 0)
      {
          user_screen user_screen;
@@ -500,7 +500,16 @@ void override_screen::on_pushButton_3_clicked()
          user_screen.exec();
          close();
      }
- //------------------------------------End of User Edit Override----------------------------------------------
+//------------------------------------End of User Edit Override-------------------------------------------------
+//------------------------------------Allow override to set date and time---------------------------------------
+     if (ui->plainTextEdit->toPlainText().compare("2") == 0 && MD5_Hash_from_db.compare(ui->plainTextEdit_3->toPlainText()) == 0)
+     {
+         user_screen user_screen;
+         user_screen.setModal(true);
+         user_screen.exec();
+         close();
+     }
+//-------------------------------------End of Time Date override------------------------------------------------
 
 return;
 

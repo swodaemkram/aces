@@ -21,6 +21,7 @@ Definitions
 #define REDBACKGROUNDIMAGE "./icons/B4RED.jpg"
 #define SETTINGSBACKGROUND "./icons/settingsbackground.jpg"
 #define BACKGROUNDOVERRIDE "./icons/B0.jpg"
+#define HELPICON "./icons/Help_Circle_Blue.png"
 /*
 ==============================================================================================================
 End Definitions

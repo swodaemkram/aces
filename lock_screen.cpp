@@ -624,6 +624,7 @@ Open System Screen
 void lock_screen::on_pushButton_3_clicked()
 {
 
+   timer->stop();
 
 //------------------------------------------------------Log Event--------------------------------------------------------
     QSqlDatabase db = QSqlDatabase::addDatabase(DATABASEDRIVER);
@@ -646,6 +647,8 @@ void lock_screen::on_pushButton_3_clicked()
      settings settings;
      settings.setModal(true);
      settings.exec();
+
+     timer->start(500);
 }
 /*
 ============================================================================================================================

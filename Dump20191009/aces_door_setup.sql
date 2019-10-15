@@ -39,7 +39,7 @@ CREATE TABLE `door_setup` (
 
 LOCK TABLES `door_setup` WRITE;
 /*!40000 ALTER TABLE `door_setup` DISABLE KEYS */;
-INSERT INTO `door_setup` VALUES (1,'outside door',0,10,1),(2,'inside door 1',0,10,1),(3,'inside door 2',0,10,1),(4,'inside door 3',0,10,1),(5,'inside door 4',0,10,1),(6,'inside door 5',0,10,1);
+INSERT INTO `door_setup` VALUES (1,'outside door',0,10,1),(2,'inside door 1',0,10,1),(3,'inside door 2',0,10,0),(4,'inside door 3',0,10,0),(5,'inside door 4',0,10,0),(6,'inside door 5',0,10,0);
 /*!40000 ALTER TABLE `door_setup` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-10-09 12:21:44
+-- Dump completed on 2019-10-15 16:03:04

@@ -23,23 +23,15 @@ DROP TABLE IF EXISTS `system_config`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `system_config` (
-  `idsystem_config` int(10) unsigned NOT NULL,
+  `idsystem_config` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `Language` varchar(45) DEFAULT NULL,
-  `Lock1_type` varchar(45) DEFAULT NULL,
-  `Lock2_type` varchar(45) DEFAULT NULL,
-  `Lock3_type` varchar(45) DEFAULT NULL,
-  `Lock4_type` varchar(45) DEFAULT NULL,
-  `Lock5_type` varchar(45) DEFAULT NULL,
-  `Lock6_type` varchar(45) DEFAULT NULL,
-  `Lock1_path` varchar(45) DEFAULT NULL,
-  `Lock2_path` varchar(45) DEFAULT NULL,
-  `Lock3_path` varchar(45) DEFAULT NULL,
-  `Lock4_path` varchar(45) DEFAULT NULL,
-  `Lock5_path` varchar(45) DEFAULT NULL,
-  `Lock6_path` varchar(45) DEFAULT NULL,
+  `days_before_pin_change` int(11) DEFAULT NULL,
+  `number_of_pin_digits` int(11) DEFAULT NULL,
+  `force_pin_change` int(11) DEFAULT NULL,
+  `door_alarm_delay` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idsystem_config`),
   UNIQUE KEY `idsystem_config_UNIQUE` (`idsystem_config`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -48,6 +40,7 @@ CREATE TABLE `system_config` (
 
 LOCK TABLES `system_config` WRITE;
 /*!40000 ALTER TABLE `system_config` DISABLE KEYS */;
+INSERT INTO `system_config` VALUES (1,'english',10,4,0,'20');
 /*!40000 ALTER TABLE `system_config` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -60,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-10-09 12:21:44
+-- Dump completed on 2019-10-15 16:03:04

@@ -24,12 +24,13 @@ DROP TABLE IF EXISTS `user`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `user` (
   `iduser` int(11) NOT NULL AUTO_INCREMENT,
-  `first_name` varchar(45) DEFAULT NULL,
-  `last_name` varchar(45) DEFAULT NULL,
+  `User_id` varchar(45) DEFAULT NULL,
+  `name` varchar(45) DEFAULT NULL,
   `pin_number` varchar(45) DEFAULT NULL,
   `permission_group` varchar(45) DEFAULT NULL,
   `user_enabled` tinyint(1) DEFAULT NULL,
   `override_key_number` int(20) unsigned DEFAULT NULL,
+  `date_of_last_pin_change` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`iduser`),
   UNIQUE KEY `iduser_UNIQUE` (`iduser`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
@@ -41,7 +42,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (4,'Steve','Meadows','dbc4d84bfcfe2284ba11beffb853a8c4','Door2',1,NULL),(5,'Mark','Meadows','2be9bd7a3434f7038ca27d1918de58bd','Admin',1,NULL),(9,'Big','MaCrevus','29549a71a57f587d88209b9c1f1b7999','NOONE',1,NULL),(11,'Brian','Meadows','b59c67bf196a4758191e42f76670ceba','noone',1,NULL),(12,'Real','Wave','b59c67bf196a4758191e42f76670ceba','employee',1,NULL);
+INSERT INTO `user` VALUES (4,'0666','Steve meadows','dbc4d84bfcfe2284ba11beffb853a8c4','Door2',1,NULL,NULL),(5,'0145','Mark meadows','2be9bd7a3434f7038ca27d1918de58bd','Admin',1,NULL,NULL),(9,'0777','Big macrevas','29549a71a57f587d88209b9c1f1b7999','NOONE',1,NULL,NULL),(11,'0333','Brian meadows','b59c67bf196a4758191e42f76670ceba','noone',1,NULL,NULL),(12,'0888','Real wave','b59c67bf196a4758191e42f76670ceba','Door2',1,NULL,NULL);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -54,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-10-09 12:21:44
+-- Dump completed on 2019-10-15 16:03:04

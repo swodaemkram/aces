@@ -51,7 +51,37 @@ QTimer *timer;
 
 QString FirstNameFromDatabase;
 QString LastNameFromDatabase;
+//----------------------------------------System Settings--------------------------------------------------
 
+QString door1_name;
+QString door2_name;
+QString door3_name;
+QString door4_name;
+QString door5_name;
+QString door6_name;
+
+int door1_open_delay = 0;
+int door2_open_delay = 0;
+int door3_open_delay = 0;
+int door4_open_delay = 0;
+int door5_open_delay = 0;
+int door6_open_delay = 0;
+
+int door1_open_alarm = 0;
+int door2_open_alarm = 0;
+int door3_open_alarm = 0;
+int door4_open_alarm = 0;
+int door5_open_alarm = 0;
+int door6_open_alarm = 0;
+
+int door1_enabled = 0;
+int door2_enabled = 0;
+int door3_enabled = 0;
+int door4_enabled = 0;
+int door5_enabled = 0;
+int door6_enabled = 0;
+
+//---------------------------------------End of System Settings-------------------------------------------
 lock_screen::lock_screen(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::lock_screen)
@@ -87,9 +117,53 @@ Lets Load a cool Background
   scene = new QGraphicsScene(this);         //   |
   scene->addPixmap(image);                  //   |_______All this to display a picture
   scene->setSceneRect(image.rect());        //   |               WOW !
-  ui->graphicsView_2->setScene(scene);        //   |
+  ui->graphicsView_2->setScene(scene);      //   |
   imageObject = new QImage();
 
+  imageObject = new QImage();               //  _
+  imageObject->load("./icons/black-open-door.png");       //   |
+  image = QPixmap::fromImage(*imageObject); //   |
+  scene = new QGraphicsScene(this);         //   |
+  scene->addPixmap(image);                  //   |_______All this to display a picture
+  scene->setSceneRect(image.rect());        //   |               WOW !
+  ui->graphicsView_3->setScene(scene);      //   |
+  imageObject = new QImage();
+
+  imageObject = new QImage();               //  _
+  imageObject->load("./icons/black-open-door.png");       //   |
+  image = QPixmap::fromImage(*imageObject); //   |
+  scene = new QGraphicsScene(this);         //   |
+  scene->addPixmap(image);                  //   |_______All this to display a picture
+  scene->setSceneRect(image.rect());        //   |               WOW !
+  ui->graphicsView_4->setScene(scene);      //   |
+  imageObject = new QImage();
+
+  imageObject = new QImage();               //  _
+  imageObject->load("./icons/black-open-door.png");       //   |
+  image = QPixmap::fromImage(*imageObject); //   |
+  scene = new QGraphicsScene(this);         //   |
+  scene->addPixmap(image);                  //   |_______All this to display a picture
+  scene->setSceneRect(image.rect());        //   |               WOW !
+  ui->graphicsView_5->setScene(scene);      //   |
+  imageObject = new QImage();
+
+  imageObject = new QImage();               //  _
+  imageObject->load("./icons/black-open-door.png");       //   |
+  image = QPixmap::fromImage(*imageObject); //   |
+  scene = new QGraphicsScene(this);         //   |
+  scene->addPixmap(image);                  //   |_______All this to display a picture
+  scene->setSceneRect(image.rect());        //   |               WOW !
+  ui->graphicsView_6->setScene(scene);      //   |
+  imageObject = new QImage();
+
+  imageObject = new QImage();               //  _
+  imageObject->load("./icons/black-open-door.png");       //   |
+  image = QPixmap::fromImage(*imageObject); //   |
+  scene = new QGraphicsScene(this);         //   |
+  scene->addPixmap(image);                  //   |_______All this to display a picture
+  scene->setSceneRect(image.rect());        //   |               WOW !
+  ui->graphicsView_7->setScene(scene);      //   |
+  imageObject = new QImage();
 
   ui->graphicsView_2->hide();
   ui->graphicsView_3->hide();
@@ -97,15 +171,152 @@ Lets Load a cool Background
   ui->graphicsView_5->hide();
   ui->graphicsView_6->hide();
   ui->graphicsView_7->hide();
+/*
+==============================================================================================================
+Lets Load System Configurations
+==============================================================================================================
+*/
+  QSqlDatabase db = QSqlDatabase::addDatabase(DATABASEDRIVER);
+  db.setHostName(DATABASEURL);
+  db.setDatabaseName(DATABASENAME);
+  db.setUserName(DATABASEUSER);
+  db.setPassword(DATABASEPASSWORD);
+  QSqlQuery query0;
+
+  if (!db.open())
+  {
+       ui->label_2->setText("Unable to connect to database !!!");
+      return;
+  }
+   ui->label_2->setText("Connected to database....");
+   query0.exec("SELECT * FROM door_setup");
+//--------------------------------------------Door1 Setup----------------------------------------------------
+   query0.next();
+   door1_name = query0.value(1).toString();
+   door1_open_delay = query0.value(2).toInt();
+   door1_open_alarm = query0.value(3).toInt();
+   door1_enabled = query0.value(4).toInt();
+   ui->pushButton_6->setText(door1_name);
+//------------------------------------------End of Door1 Setup----------------------------------------------
+//---------------------------------------------Door2 Setup--------------------------------------------------
+   query0.next();
+   door2_name = query0.value(1).toString();
+   door2_open_delay = query0.value(2).toInt();
+   door2_open_alarm = query0.value(3).toInt();
+   door2_enabled = query0.value(4).toInt();
+   ui->pushButton_7->setText(door2_name);
+//------------------------------------------End of Door2 Setup----------------------------------------------
+//---------------------------------------------Door3 Setup--------------------------------------------------
+   query0.next();
+   door3_name = query0.value(1).toString();
+   door3_open_delay = query0.value(2).toInt();
+   door3_open_alarm = query0.value(3).toInt();
+   door3_enabled = query0.value(4).toInt();
+   ui->pushButton_8->setText(door3_name);
+//------------------------------------------End of Door3 Setup----------------------------------------------
+//---------------------------------------------Door4 Setup--------------------------------------------------
+   query0.next();
+   door4_name = query0.value(1).toString();
+   door4_open_delay = query0.value(2).toInt();
+   door4_open_alarm = query0.value(3).toInt();
+   door4_enabled = query0.value(4).toInt();
+   ui->pushButton_9->setText(door4_name);
+//------------------------------------------End of Door4 Setup----------------------------------------------
+//---------------------------------------------Door5 Setup--------------------------------------------------
+   query0.next();
+   door5_name = query0.value(1).toString();
+   door5_open_delay = query0.value(2).toInt();
+   door5_open_alarm = query0.value(3).toInt();
+   door5_enabled = query0.value(4).toInt();
+   ui->pushButton_10->setText(door5_name);
+//------------------------------------------End of Door5 Setup----------------------------------------------
+//---------------------------------------------Door6 Setup--------------------------------------------------
+   query0.next();
+   door6_name = query0.value(1).toString();
+   door6_open_delay = query0.value(2).toInt();
+   door6_open_alarm = query0.value(3).toInt();
+   door6_enabled = query0.value(4).toInt();
+   ui->pushButton_11->setText(door6_name);
+//------------------------------------------End of Door6 Setup----------------------------------------------
 
 /*
 ==============================================================================================================
-Lets open some comm ports
+Lets open some comm ports if enablede
 ==============================================================================================================
 */
-
+//---------------------------------------------------Door 1--------------------------------------------------
+  if (door1_enabled == 1)
+  {
   lock1_serial = new QSerialPort(this);
-  open_Lock1_SerialPort();
+  lock1_serial->setPortName("/dev/ttyACM0");
+  lock1_serial->setBaudRate(QSerialPort::Baud115200);
+  lock1_serial->setDataBits(QSerialPort::Data8);
+  lock1_serial->setParity(QSerialPort::NoParity);
+  lock1_serial->setStopBits(QSerialPort::OneStop);
+  lock1_serial->setFlowControl(QSerialPort::NoFlowControl);
+  lock1_serial->open(QIODevice::ReadWrite);
+  }
+//---------------------------------------------------Door 2--------------------------------------------------
+  if (door2_enabled == 1)
+  {
+  lock2_serial = new QSerialPort(this);
+  lock2_serial->setPortName("/dev/ttyACM1");
+  lock2_serial->setBaudRate(QSerialPort::Baud115200);
+  lock2_serial->setDataBits(QSerialPort::Data8);
+  lock2_serial->setParity(QSerialPort::NoParity);
+  lock2_serial->setStopBits(QSerialPort::OneStop);
+  lock2_serial->setFlowControl(QSerialPort::NoFlowControl);
+  lock2_serial->open(QIODevice::ReadWrite);
+  }
+//----------------------------------------------------Door 3------------------------------------------------
+  if (door3_enabled == 1)
+  {
+  lock3_serial = new QSerialPort(this);
+  lock3_serial->setPortName("/dev/ttyACM2");
+  lock3_serial->setBaudRate(QSerialPort::Baud115200);
+  lock3_serial->setDataBits(QSerialPort::Data8);
+  lock3_serial->setParity(QSerialPort::NoParity);
+  lock3_serial->setStopBits(QSerialPort::OneStop);
+  lock3_serial->setFlowControl(QSerialPort::NoFlowControl);
+  lock3_serial->open(QIODevice::ReadWrite);
+  }
+//----------------------------------------------------Door 4------------------------------------------------
+  if (door4_enabled == 1)
+  {
+  lock4_serial = new QSerialPort(this);
+  lock4_serial->setPortName("/dev/ttyACM3");
+  lock4_serial->setBaudRate(QSerialPort::Baud115200);
+  lock4_serial->setDataBits(QSerialPort::Data8);
+  lock4_serial->setParity(QSerialPort::NoParity);
+  lock4_serial->setStopBits(QSerialPort::OneStop);
+  lock4_serial->setFlowControl(QSerialPort::NoFlowControl);
+  lock4_serial->open(QIODevice::ReadWrite);
+  }
+//-----------------------------------------------------Door 5-----------------------------------------------
+  if (door5_enabled == 1)
+  {
+  lock5_serial = new QSerialPort(this);
+  lock5_serial->setPortName("/dev/ttyACM4");
+  lock5_serial->setBaudRate(QSerialPort::Baud115200);
+  lock5_serial->setDataBits(QSerialPort::Data8);
+  lock5_serial->setParity(QSerialPort::NoParity);
+  lock5_serial->setStopBits(QSerialPort::OneStop);
+  lock5_serial->setFlowControl(QSerialPort::NoFlowControl);
+  lock5_serial->open(QIODevice::ReadWrite);
+  }
+//------------------------------------------------------Door 6----------------------------------------------
+  if (door6_enabled == 1)
+  {
+  lock6_serial = new QSerialPort(this);
+  lock6_serial->setPortName("/dev/ttyACM4");
+  lock6_serial->setBaudRate(QSerialPort::Baud115200);
+  lock6_serial->setDataBits(QSerialPort::Data8);
+  lock6_serial->setParity(QSerialPort::NoParity);
+  lock6_serial->setStopBits(QSerialPort::OneStop);
+  lock6_serial->setFlowControl(QSerialPort::NoFlowControl);
+  lock6_serial->open(QIODevice::ReadWrite);
+  }
+
 /*
 =============================================================================================================
 Locks Comm Ports are Now Open
@@ -113,19 +324,15 @@ Locks Comm Ports are Now Open
 Lets check lock door status
 =============================================================================================================
 */
-
-
   timer = new QTimer;
   connect(timer, SIGNAL(timeout()), this, SLOT(MyTimerSlot()));
   timer->start(500);
-
-
 /*
 ==============================================================================================================
 Lets Figure out who logqed in and what they can do
 ==============================================================================================================
 */
-  QSqlDatabase db = QSqlDatabase::addDatabase(DATABASEDRIVER);
+  //QSqlDatabase db = QSqlDatabase::addDatabase(DATABASEDRIVER);
   db.setHostName(DATABASEURL);
   db.setDatabaseName(DATABASENAME);
   db.setUserName(DATABASEUSER);
@@ -143,11 +350,8 @@ Ok so we conneced to the database, now run querry
 ============================================================================================================
 */
    QSqlQuery query;
-   query.exec("SELECT * FROM user WHERE iduser = " + UserID);
+   query.exec("SELECT * FROM user WHERE iduser = " + UserID + " OR User_id = " + UserID);//<--We need user id or alt-id to validate
    query.next();
-   FirstNameFromDatabase = query.value(1).toString();
-   LastNameFromDatabase = query.value(2).toString();
-   ui->label_2->setText("User Logged in is " + FirstNameFromDatabase + " " + LastNameFromDatabase);
 //-------------------------------------------Log Event------------------------------------------------------
    db.setHostName(DATABASEURL);
    db.setDatabaseName(DATABASENAME);
@@ -177,7 +381,6 @@ Lets Pull up the permissions for this user at the current time
 */
 //-----------------------------------Whats the current time------------------------------------------------
     QString time = QTime::currentTime().toString();
-    ui->label_2->setText("Logged in as " + FirstNameFromDatabase + " " + LastNameFromDatabase + " " + time );
 //------------------------------------Now we have the current time as Variable time-----------------------
 //----------------------------------We need to now figure out what day of the week it is------------------
     QString theDayName;
@@ -190,7 +393,7 @@ Lets Pull up the permissions for this user at the current time
 //---------------------------Now we know what day it is lets figure out what we have access to-------------
 
     QSqlQuery query1;
-    query1.exec("SELECT * FROM user WHERE iduser = " + UserID);
+    query1.exec("SELECT * FROM user WHERE iduser = " + UserID + " OR User_id = " + UserID);//<--We need user id or alt-id to validate
     query1.next();
     QString permission_group = query1.value(4).toString();
     qDebug() << permission_group;
@@ -271,7 +474,7 @@ void lock_screen::on_pushButton_clicked()
      QString event_date = QDate::currentDate().toString("yyyyMMdd");
      QString event_time = QTime::currentTime().toString();
      QSqlQuery query4;
-     query4.exec("INSERT INTO event_log (event_user_id, event_date, event_time, event_code, event_detail) VALUES ('"+ UserID + "','" + event_date + "','" + event_time + "','" + "3" + "','" + FirstNameFromDatabase + " " + LastNameFromDatabase + "')");
+     query4.exec("INSERT INTO event_log (event_user_id, event_date, event_time, event_code) VALUES ('"+ UserID + "','" + event_date + "','" + event_time + "','" + "3" + "')");
 //---------------------------------------------------Log Event-------------------------------------------------------------
 //---------------------------------------------------Close Window----------------------------------------------------------
      close();
@@ -378,48 +581,34 @@ End of access group screen
 ========================================================================================================================
 */
 
-void lock_screen::open_Lock1_SerialPort()
-{
-    lock1_serial->setPortName("/dev/ttyACM0");
-    lock1_serial->setBaudRate(QSerialPort::Baud115200);
-    lock1_serial->setDataBits(QSerialPort::Data8);
-    lock1_serial->setParity(QSerialPort::NoParity);
-    lock1_serial->setStopBits(QSerialPort::OneStop);
-    lock1_serial->setFlowControl(QSerialPort::NoFlowControl);
-    if (lock1_serial->open(QIODevice::ReadWrite)) {
-
-        //ui->label->setText("Connected");//DEBUG MARK MEADOWS
-
-    } else {
-
-        //ui->label->setText("Connection Error");//DEBUG MARK MEADOWS
-    }
-return;
-}
 
 /*
 ================================================================================================================
-Close Lock1 Com port
+
+================================================================================================================
+Close Lock Com ports
 ================================================================================================================
 */
 void lock_screen::close_Lock1_SerialPort()
 {
     if (lock1_serial->isOpen()) lock1_serial->close();
+    if (lock2_serial->isOpen()) lock2_serial->close();
+    if (lock3_serial->isOpen()) lock3_serial->close();
+    if (lock4_serial->isOpen()) lock4_serial->close();
+    if (lock5_serial->isOpen()) lock5_serial->close();
+    if (lock6_serial->isOpen()) lock6_serial->close();
 }
 /*
 ================================================================================================================
-end of Close Lock1 Com port
+end of Close Lock Com port
 ================================================================================================================
-Write Data to Lock1
+
 ================================================================================================================
 */
-void lock_screen::writeData_lock1(const QByteArray &data)
-{
-    lock1_serial->write(data);
-}
+
 /*
 ================================================================================================================
-End of Write Data to Lock1
+
 ================================================================================================================
  Read Data from Lock1 Com port
 ================================================================================================================
@@ -505,13 +694,65 @@ void lock_screen::MyTimerSlot()
 
 {
 //---------------------------------------------Lock 1------------------------------------------------------------
-    lock1_serial->write("r;");
-    QByteArray data = lock1_serial->readAll();
-    QString DoorOpenStatus = data.mid(5,1);
-    if(QString::compare(DoorOpenStatus,"1") == 0) ui->graphicsView_2->show();
-    else ui->graphicsView_2->hide();
-
-//------------------------------------------End of Lock 1-----------------------------------------------------
+     if (door1_enabled == 1)
+    {
+      lock1_serial->write("r;");
+      QByteArray data = lock1_serial->readAll();
+      QString DoorOpenStatus = data.mid(5,1);
+      if(QString::compare(DoorOpenStatus,"1") == 0) ui->graphicsView_2->show();
+      else ui->graphicsView_2->hide();
+    }
+//------------------------------------------End of Lock 1-------------------------------------------------------
+//---------------------------------------------Lock 2-----------------------------------------------------------
+    if (door2_enabled == 1)
+    {
+      lock2_serial->write("r;");
+      QByteArray data2 = lock2_serial->readAll();
+      QString DoorOpenStatus2 = data2.mid(5,1);
+      if(QString::compare(DoorOpenStatus2,"1") == 0) ui->graphicsView_3->show();
+      else ui->graphicsView_3->hide();
+    }
+//------------------------------------------End of Lock 2--------------------------------------------------------
+//---------------------------------------------Lock 3-----------------------------------------------------------
+    if (door3_enabled == 1)
+    {
+      lock3_serial->write("r;");
+      QByteArray data3 = lock3_serial->readAll();
+      QString DoorOpenStatus3 = data3.mid(5,1);
+      if(QString::compare(DoorOpenStatus3,"1") == 0) ui->graphicsView_4->show();
+      else ui->graphicsView_4->hide();
+    }
+//------------------------------------------End of Lock 3--------------------------------------------------------
+//---------------------------------------------Lock 4-----------------------------------------------------------
+    if (door4_enabled == 1)
+    {
+      lock4_serial->write("r;");
+      QByteArray data4 = lock4_serial->readAll();
+      QString DoorOpenStatus4 = data4.mid(5,1);
+      if(QString::compare(DoorOpenStatus4,"1") == 0) ui->graphicsView_5->show();
+      else ui->graphicsView_5->hide();
+    }
+//------------------------------------------End of Lock 4--------------------------------------------------------
+//---------------------------------------------Lock 5-----------------------------------------------------------
+    if (door5_enabled == 1)
+    {
+      lock5_serial->write("r;");
+      QByteArray data5 = lock5_serial->readAll();
+      QString DoorOpenStatus5 = data5.mid(5,1);
+      if(QString::compare(DoorOpenStatus5,"1") == 0) ui->graphicsView_6->show();
+      else ui->graphicsView_6->hide();
+    }
+//------------------------------------------End of Lock 5--------------------------------------------------------
+//---------------------------------------------Lock 6-----------------------------------------------------------
+    if (door6_enabled == 1)
+    {
+      lock6_serial->write("r;");
+      QByteArray data6 = lock6_serial->readAll();
+      QString DoorOpenStatus6 = data6.mid(5,1);
+      if(QString::compare(DoorOpenStatus6,"1") == 0) ui->graphicsView_7->show();
+      else ui->graphicsView_7->hide();
+    }
+//------------------------------------------End of Lock 6--------------------------------------------------------
     return;
 }
 /*
@@ -653,5 +894,70 @@ void lock_screen::on_pushButton_3_clicked()
 /*
 ============================================================================================================================
 End of Open System Screen
+============================================================================================================================
+Open Lock 2
+=============================================================================================================================
+*/
+
+void lock_screen::on_pushButton_7_clicked()
+{
+    timer->stop();
+    QByteArray data;
+
+    lock2_serial->write("k;");
+    //data = lock2_serial->readAll();
+
+    while(lock2_serial->bytesAvailable()>0||lock2_serial->waitForReadyRead(10))
+    {
+       data = lock2_serial->readAll();
+    }
+
+    data = data.mid(3,10);
+    //ui->label->setText("Challenge Code = " + data);
+    std::string challenge = data.toStdString();
+    const char* newchallenge = challenge.c_str();
+
+    std::string response = genkey(newchallenge);
+    printf("Response Key = %s\n",response.c_str());
+
+    QString newResponse = QString::fromStdString(response);
+    QString TheResponse = "E 10 " + newResponse + ";";
+    std::string TheStringResponse = TheResponse.toStdString();
+    qDebug() << TheResponse;
+    QByteArray NewResponse = QByteArray::fromStdString(TheStringResponse);
+    lock2_serial->write(NewResponse);
+
+    while(lock2_serial->bytesAvailable()>0||lock2_serial->waitForReadyRead(10))
+    {
+       data = lock2_serial->readAll();
+    }
+
+    //ui->label->setText(data);
+
+//--------------------------------------------Log Event-------------------------------------------------------------
+
+    QSqlDatabase db = QSqlDatabase::addDatabase(DATABASEDRIVER);
+    db.setHostName(DATABASEURL);
+    db.setDatabaseName(DATABASENAME);
+    db.setUserName(DATABASEUSER);
+    db.setPassword(DATABASEPASSWORD);
+
+    if (!db.open())
+    {
+         ui->label_2->setText("Unable to connect to database !!!");
+        return;
+    }
+     ui->label_2->setText("Connected to database again....");
+     QString event_date = QDate::currentDate().toString("yyyyMMdd");
+     QString event_time = QTime::currentTime().toString();
+     QSqlQuery query4;
+     query4.exec("INSERT INTO event_log (event_user_id, event_date, event_time, event_code, event_detail) VALUES ('"+ UserID + "','" + event_date + "','" + event_time + "','" + "5" + "','" + FirstNameFromDatabase + " " + LastNameFromDatabase + "')");
+
+//------------------------------------------------Log Event----------------------------------------------------------
+    timer->start(500);
+}
+/*
+============================================================================================================================
+End of Open Lock 2
 ============================================================================================================================
 */

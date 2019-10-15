@@ -13,16 +13,34 @@ QString UserID;
 QString Pin;
 QString Validatae;
 QString HideText;
+QString Alt_ID;
 
+//----------------------------------------System Config-------------------------------------------------------
+int days_before_pinchange = 0;
+int number_of_pin_digits = 0;
+int force_pin_change = 0;
+int door_alarm_delay = 0;
+
+int door1_enabledmm = 0;
+int door2_enabledmm = 0;
+int door3_enabledmm = 0;
+int door4_enabledmm = 0;
+int door5_enabledmm = 0;
+int door6_enabledmm = 0;
+
+//-----------------------------------------End of System Config-----------------------------------------------
+
+//-----------------------------------------Flags-------------------------------------------------------------
 int lock1_serial_open = 0;
+int lock2_serial_open = 0;
 int Alarm_Logged = 0;
+//-----------------------------------------Flags-------------------------------------------------------------
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
   ui->setupUi(this);
-
 /*
 ===============================================================================================================
 Center Window on Screen and remove minimize, maximize and exit buttons
@@ -98,6 +116,45 @@ db.close();
 ====================================================================================================
    End of connecting to Database
 ====================================================================================================
+   Load System Config
+====================================================================================================
+*/
+db.setHostName(DATABASEURL);
+db.setDatabaseName(DATABASENAME);
+db.setUserName(DATABASEUSER);
+db.setPassword(DATABASEPASSWORD);
+
+if (!db.open())
+{
+     ui->label_4->setText("Unable to connect to database !!!");
+    return;
+}
+ ui->label_4->setText("Connected to database again....");
+
+ QSqlQuery query;
+ query.exec("SELECT * FROM system_config" );
+ query.next();
+ days_before_pinchange = query.value(2).toInt();
+ number_of_pin_digits = query.value(3).toInt();
+ force_pin_change = query.value(4).toInt();
+ door_alarm_delay = query.value(5).toInt();
+//-----------------------------------------------Get door Setup--------------------------------
+ query.exec("SELECT * FROM door_setup");
+ query.next();
+ door1_enabledmm = query.value(4).toInt();
+ query.next();
+ door2_enabledmm = query.value(4).toInt();
+ query.next();
+ door3_enabledmm = query.value(4).toInt();
+ query.next();
+ door4_enabledmm = query.value(4).toInt();
+ query.next();
+ door5_enabledmm = query.value(4).toInt();
+ query.next();
+ door6_enabledmm = query.value(4).toInt();
+//--------------------------------------------End of Door Setup---------------------------------------
+/*
+====================================================================================================
    Log system boot
 ====================================================================================================
 */
@@ -119,8 +176,6 @@ if (!db.open())
 
  QSqlQuery query4;
  query4.exec("INSERT INTO event_log (event_date, event_time, event_code) VALUES ('"+ event_date + "','" + event_time + "','" + "1" +"')");
-
-
 
 /*
 =====================================================How We play Audio============================================
@@ -178,12 +233,12 @@ Door Status Monitor Code
 void MainWindow::DoorMonitorTimerSlot()
 {
 //-------------------------------------------Door 1------------------------------------------------
-
+    if (door1_enabledmm == 1)
+    {
     if(lock1_serial_open == 0) Open_Lock1_SerialPort();
 
     lock1_serial->write("r;");
     QString data = "";
-
 
     while(lock1_serial->bytesAvailable()>0||lock1_serial->waitForReadyRead(10))
     {
@@ -195,6 +250,64 @@ void MainWindow::DoorMonitorTimerSlot()
     {
         ui->graphicsView->hide();
         ui->graphicsView_2->show();
+
+//-------------------------------------------------------Log Event--------------------------------------------------
+
+        if(Alarm_Logged == 0)
+        {
+        QSqlDatabase db = QSqlDatabase::addDatabase(DATABASEDRIVER);
+        db.setHostName(DATABASEURL);
+        db.setDatabaseName(DATABASENAME);
+        db.setUserName(DATABASEUSER);
+        db.setPassword(DATABASEPASSWORD);
+
+        if (!db.open())
+        {
+             ui->label_4->setText("Unable to connect to database !!!");
+            return;
+        }
+         ui->label_4->setText("Connected to database again....");
+
+         QString event_date = QDate::currentDate().toString("yyyyMMdd");
+
+         QString event_time = QTime::currentTime().toString();
+
+         QSqlQuery query4;
+         query4.exec("INSERT INTO event_log (event_date, event_time, event_code) VALUES ('"+ event_date + "','" + event_time + "','" + "911" +"')");
+         Alarm_Logged = 1;//Set Alarm Flag so we dont log multiple events for a single alarm
+         return;
+        }
+
+//-------------------------------------------------------End of Log Event---------------------------------------------------
+    }
+        else
+    {
+        ui->graphicsView->show();
+        ui->graphicsView_2->hide();
+        Alarm_Logged = 0;//Reset Alarm Flag to catch next event
+    }
+    }
+//----------------------------------------End of Door 1---------------------------------------------------------------------
+//-------------------------------------------Door 2-------------------------------------------------------------------------
+/*
+    if (door2_enabledmm == 1)
+    {
+    if(lock2_serial_open == 0) Open_Lock2_SerialPort();
+
+    lock2_serial->write("r;");
+    QString data2 = "";
+
+    while(lock2_serial->bytesAvailable()>0||lock2_serial->waitForReadyRead(10))
+    {
+       data2 = lock2_serial->readAll();
+    }
+
+    QString DoorOpenStatus2 = data2.mid(5,1);
+    if(QString::compare(DoorOpenStatus2,"1") == 0)
+    {
+        ui->graphicsView->hide();
+        ui->graphicsView_2->show();
+
 //-------------------------------------------------------Log Event--------------------------------------------------
         if(Alarm_Logged == 0)
         {
@@ -218,9 +331,9 @@ void MainWindow::DoorMonitorTimerSlot()
          QSqlQuery query4;
          query4.exec("INSERT INTO event_log (event_date, event_time, event_code) VALUES ('"+ event_date + "','" + event_time + "','" + "911" +"')");
          Alarm_Logged = 1;//Set Alarm Flag so we dont log multiple events for a single alarm
+         return;
         }
 //-------------------------------------------------------End of Log Event---------------------------------------------------
-        return;
     }
         else
     {
@@ -228,7 +341,9 @@ void MainWindow::DoorMonitorTimerSlot()
         ui->graphicsView_2->hide();
         Alarm_Logged = 0;//Reset Alarm Flag to catch next event
     }
-//----------------------------------------End of Door 1---------------------------------------------------------------------
+    }
+//----------------------------------------End of Door 2---------------------------------------------------------------------
+*/
 }
 /*
 ============================================================================================================================
@@ -242,7 +357,7 @@ void MainWindow::on_pushButton_2_clicked()
     if (ui->plainTextEdit->hasFocus() )
     {
 
-        if (UserID.length() == 4)
+        if (UserID.length() == number_of_pin_digits)
         {
            ui->plainTextEdit_2->setFocus();
            Pin = Pin + "1";
@@ -262,7 +377,7 @@ void MainWindow::on_pushButton_2_clicked()
         ui->plainTextEdit_2->setPlainText(HideText);
      }
 
-    if (Pin.length() ==4) ValidateUser();
+    if (Pin.length() == number_of_pin_digits) ValidateUser();
 
 }
 
@@ -271,7 +386,7 @@ void MainWindow::on_pushButton_3_clicked()
     if (ui->plainTextEdit->hasFocus() )
     {
 
-        if (UserID.length() == 4)
+        if (UserID.length() == number_of_pin_digits)
         {
            ui->plainTextEdit_2->setFocus();
            Pin = Pin + "2";
@@ -291,7 +406,7 @@ void MainWindow::on_pushButton_3_clicked()
         ui->plainTextEdit_2->setPlainText(HideText);
      }
 
-    if (Pin.length() ==4) ValidateUser();
+    if (Pin.length() == number_of_pin_digits) ValidateUser();
 
 }
 
@@ -300,7 +415,7 @@ void MainWindow::on_pushButton_4_clicked()
     if (ui->plainTextEdit->hasFocus() )
     {
 
-        if (UserID.length() == 4)
+        if (UserID.length() == number_of_pin_digits)
         {
            ui->plainTextEdit_2->setFocus();
            Pin = Pin + "3";
@@ -320,7 +435,7 @@ void MainWindow::on_pushButton_4_clicked()
         ui->plainTextEdit_2->setPlainText(HideText);
      }
 
-    if (Pin.length() ==4) ValidateUser();
+    if (Pin.length() == number_of_pin_digits) ValidateUser();
 
 }
 
@@ -329,7 +444,7 @@ void MainWindow::on_pushButton_6_clicked()
     if (ui->plainTextEdit->hasFocus() )
     {
 
-        if (UserID.length() == 4)
+        if (UserID.length() == number_of_pin_digits)
         {
            ui->plainTextEdit_2->setFocus();
            Pin = Pin + "4";
@@ -349,7 +464,7 @@ void MainWindow::on_pushButton_6_clicked()
         ui->plainTextEdit_2->setPlainText(HideText);
      }
 
-    if (Pin.length() ==4) ValidateUser();
+    if (Pin.length() == number_of_pin_digits) ValidateUser();
 
 }
 
@@ -358,7 +473,7 @@ void MainWindow::on_pushButton_7_clicked()
     if (ui->plainTextEdit->hasFocus() )
     {
 
-        if (UserID.length() == 4)
+        if (UserID.length() == number_of_pin_digits)
         {
            ui->plainTextEdit_2->setFocus();
            Pin = Pin + "5";
@@ -378,7 +493,7 @@ void MainWindow::on_pushButton_7_clicked()
         ui->plainTextEdit_2->setPlainText(HideText);
      }
 
-    if (Pin.length() ==4) ValidateUser();
+    if (Pin.length() == number_of_pin_digits) ValidateUser();
 
 }
 
@@ -387,7 +502,7 @@ void MainWindow::on_pushButton_8_clicked()
     if (ui->plainTextEdit->hasFocus() )
     {
 
-        if (UserID.length() == 4)
+        if (UserID.length() == number_of_pin_digits)
         {
            ui->plainTextEdit_2->setFocus();
            Pin = Pin + "6";
@@ -407,7 +522,7 @@ void MainWindow::on_pushButton_8_clicked()
         ui->plainTextEdit_2->setPlainText(HideText);
      }
 
-    if (Pin.length() ==4) ValidateUser();
+    if (Pin.length() == number_of_pin_digits) ValidateUser();
 
 }
 
@@ -416,7 +531,7 @@ void MainWindow::on_pushButton_10_clicked()
     if (ui->plainTextEdit->hasFocus() )
     {
 
-        if (UserID.length() == 4)
+        if (UserID.length() == number_of_pin_digits)
         {
            ui->plainTextEdit_2->setFocus();
            Pin = Pin + "7";
@@ -436,7 +551,7 @@ void MainWindow::on_pushButton_10_clicked()
         ui->plainTextEdit_2->setPlainText(HideText);
      }
 
-    if (Pin.length() ==4) ValidateUser();
+    if (Pin.length() == number_of_pin_digits) ValidateUser();
 
 }
 
@@ -445,7 +560,7 @@ void MainWindow::on_pushButton_11_clicked()
     if (ui->plainTextEdit->hasFocus() )
     {
 
-        if (UserID.length() == 4)
+        if (UserID.length() == number_of_pin_digits)
         {
            ui->plainTextEdit_2->setFocus();
            Pin = Pin + "8";
@@ -465,7 +580,7 @@ void MainWindow::on_pushButton_11_clicked()
         ui->plainTextEdit_2->setPlainText(HideText);
      }
 
-    if (Pin.length() ==4) ValidateUser();
+    if (Pin.length() == number_of_pin_digits) ValidateUser();
 
 }
 
@@ -474,7 +589,7 @@ void MainWindow::on_pushButton_12_clicked()
     if (ui->plainTextEdit->hasFocus() )
     {
 
-        if (UserID.length() == 4)
+        if (UserID.length() == number_of_pin_digits)
         {
            ui->plainTextEdit_2->setFocus();
            Pin = Pin + "9";
@@ -494,7 +609,7 @@ void MainWindow::on_pushButton_12_clicked()
         ui->plainTextEdit_2->setPlainText(HideText);
      }
 
-    if (Pin.length() ==4) ValidateUser();
+    if (Pin.length() == number_of_pin_digits) ValidateUser();
 
 }
 
@@ -503,7 +618,7 @@ void MainWindow::on_pushButton_15_clicked()
     if (ui->plainTextEdit->hasFocus() )
     {
 
-        if (UserID.length() == 4)
+        if (UserID.length() == number_of_pin_digits)
         {
            ui->plainTextEdit_2->setFocus();
            Pin = Pin + "0";
@@ -523,7 +638,7 @@ void MainWindow::on_pushButton_15_clicked()
         ui->plainTextEdit_2->setPlainText(HideText);
      }
 
-    if (Pin.length() ==4) ValidateUser();
+    if (Pin.length() == number_of_pin_digits) ValidateUser();
 
 }
 
@@ -561,10 +676,12 @@ void MainWindow::ValidateUser()
 
 
      QSqlQuery query;
-     query.exec("SELECT * FROM user WHERE iduser = " + UserID );
+     query.exec("SELECT * FROM user WHERE iduser = " + UserID + " OR User_id = " + UserID);//<--Wee need user id or alt-id to validate
      query.next();
      QString pin_from_db = query.value(3).toString();
      //ui->label->setText(pin_from_db);
+     qDebug() << "pin from db = " +pin_from_db;
+
      int user_enabled_from_db = query.value(5).toInt();
 
 //-------------------------------------Here we need to encode the PIN into a MD5 hash so we can compare with the
@@ -655,17 +772,18 @@ Planed Fall Through
 ==============================================================================================================
 End of Validate user
 ===============================================================================================================
-Open Lock 1 Serial Port
+Open Serial Ports
 ===============================================================================================================
 */
 
 void MainWindow::Open_Lock1_SerialPort()
 {
+//-------------------------------------------Lock 1---------------------------------------------------------------
     if (lock1_serial_open == 0)
     {
 
 
-    qDebug() << "open Comm Port";
+    qDebug() << "open Comm Port1";
     lock1_serial->setPortName("/dev/ttyACM0");
     lock1_serial->setBaudRate(QSerialPort::Baud115200);
     lock1_serial->setDataBits(QSerialPort::Data8);
@@ -685,13 +803,54 @@ void MainWindow::Open_Lock1_SerialPort()
          }
 
     }
+//------------------------------------------End of Lock 1-------------------------------------------------------
 
-    return;
+return;
 }
 
+void MainWindow::Open_Lock2_SerialPort()
+{
+//--------------------------------------------Lock 2------------------------------------------------------------------
+
+    if (lock2_serial_open == 0)
+    {
+
+     qDebug() << "open Comm Port2";
+     lock2_serial->setPortName("/dev/ttyACM1");
+     lock2_serial->setBaudRate(QSerialPort::Baud115200);
+     lock2_serial->setDataBits(QSerialPort::Data8);
+     lock2_serial->setParity(QSerialPort::NoParity);
+     lock2_serial->setStopBits(QSerialPort::OneStop);
+     lock2_serial->setFlowControl(QSerialPort::NoFlowControl);
+     if (lock2_serial->open(QIODevice::ReadWrite))
+      {
+
+     // ui->label_4->setText("Door 1 Connected");//DEBUG MARK MEADOWS
+        lock2_serial_open = 1;
+        } else
+        {
+
+     //ui->label_4->setText("Door 1 Connection Error");//DEBUG MARK MEADOWS
+        lock2_serial_open = 0;
+        }
+
+        }
+//-------------------------------------------End of Lock 2------------------------------------------------------
+
+}
+/*
+================================================================================================================
+Over-ride Button
+================================================================================================================
+*/
 void MainWindow::on_pushButton_16_clicked()
 {
     override_screen override_screen;
     override_screen.setModal(true);
     override_screen.exec();
 }
+/*
+================================================================================================================
+end of Over-ride Button
+================================================================================================================
+*/

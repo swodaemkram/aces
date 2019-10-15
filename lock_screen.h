@@ -18,6 +18,11 @@ public:
     explicit lock_screen(QWidget *parent = 0);
     ~lock_screen();
     QSerialPort *lock1_serial;
+    QSerialPort *lock2_serial;
+    QSerialPort *lock3_serial;
+    QSerialPort *lock4_serial;
+    QSerialPort *lock5_serial;
+    QSerialPort *lock6_serial;
 
 private slots:
     void on_pushButton_clicked();
@@ -28,11 +33,7 @@ private slots:
 
     void on_pushButton_4_clicked();
 
-    void open_Lock1_SerialPort();
-
     void close_Lock1_SerialPort();
-
-    void writeData_lock1(const QByteArray &data);
 
     QByteArray readData_lock1();
 
@@ -47,6 +48,8 @@ private slots:
     void on_pushButton_12_clicked();
 
     void on_pushButton_3_clicked();
+
+    void on_pushButton_7_clicked();
 
 private:
     Ui::lock_screen *ui;

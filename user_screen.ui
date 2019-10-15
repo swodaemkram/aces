@@ -745,9 +745,9 @@
     <widget class="QLabel" name="label_3">
      <property name="geometry">
       <rect>
-       <x>10</x>
+       <x>40</x>
        <y>20</y>
-       <width>121</width>
+       <width>71</width>
        <height>17</height>
       </rect>
      </property>
@@ -757,7 +757,7 @@
       </font>
      </property>
      <property name="text">
-      <string>First Name :</string>
+      <string>Alt I.D. : </string>
      </property>
     </widget>
     <widget class="QPlainTextEdit" name="plainTextEdit">
@@ -787,9 +787,9 @@
     <widget class="QLabel" name="label_4">
      <property name="geometry">
       <rect>
-       <x>10</x>
+       <x>50</x>
        <y>60</y>
-       <width>111</width>
+       <width>71</width>
        <height>17</height>
       </rect>
      </property>
@@ -799,7 +799,7 @@
       </font>
      </property>
      <property name="text">
-      <string>Last Name :</string>
+      <string>Name :</string>
      </property>
     </widget>
     <widget class="QPlainTextEdit" name="plainTextEdit_2">
@@ -1554,9 +1554,9 @@
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>10</y>
-       <width>838</width>
-       <height>311</height>
+       <y>20</y>
+       <width>811</width>
+       <height>301</height>
       </rect>
      </property>
      <layout class="QGridLayout" name="gridLayout">
@@ -2459,10 +2459,10 @@
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>6</x>
+     <x>0</x>
      <y>730</y>
-     <width>1011</width>
-     <height>31</height>
+     <width>1041</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="palette">

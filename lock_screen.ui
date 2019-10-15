@@ -1425,10 +1425,10 @@
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>10</x>
+     <x>0</x>
      <y>730</y>
-     <width>1001</width>
-     <height>31</height>
+     <width>1031</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="palette">

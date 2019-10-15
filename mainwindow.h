@@ -39,8 +39,9 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
-    QSerialPort *lock1_serial;
 
+    QSerialPort *lock1_serial;
+    QSerialPort *lock2_serial;
 
 private slots:
     void on_pushButton_clicked();
@@ -74,6 +75,8 @@ private slots:
     void DoorMonitorTimerSlot();
 
     void Open_Lock1_SerialPort();
+
+    void Open_Lock2_SerialPort();
 
     void on_pushButton_16_clicked();
 

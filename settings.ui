@@ -506,7 +506,7 @@
      <x>170</x>
      <y>40</y>
      <width>841</width>
-     <height>241</height>
+     <height>301</height>
     </rect>
    </property>
    <property name="autoFillBackground">
@@ -523,7 +523,7 @@
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>231</width>
+      <width>181</width>
       <height>31</height>
      </rect>
     </property>
@@ -542,15 +542,15 @@
      <enum>QFrame::Sunken</enum>
     </property>
     <property name="text">
-     <string>Days Befor PIN Change : </string>
+     <string>Change PIN after : </string>
     </property>
    </widget>
    <widget class="QPlainTextEdit" name="plainTextEdit_7">
     <property name="geometry">
      <rect>
-      <x>250</x>
+      <x>190</x>
       <y>10</y>
-      <width>201</width>
+      <width>101</width>
       <height>31</height>
      </rect>
     </property>
@@ -564,8 +564,8 @@
    <widget class="QLabel" name="label_10">
     <property name="geometry">
      <rect>
-      <x>460</x>
-      <y>10</y>
+      <x>430</x>
+      <y>230</y>
       <width>181</width>
       <height>31</height>
      </rect>
@@ -591,8 +591,8 @@
    <widget class="QPlainTextEdit" name="plainTextEdit_8">
     <property name="geometry">
      <rect>
-      <x>650</x>
-      <y>10</y>
+      <x>620</x>
+      <y>230</y>
       <width>181</width>
       <height>31</height>
      </rect>
@@ -610,7 +610,7 @@
       <x>10</x>
       <y>50</y>
       <width>821</width>
-      <height>181</height>
+      <height>171</height>
      </rect>
     </property>
     <property name="frameShape">
@@ -1220,6 +1220,82 @@
      </property>
     </widget>
    </widget>
+   <widget class="QLabel" name="label_17">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>230</y>
+      <width>211</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::WinPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Sunken</enum>
+    </property>
+    <property name="text">
+     <string>Number of PIN Digits : </string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBox">
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>10</y>
+      <width>201</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Force PIN Change </string>
+    </property>
+   </widget>
+   <widget class="QPlainTextEdit" name="plainTextEdit_9">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>230</y>
+      <width>104</width>
+      <height>31</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_18">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>10</y>
+      <width>67</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::WinPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Sunken</enum>
+    </property>
+    <property name="text">
+     <string>Days </string>
+    </property>
+   </widget>
   </widget>
   <widget class="QFrame" name="frame_4">
    <property name="geometry">
@@ -1302,10 +1378,10 @@
    <widget class="QWidget" name="gridLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>7</x>
+      <x>10</x>
       <y>20</y>
-      <width>838</width>
-      <height>311</height>
+      <width>821</width>
+      <height>301</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout">

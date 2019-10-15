@@ -608,7 +608,7 @@ Save Button
       }
 //----------------------------New PIN Hashed and ready for Database-----------------------------
 
-     query.exec("INSERT INTO user (first_name, last_name, pin_number, permission_group, user_enabled) VALUES ('" + first_name + "','" +  last_name + "','" + pin_number + "','" + permission_group + "','" + user_enabled +"')");
+     query.exec("INSERT INTO user (User_id, name, pin_number, permission_group, user_enabled) VALUES ('" + first_name + "','" +  last_name + "','" + pin_number + "','" + permission_group + "','" + user_enabled +"')");
      query.next();
 
 //-----------------------------------Lets Reload Changes to Database------------------------------
@@ -747,7 +747,7 @@ Save Button
       }
 //----------------------------New PIN Hashed and ready for Database-----------------------------
 
-      query.exec("UPDATE user SET first_name = '" + first_name +"', last_name = '" + last_name + "', pin_number = '" +
+      query.exec("UPDATE user SET User_id = '" + first_name +"', name = '" + last_name + "', pin_number = '" +
                  pin_number + "', permission_group = '" + permission_group + "', user_enabled = '" + user_enabled +
                  "' WHERE iduser = '" + iduserFromDB + "'" );
      query.next();

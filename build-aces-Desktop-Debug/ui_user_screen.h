@@ -281,7 +281,7 @@ public:
         frame_3->setFrameShadow(QFrame::Raised);
         label_3 = new QLabel(frame_3);
         label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setGeometry(QRect(10, 20, 121, 17));
+        label_3->setGeometry(QRect(40, 20, 71, 17));
         QFont font1;
         font1.setPointSize(14);
         label_3->setFont(font1);
@@ -294,7 +294,7 @@ public:
         plainTextEdit->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         label_4 = new QLabel(frame_3);
         label_4->setObjectName(QStringLiteral("label_4"));
-        label_4->setGeometry(QRect(10, 60, 111, 17));
+        label_4->setGeometry(QRect(50, 60, 71, 17));
         label_4->setFont(font1);
         plainTextEdit_2 = new QPlainTextEdit(frame_3);
         plainTextEdit_2->setObjectName(QStringLiteral("plainTextEdit_2"));
@@ -491,7 +491,7 @@ public:
         pushButton_48->setFocusPolicy(Qt::NoFocus);
         gridLayoutWidget = new QWidget(frame_4);
         gridLayoutWidget->setObjectName(QStringLiteral("gridLayoutWidget"));
-        gridLayoutWidget->setGeometry(QRect(10, 10, 838, 311));
+        gridLayoutWidget->setGeometry(QRect(10, 20, 811, 301));
         gridLayout = new QGridLayout(gridLayoutWidget);
         gridLayout->setSpacing(4);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
@@ -899,7 +899,7 @@ public:
         pushButton_28->raise();
         label_2 = new QLabel(user_screen);
         label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(6, 730, 1011, 31));
+        label_2->setGeometry(QRect(0, 730, 1041, 41));
         QPalette palette11;
         palette11.setBrush(QPalette::Active, QPalette::WindowText, brush);
         palette11.setBrush(QPalette::Active, QPalette::Base, brush1);
@@ -934,8 +934,8 @@ public:
         pushButton_49->setText(QApplication::translate("user_screen", "Cancel", Q_NULLPTR));
         pushButton_5->setText(QApplication::translate("user_screen", "Save", Q_NULLPTR));
         pushButton->setText(QApplication::translate("user_screen", "Exit", Q_NULLPTR));
-        label_3->setText(QApplication::translate("user_screen", "First Name :", Q_NULLPTR));
-        label_4->setText(QApplication::translate("user_screen", "Last Name :", Q_NULLPTR));
+        label_3->setText(QApplication::translate("user_screen", "Alt I.D. : ", Q_NULLPTR));
+        label_4->setText(QApplication::translate("user_screen", "Name :", Q_NULLPTR));
         label_5->setText(QApplication::translate("user_screen", "PIN :", Q_NULLPTR));
         label_6->setText(QApplication::translate("user_screen", "Permission Group :", Q_NULLPTR));
         checkBox->setText(QApplication::translate("user_screen", "User Enabled", Q_NULLPTR));

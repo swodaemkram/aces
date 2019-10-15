@@ -355,7 +355,7 @@ public:
 
         label_2 = new QLabel(lock_screen);
         label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(10, 730, 1001, 31));
+        label_2->setGeometry(QRect(0, 730, 1031, 41));
         QPalette palette13;
         palette13.setBrush(QPalette::Active, QPalette::WindowText, brush);
         palette13.setBrush(QPalette::Active, QPalette::Base, brush1);

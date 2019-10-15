@@ -401,7 +401,7 @@ public:
         lcdNumber->setSegmentStyle(QLCDNumber::Filled);
         label_4 = new QLabel(centralWidget);
         label_4->setObjectName(QStringLiteral("label_4"));
-        label_4->setGeometry(QRect(16, 720, 991, 41));
+        label_4->setGeometry(QRect(0, 730, 1031, 41));
         QPalette palette16;
         QBrush brush8(QColor(243, 245, 174, 255));
         brush8.setStyle(Qt::SolidPattern);

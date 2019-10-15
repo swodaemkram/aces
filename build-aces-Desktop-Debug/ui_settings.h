@@ -13,6 +13,7 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QGraphicsView>
@@ -69,6 +70,10 @@ public:
     QTextEdit *textEdit_4;
     QTextEdit *textEdit_5;
     QTextEdit *textEdit_6;
+    QLabel *label_17;
+    QCheckBox *checkBox;
+    QPlainTextEdit *plainTextEdit_9;
+    QLabel *label_18;
     QFrame *frame_4;
     QPushButton *pushButton_47;
     QPushButton *pushButton_45;
@@ -248,37 +253,37 @@ public:
 
         frame_2 = new QFrame(settings);
         frame_2->setObjectName(QStringLiteral("frame_2"));
-        frame_2->setGeometry(QRect(170, 40, 841, 241));
+        frame_2->setGeometry(QRect(170, 40, 841, 301));
         frame_2->setAutoFillBackground(true);
         frame_2->setFrameShape(QFrame::StyledPanel);
         frame_2->setFrameShadow(QFrame::Raised);
         label_9 = new QLabel(frame_2);
         label_9->setObjectName(QStringLiteral("label_9"));
-        label_9->setGeometry(QRect(10, 10, 231, 31));
+        label_9->setGeometry(QRect(10, 10, 181, 31));
         label_9->setFont(font);
         label_9->setAutoFillBackground(true);
         label_9->setFrameShape(QFrame::WinPanel);
         label_9->setFrameShadow(QFrame::Sunken);
         plainTextEdit_7 = new QPlainTextEdit(frame_2);
         plainTextEdit_7->setObjectName(QStringLiteral("plainTextEdit_7"));
-        plainTextEdit_7->setGeometry(QRect(250, 10, 201, 31));
+        plainTextEdit_7->setGeometry(QRect(190, 10, 101, 31));
         plainTextEdit_7->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         plainTextEdit_7->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         label_10 = new QLabel(frame_2);
         label_10->setObjectName(QStringLiteral("label_10"));
-        label_10->setGeometry(QRect(460, 10, 181, 31));
+        label_10->setGeometry(QRect(430, 230, 181, 31));
         label_10->setFont(font);
         label_10->setAutoFillBackground(true);
         label_10->setFrameShape(QFrame::WinPanel);
         label_10->setFrameShadow(QFrame::Sunken);
         plainTextEdit_8 = new QPlainTextEdit(frame_2);
         plainTextEdit_8->setObjectName(QStringLiteral("plainTextEdit_8"));
-        plainTextEdit_8->setGeometry(QRect(650, 10, 181, 31));
+        plainTextEdit_8->setGeometry(QRect(620, 230, 181, 31));
         plainTextEdit_8->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         plainTextEdit_8->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         frame_3 = new QFrame(frame_2);
         frame_3->setObjectName(QStringLiteral("frame_3"));
-        frame_3->setGeometry(QRect(10, 50, 821, 181));
+        frame_3->setGeometry(QRect(10, 50, 821, 171));
         frame_3->setFrameShape(QFrame::StyledPanel);
         frame_3->setFrameShadow(QFrame::Raised);
         label_3 = new QLabel(frame_3);
@@ -447,6 +452,25 @@ public:
         textEdit_6->setFont(font);
         textEdit_6->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         textEdit_6->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        label_17 = new QLabel(frame_2);
+        label_17->setObjectName(QStringLiteral("label_17"));
+        label_17->setGeometry(QRect(10, 230, 211, 31));
+        label_17->setFont(font);
+        label_17->setFrameShape(QFrame::WinPanel);
+        label_17->setFrameShadow(QFrame::Sunken);
+        checkBox = new QCheckBox(frame_2);
+        checkBox->setObjectName(QStringLiteral("checkBox"));
+        checkBox->setGeometry(QRect(540, 10, 201, 23));
+        checkBox->setFont(font);
+        plainTextEdit_9 = new QPlainTextEdit(frame_2);
+        plainTextEdit_9->setObjectName(QStringLiteral("plainTextEdit_9"));
+        plainTextEdit_9->setGeometry(QRect(230, 230, 104, 31));
+        label_18 = new QLabel(frame_2);
+        label_18->setObjectName(QStringLiteral("label_18"));
+        label_18->setGeometry(QRect(290, 10, 67, 31));
+        label_18->setFont(font);
+        label_18->setFrameShape(QFrame::WinPanel);
+        label_18->setFrameShadow(QFrame::Sunken);
         frame_4 = new QFrame(settings);
         frame_4->setObjectName(QStringLiteral("frame_4"));
         frame_4->setGeometry(QRect(170, 350, 841, 381));
@@ -469,7 +493,7 @@ public:
         pushButton_48->setFocusPolicy(Qt::NoFocus);
         gridLayoutWidget = new QWidget(frame_4);
         gridLayoutWidget->setObjectName(QStringLiteral("gridLayoutWidget"));
-        gridLayoutWidget->setGeometry(QRect(7, 20, 838, 311));
+        gridLayoutWidget->setGeometry(QRect(10, 20, 821, 301));
         gridLayout = new QGridLayout(gridLayoutWidget);
         gridLayout->setSpacing(4);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
@@ -893,7 +917,7 @@ public:
         pushButton_3->setText(QApplication::translate("settings", "Network", Q_NULLPTR));
         pushButton_2->setText(QApplication::translate("settings", "Date / Time", Q_NULLPTR));
         pushButton->setText(QApplication::translate("settings", "Exit", Q_NULLPTR));
-        label_9->setText(QApplication::translate("settings", "Days Befor PIN Change : ", Q_NULLPTR));
+        label_9->setText(QApplication::translate("settings", "Change PIN after : ", Q_NULLPTR));
         label_10->setText(QApplication::translate("settings", "Door Alarm Delay : ", Q_NULLPTR));
         label_3->setText(QApplication::translate("settings", "Door/lock", Q_NULLPTR));
         label_4->setText(QApplication::translate("settings", "1", Q_NULLPTR));
@@ -907,6 +931,9 @@ public:
         label_14->setText(QApplication::translate("settings", "Door/lock", Q_NULLPTR));
         label_15->setText(QApplication::translate("settings", "Name", Q_NULLPTR));
         label_16->setText(QApplication::translate("settings", "dr/opn/dly", Q_NULLPTR));
+        label_17->setText(QApplication::translate("settings", "Number of PIN Digits : ", Q_NULLPTR));
+        checkBox->setText(QApplication::translate("settings", "Force PIN Change ", Q_NULLPTR));
+        label_18->setText(QApplication::translate("settings", "Days ", Q_NULLPTR));
         pushButton_47->setText(QApplication::translate("settings", "TAB", Q_NULLPTR));
         pushButton_45->setText(QApplication::translate("settings", "Space", Q_NULLPTR));
         pushButton_48->setText(QApplication::translate("settings", "BCKSPC", Q_NULLPTR));

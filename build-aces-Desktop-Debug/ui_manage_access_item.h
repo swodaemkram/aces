@@ -173,7 +173,7 @@ public:
         label->setAlignment(Qt::AlignCenter);
         label_2 = new QLabel(manage_access_item);
         label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(10, 730, 1001, 31));
+        label_2->setGeometry(QRect(0, 730, 1031, 41));
         QPalette palette1;
         palette1.setBrush(QPalette::Active, QPalette::WindowText, brush);
         QBrush brush4(QColor(164, 0, 0, 255));

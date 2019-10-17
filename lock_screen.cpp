@@ -477,6 +477,8 @@ void lock_screen::on_pushButton_clicked()
      query4.exec("INSERT INTO event_log (event_user_id, event_date, event_time, event_code) VALUES ('"+ UserID + "','" + event_date + "','" + event_time + "','" + "3" + "')");
 //---------------------------------------------------Log Event-------------------------------------------------------------
 //---------------------------------------------------Close Window----------------------------------------------------------
+
+     close_Lock1_SerialPort();//Lets Close All Comm ports like a good boy
      close();
 
 }
@@ -591,12 +593,13 @@ Close Lock Com ports
 */
 void lock_screen::close_Lock1_SerialPort()
 {
-    if (lock1_serial->isOpen()) lock1_serial->close();
-    if (lock2_serial->isOpen()) lock2_serial->close();
-    if (lock3_serial->isOpen()) lock3_serial->close();
-    if (lock4_serial->isOpen()) lock4_serial->close();
-    if (lock5_serial->isOpen()) lock5_serial->close();
-    if (lock6_serial->isOpen()) lock6_serial->close();
+    if (door1_enabled == 1 && lock1_serial->isOpen()) lock1_serial->close();//-|
+    if (door2_enabled == 1 && lock2_serial->isOpen()) lock2_serial->close();//-|
+    if (door3_enabled == 1 && lock3_serial->isOpen()) lock3_serial->close();//-|
+    if (door4_enabled == 1 && lock4_serial->isOpen()) lock4_serial->close();//-|-----Close all enabled comm ports
+    if (door5_enabled == 1 && lock5_serial->isOpen()) lock5_serial->close();//-|             Like a good boy
+    if (door6_enabled == 1 && lock6_serial->isOpen()) lock6_serial->close();//-|
+    return;
 }
 /*
 ================================================================================================================

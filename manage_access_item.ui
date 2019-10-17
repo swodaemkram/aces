@@ -1159,6 +1159,9 @@
       <pointsize>14</pointsize>
      </font>
     </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
     <property name="frameShape">
      <enum>QFrame::WinPanel</enum>
     </property>
@@ -1371,7 +1374,7 @@
      <enum>QTabWidget::Triangular</enum>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -1752,7 +1755,7 @@
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>838</width>
+      <width>850</width>
       <height>281</height>
      </rect>
     </property>
@@ -1933,7 +1936,7 @@
         <enum>Qt::NoFocus</enum>
        </property>
        <property name="text">
-        <string>/</string>
+        <string>:</string>
        </property>
       </widget>
      </item>
@@ -2249,6 +2252,16 @@
        </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../build-aces-Desktop-Debug/icons/Help_Circle_Blue.png</normaloff>../build-aces-Desktop-Debug/icons/Help_Circle_Blue.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>80</width>
+         <height>80</height>
+        </size>
        </property>
       </widget>
      </item>

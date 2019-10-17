@@ -372,6 +372,7 @@ public:
         palette8.setBrush(QPalette::Disabled, QPalette::Base, brush9);
         plainTextEdit->setPalette(palette8);
         plainTextEdit->setFont(font);
+        plainTextEdit->setFocusPolicy(Qt::NoFocus);
         plainTextEdit->setFrameShape(QFrame::WinPanel);
         plainTextEdit->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         plainTextEdit->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
@@ -515,7 +516,7 @@ public:
         frame_3->setFrameShadow(QFrame::Raised);
         gridLayoutWidget = new QWidget(frame_3);
         gridLayoutWidget->setObjectName(QStringLiteral("gridLayoutWidget"));
-        gridLayoutWidget->setGeometry(QRect(0, 0, 838, 281));
+        gridLayoutWidget->setGeometry(QRect(0, 0, 850, 281));
         gridLayout = new QGridLayout(gridLayoutWidget);
         gridLayout->setSpacing(4);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
@@ -727,6 +728,10 @@ public:
         pushButton_34->setSizePolicy(sizePolicy);
         pushButton_34->setFont(font2);
         pushButton_34->setFocusPolicy(Qt::NoFocus);
+        QIcon icon2;
+        icon2.addFile(QStringLiteral("../build-aces-Desktop-Debug/icons/Help_Circle_Blue.png"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton_34->setIcon(icon2);
+        pushButton_34->setIconSize(QSize(80, 80));
 
         gridLayout->addWidget(pushButton_34, 3, 0, 1, 1);
 
@@ -903,7 +908,7 @@ public:
 
         retranslateUi(manage_access_item);
 
-        tabWidget->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(manage_access_item);
@@ -955,7 +960,7 @@ public:
         pushButton_11->setText(QApplication::translate("manage_access_item", "Y", Q_NULLPTR));
         pushButton_19->setText(QApplication::translate("manage_access_item", "F", Q_NULLPTR));
         pushButton_18->setText(QApplication::translate("manage_access_item", "D", Q_NULLPTR));
-        pushButton_46->setText(QApplication::translate("manage_access_item", "/", Q_NULLPTR));
+        pushButton_46->setText(QApplication::translate("manage_access_item", ":", Q_NULLPTR));
         pushButton_33->setText(QApplication::translate("manage_access_item", "Clear", Q_NULLPTR));
         pushButton_9->setText(QApplication::translate("manage_access_item", "E", Q_NULLPTR));
         pushButton_15->setText(QApplication::translate("manage_access_item", "P", Q_NULLPTR));

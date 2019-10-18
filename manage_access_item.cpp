@@ -276,6 +276,7 @@ Move Backwards In the Database
         else ui->checkBox_18->setChecked(false);
         if(query.value(11) == 1)ui->checkBox_19->setChecked(true);
         else ui->checkBox_19->setChecked(false);
+        return;
 /*
 ===============================================================================================================
 End of Move Backwards In the Database
@@ -2134,68 +2135,235 @@ void manage_access_item::on_pushButton_5_clicked()
         return;
     }
 //-------------------------------------------End of Save New Record------------------------------------------------
+//-------------------------------------------Delete Current Record-------------------------------------------------
+     if(RecordModTypeManageAccess == "delete")
+     {
+//----------------------------------------------Open Database------------------------------------------------------
+         QSqlDatabase db = QSqlDatabase::addDatabase(DATABASEDRIVER);
+         db.setHostName(DATABASEURL);
+         db.setDatabaseName(DATABASENAME);
+         db.setUserName(DATABASEUSER);
+         db.setPassword(DATABASEPASSWORD);
 
+         if (!db.open())
+         {
+              ui->label_2->setText("Unable to connect to database !!!");
+             return;
+         }
+          ui->label_2->setText("Connected to database....");
+//----------------------------------------------Setup SQL Query and Execute--------------------------------------------
+          QSqlQuery query;
+          query.exec("DELETE FROM permissions WHERE idpermission_window = " + ui->plainTextEdit->toPlainText());
+          query.next();
+//-----------------------------------------------Reload Modified Database---------------------------------------------
+//---------------------------------------------------Reload Control Buttons-------------------------------------------
+           ui->pushButton->show();
+           ui->pushButton_2->show();
+           ui->pushButton_3->show();
+           ui->pushButton_4->show();
+           ui->pushButton_6->hide();
+           ui->pushButton_5->hide();
+           RecordModTypeManageAccess = "";
+           on_pushButton_51_clicked();
+           return;
+     }
+//-----------------------------------------End of Delete Current Record---------------------------------------------
+//---------------------------------------------------Save Edited Record---------------------------------------------
+     if(RecordModTypeManageAccess == "edit")
+     {
+//-------------------------------------------We must have a name filled out---------------------------------------
+       if(ui->plainTextEdit_4->toPlainText().size()<1)
+       {
+           ui->plainTextEdit_4->setFocus();
+           ui->plainTextEdit_4->setStyleSheet("background-color: red");
+           ui->label_2->setText("Must have a name !!!");
+           return;
+        }
+//----------------------------------------------End of Check Name--------------------------------------------------
+//----------------------------------------------Check Start Time---------------------------------------------------
+       if(ui->plainTextEdit_2->toPlainText().size() < 4)
+       {
+         ui->plainTextEdit_2->setFocus();
+         ui->plainTextEdit_2->setStyleSheet("background-color: red");
+         ui->label_2->setText("Must have a valid start time !!!");
+         return;
+       }
+//------------------------------------------------End of Start Time Check----------------------------------------
+//------------------------------------------------End Time Check-------------------------------------------------
+       if(ui->plainTextEdit_3->toPlainText().size() < 4)
+       {
+         ui->plainTextEdit_3->setFocus();
+         ui->plainTextEdit_3->setStyleSheet("background-color: red");
+         ui->label_2->setText("Must have a valid End time !!!");
+         return;
+       }
+//------------------------------------------------End of End Time Check------------------------------------------
+//-----------------------------------------Start Time Must Be Less then End Time---------------------------------
+        QTime StartTime = QTime::fromString(ui->plainTextEdit_2->toPlainText()) ;
+        QTime EndTime = QTime::fromString(ui->plainTextEdit_3->toPlainText()) ;
 
+        if (StartTime > EndTime)
+        {
+          ui->plainTextEdit_2->setFocus();
+          ui->plainTextEdit_2->setStyleSheet("background-color: red");
+          ui->label_2->setText("Start Time must be less then End Time !!!!");
+          return;
+         }
+//------------------------------------------------End of Sanity Checks-------------------------------------------
+//------------------------------------------------Lets Save Record-----------------------------------------------
+//----------------------------------------------------Open Database----------------------------------------------
+            QSqlDatabase db = QSqlDatabase::addDatabase(DATABASEDRIVER);
+            db.setHostName(DATABASEURL);
+            db.setDatabaseName(DATABASENAME);
+            db.setUserName(DATABASEUSER);
+            db.setPassword(DATABASEPASSWORD);
 
+            if (!db.open())
+            {
+                 ui->label_2->setText("Unable to connect to database !!!");
+                return;
+            }
+             ui->label_2->setText("Connected to database....");
+//-----------------------------------------------------Database Opened-----------------------------------------
+//------------------------------------------------Lets Get all Variables Set-----------------------------------
+             QString start_time = ui->plainTextEdit_2->toPlainText();
+             QString end_time = ui->plainTextEdit_3->toPlainText();
+             QString Monday = "0";
+             QString Tuesday = "0";
+             QString Wednesday = "0";
+             QString Thursday = "0";
+             QString Friday = "0";
+             QString Saturday = "0";
+             QString sunday = "0";
+             QString permission_window_name = ui->plainTextEdit_4->toPlainText();
+             QString can_mod_users = "0";
+             QString can_mod_system = "0";
+             QString can_access_door1 = "0";
+             QString can_access_door2 = "0";
+             QString can_access_door3 = "0";
+             QString can_access_door4 = "0";
+             QString can_access_door5 = "0";
+             QString can_access_door6 = "0";
+             QString access_item_button_enabled = "0";
+             QString access_group_button_enabled = "0";
+             QString Loggs_button_enabled = "0";
+//------------------------------------------Variables are set at defaults now-----------------------------------
+//-------------------------------------------Lets set current status--------------------------------------------
+             if (ui->checkBox->isChecked()) Monday = "1";
+             if (ui->checkBox_2->isChecked()) Tuesday = "1";
+             if (ui->checkBox_3->isChecked()) Wednesday = "1";
+             if (ui->checkBox_4->isChecked()) Thursday = "1";
+             if (ui->checkBox_5->isChecked()) Friday = "1";
+             if (ui->checkBox_6->isChecked()) Saturday = "1";
+             if (ui->checkBox_7->isChecked()) sunday = "1";
+             if (ui->checkBox_9->isChecked()) can_access_door1 = "1";
+             if (ui->checkBox_10->isChecked()) can_access_door2 = "1";
+             if (ui->checkBox_11->isChecked()) can_access_door3 = "1";
+             if (ui->checkBox_12->isChecked()) can_access_door4 = "1";
+             if (ui->checkBox_13->isChecked()) can_access_door5 = "1";
+             if (ui->checkBox_14->isChecked()) can_access_door6 = "1";
+             if (ui->checkBox_15->isChecked()) Loggs_button_enabled = "1";
+             if (ui->checkBox_16->isChecked()) access_group_button_enabled = "1";
+             if (ui->checkBox_17->isChecked()) access_item_button_enabled = "1";
+             if (ui->checkBox_18->isChecked()) can_mod_system = "1";
+             if (ui->checkBox_19->isChecked()) can_mod_users = "1";
 
+             QSqlQuery query;
 
+             query.exec("UPDATE permissions SET start_time = '" + start_time + "', end_time = '" + end_time \
+                        + "', Monday = '"+ Monday +"', Tuesday = '" + Tuesday + "', Wednesday = '"+ Wednesday \
+                        + "', Thursday = '" + Thursday + "', Friday = '"+ Friday + "', Saturday = '" + Saturday \
+                        + "', sunday = '" + sunday + "', permission_window_name = '" + permission_window_name \
+                        + "', can_mod_users = '" + can_mod_users + "', can_mod_system = '" + can_mod_system \
+                        + "', can_access_door1 = '" + can_access_door1 + "', can_access_door2 = '" + can_access_door2 \
+                        + "', can_access_door3 = '" + can_access_door3 + "', can_access_door4 = '" + can_access_door4 \
+                        + "', can_access_door5 = '" + can_access_door5 + "', can_access_door6 = '" + can_access_door6 \
+                        + "', access_item_button_enabled = '" + access_item_button_enabled + "', access_group_button_enabled = '" + \
+                        access_group_button_enabled + "', Loggs_button_enabled = '" + Loggs_button_enabled + "' WHERE idpermission_window = '" + ui->plainTextEdit->toPlainText() + "'");
 
+             query.next();
+             ui->label_2->setText("Record Saved......");
 
+//-----------------------------------------------Clear all highlighted items---------------------------------------
+      ui->checkBox->setStyleSheet("background-color: white");
+      ui->checkBox_2->setStyleSheet("background-color: white");
+      ui->checkBox_3->setStyleSheet("background-color: white");
+      ui->checkBox_4->setStyleSheet("background-color: white");
+      ui->checkBox_5->setStyleSheet("background-color: white");
+      ui->checkBox_6->setStyleSheet("background-color: white");
+      ui->checkBox_7->setStyleSheet("background-color: white");
+      ui->checkBox_8->setStyleSheet("background-color: white");
+      ui->checkBox_9->setStyleSheet("background-color: white");
+      ui->checkBox_10->setStyleSheet("background-color: white");
+      ui->checkBox_11->setStyleSheet("background-color: white");
+      ui->checkBox_12->setStyleSheet("background-color: white");
+      ui->checkBox_13->setStyleSheet("background-color: white");
+      ui->checkBox_14->setStyleSheet("background-color: white");
+      ui->checkBox_15->setStyleSheet("background-color: white");
+      ui->checkBox_16->setStyleSheet("background-color: white");
+      ui->checkBox_17->setStyleSheet("background-color: white");
+      ui->checkBox_18->setStyleSheet("background-color: white");
+      ui->checkBox_19->setStyleSheet("background-color: white");
+      ui->plainTextEdit_2->setStyleSheet("background-color: white");
+      ui->plainTextEdit_3->setStyleSheet("background-color: white");
+      ui->plainTextEdit_4->setStyleSheet("background-color: white");
 
+//-----------------------------------------Hide and show all the correct buttons-----------------------------------
+       ui->pushButton_2->show();
+       ui->pushButton_3->show();
+       ui->pushButton_4->show();
+       ui->pushButton->show();
+       ui->pushButton_6->hide();
+       ui->pushButton_5->hide();
+       ui->frame_3->hide();
+       RecordModTypeManageAccess = "";
 
-
-
-
-
+             return;
+         }
 
 }
 /*
 =====================================================================================================================
 End of Save Button
 =====================================================================================================================
+Edit Current Record Button
+=====================================================================================================================
 */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 void manage_access_item::on_pushButton_4_clicked()
 {
-
+//-------------------------------------------Setup Control Buttons--------------------------------------------------
+             ui->pushButton->hide();
+             ui->pushButton_2->hide();
+             ui->pushButton_3->hide();
+             ui->pushButton_4->hide();
+             ui->pushButton_6->show();
+             ui->pushButton_5->show();
+             RecordModTypeManageAccess = "edit";
+             ui->plainTextEdit_4->setFocus();
+             ui->plainTextEdit_4->setStyleSheet("background-color: yellow");
+             ui->frame_3->show();
 }
+/*
+===================================================================================================================
+End of Edit Current Record Button
+===================================================================================================================
+Delete Button
+===================================================================================================================
+*/
+void manage_access_item::on_pushButton_3_clicked()
+{
+//----------------------------------------------Hide and Show Correct Buttons------------------------------------
+    ui->pushButton->hide();
+    ui->pushButton_2->hide();
+    ui->pushButton_3->hide();
+    ui->pushButton_4->hide();
+    ui->pushButton_6->show();
+    ui->pushButton_5->show();
+//--------------------------------------------End of Hide Show Buttons------------------------------------------
+    RecordModTypeManageAccess = "delete";
+}
+/*
+==============================================================================================================
+End of Delete Button
+==============================================================================================================
+*/

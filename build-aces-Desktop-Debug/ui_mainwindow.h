@@ -53,6 +53,7 @@ public:
     QLCDNumber *lcdNumber;
     QLabel *label_4;
     QGraphicsView *graphicsView_2;
+    QPushButton *pushButton_5;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -376,7 +377,7 @@ public:
         palette15.setBrush(QPalette::Active, QPalette::Button, brush6);
         palette15.setBrush(QPalette::Active, QPalette::Text, brush5);
         palette15.setBrush(QPalette::Active, QPalette::ButtonText, brush5);
-        QBrush brush7(QColor(32, 74, 135, 255));
+        QBrush brush7(QColor(5, 27, 105, 255));
         brush7.setStyle(Qt::SolidPattern);
         palette15.setBrush(QPalette::Active, QPalette::Base, brush7);
         palette15.setBrush(QPalette::Active, QPalette::Window, brush7);
@@ -435,6 +436,10 @@ public:
         graphicsView_2->setGeometry(QRect(0, 0, 1021, 771));
         graphicsView_2->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         graphicsView_2->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        pushButton_5 = new QPushButton(centralWidget);
+        pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
+        pushButton_5->setGeometry(QRect(930, 0, 89, 61));
+        pushButton_5->setFlat(true);
         MainWindow->setCentralWidget(centralWidget);
         graphicsView_2->raise();
         graphicsView->raise();
@@ -447,6 +452,7 @@ public:
         lcdNumber->raise();
         pushButton->raise();
         label_4->raise();
+        pushButton_5->raise();
 
         retranslateUi(MainWindow);
 
@@ -473,6 +479,7 @@ public:
         label_2->setText(QApplication::translate("MainWindow", "User ID :", Q_NULLPTR));
         label_3->setText(QApplication::translate("MainWindow", "PIN :", Q_NULLPTR));
         label_4->setText(QString());
+        pushButton_5->setText(QString());
     } // retranslateUi
 
 };

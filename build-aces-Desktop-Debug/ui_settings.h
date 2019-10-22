@@ -22,7 +22,6 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPlainTextEdit>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QTextEdit>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -51,7 +50,6 @@ public:
     QLabel *label_5;
     QPlainTextEdit *plainTextEdit;
     QLabel *label_6;
-    QTextEdit *textEdit;
     QLabel *label_7;
     QLabel *label_8;
     QLabel *label_11;
@@ -65,11 +63,12 @@ public:
     QPlainTextEdit *plainTextEdit_4;
     QPlainTextEdit *plainTextEdit_5;
     QPlainTextEdit *plainTextEdit_6;
-    QTextEdit *textEdit_2;
-    QTextEdit *textEdit_3;
-    QTextEdit *textEdit_4;
-    QTextEdit *textEdit_5;
-    QTextEdit *textEdit_6;
+    QPlainTextEdit *plainTextEdit_10;
+    QPlainTextEdit *plainTextEdit_11;
+    QPlainTextEdit *plainTextEdit_12;
+    QPlainTextEdit *plainTextEdit_13;
+    QPlainTextEdit *plainTextEdit_14;
+    QPlainTextEdit *plainTextEdit_15;
     QLabel *label_17;
     QCheckBox *checkBox;
     QPlainTextEdit *plainTextEdit_9;
@@ -248,6 +247,7 @@ public:
         QFont font3;
         font3.setPointSize(18);
         pushButton->setFont(font3);
+        pushButton->setFocusPolicy(Qt::NoFocus);
 
         verticalLayout->addWidget(pushButton);
 
@@ -267,6 +267,7 @@ public:
         plainTextEdit_7 = new QPlainTextEdit(frame_2);
         plainTextEdit_7->setObjectName(QStringLiteral("plainTextEdit_7"));
         plainTextEdit_7->setGeometry(QRect(190, 10, 101, 31));
+        plainTextEdit_7->setFont(font);
         plainTextEdit_7->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         plainTextEdit_7->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         label_10 = new QLabel(frame_2);
@@ -279,6 +280,7 @@ public:
         plainTextEdit_8 = new QPlainTextEdit(frame_2);
         plainTextEdit_8->setObjectName(QStringLiteral("plainTextEdit_8"));
         plainTextEdit_8->setGeometry(QRect(620, 230, 181, 31));
+        plainTextEdit_8->setFont(font);
         plainTextEdit_8->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         plainTextEdit_8->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         frame_3 = new QFrame(frame_2);
@@ -324,12 +326,6 @@ public:
         label_6->setAutoFillBackground(true);
         label_6->setFrameShape(QFrame::WinPanel);
         label_6->setFrameShadow(QFrame::Sunken);
-        textEdit = new QTextEdit(frame_3);
-        textEdit->setObjectName(QStringLiteral("textEdit"));
-        textEdit->setGeometry(QRect(300, 50, 111, 31));
-        textEdit->setFont(font);
-        textEdit->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-        textEdit->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         label_7 = new QLabel(frame_3);
         label_7->setObjectName(QStringLiteral("label_7"));
         label_7->setGeometry(QRect(10, 90, 111, 31));
@@ -422,36 +418,42 @@ public:
         plainTextEdit_6->setFont(font);
         plainTextEdit_6->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         plainTextEdit_6->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-        textEdit_2 = new QTextEdit(frame_3);
-        textEdit_2->setObjectName(QStringLiteral("textEdit_2"));
-        textEdit_2->setGeometry(QRect(300, 90, 111, 31));
-        textEdit_2->setFont(font);
-        textEdit_2->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-        textEdit_2->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-        textEdit_3 = new QTextEdit(frame_3);
-        textEdit_3->setObjectName(QStringLiteral("textEdit_3"));
-        textEdit_3->setGeometry(QRect(300, 130, 111, 31));
-        textEdit_3->setFont(font);
-        textEdit_3->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-        textEdit_3->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-        textEdit_4 = new QTextEdit(frame_3);
-        textEdit_4->setObjectName(QStringLiteral("textEdit_4"));
-        textEdit_4->setGeometry(QRect(700, 50, 111, 31));
-        textEdit_4->setFont(font);
-        textEdit_4->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-        textEdit_4->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-        textEdit_5 = new QTextEdit(frame_3);
-        textEdit_5->setObjectName(QStringLiteral("textEdit_5"));
-        textEdit_5->setGeometry(QRect(700, 90, 111, 31));
-        textEdit_5->setFont(font);
-        textEdit_5->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-        textEdit_5->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-        textEdit_6 = new QTextEdit(frame_3);
-        textEdit_6->setObjectName(QStringLiteral("textEdit_6"));
-        textEdit_6->setGeometry(QRect(700, 130, 111, 31));
-        textEdit_6->setFont(font);
-        textEdit_6->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-        textEdit_6->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        plainTextEdit_10 = new QPlainTextEdit(frame_3);
+        plainTextEdit_10->setObjectName(QStringLiteral("plainTextEdit_10"));
+        plainTextEdit_10->setGeometry(QRect(300, 50, 111, 31));
+        plainTextEdit_10->setFont(font);
+        plainTextEdit_10->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        plainTextEdit_10->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        plainTextEdit_11 = new QPlainTextEdit(frame_3);
+        plainTextEdit_11->setObjectName(QStringLiteral("plainTextEdit_11"));
+        plainTextEdit_11->setGeometry(QRect(300, 90, 111, 31));
+        plainTextEdit_11->setFont(font);
+        plainTextEdit_11->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        plainTextEdit_11->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        plainTextEdit_12 = new QPlainTextEdit(frame_3);
+        plainTextEdit_12->setObjectName(QStringLiteral("plainTextEdit_12"));
+        plainTextEdit_12->setGeometry(QRect(300, 130, 111, 31));
+        plainTextEdit_12->setFont(font);
+        plainTextEdit_12->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        plainTextEdit_12->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        plainTextEdit_13 = new QPlainTextEdit(frame_3);
+        plainTextEdit_13->setObjectName(QStringLiteral("plainTextEdit_13"));
+        plainTextEdit_13->setGeometry(QRect(700, 50, 111, 31));
+        plainTextEdit_13->setFont(font);
+        plainTextEdit_13->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        plainTextEdit_13->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        plainTextEdit_14 = new QPlainTextEdit(frame_3);
+        plainTextEdit_14->setObjectName(QStringLiteral("plainTextEdit_14"));
+        plainTextEdit_14->setGeometry(QRect(700, 90, 111, 31));
+        plainTextEdit_14->setFont(font);
+        plainTextEdit_14->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        plainTextEdit_14->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        plainTextEdit_15 = new QPlainTextEdit(frame_3);
+        plainTextEdit_15->setObjectName(QStringLiteral("plainTextEdit_15"));
+        plainTextEdit_15->setGeometry(QRect(700, 130, 111, 31));
+        plainTextEdit_15->setFont(font);
+        plainTextEdit_15->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        plainTextEdit_15->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         label_17 = new QLabel(frame_2);
         label_17->setObjectName(QStringLiteral("label_17"));
         label_17->setGeometry(QRect(10, 230, 211, 31));
@@ -465,6 +467,9 @@ public:
         plainTextEdit_9 = new QPlainTextEdit(frame_2);
         plainTextEdit_9->setObjectName(QStringLiteral("plainTextEdit_9"));
         plainTextEdit_9->setGeometry(QRect(230, 230, 104, 31));
+        plainTextEdit_9->setFont(font);
+        plainTextEdit_9->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        plainTextEdit_9->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         label_18 = new QLabel(frame_2);
         label_18->setObjectName(QStringLiteral("label_18"));
         label_18->setGeometry(QRect(290, 10, 67, 31));
@@ -493,7 +498,7 @@ public:
         pushButton_48->setFocusPolicy(Qt::NoFocus);
         gridLayoutWidget = new QWidget(frame_4);
         gridLayoutWidget->setObjectName(QStringLiteral("gridLayoutWidget"));
-        gridLayoutWidget->setGeometry(QRect(10, 20, 821, 301));
+        gridLayoutWidget->setGeometry(QRect(10, 20, 838, 291));
         gridLayout = new QGridLayout(gridLayoutWidget);
         gridLayout->setSpacing(4);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
@@ -916,7 +921,7 @@ public:
         label_2->setText(QApplication::translate("settings", "DO NOT CHANGE UNLESS YOU KNOW EXACTLY WHAT YOU ARE DOING !!!", Q_NULLPTR));
         pushButton_3->setText(QApplication::translate("settings", "Network", Q_NULLPTR));
         pushButton_2->setText(QApplication::translate("settings", "Date / Time", Q_NULLPTR));
-        pushButton->setText(QApplication::translate("settings", "Exit", Q_NULLPTR));
+        pushButton->setText(QApplication::translate("settings", "Exit/Save", Q_NULLPTR));
         label_9->setText(QApplication::translate("settings", "Change PIN after : ", Q_NULLPTR));
         label_10->setText(QApplication::translate("settings", "Door Alarm Delay : ", Q_NULLPTR));
         label_3->setText(QApplication::translate("settings", "Door/lock", Q_NULLPTR));

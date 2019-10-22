@@ -23,6 +23,12 @@ private slots:
 
     void on_pushButton_3_clicked();
 
+    void on_pushButton_47_clicked();
+
+    void on_pushButton_25_clicked();
+
+    void on_pushButton_33_clicked();
+
 private:
     Ui::settings *ui;
     QPixmap image;

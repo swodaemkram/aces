@@ -40,16 +40,6 @@ Lets Load a cool Background
           ui->graphicsView->setScene(scene);        //   |
           imageObject = new QImage();
 /*
-          imageObject = new QImage();               //  _
-          imageObject->load(SECONDBACKGROUNDIMAGE);       //   |
-          image = QPixmap::fromImage(*imageObject); //   |
-          scene = new QGraphicsScene(this);         //   |
-          scene->addPixmap(image);                  //   |_______All this to display a picture
-          scene->setSceneRect(image.rect());        //   |               WOW !
-          ui->graphicsView_2->setScene(scene);        //   |
-          imageObject = new QImage();
-*/
-/*
 ==============================================================================================================
 Background is loaded
 ==============================================================================================================
@@ -305,6 +295,7 @@ Add New Button
     ui->frame_3->show();
     RecordModTypeaccess = "addnew";
 //----------------------------------Load the Access Items into a list and show them-------------------------------
+        ui->plainTextEdit->setFocus();
         ui->listWidget->clear();
 
         QSqlDatabase db = QSqlDatabase::addDatabase(DATABASEDRIVER);
@@ -507,6 +498,14 @@ Handels Tab key
 ===========================================================================================================
 */
 
+    if (ui->plainTextEdit->hasFocus())
+    {
+        ui->plainTextEdit_2->setFocus();
+        ui->plainTextEdit_2->setStyleSheet("background-color: yellow");
+        ui->plainTextEdit->setStyleSheet("background-color: white");
+    }
+
+
 
     if (ui->plainTextEdit_2->hasFocus())
     {
@@ -595,6 +594,7 @@ Handels Tab key
         ui->plainTextEdit_11->setStyleSheet("background-color: white");
         return;
     }
+
 
 /*
 ===========================================================================================================

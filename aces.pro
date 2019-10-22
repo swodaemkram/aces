@@ -40,7 +40,8 @@ SOURCES += \
     override_screen.cpp \
     pin_change_screen.cpp \
     set_time_screen.cpp \
-    networksettings.cpp
+    networksettings.cpp \
+    aboutscreen.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -52,7 +53,8 @@ HEADERS += \
     override_screen.h \
     pin_change_screen.h \
     set_time_screen.h \
-    networksettings.h
+    networksettings.h \
+    aboutscreen.h
 
 FORMS += \
         mainwindow.ui \
@@ -64,4 +66,5 @@ FORMS += \
     override_screen.ui \
     pin_change_screen.ui \
     set_time_screen.ui \
-    networksettings.ui
+    networksettings.ui \
+    aboutscreen.ui

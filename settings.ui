@@ -492,8 +492,11 @@
          <pointsize>18</pointsize>
         </font>
        </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
        <property name="text">
-        <string>Exit</string>
+        <string>Exit/Save</string>
        </property>
       </widget>
      </item>
@@ -554,6 +557,11 @@
       <height>31</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
     <property name="verticalScrollBarPolicy">
      <enum>Qt::ScrollBarAlwaysOff</enum>
     </property>
@@ -596,6 +604,11 @@
       <width>181</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+     </font>
     </property>
     <property name="verticalScrollBarPolicy">
      <enum>Qt::ScrollBarAlwaysOff</enum>
@@ -752,27 +765,6 @@
      </property>
      <property name="text">
       <string>dr/opn/dly</string>
-     </property>
-    </widget>
-    <widget class="QTextEdit" name="textEdit">
-     <property name="geometry">
-      <rect>
-       <x>300</x>
-       <y>50</y>
-       <width>111</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>14</pointsize>
-      </font>
-     </property>
-     <property name="verticalScrollBarPolicy">
-      <enum>Qt::ScrollBarAlwaysOff</enum>
-     </property>
-     <property name="horizontalScrollBarPolicy">
-      <enum>Qt::ScrollBarAlwaysOff</enum>
      </property>
     </widget>
     <widget class="QLabel" name="label_7">
@@ -1114,7 +1106,28 @@
       <enum>Qt::ScrollBarAlwaysOff</enum>
      </property>
     </widget>
-    <widget class="QTextEdit" name="textEdit_2">
+    <widget class="QPlainTextEdit" name="plainTextEdit_10">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>50</y>
+       <width>111</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="verticalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="horizontalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+    </widget>
+    <widget class="QPlainTextEdit" name="plainTextEdit_11">
      <property name="geometry">
       <rect>
        <x>300</x>
@@ -1135,7 +1148,7 @@
       <enum>Qt::ScrollBarAlwaysOff</enum>
      </property>
     </widget>
-    <widget class="QTextEdit" name="textEdit_3">
+    <widget class="QPlainTextEdit" name="plainTextEdit_12">
      <property name="geometry">
       <rect>
        <x>300</x>
@@ -1156,7 +1169,7 @@
       <enum>Qt::ScrollBarAlwaysOff</enum>
      </property>
     </widget>
-    <widget class="QTextEdit" name="textEdit_4">
+    <widget class="QPlainTextEdit" name="plainTextEdit_13">
      <property name="geometry">
       <rect>
        <x>700</x>
@@ -1177,7 +1190,7 @@
       <enum>Qt::ScrollBarAlwaysOff</enum>
      </property>
     </widget>
-    <widget class="QTextEdit" name="textEdit_5">
+    <widget class="QPlainTextEdit" name="plainTextEdit_14">
      <property name="geometry">
       <rect>
        <x>700</x>
@@ -1198,7 +1211,7 @@
       <enum>Qt::ScrollBarAlwaysOff</enum>
      </property>
     </widget>
-    <widget class="QTextEdit" name="textEdit_6">
+    <widget class="QPlainTextEdit" name="plainTextEdit_15">
      <property name="geometry">
       <rect>
        <x>700</x>
@@ -1270,6 +1283,17 @@
       <width>104</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+    <property name="verticalScrollBarPolicy">
+     <enum>Qt::ScrollBarAlwaysOff</enum>
+    </property>
+    <property name="horizontalScrollBarPolicy">
+     <enum>Qt::ScrollBarAlwaysOff</enum>
     </property>
    </widget>
    <widget class="QLabel" name="label_18">
@@ -1380,8 +1404,8 @@
      <rect>
       <x>10</x>
       <y>20</y>
-      <width>821</width>
-      <height>301</height>
+      <width>838</width>
+      <height>291</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout">

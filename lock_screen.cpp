@@ -371,6 +371,7 @@ Ok so we conneced to the database, now run querry
 
     QSqlQuery query4;
     query4.exec("INSERT INTO event_log (event_user_id, event_date, event_time, event_code, event_detail) VALUES ('"+ UserID + "','" + event_date + "','" + event_time + "','" + "2" + "','" + FirstNameFromDatabase + " " + LastNameFromDatabase + "')");
+
 //--------------------------------------------Log Event----------------------------------------------------
 /*
 ============================================================================================================
@@ -442,7 +443,7 @@ Lets Pull up the permissions for this user at the current time
 //--------------------------------------------End of Screen Setup---------------------------------------------
 
     ui->label_2->setText("using permission group " + permission_group );
-    db.close(); //Close Database
+     //Close Database
 
 }
 
@@ -475,12 +476,11 @@ void lock_screen::on_pushButton_clicked()
      QString event_time = QTime::currentTime().toString();
      QSqlQuery query4;
      query4.exec("INSERT INTO event_log (event_user_id, event_date, event_time, event_code) VALUES ('"+ UserID + "','" + event_date + "','" + event_time + "','" + "3" + "')");
+     db.close();
 //---------------------------------------------------Log Event-------------------------------------------------------------
 //---------------------------------------------------Close Window----------------------------------------------------------
-
      close_Lock1_SerialPort();//Lets Close All Comm ports like a good boy
      close();
-
 }
 /*
 =========================================================================================================================
@@ -509,11 +509,13 @@ void lock_screen::on_pushButton_2_clicked()
       QString event_time = QTime::currentTime().toString();
       QSqlQuery query4;
       query4.exec("INSERT INTO event_log (event_user_id, event_date, event_time, event_code, event_detail) VALUES ('"+ UserID + "','" + event_date + "','" + event_time + "','" + "21" + "','" + FirstNameFromDatabase + " " + LastNameFromDatabase + "')");
+    db.close();
 //------------------------------------------------Log Event----------------------------------------------------------
-
+    timer->stop();
     user_screen user_screen;
     user_screen.setModal(true);
     user_screen.exec();
+    timer->start(500);
 }
 /*
 =========================================================================================================================
@@ -541,10 +543,13 @@ void lock_screen::on_pushButton_5_clicked()
       QString event_time = QTime::currentTime().toString();
       QSqlQuery query4;
       query4.exec("INSERT INTO event_log (event_user_id, event_date, event_time, event_code, event_detail) VALUES ('"+ UserID + "','" + event_date + "','" + event_time + "','" + "18" + "','" + FirstNameFromDatabase + " " + LastNameFromDatabase + "')");
+      db.close();
 //------------------------------------------------Log Event----------------------------------------------------------
+    timer->stop();
     manage_access_item manage_access_item;
     manage_access_item.setModal(true);
     manage_access_item.exec();
+    timer->start(500);
 }
 /*
 =========================================================================================================================
@@ -556,7 +561,9 @@ Display Acces Group Screen
 void lock_screen::on_pushButton_4_clicked()
 {
 //--------------------------------------------Log Event-------------------------------------------------------------
+
      QSqlDatabase db = QSqlDatabase::addDatabase(DATABASEDRIVER);
+
      db.setHostName(DATABASEURL);
      db.setDatabaseName(DATABASENAME);
      db.setUserName(DATABASEUSER);
@@ -572,10 +579,13 @@ void lock_screen::on_pushButton_4_clicked()
       QString event_time = QTime::currentTime().toString();
       QSqlQuery query4;
       query4.exec("INSERT INTO event_log (event_user_id, event_date, event_time, event_code, event_detail) VALUES ('"+ UserID + "','" + event_date + "','" + event_time + "','" + "17" + "','" + FirstNameFromDatabase + " " + LastNameFromDatabase + "')");
+      db.close();
 //------------------------------------------------Log Event----------------------------------------------------------
+    timer->stop();
     Access_Group Access_Group;
     Access_Group.setModal(true);
     Access_Group.exec();
+    timer->start(500);
 }
 /*
 ========================================================================================================================
@@ -855,6 +865,7 @@ void lock_screen::on_pushButton_12_clicked()
      QString event_time = QTime::currentTime().toString();
      QSqlQuery query4;
      query4.exec("INSERT INTO event_log (event_user_id, event_date, event_time, event_code, event_detail) VALUES ('"+ UserID + "','" + event_date + "','" + event_time + "','" + "20" + "','" + FirstNameFromDatabase + " " + LastNameFromDatabase + "')");
+     db.close();
 }
 //------------------------------------------------------Log Event-------------------------------------------------------
 
@@ -887,6 +898,7 @@ void lock_screen::on_pushButton_3_clicked()
      QString event_time = QTime::currentTime().toString();
      QSqlQuery query4;
      query4.exec("INSERT INTO event_log (event_user_id, event_date, event_time, event_code, event_detail) VALUES ('"+ UserID + "','" + event_date + "','" + event_time + "','" + "19" + "','" + FirstNameFromDatabase + " " + LastNameFromDatabase + "')");
+     db.close();
 //-----------------------------------------------------------Log Event-------------------------------------------------------
      settings settings;
      settings.setModal(true);

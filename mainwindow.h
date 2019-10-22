@@ -16,7 +16,8 @@ Definitions
 #define DATABASEUSER "root"
 #define DATABASEPASSWORD "b0whunter"
 #define DATABASENAME "aces"
-#define BACKGROUNDIMAGE "./icons/B4.jpg"
+#define BACKGROUNDIMAGE "./icons/fire.jpg"
+//#define BACKGROUNDIMAGE "./icons/B4.jpg"
 #define SECONDBACKGROUNDIMAGE "./icons/background2.jpg"
 #define REDBACKGROUNDIMAGE "./icons/B4RED.jpg"
 #define SETTINGSBACKGROUND "./icons/settingsbackground.jpg"
@@ -79,6 +80,8 @@ private slots:
     void Open_Lock2_SerialPort();
 
     void on_pushButton_16_clicked();
+
+    void on_pushButton_5_clicked();
 
 private:
     Ui::MainWindow *ui;

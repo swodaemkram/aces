@@ -1,3 +1,4 @@
+#include "aboutscreen.h"
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "lock_screen.h"
@@ -152,6 +153,7 @@ if (!db.open())
  query.next();
  door6_enabledmm = query.value(4).toInt();
 //--------------------------------------------End of Door Setup---------------------------------------
+db.close();
 /*
 ====================================================================================================
    Log system boot
@@ -188,7 +190,7 @@ if (!db.open())
 /*
 =======================================================How We Play Audio==========================================
 */
-
+db.close();
 return;
 /*
 ====================================================================================================
@@ -216,9 +218,9 @@ Clock Display
 void MainWindow::MyTimerSlot()
 {
     QTime time = QTime::currentTime();
-    QString ct = time.toString("hh:mm:ss    ");
+    QString ct = time.toString("hh:mm:ss.zzz ");
     QDate dedate = QDate::currentDate();
-    QString cd = dedate.toString();
+    QString cd = dedate.toString("MM-dd-yyyy");
     QString DateAndTime = cd + " " + ct;
     ui->lcdNumber->display(DateAndTime);
 }
@@ -274,6 +276,7 @@ void MainWindow::DoorMonitorTimerSlot()
          QSqlQuery query4;
          query4.exec("INSERT INTO event_log (event_date, event_time, event_code) VALUES ('"+ event_date + "','" + event_time + "','" + "911" +"')");
          Alarm_Logged = 1;//Set Alarm Flag so we dont log multiple events for a single alarm
+         db.close();
          return;
         }
 
@@ -333,6 +336,7 @@ void MainWindow::DoorMonitorTimerSlot()
          QSqlQuery query4;
          query4.exec("INSERT INTO event_log (event_date, event_time, event_code) VALUES ('"+ event_date + "','" + event_time + "','" + "911" +"')");
          Alarm_Logged2 = 1;//Set Alarm Flag so we dont log multiple events for a single alarm
+         db.close();
          return;
         }
 
@@ -729,7 +733,8 @@ Is User Enabled
 
           QSqlQuery query4;
           query4.exec("INSERT INTO event_log (event_date, event_time, event_code) VALUES ('"+ event_date + "','" + event_time + "','" + "35" +"')");
-         return;
+         db.close();
+          return;
      }
 /*
 ================================================================================================================
@@ -864,3 +869,10 @@ void MainWindow::on_pushButton_16_clicked()
 end of Over-ride Button
 ================================================================================================================
 */
+
+void MainWindow::on_pushButton_5_clicked()
+{
+    aboutscreen aboutscreen;
+    aboutscreen.setModal(true);
+    aboutscreen.exec();
+}

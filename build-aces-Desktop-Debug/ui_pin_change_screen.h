@@ -14,8 +14,10 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QDialog>
+#include <QtWidgets/QGraphicsView>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QPlainTextEdit>
 #include <QtWidgets/QPushButton>
 
 QT_BEGIN_NAMESPACE
@@ -36,6 +38,9 @@ public:
     QPushButton *pushButton_8;
     QPushButton *pushButton_11;
     QLabel *label;
+    QGraphicsView *graphicsView;
+    QLabel *label_2;
+    QPlainTextEdit *plainTextEdit;
 
     void setupUi(QDialog *pin_change_screen)
     {
@@ -269,6 +274,56 @@ public:
         label->setFont(font1);
         label->setAutoFillBackground(true);
         label->setAlignment(Qt::AlignCenter);
+        graphicsView = new QGraphicsView(pin_change_screen);
+        graphicsView->setObjectName(QStringLiteral("graphicsView"));
+        graphicsView->setGeometry(QRect(0, 0, 1024, 768));
+        graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        label_2 = new QLabel(pin_change_screen);
+        label_2->setObjectName(QStringLiteral("label_2"));
+        label_2->setGeometry(QRect(0, 0, 1031, 41));
+        QPalette palette13;
+        palette13.setBrush(QPalette::Active, QPalette::WindowText, brush4);
+        palette13.setBrush(QPalette::Active, QPalette::Button, brush5);
+        palette13.setBrush(QPalette::Active, QPalette::Text, brush4);
+        palette13.setBrush(QPalette::Active, QPalette::Base, brush6);
+        palette13.setBrush(QPalette::Active, QPalette::Window, brush5);
+        palette13.setBrush(QPalette::Inactive, QPalette::WindowText, brush4);
+        palette13.setBrush(QPalette::Inactive, QPalette::Button, brush5);
+        palette13.setBrush(QPalette::Inactive, QPalette::Text, brush4);
+        palette13.setBrush(QPalette::Inactive, QPalette::Base, brush6);
+        palette13.setBrush(QPalette::Inactive, QPalette::Window, brush5);
+        palette13.setBrush(QPalette::Disabled, QPalette::WindowText, brush2);
+        palette13.setBrush(QPalette::Disabled, QPalette::Button, brush5);
+        palette13.setBrush(QPalette::Disabled, QPalette::Text, brush2);
+        palette13.setBrush(QPalette::Disabled, QPalette::Base, brush5);
+        palette13.setBrush(QPalette::Disabled, QPalette::Window, brush5);
+        label_2->setPalette(palette13);
+        QFont font2;
+        font2.setPointSize(20);
+        label_2->setFont(font2);
+        label_2->setAutoFillBackground(true);
+        label_2->setAlignment(Qt::AlignCenter);
+        plainTextEdit = new QPlainTextEdit(pin_change_screen);
+        plainTextEdit->setObjectName(QStringLiteral("plainTextEdit"));
+        plainTextEdit->setGeometry(QRect(210, 190, 591, 70));
+        plainTextEdit->setFont(font2);
+        graphicsView->raise();
+        pushButton_7->raise();
+        pushButton_10->raise();
+        pushButton_4->raise();
+        pushButton_16->raise();
+        pushButton_3->raise();
+        pushButton_6->raise();
+        pushButton_2->raise();
+        pushButton_12->raise();
+        pushButton_15->raise();
+        pushButton_14->raise();
+        pushButton_8->raise();
+        pushButton_11->raise();
+        label->raise();
+        label_2->raise();
+        plainTextEdit->raise();
 
         retranslateUi(pin_change_screen);
 
@@ -290,7 +345,8 @@ public:
         pushButton_14->setText(QApplication::translate("pin_change_screen", "Clear", Q_NULLPTR));
         pushButton_8->setText(QApplication::translate("pin_change_screen", "6", Q_NULLPTR));
         pushButton_11->setText(QApplication::translate("pin_change_screen", "8", Q_NULLPTR));
-        label->setText(QApplication::translate("pin_change_screen", "TextLabel", Q_NULLPTR));
+        label->setText(QString());
+        label_2->setText(QApplication::translate("pin_change_screen", "PIN Change Requiered", Q_NULLPTR));
     } // retranslateUi
 
 };

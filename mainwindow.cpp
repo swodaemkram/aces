@@ -2,6 +2,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "lock_screen.h"
+#include "pin_change_screen.h"
 #include <QStyle>
 #include <QDesktopWidget>
 #include <QtWidgets>
@@ -12,7 +13,7 @@
 
 QString UserID;
 QString Pin;
-QString Validatae;
+QString Validate;
 QString HideText;
 QString Alt_ID;
 
@@ -754,6 +755,28 @@ Is PIN Correct
         lock1_serial_open = 0;
         lock2_serial_open = 0;
         DoorMonitorTimer->stop();
+//-----------------------------------------------Do we need to change PIN ?-------------------------------------
+        //qDebug() << "Last PIN Change was " +  query.value(7).toString();
+        QString DateFromDatabase = query.value(7).toString();
+
+        QDate lastPINDate = QDate::fromString(DateFromDatabase,"MM/dd/yyyy");
+
+        qDebug() << lastPINDate;
+        qDebug() << days_before_pinchange;
+
+        QDate PINExpiers = lastPINDate.addDays(days_before_pinchange);
+
+        qDebug() <<  PINExpiers ;
+        QDate dedate = QDate::currentDate();
+        //qDebug() <<  dedate;
+        if(dedate > PINExpiers)
+        {
+            pin_change_screen pin_change_screen;
+            pin_change_screen.setModal(true);
+            pin_change_screen.exec();
+        }
+
+//-----------------------------------------End of do we need to change PIN-------------------------------------
         lock_screen lock_screen;
         lock_screen.setModal(true);
         lock_screen.exec();
@@ -768,7 +791,7 @@ Is PIN Correct
      }
 /*
 ==============================================================================================================
-Planed Fall Through
+Planed Fall Through Failed Authentication
 ==============================================================================================================
 */
 

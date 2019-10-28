@@ -37,6 +37,8 @@ private slots:
 
     QByteArray readData_lock1();
 
+    void LogEvent(QString EventID);
+
     std::string genkey(const char* challenge);
 
     char* rot(char b[], char seed);

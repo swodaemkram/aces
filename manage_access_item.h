@@ -115,6 +115,8 @@ private slots:
 
     void on_pushButton_3_clicked();
 
+    void LogEvent(QString EventID);
+
 private:
     Ui::manage_access_item *ui;
     QPixmap image;

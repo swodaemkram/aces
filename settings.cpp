@@ -4109,3 +4109,43 @@ void settings::on_pushButton_45_clicked()
         return;
     }
 }
+
+/*
+============================================================================================================================
+Log Event
+============================================================================================================================
+*/
+
+void settings::LogEvent(QString EventID)
+{
+
+    QSqlDatabase db = QSqlDatabase::addDatabase(DATABASEDRIVER);
+    db.setHostName(DATABASEURL);
+    db.setDatabaseName(DATABASENAME);
+    db.setUserName(DATABASEUSER);
+    db.setPassword(DATABASEPASSWORD);
+    db.open();
+
+    QString event_date = QDate::currentDate().toString("yyyyMMdd");
+    QString event_time = QTime::currentTime().toString();
+    QSqlQuery query4;
+    query4.exec("INSERT INTO event_log (event_user_id, event_date, event_time, event_code) VALUES ('"+ UserID + "','" + event_date + "','" + event_time + "','" + EventID + "')");
+/*
+============================================================================================================
+End of Logging
+============================================================================================================
+*/
+
+    return;
+}
+
+
+
+
+
+
+
+
+
+
+

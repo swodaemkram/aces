@@ -11,6 +11,8 @@ int RecordNumberManageAccess = 0;
 QString NextRecordNumberManageAccess = "" ;
 QString RecordStatus = "";
 
+extern QString UserID;
+
 manage_access_item::manage_access_item(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::manage_access_item)
@@ -2367,3 +2369,32 @@ void manage_access_item::on_pushButton_3_clicked()
 End of Delete Button
 ==============================================================================================================
 */
+
+/*
+============================================================================================================================
+Log Event
+============================================================================================================================
+*/
+
+void manage_access_item::LogEvent(QString EventID)
+{
+
+    QSqlDatabase db = QSqlDatabase::addDatabase(DATABASEDRIVER);
+    db.setHostName(DATABASEURL);
+    db.setDatabaseName(DATABASENAME);
+    db.setUserName(DATABASEUSER);
+    db.setPassword(DATABASEPASSWORD);
+    db.open();
+
+    QString event_date = QDate::currentDate().toString("yyyyMMdd");
+    QString event_time = QTime::currentTime().toString();
+    QSqlQuery query4;
+    query4.exec("INSERT INTO event_log (event_user_id, event_date, event_time, event_code) VALUES ('"+ UserID + "','" + event_date + "','" + event_time + "','" + EventID + "')");
+/*
+============================================================================================================
+End of Logging
+============================================================================================================
+*/
+
+    return;
+}

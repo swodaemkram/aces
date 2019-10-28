@@ -103,6 +103,8 @@ private slots:
 
     void on_pushButton_45_clicked();
 
+    void LogEvent(QString EventID);
+
 private:
     Ui::settings *ui;
     QPixmap image;

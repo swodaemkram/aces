@@ -59,6 +59,8 @@ private slots:
 
     void on_pushButton_3_clicked();
 
+    void LogEvent(QString EventID);
+
 private:
     Ui::override_screen *ui;
     QPixmap image;

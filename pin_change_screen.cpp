@@ -222,6 +222,7 @@ Save and Exit
       QSqlQuery query;
       query.exec("UPDATE user SET  pin_number = '" + buffer + "', date_of_last_pin_change = '" + dedate.toString("MM/dd/yyyy") +"' WHERE iduser = '" + UserID + "'" );
       query.next();
+      LogEvent("36");//Lets Log This Event
       close();
  }
 /*
@@ -230,9 +231,49 @@ End of Save and Exit
 ============================================================================================================
 */
 
-
  void pin_change_screen::LogEvent(QString EventID)
  {
 
+     QSqlDatabase db = QSqlDatabase::addDatabase(DATABASEDRIVER);
+     db.setHostName(DATABASEURL);
+     db.setDatabaseName(DATABASENAME);
+     db.setUserName(DATABASEUSER);
+     db.setPassword(DATABASEPASSWORD);
+
+     if (!db.open())
+     {
+          ui->label_2->setText("Unable to connect to database !!!");
+         return;
+     }
+      ui->label_2->setText("Connected to database....");
+/*
+============================================================================================================
+Ok so we conneced to the database, now run querry
+============================================================================================================
+*/
+      QSqlQuery query;
+      query.exec("SELECT * FROM user WHERE iduser = " + UserID + " OR User_id = " + UserID);//<--We need user id or alt-id to validate
+      query.next();
+//-------------------------------------------Log Event------------------------------------------------------
+      db.setHostName(DATABASEURL);
+      db.setDatabaseName(DATABASENAME);
+      db.setUserName(DATABASEUSER);
+      db.setPassword(DATABASEPASSWORD);
+      db.open();
+
+       QString event_date = QDate::currentDate().toString("yyyyMMdd");
+       QString event_time = QTime::currentTime().toString();
+
+       QSqlQuery query4;
+       query4.exec("INSERT INTO event_log (event_user_id, event_date, event_time, event_code) VALUES ('"+ UserID + "','" + event_date + "','" + event_time + "','" + EventID + "')");
+
+//--------------------------------------------Log Event----------------------------------------------------
+/*
+============================================================================================================
+End of Logging
+============================================================================================================
+*/
+
      return;
  }
+

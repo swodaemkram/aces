@@ -115,6 +115,11 @@ private slots:
 
     void on_pushButton_48_clicked();
 
+    void LogEvent(QString EventID);
+
+
+
+
 private:
     Ui::user_screen *ui;
     QPixmap image;

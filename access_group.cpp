@@ -11,6 +11,8 @@ int RecordNumberaccess = 0;
 QString NextRecordaccess  ;
 QString PrevRecordStringaccess ;
 
+extern QString UserID;
+
 Access_Group::Access_Group(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Access_Group)
@@ -6925,3 +6927,36 @@ void Access_Group::on_pushButton_6_clicked()
            return;
     //-----------------------------------------------------End of the space key-------------------------------------------------------
 }
+
+/*
+============================================================================================================================
+End of Open Lock 2
+============================================================================================================================
+Log Event
+============================================================================================================================
+*/
+
+void Access_Group::LogEvent(QString EventID)
+{
+
+    QSqlDatabase db = QSqlDatabase::addDatabase(DATABASEDRIVER);
+    db.setHostName(DATABASEURL);
+    db.setDatabaseName(DATABASENAME);
+    db.setUserName(DATABASEUSER);
+    db.setPassword(DATABASEPASSWORD);
+    db.open();
+
+    QString event_date = QDate::currentDate().toString("yyyyMMdd");
+    QString event_time = QTime::currentTime().toString();
+    QSqlQuery query4;
+    query4.exec("INSERT INTO event_log (event_user_id, event_date, event_time, event_code) VALUES ('"+ UserID + "','" + event_date + "','" + event_time + "','" + EventID + "')");
+/*
+============================================================================================================
+End of Logging
+============================================================================================================
+*/
+
+    return;
+}
+
+

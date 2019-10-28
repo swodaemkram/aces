@@ -83,6 +83,8 @@ private slots:
 
     void on_pushButton_5_clicked();
 
+    void LogEvent(QString EventID);
+
 private:
     Ui::MainWindow *ui;
     QPixmap image;

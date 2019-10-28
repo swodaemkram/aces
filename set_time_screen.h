@@ -18,6 +18,10 @@ public:
 private slots:
     void on_pushButton_clicked();
 
+    void LogEvent(QString EventID);
+
+
+
 private:
     Ui::set_time_screen *ui;
 

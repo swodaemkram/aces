@@ -62,6 +62,7 @@ public:
     QLabel *label_11;
     QListWidget *listWidget;
     QGraphicsView *graphicsView_2;
+    QPushButton *pushButton_52;
     QFrame *frame_4;
     QPushButton *pushButton_47;
     QPushButton *pushButton_45;
@@ -449,6 +450,10 @@ public:
         graphicsView_2->setAutoFillBackground(true);
         graphicsView_2->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         graphicsView_2->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        pushButton_52 = new QPushButton(frame_3);
+        pushButton_52->setObjectName(QStringLiteral("pushButton_52"));
+        pushButton_52->setGeometry(QRect(360, 50, 221, 31));
+        pushButton_52->setFont(font1);
         graphicsView_2->raise();
         label_3->raise();
         plainTextEdit->raise();
@@ -467,6 +472,7 @@ public:
         label_10->raise();
         label_11->raise();
         listWidget->raise();
+        pushButton_52->raise();
         frame_4 = new QFrame(frame_2);
         frame_4->setObjectName(QStringLiteral("frame_4"));
         frame_4->setGeometry(QRect(10, 270, 831, 391));
@@ -491,7 +497,7 @@ public:
         pushButton_48->setFocusPolicy(Qt::NoFocus);
         gridLayoutWidget = new QWidget(frame_4);
         gridLayoutWidget->setObjectName(QStringLiteral("gridLayoutWidget"));
-        gridLayoutWidget->setGeometry(QRect(10, 20, 811, 301));
+        gridLayoutWidget->setGeometry(QRect(10, 20, 838, 301));
         gridLayout = new QGridLayout(gridLayoutWidget);
         gridLayout->setSpacing(4);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
@@ -946,6 +952,7 @@ public:
         label_9->setText(QApplication::translate("user_screen", "0", Q_NULLPTR));
         label_10->setText(QApplication::translate("user_screen", "USER ID :", Q_NULLPTR));
         label_11->setText(QString());
+        pushButton_52->setText(QApplication::translate("user_screen", "Enroll I-Button Key", Q_NULLPTR));
         pushButton_47->setText(QApplication::translate("user_screen", "TAB", Q_NULLPTR));
         pushButton_45->setText(QApplication::translate("user_screen", "Space", Q_NULLPTR));
         pushButton_48->setText(QApplication::translate("user_screen", "BCKSPC", Q_NULLPTR));

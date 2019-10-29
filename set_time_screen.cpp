@@ -76,6 +76,6 @@ void set_time_screen::LogEvent(QString EventID)
 End of Logging
 ============================================================================================================
 */
-
+    db.close();
     return;
 }

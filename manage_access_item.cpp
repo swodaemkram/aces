@@ -2395,6 +2395,6 @@ void manage_access_item::LogEvent(QString EventID)
 End of Logging
 ============================================================================================================
 */
-
+    db.close();
     return;
 }

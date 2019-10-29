@@ -10,7 +10,6 @@
 Definitions
 ==============================================================================================================
 */
-
 #define DATABASEDRIVER "QMYSQL"
 #define DATABASEURL "localhost"
 #define DATABASEUSER "root"
@@ -43,6 +42,7 @@ public:
 
     QSerialPort *lock1_serial;
     QSerialPort *lock2_serial;
+    QSerialPort *vim_serial;
 
 private slots:
     void on_pushButton_clicked();
@@ -84,6 +84,14 @@ private slots:
     void on_pushButton_5_clicked();
 
     void LogEvent(QString EventID);
+
+    void open_vim_serial();
+
+    void vim_comm();
+
+    void lock2_comm();
+
+    void lock1_comm();
 
 private:
     Ui::MainWindow *ui;

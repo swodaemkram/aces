@@ -2805,7 +2805,7 @@ void user_screen::LogEvent(QString EventID)
 End of Logging
 ============================================================================================================
 */
-
+    db.close();
     return;
 }
 

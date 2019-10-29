@@ -16,6 +16,7 @@ QString Pin;
 QString Validate;
 QString HideText;
 QString Alt_ID;
+QString DataFromVIM;
 
 //----------------------------------------System Config-------------------------------------------------------
 int days_before_pinchange = 0;
@@ -29,14 +30,15 @@ int door3_enabledmm = 0;
 int door4_enabledmm = 0;
 int door5_enabledmm = 0;
 int door6_enabledmm = 0;
-
 //-----------------------------------------End of System Config-----------------------------------------------
 
 //-----------------------------------------Flags-------------------------------------------------------------
 int lock1_serial_open = 0;
 int lock2_serial_open = 0;
+int vim_serial_open = 0;
 int Alarm_Logged = 0;
 int Alarm_Logged2 = 0;
+int is_vim_enabled = 0;
 //-----------------------------------------Flags-------------------------------------------------------------
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -98,7 +100,7 @@ End of Update Clock Timer and Door Status Timer
 ====================================================================================================================
 Lets connect to the database
 ====================================================================================================================
- */
+*/
 
 QSqlDatabase db = QSqlDatabase::addDatabase(DATABASEDRIVER);
 db.setHostName(DATABASEURL);
@@ -155,50 +157,19 @@ if (!db.open())
  door6_enabledmm = query.value(4).toInt();
 //--------------------------------------------End of Door Setup---------------------------------------
 db.close();
-/*
-====================================================================================================
-   Log system boot
-====================================================================================================
-*/
-db.setHostName(DATABASEURL);
-db.setDatabaseName(DATABASENAME);
-db.setUserName(DATABASEUSER);
-db.setPassword(DATABASEPASSWORD);
-
-if (!db.open())
-{
-     ui->label_4->setText("Unable to connect to database !!!");
-    return;
-}
- ui->label_4->setText("Connected to database again....");
-
- QString event_date = QDate::currentDate().toString("yyyyMMdd");
-
- QString event_time = QTime::currentTime().toString();
-
- QSqlQuery query4;
- query4.exec("INSERT INTO event_log (event_date, event_time, event_code) VALUES ('"+ event_date + "','" + event_time + "','" + "1" +"')");
-
+//--------------------------------------------Log System Boot-----------------------------------------
+LogEvent("1");
 /*
 =====================================================How We play Audio============================================
 */
-
 //player = new QMediaPlayer;
 //player->setMedia(QUrl::fromLocalFile("/home/mark/qt_projects/build-aces-Desktop-Debug/01.mp3"));
 //player->setVolume(90);
 //player->play();
-
 /*
 =======================================================How We Play Audio==========================================
 */
-db.close();
 return;
-/*
-====================================================================================================
-  End of Log system Boot
-====================================================================================================
-*/
-
 }
 
 MainWindow::~MainWindow()
@@ -208,6 +179,9 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
+    lock1_serial->close();
+    lock2_serial->close();
+    vim_serial->close();
     exit(0);
 }
 
@@ -234,124 +208,17 @@ Door Status Monitor Code
 */
 void MainWindow::DoorMonitorTimerSlot()
 {
-//-------------------------------------------Door 1------------------------------------------------
-    if (door1_enabledmm == 1)
-    {
-    if(lock1_serial_open == 0) Open_Lock1_SerialPort();
 
-    lock1_serial->write("r;");
-    QString data = "";
-
-    while(lock1_serial->bytesAvailable()>0||lock1_serial->waitForReadyRead(10))
-    {
-       data = lock1_serial->readAll();
-    }
-
-    QString DoorOpenStatus = data.mid(5,1);
-    if(QString::compare(DoorOpenStatus,"1") == 0)
-    {
-        ui->graphicsView->hide();
-        ui->graphicsView_2->show();
-
-//-------------------------------------------------------Log Event--------------------------------------------------
-
-        if(Alarm_Logged == 0)
-        {
-        QSqlDatabase db = QSqlDatabase::addDatabase(DATABASEDRIVER);
-        db.setHostName(DATABASEURL);
-        db.setDatabaseName(DATABASENAME);
-        db.setUserName(DATABASEUSER);
-        db.setPassword(DATABASEPASSWORD);
-
-        if (!db.open())
-        {
-             ui->label_4->setText("Unable to connect to database !!!");
-            return;
-        }
-         ui->label_4->setText("Connected to database again....");
-
-         QString event_date = QDate::currentDate().toString("yyyyMMdd");
-
-         QString event_time = QTime::currentTime().toString();
-
-         QSqlQuery query4;
-         query4.exec("INSERT INTO event_log (event_date, event_time, event_code) VALUES ('"+ event_date + "','" + event_time + "','" + "911" +"')");
-         Alarm_Logged = 1;//Set Alarm Flag so we dont log multiple events for a single alarm
-         db.close();
-         return;
-        }
-
-//-------------------------------------------------------End of Log Event---------------------------------------------------
-    }
-
-    else
-    {
-        ui->graphicsView->show();
-        ui->graphicsView_2->hide();
-        Alarm_Logged = 0;//Reset Alarm Flag to catch next event
-    }
-    }
+//------------------------------------------Door 1--------------------------------------------------------------------------
+    lock1_comm();
 //----------------------------------------End of Door 1---------------------------------------------------------------------
 //-------------------------------------------Door 2-------------------------------------------------------------------------
-
-    if (door2_enabledmm == 1)
-    {
-
-        if(lock2_serial_open == 0) Open_Lock2_SerialPort();
-
-    lock2_serial->write("r;");
-    QString data2 = "";
-
-    while(lock2_serial->bytesAvailable()>0||lock2_serial->waitForReadyRead(10))
-    {
-       data2 = lock2_serial->readAll();
-    }
-
-    QString DoorOpenStatus2 = data2.mid(5,1);
-    if(QString::compare(DoorOpenStatus2,"1") == 0)
-    {
-        ui->graphicsView->hide();
-        ui->graphicsView_2->show();
-
-//-------------------------------------------------------Log Event--------------------------------------------------
-
-        if(Alarm_Logged2 == 0)
-        {
-        QSqlDatabase db = QSqlDatabase::addDatabase(DATABASEDRIVER);
-        db.setHostName(DATABASEURL);
-        db.setDatabaseName(DATABASENAME);
-        db.setUserName(DATABASEUSER);
-        db.setPassword(DATABASEPASSWORD);
-
-        if (!db.open())
-        {
-             ui->label_4->setText("Unable to connect to database !!!");
-            return;
-        }
-         ui->label_4->setText("Connected to database again....");
-
-         QString event_date = QDate::currentDate().toString("yyyyMMdd");
-
-         QString event_time = QTime::currentTime().toString();
-
-         QSqlQuery query4;
-         query4.exec("INSERT INTO event_log (event_date, event_time, event_code) VALUES ('"+ event_date + "','" + event_time + "','" + "911" +"')");
-         Alarm_Logged2 = 1;//Set Alarm Flag so we dont log multiple events for a single alarm
-         db.close();
-         return;
-        }
-
-//-------------------------------------------------------End of Log Event---------------------------------------------------
-    }
-        else
-    {
-        ui->graphicsView->show();
-        ui->graphicsView_2->hide();
-        Alarm_Logged2 = 0;//Reset Alarm Flag to catch next event
-    }
-    }
+    lock2_comm();
 //----------------------------------------End of Door 2---------------------------------------------------------------------
-
+//----------------------------------------Check VIM for Data----------------------------------------------------------------
+    vim_comm();
+//-----------------------------------------END of VIM Code------------------------------------------------------------------
+    return;
 }
 /*
 ============================================================================================================================
@@ -684,28 +551,28 @@ void MainWindow::ValidateUser()
 
 
      QSqlQuery query;
-     query.exec("SELECT * FROM user WHERE iduser = " + UserID + " OR User_id = " + UserID);//<--Wee need user id or alt-id to validate
+//--We need user id or alt-id to validate or the override_key_number----------------------------------------------
+
+     query.exec("SELECT * FROM user WHERE iduser = " + UserID + " OR User_id = " + UserID);
      query.next();
      QString pin_from_db = query.value(3).toString();
      //ui->label->setText(pin_from_db);
      qDebug() << "pin from db = " +pin_from_db;
-
+     QString IButtonCodeFromDB = query.value(6).toString();//Get IButtonData
      int user_enabled_from_db = query.value(5).toInt();
 
-//-------------------------------------Here we need to encode the PIN into a MD5 hash so we can compare with the
+//---------------Here we need to encode the PIN into a MD5 hash so we can compare with the----------------------
 //-------------------------------------Given password-----------------------------------------------------------
      QSqlQuery query1;
      query1.exec("SELECT MD5('" + Pin + "')" );
      query1.next();
      QString MD5_Hash_from_db = query1.value(0).toString();
      db.close();
-
 /*
 =================================================================================================================
 Is User Enabled
 =================================================================================================================
 */
-
      if (!user_enabled_from_db)
      {
          ui->plainTextEdit->setPlainText("");
@@ -716,34 +583,15 @@ Is User Enabled
          ui->label_4->setText("User Not Enabled !!!");
          ui->plainTextEdit->setFocus();
 
-         db.setHostName(DATABASEURL);
-         db.setDatabaseName(DATABASENAME);
-         db.setUserName(DATABASEUSER);
-         db.setPassword(DATABASEPASSWORD);
-
-         if (!db.open())
-         {
-              ui->label_4->setText("Unable to connect to database !!!");
-             return;
-         }
-          ui->label_4->setText("Connected to database again....");
-
-          QString event_date = QDate::currentDate().toString("yyyyMMdd");
-
-          QString event_time = QTime::currentTime().toString();
-
-          QSqlQuery query4;
-          query4.exec("INSERT INTO event_log (event_date, event_time, event_code) VALUES ('"+ event_date + "','" + event_time + "','" + "35" +"')");
-         db.close();
-          return;
+         LogEvent("35");
+         return;
      }
 /*
 ================================================================================================================
 Is PIN Correct
 ================================================================================================================
 */
-
-     if(MD5_Hash_from_db == pin_from_db)
+     if(MD5_Hash_from_db == pin_from_db || IButtonCodeFromDB == DataFromVIM)
      {
         ui->plainTextEdit->setPlainText("");
         ui->plainTextEdit_2->setPlainText("");
@@ -752,8 +600,10 @@ Is PIN Correct
         Pin = "";
         if (lock1_serial->isOpen()) lock1_serial->close();//Close Comm Ports before leaving Screen
         if (lock2_serial->isOpen()) lock2_serial->close();//Close Comm Ports before leaving screen
+        if(vim_serial->isOpen()) vim_serial->close();//Close Vim serial port
         lock1_serial_open = 0;
         lock2_serial_open = 0;
+        vim_serial_open = 0;
         DoorMonitorTimer->stop();
 //-----------------------------------------------Do we need to change PIN ?-------------------------------------
         //qDebug() << "Last PIN Change was " +  query.value(7).toString();
@@ -786,6 +636,8 @@ Is PIN Correct
         UserID="";
 
         Open_Lock1_SerialPort();//---------Open Comm Ports
+        Open_Lock2_SerialPort();
+        open_vim_serial();
         DoorMonitorTimer->start(500);
         return;
      }
@@ -794,7 +646,6 @@ Is PIN Correct
 Planed Fall Through Failed Authentication
 ==============================================================================================================
 */
-
      ui->plainTextEdit->setPlainText("");
      ui->plainTextEdit_2->setPlainText("");
      HideText = "";
@@ -803,7 +654,6 @@ Planed Fall Through Failed Authentication
      ui->label_4->setText("Validation Error !!!");
      ui->plainTextEdit->setFocus();
      return;
-
 }
 /*
 ==============================================================================================================
@@ -816,6 +666,9 @@ Open Serial Ports
 void MainWindow::Open_Lock1_SerialPort()
 {
 //-------------------------------------------Lock 1---------------------------------------------------------------
+
+    if(door1_enabledmm == 0)return;
+
     if (lock1_serial_open == 0)
     {
     lock1_serial = new QSerialPort(this);//----Instanciate Comm port 1
@@ -848,6 +701,7 @@ void MainWindow::Open_Lock2_SerialPort()
 {
 //--------------------------------------------Lock 2------------------------------------------------------------------
 
+    if (door2_enabledmm == 0)return;
 
     if (lock2_serial_open == 0)
     {
@@ -876,6 +730,40 @@ void MainWindow::Open_Lock2_SerialPort()
 //-------------------------------------------End of Lock 2------------------------------------------------------
 return;
 }
+//-------------------------------------Open Comm Port for VIM module--------------------------------------------
+void MainWindow::open_vim_serial(void)
+{
+
+    if(vim_serial_open == 0)
+    {
+    vim_serial = new QSerialPort(this);//----Instanciate VIM Com port
+    qDebug() << "open VIM Comm Port";
+    vim_serial->setPortName("/dev/ttyACM2");
+    vim_serial->setBaudRate(QSerialPort::Baud115200);
+    vim_serial->setDataBits(QSerialPort::Data8);
+    vim_serial->setParity(QSerialPort::NoParity);
+    vim_serial->setStopBits(QSerialPort::OneStop);
+    vim_serial->setFlowControl(QSerialPort::NoFlowControl);
+
+    if (vim_serial->open(QIODevice::ReadWrite))
+     {
+
+     //ui->label_4->setText("VIM Connected");
+       vim_serial_open = 1;
+       return;
+    }
+
+    else
+    {
+
+    //ui->label_4->setText("VIM Connection Error");
+       vim_serial_open = 0;
+    }
+
+    }
+return;
+}
+//--------------------------------------End of VIM Module-------------------------------------------------------
 /*
 ================================================================================================================
 Over-ride Button
@@ -902,8 +790,6 @@ void MainWindow::on_pushButton_5_clicked()
 
 /*
 ============================================================================================================================
-End of Open Lock 2
-============================================================================================================================
 Log Event
 ============================================================================================================================
 */
@@ -927,6 +813,144 @@ void MainWindow::LogEvent(QString EventID)
 End of Logging
 ============================================================================================================
 */
+    db.close();
+    return;
+}
+/*
+============================================================================================================
+VIM Board Communications
+============================================================================================================
+*/
+
+void MainWindow::vim_comm()
+{
+
+    QString data7 = "";
+    if (vim_serial_open == 0) open_vim_serial();
+    if (vim_serial_open == 0) return;
+
+    if(is_vim_enabled == 0)
+    {
+        vim_serial->write("E;");//IF the VIM is no enabled Enable it
+        is_vim_enabled = 1;
+        //qDebug() << "VIM is now Enabled";
+        while(vim_serial->bytesAvailable()>0||vim_serial->waitForReadyRead(10))
+        {
+           data7 = vim_serial->readAll();
+        }
+        //qDebug() << data7;
+        return;
+    }
+
+     vim_serial->write("I;");//Send Show Me the Key
+     while(vim_serial->bytesAvailable()>0||vim_serial->waitForReadyRead(10))
+    {
+       data7 = vim_serial->readAll();
+     }
+    //qDebug() << data7;
+    vim_serial->write(";");//The VIM WILL NOT WORK WITHOUT THIS !!!
+//----------------------------IF THE VIM RESPONSE IS NOT "ffffffffffffffff;" then process the number-------
+//------------------------------Or VIM response is not "" or "OK;"-----------------------------------------
+
+    DataFromVIM = data7;
+    if(DataFromVIM == "OK;" || DataFromVIM == "" || DataFromVIM == "ffffffffffffffff;")return;
+    qDebug() << DataFromVIM;
+//---------------------------------Now we need to validate the number against the database----------------
+
+    ValidateUser();
+    return;
+}
+/*
+============================================================================================================
+End of VIM Board Communications
+============================================================================================================
+Lock 2 Comm
+============================================================================================================
+*/
+void MainWindow::lock2_comm()
+{
+    if (door2_enabledmm == 0) return;
+    if(lock2_serial_open == 0) Open_Lock2_SerialPort();
+    if(lock2_serial_open == 0)return;
+
+    lock2_serial->write("r;");
+    QString data2 = "";
+
+    while(lock2_serial->bytesAvailable()>0||lock2_serial->waitForReadyRead(10))
+    {
+       data2 = lock2_serial->readAll();
+    }
+
+    QString DoorOpenStatus2 = data2.mid(5,1);
+    if(QString::compare(DoorOpenStatus2,"1") == 0)
+    {
+        ui->graphicsView->hide();
+        ui->graphicsView_2->show();
+
+//-------------------------------------------------------Log Event--------------------------------------------------
+        if(Alarm_Logged2 == 0)
+        {
+          LogEvent("911");
+          Alarm_Logged2 = 1;//Set Alarm Flag so we dont log multiple events for a single alarm
+          return;
+        }
+//-------------------------------------------------------End of Log Event---------------------------------------------------
+    }
+        else
+    {
+        ui->graphicsView->show();
+        ui->graphicsView_2->hide();
+        Alarm_Logged2 = 0;//Reset Alarm Flag to catch next event
+    }
 
     return;
 }
+/*
+============================================================================================================
+End of Lock 2 Comm
+============================================================================================================
+Lock 1 Comm
+============================================================================================================
+*/
+void MainWindow::lock1_comm()
+{
+//-------------------------------------------Door 1------------------------------------------------
+        if (door1_enabledmm == 0)return;
+        if(lock1_serial_open == 0) Open_Lock1_SerialPort();
+        if(lock1_serial_open == 0)return;
+
+        lock1_serial->write("r;");
+        QString data = "";
+
+        while(lock1_serial->bytesAvailable()>0||lock1_serial->waitForReadyRead(10))
+        {
+           data = lock1_serial->readAll();
+        }
+
+        QString DoorOpenStatus = data.mid(5,1);
+        if(QString::compare(DoorOpenStatus,"1") == 0)
+        {
+            ui->graphicsView->hide();
+            ui->graphicsView_2->show();
+//-------------------------------------------------------Log Event--------------------------------------------------
+            if(Alarm_Logged == 0)
+              LogEvent("911");
+              Alarm_Logged = 1;//Set Alarm Flag so we dont log multiple events for a single alarm
+              return;
+            }
+//-------------------------------------------------------End of Log Event---------------------------------------------------
+        else
+        {
+            ui->graphicsView->show();
+            ui->graphicsView_2->hide();
+            Alarm_Logged = 0;//Reset Alarm Flag to catch next event
+        }
+
+ return;
+}
+/*
+==============================================================================================================
+End of Lock 1 comm
+===============================================================================================================
+*/
+

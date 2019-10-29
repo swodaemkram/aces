@@ -6955,7 +6955,7 @@ void Access_Group::LogEvent(QString EventID)
 End of Logging
 ============================================================================================================
 */
-
+    db.close();
     return;
 }
 

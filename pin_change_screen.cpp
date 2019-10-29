@@ -273,7 +273,7 @@ Ok so we conneced to the database, now run querry
 End of Logging
 ============================================================================================================
 */
-
+     db.close();
      return;
  }
 

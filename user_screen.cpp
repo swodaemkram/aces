@@ -1,6 +1,7 @@
 #include "user_screen.h"
 #include "ui_user_screen.h"
 #include "mainwindow.h"
+#include "enroll_ibutton.h"
 #include <QStyle>
 #include <QDesktopWidget>
 //#include <QtWidgets>
@@ -56,6 +57,7 @@ Lets Load a cool Background
   ui->pushButton_5->hide();
   ui->pushButton_49->hide();
   ui->frame_4->hide();
+  ui->pushButton_52->hide();
 /*
 =================================================================================================================
 So lets connect to the database
@@ -141,7 +143,7 @@ Edit User Button
     ui->listWidget->clear();
     ui->plainTextEdit->setStyleSheet("background-color: yellow");
     ui->plainTextEdit->setFocus();
-
+    ui->pushButton_52->show();
 //--------------------List all Permissions Groups From Database----------------------------
 
     QSqlDatabase db = QSqlDatabase::addDatabase(DATABASEDRIVER);
@@ -362,7 +364,7 @@ Add New User
      recordcount++;
 
  }
-
+    ui->pushButton_52->show();
     ui->listWidget->setVisible(true);
     ui->listWidget->show();
 
@@ -394,7 +396,7 @@ Cancel Button
     ui->plainTextEdit_3->setStyleSheet("background-color: white");
     ui->plainTextEdit_4->setStyleSheet("background-color: white");
     ui->checkBox->setStyleSheet("background-color: ");
-
+    ui->pushButton_52->hide();
     RecordModType = "";
 
       ui->listWidget->setVisible(false);
@@ -525,6 +527,7 @@ Save Button
      ui->pushButton_3->show();
      ui->pushButton_2->show();
      ui->pushButton_4->show();
+     ui->pushButton_52->show();
      QSqlDatabase db = QSqlDatabase::addDatabase(DATABASEDRIVER);
      db.setHostName(DATABASEURL);
      db.setDatabaseName(DATABASENAME);
@@ -654,7 +657,6 @@ Save Button
      ui->plainTextEdit_3->setStyleSheet("background-color: white");
      ui->plainTextEdit_4->setStyleSheet("background-color: white");
      ui->checkBox->setStyleSheet("background-color: ");
-
      return;
  }
 //--------------------------------Add New User record----------------------------------------
@@ -2810,37 +2812,9 @@ End of Logging
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+void user_screen::on_pushButton_52_clicked()
+{
+    enroll_ibutton enroll_ibutton;
+    enroll_ibutton.setModal(true);
+    enroll_ibutton.exec();
+}

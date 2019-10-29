@@ -934,6 +934,7 @@ void MainWindow::lock1_comm()
             ui->graphicsView_2->show();
 //-------------------------------------------------------Log Event--------------------------------------------------
             if(Alarm_Logged == 0)
+            {
               LogEvent("911");
               Alarm_Logged = 1;//Set Alarm Flag so we dont log multiple events for a single alarm
               return;
@@ -947,6 +948,7 @@ void MainWindow::lock1_comm()
         }
 
  return;
+}
 }
 /*
 ==============================================================================================================

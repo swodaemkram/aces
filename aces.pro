@@ -41,7 +41,8 @@ SOURCES += \
     pin_change_screen.cpp \
     set_time_screen.cpp \
     networksettings.cpp \
-    aboutscreen.cpp
+    aboutscreen.cpp \
+    enroll_ibutton.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -54,7 +55,8 @@ HEADERS += \
     pin_change_screen.h \
     set_time_screen.h \
     networksettings.h \
-    aboutscreen.h
+    aboutscreen.h \
+    enroll_ibutton.h
 
 FORMS += \
         mainwindow.ui \
@@ -67,4 +69,5 @@ FORMS += \
     pin_change_screen.ui \
     set_time_screen.ui \
     networksettings.ui \
-    aboutscreen.ui
+    aboutscreen.ui \
+    enroll_ibutton.ui

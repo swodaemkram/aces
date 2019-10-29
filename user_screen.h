@@ -120,6 +120,8 @@ private slots:
 
 
 
+    void on_pushButton_52_clicked();
+
 private:
     Ui::user_screen *ui;
     QPixmap image;

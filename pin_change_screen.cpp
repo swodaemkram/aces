@@ -180,9 +180,9 @@ return;
 
 void pin_change_screen::on_pushButton_14_clicked()
 {
-    buffer = ui->plainTextEdit->toPlainText();
+    //buffer = ui->plainTextEdit->toPlainText();
     buffer = "";
-    hidetext = hidetext + "";
+    hidetext = "";
     ui->plainTextEdit->setPlainText(hidetext);
     return;
 }
@@ -221,9 +221,11 @@ Save and Exit
 //-------------------------------------------Update User------------------------------------------------------
       QSqlQuery query;
       query.exec("UPDATE user SET  pin_number = '" + buffer + "', date_of_last_pin_change = '" + dedate.toString("MM/dd/yyyy") +"' WHERE iduser = '" + UserID + "'" );
+      qDebug() << "UPDATE user SET  pin_number = '" + buffer + "', date_of_last_pin_change = '" + dedate.toString("MM/dd/yyyy") +"' WHERE iduser = '" + UserID + "'" ;
       query.next();
       LogEvent("36");//Lets Log This Event
       close();
+      return;
  }
 /*
 ============================================================================================================

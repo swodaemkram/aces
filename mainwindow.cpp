@@ -560,6 +560,7 @@ void MainWindow::ValidateUser()
      qDebug() << "pin from db = " +pin_from_db;
      QString IButtonCodeFromDB = query.value(6).toString();//Get IButtonData
      int user_enabled_from_db = query.value(5).toInt();
+     UserID = query.value(0).toString();
 
 //---------------Here we need to encode the PIN into a MD5 hash so we can compare with the----------------------
 //-------------------------------------Given password-----------------------------------------------------------

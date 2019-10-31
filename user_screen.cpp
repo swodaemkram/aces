@@ -15,7 +15,7 @@
     int RecordNumber = 0;
 
     extern QString UserID;
-
+    extern QString DataFromVIM_enroll;
 
     user_screen::user_screen(QWidget *parent) :
     QDialog(parent),
@@ -107,6 +107,9 @@ We need to Fill in all the Screen info on the current record
  int UserEnabledfromDB = query.value(5).toInt();
  if(UserEnabledfromDB == 1)ui->checkBox->setChecked(true);
  else ui->checkBox->setChecked(false);
+
+ DataFromVIM_enroll = query.value(6).toString();//----We need to load the iButton code if one is in the database
+
 /*
 ================================================================================================================
 Screen loaded with First record int the dataqbase
@@ -221,6 +224,7 @@ Move Forward in Database
      int UserEnabledfromDB = query.value(5).toInt();
      if(UserEnabledfromDB == 1)ui->checkBox->setChecked(true);
      else ui->checkBox->setChecked(false);
+     DataFromVIM_enroll =query.value(6).toString();
      ui->label_9->setText(NextRecord);
 /*
 =============================================================================================
@@ -261,6 +265,7 @@ Move Backward in database
         int UserEnabledfromDB = query.value(5).toInt();
         if(UserEnabledfromDB == 1)ui->checkBox->setChecked(true);
         else ui->checkBox->setChecked(false);
+        DataFromVIM_enroll =query.value(6).toString();
         return;
     }
 
@@ -284,6 +289,7 @@ Move Backward in database
     int UserEnabledfromDB = query.value(5).toInt();
     if(UserEnabledfromDB == 1)ui->checkBox->setChecked(true);
     else ui->checkBox->setChecked(false);
+    DataFromVIM_enroll =query.value(6).toString();
     ui->label_9->setText(PrevRecordString);
 /*
 ============================================================================================
@@ -332,6 +338,7 @@ Add New User
     ui->plainTextEdit_2->setPlainText("");
     ui->plainTextEdit_3->setPlainText("");
     ui->plainTextEdit_4->setPlainText("");
+    DataFromVIM_enroll = "";
     ui->frame_4->show();
     ui->plainTextEdit->setFocus();
     ui->plainTextEdit->setStyleSheet("background-color: yellow");
@@ -500,6 +507,7 @@ Save Button
      UserEnabledfromDB = query3.value(5).toInt();
      if(UserEnabledfromDB == 1)ui->checkBox->setChecked(true);
      else ui->checkBox->setChecked(false);
+     DataFromVIM_enroll =query.value(6).toString();
 
      RecordModType = "";
      ui->pushButton_5->hide();
@@ -614,7 +622,7 @@ Save Button
       }
 //----------------------------New PIN Hashed and ready for Database-----------------------------
 
-     query.exec("INSERT INTO user (User_id, name, pin_number, permission_group, user_enabled) VALUES ('" + first_name + "','" +  last_name + "','" + pin_number + "','" + permission_group + "','" + user_enabled +"')");
+     query.exec("INSERT INTO user (User_id, name, pin_number, permission_group, user_enabled, override_key_number) VALUES ('" + first_name + "','" +  last_name + "','" + pin_number + "','" + permission_group + "','" + user_enabled + "','"+ DataFromVIM_enroll + "')");
      query.next();
 
 //-----------------------------------Lets Reload Changes to Database------------------------------
@@ -753,9 +761,9 @@ Save Button
 //----------------------------New PIN Hashed and ready for Database-----------------------------
 
       query.exec("UPDATE user SET User_id = '" + first_name +"', name = '" + last_name + "', pin_number = '" +
-                 pin_number + "', permission_group = '" + permission_group + "', user_enabled = '" + user_enabled +
+                 pin_number + "', permission_group = '" + permission_group + "', user_enabled = '" + user_enabled + "', override_key_number = '" + DataFromVIM_enroll +
                  "' WHERE iduser = '" + iduserFromDB + "'" );
-     query.next();
+      query.next();
 
 //-----------------------------------Lets Reload Changes to Database------------------------------
      QSqlQuery query2;
@@ -2817,4 +2825,8 @@ void user_screen::on_pushButton_52_clicked()
     enroll_ibutton enroll_ibutton;
     enroll_ibutton.setModal(true);
     enroll_ibutton.exec();
+    qDebug() << DataFromVIM_enroll;
+
+
+
 }

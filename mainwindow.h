@@ -22,6 +22,8 @@ Definitions
 #define SETTINGSBACKGROUND "./icons/settingsbackground.jpg"
 #define BACKGROUNDOVERRIDE "./icons/B0.jpg"
 #define HELPICON "./icons/Help_Circle_Blue.png"
+#define REPORTHEADER "./icons/yum.jpg"
+
 /*
 ==============================================================================================================
 End Definitions

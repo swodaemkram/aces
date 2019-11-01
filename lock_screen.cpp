@@ -5,6 +5,7 @@
 #include "access_group.h"
 #include "manage_access_item.h"
 #include "settings.h"
+#include "reports.h"
 #include <QtSerialPort/QtSerialPort>
 #include <unistd.h> //For sleep function
 #include <QStyle>
@@ -812,10 +813,12 @@ Open Log Screen
 */
 void lock_screen::on_pushButton_12_clicked()
 {
-
 //--------------------------------------------------Log Event------------------------------------------------------
     LogEvent("20");
 //--------------------------------------------------Log Event-------------------------------------------------------
+    reports reports;
+    reports.setModal(true);
+    reports.exec();
 }
 
 

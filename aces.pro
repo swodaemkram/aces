@@ -9,7 +9,7 @@ QT += sql
 QT += serialport
 QT += network
 QT += multimedia
-
+QT += printsupport
 
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
@@ -42,7 +42,8 @@ SOURCES += \
     set_time_screen.cpp \
     networksettings.cpp \
     aboutscreen.cpp \
-    enroll_ibutton.cpp
+    enroll_ibutton.cpp \
+    reports.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -56,7 +57,8 @@ HEADERS += \
     set_time_screen.h \
     networksettings.h \
     aboutscreen.h \
-    enroll_ibutton.h
+    enroll_ibutton.h \
+    reports.h
 
 FORMS += \
         mainwindow.ui \
@@ -70,4 +72,5 @@ FORMS += \
     set_time_screen.ui \
     networksettings.ui \
     aboutscreen.ui \
-    enroll_ibutton.ui
+    enroll_ibutton.ui \
+    reports.ui

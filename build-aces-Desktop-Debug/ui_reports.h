@@ -153,6 +153,7 @@ public:
         textEdit = new QTextEdit(reports);
         textEdit->setObjectName(QStringLiteral("textEdit"));
         textEdit->setGeometry(QRect(160, 30, 871, 691));
+        textEdit->setFont(font);
 
         retranslateUi(reports);
 

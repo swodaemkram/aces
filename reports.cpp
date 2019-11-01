@@ -45,7 +45,7 @@ Run A Daily Log
 void reports::on_pushButton_2_clicked()
 {
     QDate dedate = QDate::currentDate();
-    QString cd = dedate.toString("MM-dd-yyyy");
+    QString cd = dedate.toString("yyyy-MM-dd");
 
 
     QSqlDatabase db = QSqlDatabase::addDatabase(DATABASEDRIVER);
@@ -62,14 +62,40 @@ void reports::on_pushButton_2_clicked()
      ui->label_2->setText("Connected to database....");
 
      QSqlQuery query;
-     query.exec("SELECT * FROM event_log WERE event_date = '" + cd + "'");
-     query.first();
+     query.exec("SELECT * FROM event_log WHERE event_date = '" + cd + "'");
+     query.next();
 
+     int lastrow = 1;
+//-----------------------------Lets setup the printer------------------------------------------------------------------
 
-
-
-
-
+     QString TestString = "Mark is cool";
+     QPrinter printer;
+     QPrintDialog *dialog = new QPrintDialog(&printer);
+     dialog->setWindowTitle("print");
+     QImage img(REPORTHEADER);
+     QPainter painter;
+     painter.begin(&printer);
+     painter.drawImage(QPoint(0,0),img);
+     QFont font=painter.font();
+     font.setPointSize ( 20 ); /// BIG
+     painter.setFont(font);
+     int lineNumber = 500;
+     painter.drawText(250,lineNumber,"Daily Activity Log");
+     lineNumber = lineNumber + 40;
+     painter.drawText(1, lineNumber,"==========================================================================================");
+     lineNumber = lineNumber + 40;
+//--------------------------------Lets Rip through the data and populate the text box--------------------------------------
+     while(lastrow == 1)
+     {
+         QString TheLineOfText = query.value(0).toString() + " " + query.value(1).toString() + " " + query.value(2).toString()
+         + " " + query.value(3).toString() + " " + query.value(4).toString() + "\n";
+         ui->textEdit->append(TheLineOfText);
+         painter.drawText(50, lineNumber,  TheLineOfText);
+         lineNumber = lineNumber + 40;
+         lastrow = query.next();
+     }
+//------------------------------------------Done Ripping-------------------------------------------------------------------
+painter.end();
 }
 /*
 ==========================================================================================================
@@ -89,7 +115,9 @@ void reports::on_pushButton_5_clicked()
     QPainter painter;
     painter.begin(&printer);
     painter.drawImage(QPoint(0,0),img);
+
     painter.drawText(50, 50, 250, 250, Qt::AlignLeft|Qt::AlignTop, TestString);
+
     painter.end();
 }
 /*
